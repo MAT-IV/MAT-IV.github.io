@@ -5,13 +5,48 @@ title: Mauricio Trevino
 
 <canvas id="starfield"></canvas>
 
-<section class="hero">
-  <h1>Mauricio Trevino</h1>
-  <h2>Mechanical Engineering · Space Systems</h2>
+<section class="landing">
 
-  <nav class="hero-nav">
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="intro-card">
+    <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+         alt="Photo of Mauricio Trevino"
+         class="profile-photo" />
+
+    <h1>Mauricio Trevino</h1>
+    <p class="tagline">
+      Mechanical engineer with interests in space systems, robotics,
+      and hands-on design. This site is a curated portfolio of my
+      academic work, professional experience, and personal builds.
+    </p>
+
+    <nav class="primary-nav">
+      <a href="/about/">About Me</a>
+      <a href="/resume/">Resume</a>
+      <a href="/experience/">Professional Experience</a>
+      <a href="/teams/">Engineering Design Teams</a>
+      <a href="/projects/">Hobby Builds</a>
+    </nav>
+  </div>
+
+</section>
+
+<section class="maker-preview">
+  <h2>Maker Portfolio</h2>
+
+  <div class="preview-grid">
+    <a href="/projects/razor/" class="preview-card">
+      <img src="{{ '/assets/images/razor.jpg' | relative_url }}" alt="">
+      <span>Mechanical Builds</span>
+    </a>
+
+    <a href="/projects/electronics/" class="preview-card">
+      <img src="{{ '/assets/images/electronics.jpg' | relative_url }}" alt="">
+      <span>Electronics</span>
+    </a>
+
+    <a href="/projects/3d-printing/" class="preview-card">
+      <img src="{{ '/assets/images/printing.jpg' | relative_url }}" alt="">
+      <span>3D Printing</span>
+    </a>
+  </div>
 </section>
