@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!orbitItems.length) return;
 
   const radius = 180;      // orbit radius in px
-  const speed = 0.002;     // radians per ms
+  const speed = 0.0004;     // radians per ms
   let start = null;
 
   let centerX = window.innerWidth / 2;
