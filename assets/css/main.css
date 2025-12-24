@@ -64,7 +64,7 @@ body, html {
   position: absolute;
   display: block;
   padding: 0.6rem 1rem;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.7); /* visible background */
   border-radius: 8px;
   color: white;
   text-decoration: none;
@@ -72,6 +72,7 @@ body, html {
   transform-origin: center center;
   transition: transform 0.2s, background 0.2s;
 }
+
 
 .orbit-item:hover {
   transform: scale(1.2);
