@@ -97,3 +97,13 @@ function animate() {
 }
 
 animate();
+
+
+orbitItem.addEventListener('mouseenter', () => {
+  cursor.x = itemX;
+  cursor.y = itemY;
+});
+orbitItem.addEventListener('mouseleave', () => {
+  cursor.x = null;
+  cursor.y = null;
+});
