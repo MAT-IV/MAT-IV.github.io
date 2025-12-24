@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 let width, height;
 const stars = [];
-const STAR_COUNT = 120;
+const STAR_COUNT = 200;
 
 const mouse = { x: null, y: null };
 
