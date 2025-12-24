@@ -1,5 +1,4 @@
 const orbitItems = document.querySelectorAll('.orbit-item');
-
 const radius = 180; // distance from center
 const speed = 0.002; // radians per ms
 let start = null;
