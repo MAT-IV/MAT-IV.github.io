@@ -5,48 +5,19 @@ title: Mauricio Trevino
 
 <canvas id="starfield"></canvas>
 
-<section class="landing">
-
-  <div class="intro-card">
-    <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
-         alt="Photo of Mauricio Trevino"
-         class="profile-photo" />
-
+<header class="identity">
+  <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Mauricio Trevino" class="profile-photo">
+  <div class="identity-text">
     <h1>Mauricio Trevino</h1>
-    <p class="tagline">
-      Mechanical engineer with interests in space systems, robotics,
-      and hands-on design. This site is a curated portfolio of my
-      academic work, professional experience, and personal builds.
-    </p>
-
-    <nav class="primary-nav">
-      <a href="/about/">About Me</a>
-      <a href="/resume/">Resume</a>
-      <a href="/experience/">Professional Experience</a>
-      <a href="/teams/">Engineering Design Teams</a>
-      <a href="/projects/">Hobby Builds</a>
-    </nav>
+    <span>Mechanical Engineering · Space Systems</span>
   </div>
+</header>
 
-</section>
-
-<section class="maker-preview">
-  <h2>Maker Portfolio</h2>
-
-  <div class="preview-grid">
-    <a href="/projects/razor/" class="preview-card">
-      <img src="{{ '/assets/images/razor.jpg' | relative_url }}" alt="">
-      <span>Mechanical Builds</span>
-    </a>
-
-    <a href="/projects/electronics/" class="preview-card">
-      <img src="{{ '/assets/images/electronics.jpg' | relative_url }}" alt="">
-      <span>Electronics</span>
-    </a>
-
-    <a href="/projects/3d-printing/" class="preview-card">
-      <img src="{{ '/assets/images/printing.jpg' | relative_url }}" alt="">
-      <span>3D Printing</span>
-    </a>
-  </div>
-</section>
+<nav class="orbit-nav">
+  <a href="/about/" class="orbit-item">About Me</a>
+  <a href="/resume/" class="orbit-item">Resume</a>
+  <a href="/experience/" class="orbit-item">Professional Experience</a>
+  <a href="/teams/" class="orbit-item">Engineering Design Teams</a>
+  <a href="/projects/" class="orbit-item">Hobby Builds</a>
+  <a href="/maker/" class="orbit-item">Maker Portfolio</a>
+</nav>
