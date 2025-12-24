@@ -54,7 +54,10 @@ body, html {
   left: 50%;
   width: 0;
   height: 0;
-  z-index: 1;
+  z-index: 3; /* MUST be above the canvas (which is z-index:0) */
+}
+.orbit-item {
+  z-index: 4; /* above orbit-nav */
 }
 
 .orbit-item {
