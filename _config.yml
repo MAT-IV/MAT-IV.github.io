@@ -1,7 +1,15 @@
 # Basics
-theme: jekyll-theme-slate
 title: Mauricio's homepage
 description: Mauricio's Personal Portfolio
+
+# For GitHub Pages
+# If this is a user/organization site: https://<user>.github.io
+url: "https://<your-username>.github.io"
+baseurl: ""        # For project sites use "/repo-name"
+
+theme: jekyll-theme-slate
+
+# (rest of your existing config can stay as‑is below)
 
 # Where things are
 source              : .
