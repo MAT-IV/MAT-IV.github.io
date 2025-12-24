@@ -7,7 +7,6 @@ const STAR_COUNT = 200;
 
 const mouse = { x: null, y: null };
 
-// Tunable physics constants
 const CURSOR_RADIUS = 140;
 const CURSOR_FORCE = 0.08;
 const HOME_FORCE = 0.002;
@@ -34,13 +33,10 @@ class Star {
   constructor() {
     this.x0 = Math.random() * width;
     this.y0 = Math.random() * height;
-
     this.x = this.x0;
     this.y = this.y0;
-
     this.vx = 0;
     this.vy = 0;
-
     this.r = Math.random() * 1.4 + 0.6;
   }
 
@@ -48,12 +44,10 @@ class Star {
     let ax = 0;
     let ay = 0;
 
-    // Cursor attraction
     if (mouse.x !== null) {
       const dx = mouse.x - this.x;
       const dy = mouse.y - this.y;
       const dist = Math.hypot(dx, dy);
-
       if (dist < CURSOR_RADIUS) {
         const force = (1 - dist / CURSOR_RADIUS) * CURSOR_FORCE;
         ax += (dx / dist) * force;
@@ -61,15 +55,12 @@ class Star {
       }
     }
 
-    // Spring force back to home position
     ax += (this.x0 - this.x) * HOME_FORCE;
     ay += (this.y0 - this.y) * HOME_FORCE;
 
-    // Integrate velocity
     this.vx = (this.vx + ax) * DAMPING;
     this.vy = (this.vy + ay) * DAMPING;
 
-    // Integrate position
     this.x += this.vx;
     this.y += this.vy;
   }
@@ -82,10 +73,7 @@ class Star {
   }
 }
 
-// Initialize stars
-for (let i = 0; i < STAR_COUNT; i++) {
-  stars.push(new Star());
-}
+for (let i = 0; i < STAR_COUNT; i++) stars.push(new Star());
 
 function animate() {
   ctx.clearRect(0, 0, width, height);
@@ -97,13 +85,3 @@ function animate() {
 }
 
 animate();
-
-
-orbitItem.addEventListener('mouseenter', () => {
-  cursor.x = itemX;
-  cursor.y = itemY;
-});
-orbitItem.addEventListener('mouseleave', () => {
-  cursor.x = null;
-  cursor.y = null;
-});
