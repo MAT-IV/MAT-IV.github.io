@@ -1,4 +1,4 @@
-/* General */
+/* ===== General page styling ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   height: 100%;
 }
 
-/* Canvas starfield */
+/* Fullscreen starfield canvas */
 #starfield {
   position: fixed;
   inset: 0;
@@ -19,14 +19,14 @@ html, body {
   display: block;
 }
 
-/* Identity Top-Left */
+/* ===== Identity (top-left) ===== */
 .identity {
   position: fixed;
   top: 1rem;
   left: 1rem;
   display: flex;
   align-items: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .profile-photo {
@@ -48,53 +48,7 @@ html, body {
   opacity: 0.8;
 }
 
-/* Orbit navigation */
-.orbit-nav {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* let clicks pass */
-  z-index: 3;
-}
-
-.orbit-item {
-  position: fixed;
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 8px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transform-origin: center center;
-  transition: transform 0.2s, background 0.2s;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.orbit-item:hover {
-  transform: scale(1.2);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Mobile fallback */
-@media (max-width: 768px) {
-  .orbit-nav {
-    position: static;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 200px;
-    pointer-events: auto;
-  }
-
-  .orbit-item {
-    position: static;
-    margin: 0.5rem;
-  }
-}
-
+/* ===== Big Bang toggle (top-right) ===== */
 .bigbang-toggle {
   position: fixed;
   top: 1rem;
@@ -107,7 +61,7 @@ html, body {
   font-size: 0.9rem;
 }
 
-/* Simple toggle switch */
+/* CSS toggle switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -150,34 +104,78 @@ html, body {
   transform: translateX(22px);
 }
 
+/* ===== Orbit navigation ===== */
+.orbit-nav {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* items re-enable clicks */
+  z-index: 3;
+}
 
+/* Each orbiting link / "planet label" */
 .orbit-item {
   position: fixed;
   display: inline-flex;
-  flex-direction: column;   /* allows vertical stacking */
+  flex-direction: column; /* allows 2-line labels */
   align-items: center;
+  justify-content: center;
   gap: 0.1rem;
   padding: 0.4rem 0.8rem;
-  /* rest of your existing styles */
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transform-origin: center center;
+  transition: transform 0.2s, background 0.2s;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
+/* Two-line text styling */
 .orbit-item .line-1,
 .orbit-item .line-2 {
   display: block;
   white-space: nowrap;
 }
 
+/* Small "planet" circle attached to each label */
 .orbit-item::before {
   content: "";
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ffd36b; /* default planet color */
+  background: #ffd36b;
+  margin-bottom: 0.1rem;
 }
 
-/* Different colors per link via nth-child */
+/* Different planet colors by index */
 .orbit-item:nth-child(2)::before { background: #6bc5ff; }
 .orbit-item:nth-child(3)::before { background: #ff7b6b; }
 .orbit-item:nth-child(4)::before { background: #8dff6b; }
 .orbit-item:nth-child(5)::before { background: #b16bff; }
 .orbit-item:nth-child(6)::before { background: #ff6be0; }
+
+.orbit-item:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Mobile fallback ===== */
+@media (max-width: 768px) {
+  .orbit-nav {
+    position: static;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 200px;
+    pointer-events: auto;
+  }
+
+  .orbit-item {
+    position: static;
+    margin: 0.5rem;
+  }
+}
