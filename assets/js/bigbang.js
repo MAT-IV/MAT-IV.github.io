@@ -122,7 +122,7 @@ function startBigBangSequence(onComplete) {
         x = -20;
         y = Math.random() * H;
       }
-      const speed = 0.15 + Math.random() * 0.25;
+      const speed = 0.4 + Math.random() * 0.4;
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
   }
@@ -209,36 +209,45 @@ function startBigBangSequence(onComplete) {
       }
 
     } else if (phase === "explode") {
-      // Update and draw explosion
-      particles.forEach(p => p.update(dt));
-      particles.forEach(p => p.draw(ctx));
+  // Update and draw explosion
+  particles.forEach(p => p.update(dt));
+  particles.forEach(p => p.draw(ctx));
 
-      // White flash over the screen
-      flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
-      ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
-      ctx.fillRect(0, 0, W, H);
+  // White flash over the screen
+  flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
+  ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
+  ctx.fillRect(0, 0, W, H);
 
-      // Once flash is full, fade back to black
-      if (flashAlpha >= 1) {
-        phase = "fadeToBlack";
-        phaseStart = now;
-      }
+  // Once flash is full white, immediately reveal orbits underneath
+  if (flashAlpha >= 1) {
+    // Show orbits while the screen is still white
+    const orbitNav = document.querySelector('.orbit-nav');
+    const orbitLinesCanvas = document.getElementById('orbit-lines');
+    if (orbitNav) orbitNav.style.visibility = 'visible';
+    if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
-    } else if (phase === "fadeToBlack") {
-      // Fade from white back to black
-      const elapsed = now - phaseStart;
-      const fade = Math.min(1, elapsed / 1000);
-      ctx.fillStyle = "#000";
-      ctx.globalAlpha = fade;
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalAlpha = 1;
+    // Option A: quick fade from white to black (very short)
+    phase = "fadeToBlack";
+    phaseStart = now;
+  }
+}
 
-      // End of sequence: hand control back to main animations
-      if (fade >= 1) {
-        if (typeof onComplete === "function") onComplete();
-        return; // stop Big Bang loop
-      }
-    }
+
+} else if (phase === "fadeToBlack") {
+  const elapsed = now - phaseStart;
+  const fade = Math.min(1, elapsed / 200); // 0.2s fade
+  ctx.fillStyle = "#000";
+  ctx.globalAlpha = fade;
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalAlpha = 1;
+
+  if (fade >= 1) {
+    if (typeof onComplete === "function") onComplete();
+    return;
+  }
+}
+
+
 
     requestAnimationFrame(loop);
   }
