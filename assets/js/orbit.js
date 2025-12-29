@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const orbits = [];
 
-  // First item is central
+  // First item is central (About Me)
   const aboutItem = items[0];
   const otherItems = items.slice(1);
 
