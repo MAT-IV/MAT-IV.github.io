@@ -130,22 +130,10 @@ html, body {
 
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
-  .orbit-nav {
-    position: static;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 200px;
-    pointer-events: auto;
-  }
-
-  .orbit-item {
-    position: static;
-    margin: 0.5rem;
-  }
-
+  /* Keep orbits fixed; only adjust button position */
   .bigbang-button {
     top: auto;
     bottom: 1rem;
   }
 }
+
