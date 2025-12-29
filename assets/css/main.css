@@ -1,4 +1,4 @@
-/* ===== General page styling ===== */
+/* ===== General ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   height: 100%;
 }
 
-/* Fullscreen starfield canvas */
+/* Starfield canvas */
 #starfield {
   position: fixed;
   inset: 0;
@@ -19,7 +19,7 @@ html, body {
   display: block;
 }
 
-/* ===== Identity (top-left) ===== */
+/* Identity top-left */
 .identity {
   position: fixed;
   top: 1rem;
@@ -48,60 +48,27 @@ html, body {
   opacity: 0.8;
 }
 
-/* ===== Big Bang toggle (top-right) ===== */
-.bigbang-toggle {
+/* ===== Big Bang replay button (top-right) ===== */
+.bigbang-button {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
   z-index: 4;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.6);
   color: #fff;
-  font-size: 0.9rem;
-}
-
-/* CSS toggle switch */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 46px;
-  height: 24px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
+  font-size: 0.8rem;
   cursor: pointer;
-  inset: 0;
-  background-color: #555;
-  transition: 0.3s;
-  border-radius: 24px;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: #fff;
-  transition: 0.3s;
-  border-radius: 50%;
-}
-
-.switch input:checked + .slider {
-  background-color: #18a0fb;
-}
-
-.switch input:checked + .slider:before {
-  transform: translateX(22px);
+.bigbang-button:hover {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+  transform: translateY(-1px);
 }
 
 /* ===== Orbit navigation ===== */
@@ -110,15 +77,14 @@ html, body {
   inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* items re-enable clicks */
+  pointer-events: none;
   z-index: 3;
 }
 
-/* Each orbiting link / "planet label" */
 .orbit-item {
   position: fixed;
   display: inline-flex;
-  flex-direction: column; /* allows 2-line labels */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.1rem;
@@ -134,14 +100,13 @@ html, body {
   cursor: pointer;
 }
 
-/* Two-line text styling */
 .orbit-item .line-1,
 .orbit-item .line-2 {
   display: block;
   white-space: nowrap;
 }
 
-/* Small "planet" circle attached to each label */
+/* small planet dot */
 .orbit-item::before {
   content: "";
   width: 10px;
@@ -151,7 +116,6 @@ html, body {
   margin-bottom: 0.1rem;
 }
 
-/* Different planet colors by index */
 .orbit-item:nth-child(2)::before { background: #6bc5ff; }
 .orbit-item:nth-child(3)::before { background: #ff7b6b; }
 .orbit-item:nth-child(4)::before { background: #8dff6b; }
@@ -160,7 +124,7 @@ html, body {
 
 .orbit-item:hover {
   transform: scale(1.2);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.2);
 }
 
 /* ===== Mobile fallback ===== */
@@ -177,5 +141,10 @@ html, body {
   .orbit-item {
     position: static;
     margin: 0.5rem;
+  }
+
+  .bigbang-button {
+    top: auto;
+    bottom: 1rem;
   }
 }
