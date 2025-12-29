@@ -15,7 +15,7 @@ function startBigBangSequence(onComplete) {
   let textIndex = 0;
 
   const particles = [];
-  const PARTICLE_COUNT = 300;     // keep original amount
+  const PARTICLE_COUNT = 300;
   let flashAlpha = 0;
 
   class Particle {
@@ -54,27 +54,16 @@ function startBigBangSequence(onComplete) {
     }
   }
 
-  // ONLY CHANGE: faster inward speeds, rest of phases unchanged
+  // Spawn particles uniformly on a large circle around the center
   function spawnInwardParticles(count) {
+    const radius = Math.max(W, H) * 0.7; // big circle off-screen-ish
     for (let i = 0; i < count; i++) {
-      const edge = Math.floor(Math.random() * 4);
-      let x, y;
-      if (edge === 0) {
-        x = Math.random() * W;
-        y = -20;
-      } else if (edge === 1) {
-        x = W + 20;
-        y = Math.random() * H;
-      } else if (edge === 2) {
-        x = Math.random() * W;
-        y = H + 20;
-      } else {
-        x = -20;
-        y = Math.random() * H;
-      }
+      const angle = Math.random() * Math.PI * 2;
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
 
-      // Faster inward motion: bump speeds up, but not crazy high
-      const speed = 0.6 + Math.random() * 0.5;  // original was ~0.15–0.4
+      // Faster inward motion so this phase is snappy
+      const speed = 0.6 + Math.random() * 0.5;
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
   }
@@ -89,9 +78,9 @@ function startBigBangSequence(onComplete) {
     ctx.fillRect(0, 0, W, H);
 
     if (phase === "fadeInText") {
-      // Use your original typing timing here
+      // Slower typing: entire line over ~1.5s
       const elapsed = now - phaseStart;
-      const charsPerMs = 1 / 0.75;
+      const charsPerMs = text.length / 1500; // adjust for taste
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
@@ -100,6 +89,7 @@ function startBigBangSequence(onComplete) {
       ctx.textBaseline = "middle";
       ctx.fillText(text.slice(0, textIndex), centerX, centerY);
 
+      // Small pause after full text (e.g. 500 ms)
       if (textIndex === text.length && elapsed > 2000) {
         phase = "inward";
         phaseStart = now;
@@ -145,7 +135,7 @@ function startBigBangSequence(onComplete) {
 
         particles.forEach(p => {
           const angle = Math.atan2(p.y - centerY, p.x - centerX) || Math.random() * Math.PI * 2;
-          const speed = 0.7 + Math.random() * 0.7; // keep original explosion feel
+          const speed = 0.7 + Math.random() * 0.7;
           p.vx = Math.cos(angle) * speed;
           p.vy = Math.sin(angle) * speed;
           p.state = "explode";
@@ -166,8 +156,6 @@ function startBigBangSequence(onComplete) {
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
-        // Optional: keep your quick fade or remove it.
-        // Here we keep the instant cut back (no extra fade).
         if (typeof onComplete === "function") onComplete();
         ctx.clearRect(0, 0, W, H);
         return;
