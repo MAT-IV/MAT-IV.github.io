@@ -1,6 +1,8 @@
-// In a new file assets/js/bigbang.js (and include it after stars.js and orbit.js)
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('bigbang-toggle');
+  const orbitNav = document.querySelector('.orbit-nav');
+  const orbitLinesCanvas = document.getElementById('orbit-lines'); // created in orbit.js if you kept that
+
   if (!toggle) return;
 
   let bigBangActive = false;
@@ -8,16 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle.addEventListener('change', () => {
     if (toggle.checked && !bigBangActive) {
       bigBangActive = true;
+
+      // Hide current nav/orbits
+      if (orbitNav) orbitNav.style.visibility = 'hidden';
+      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
+
       startBigBangSequence(() => {
-        // After sequence finishes, you can keep Big Bang orbits enabled
+        // After sequence finishes, show the new orbit layout
+        if (orbitNav) orbitNav.style.visibility = 'visible';
+        if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
       });
     } else if (!toggle.checked && bigBangActive) {
       bigBangActive = false;
-      // Optional: reset to normal mode
-      resetToNormalMode();
+      resetToNormalMode(); // whatever you do here
+      if (orbitNav) orbitNav.style.visibility = 'visible';
+      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
     }
   });
 });
+
 
 
 function startBigBangSequence(onComplete) {
@@ -124,57 +135,67 @@ function startBigBangSequence(onComplete) {
         spawnInwardParticles(TARGET_CLUSTER_COUNT);
       }
     } else if (phase === "inward") {
-      particles.forEach(p => p.update(dt));
-      particles.forEach(p => p.draw(ctx));
+  particles.forEach(p => p.update(dt));
+  particles.forEach(p => p.draw(ctx));
 
-      const clustered = particles.filter(p => {
-        const dx = p.x - centerX;
-        const dy = p.y - centerY;
-        return Math.hypot(dx, dy) < 40;
-      }).length;
-
-      if (clustered > TARGET_CLUSTER_COUNT * 0.7) {
-        phase = "explode";
-        phaseStart = now;
-
-        // Give outward velocities
-        particles.forEach(p => {
-          const angle = Math.atan2(p.y - centerY, p.x - centerX);
-          const speed = 0.6 + Math.random() * 0.5;
-          p.vx = Math.cos(angle) * speed;
-          p.vy = Math.sin(angle) * speed;
-          p.state = "explode";
-        });
-      }
-      // Also draw text faintly if you like
-    } else if (phase === "explode") {
-      particles.forEach(p => p.update(dt));
-      particles.forEach(p => p.draw(ctx));
-
-      // White flash overlay
-      flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
-      ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
-      ctx.fillRect(0, 0, W, H);
-
-      if (flashAlpha >= 1) {
-        phase = "fadeToBlack";
-        phaseStart = now;
-      }
-    } else if (phase === "fadeToBlack") {
-      const elapsed = now - phaseStart;
-      const fade = Math.min(1, elapsed / 1000);
-      ctx.fillStyle = "#000";
-      ctx.globalAlpha = fade;
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalAlpha = 1;
-
-      if (fade >= 1) {
-        // Hand off to the new orbit layout
-        enableBigBangOrbits();
-        if (typeof onComplete === "function") onComplete();
-        return; // stop loop; main starfield/orbit will take over
-      }
+  // Count how many are within cluster radius
+  const clusterRadius = 50;
+  let clusteredCount = 0;
+  particles.forEach(p => {
+    const dx = p.x - centerX;
+    const dy = p.y - centerY;
+    if (Math.hypot(dx, dy) < clusterRadius) {
+      clusteredCount++;
     }
+  });
+
+  const fraction = clusteredCount / particles.length;
+
+  // Draw a central glow that grows with clustered fraction
+  const maxGlowRadius = 80;
+  const glowRadius = 10 + maxGlowRadius * fraction;
+  const glowAlpha = 0.2 + 0.6 * fraction;
+
+  const gradient = ctx.createRadialGradient(
+    centerX, centerY, 0,
+    centerX, centerY, glowRadius
+  );
+  gradient.addColorStop(0, `rgba(255,255,255,${glowAlpha})`);
+  gradient.addColorStop(1, "rgba(255,255,255,0)");
+
+  ctx.fillStyle = gradient;
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, glowRadius, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Only move to explode when ALL particles are in the cluster
+  if (clusteredCount === particles.length) {
+    phase = "explode";
+    phaseStart = now;
+
+    particles.forEach(p => {
+      const angle = Math.atan2(p.y - centerY, p.x - centerX) || Math.random() * Math.PI * 2;
+      const speed = 0.7 + Math.random() * 0.7;
+      p.vx = Math.cos(angle) * speed;
+      p.vy = Math.sin(angle) * speed;
+      p.state = "explode";
+    });
+  }
+} else if (phase === "explode") {
+  particles.forEach(p => p.update(dt));
+  particles.forEach(p => p.draw(ctx));
+
+  // White flash overlay
+  flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
+  ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
+  ctx.fillRect(0, 0, W, H);
+
+  if (flashAlpha >= 1) {
+    phase = "fadeToBlack";
+    phaseStart = now;
+  }
+}
+
 
     requestAnimationFrame(loop);
   }
