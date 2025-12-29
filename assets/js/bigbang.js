@@ -1,54 +1,45 @@
-// Big Bang mode: intro animation on the starfield canvas, then reveal orbits
+// Big Bang intro: auto-plays on first load, replayable via top-right button
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Checkbox inside the top-right toggle
-  const toggle = document.getElementById('bigbang-toggle');
+  const playButton = document.getElementById('bigbang-play');
   const orbitNav = document.querySelector('.orbit-nav');
 
-  if (!toggle) return;
+  if (!playButton) return;
 
-  let bigBangActive = false;
+  let introPlayed = false;
 
-  toggle.addEventListener('change', () => {
+  // Auto-play once on initial load
+  runBigBang(() => {
+    introPlayed = true;
+  });
+
+  // Replay on button click
+  playButton.addEventListener('click', () => {
     const orbitLinesCanvas = document.getElementById('orbit-lines');
+    // Hide orbits during replay
+    if (orbitNav) orbitNav.style.visibility = 'hidden';
+    if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
 
-    if (toggle.checked && !bigBangActive) {
-      bigBangActive = true;
-
-      // Hide normal orbits during animation
-      if (orbitNav) orbitNav.style.visibility = 'hidden';
-      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
-
-      startBigBangSequence(() => {
-        // Make sure orbits are visible again after sequence
-        if (orbitNav) orbitNav.style.visibility = 'visible';
-        if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
-      });
-    } else if (!toggle.checked && bigBangActive) {
-      // Turning Big Bang off: ensure orbits are visible
-      bigBangActive = false;
-      const orbitLinesCanvas2 = document.getElementById('orbit-lines');
+    runBigBang(() => {
       if (orbitNav) orbitNav.style.visibility = 'visible';
-      if (orbitLinesCanvas2) orbitLinesCanvas2.style.visibility = 'visible';
-    }
+      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
+    });
   });
 });
 
 /**
- * Big Bang sequence:
- * 1) Slowly type intro text.
- * 2) Particles spawn on a big circle and move inward (faster).
- * 3) Glow grows at center.
- * 4) Explosion + white flash.
- * 5) While flash is white, orbits are made visible; then canvas clears.
+ * Runs the Big Bang animation, then calls onComplete.
  */
-function startBigBangSequence(onComplete) {
+function runBigBang(onComplete) {
   const canvas = document.getElementById("starfield");
-  if (!canvas) return;
+  if (!canvas) {
+    if (typeof onComplete === 'function') onComplete();
+    return;
+  }
   const ctx = canvas.getContext("2d");
 
-  const W = canvas.width;
-  const H = canvas.height;
+  const W = canvas.width = window.innerWidth;
+  const H = canvas.height = window.innerHeight;
   const centerX = W / 2;
   const centerY = H / 2;
 
@@ -98,7 +89,7 @@ function startBigBangSequence(onComplete) {
     }
   }
 
-  // Spawn particles uniformly on a big circle around the center
+  // Spawn particles uniformly on a large ring around center
   function spawnInwardParticles(count) {
     const radius = Math.max(W, H) * 0.7;
     for (let i = 0; i < count; i++) {
@@ -106,8 +97,7 @@ function startBigBangSequence(onComplete) {
       const x = centerX + radius * Math.cos(angle);
       const y = centerY + radius * Math.sin(angle);
 
-      // Faster inward motion only
-      const speed = 0.6 + Math.random() * 0.5;
+      const speed = 0.6 + Math.random() * 0.5; // faster inward only
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
   }
@@ -122,9 +112,8 @@ function startBigBangSequence(onComplete) {
     ctx.fillRect(0, 0, W, H);
 
     if (phase === "fadeInText") {
-      // Slow typing: full line over ~1.5s
       const elapsed = now - phaseStart;
-      const charsPerMs = text.length / 1500;
+      const charsPerMs = text.length / 1500; // ~1.5s typing
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
@@ -133,7 +122,6 @@ function startBigBangSequence(onComplete) {
       ctx.textBaseline = "middle";
       ctx.fillText(text.slice(0, textIndex), centerX, centerY);
 
-      // Pause after full text for a bit, then start inward phase
       if (textIndex === text.length && elapsed > 2000) {
         phase = "inward";
         phaseStart = now;
@@ -179,7 +167,7 @@ function startBigBangSequence(onComplete) {
 
         particles.forEach(p => {
           const angle = Math.atan2(p.y - centerY, p.x - centerX) || Math.random() * Math.PI * 2;
-          const speed = 0.7 + Math.random() * 0.7; // keep explosion feel
+          const speed = 0.7 + Math.random() * 0.7;
           p.vx = Math.cos(angle) * speed;
           p.vy = Math.sin(angle) * speed;
           p.state = "explode";
@@ -195,15 +183,12 @@ function startBigBangSequence(onComplete) {
       ctx.fillRect(0, 0, W, H);
 
       if (flashAlpha >= 1) {
-        // Screen is pure white: show orbits now so there is no gap
         const orbitNav = document.querySelector('.orbit-nav');
         const orbitLinesCanvas = document.getElementById('orbit-lines');
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
         if (typeof onComplete === "function") onComplete();
-
-        // Clear canvas so normal starfield/orbits show through
         ctx.clearRect(0, 0, W, H);
         return;
       }
