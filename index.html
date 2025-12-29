@@ -3,10 +3,8 @@ layout: default
 title: Mauricio Trevino
 ---
 
-<!-- Fullscreen starfield canvas -->
 <canvas id="starfield"></canvas>
 
-<!-- Identity in top-left -->
 <header class="identity">
   <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Mauricio Trevino" class="profile-photo">
   <div class="identity-text">
@@ -15,18 +13,13 @@ title: Mauricio Trevino
   </div>
 </header>
 
-<!-- Big Bang toggle in top-right -->
-<div class="bigbang-toggle">
-  <label class="switch">
-    <input type="checkbox" id="bigbang-toggle">
-    <span class="slider"></span>
-  </label>
-  <span class="bigbang-label">Big Bang mode</span>
-</div>
+<!-- Big Bang replay button (top-right) -->
+<button id="bigbang-play" class="bigbang-button" aria-label="Replay Big Bang animation">
+  Big&nbsp;Bang
+</button>
 
-<!-- Orbiting navigation -->
 <nav class="orbit-nav">
-  <!-- Central dot will be About Me -->
+  <!-- Central page (About Me) -->
   <a href="{{ '/about/' | relative_url }}" class="orbit-item">
     <span class="line-1">About</span>
     <span class="line-2">Me</span>
