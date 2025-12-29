@@ -154,9 +154,17 @@ html, body {
 .orbit-item {
   position: fixed;
   display: inline-flex;
+  flex-direction: column;   /* allows vertical stacking */
   align-items: center;
-  gap: 0.4rem;
-  /* existing styles... */
+  gap: 0.1rem;
+  padding: 0.4rem 0.8rem;
+  /* rest of your existing styles */
+}
+
+.orbit-item .line-1,
+.orbit-item .line-2 {
+  display: block;
+  white-space: nowrap;
 }
 
 .orbit-item::before {
