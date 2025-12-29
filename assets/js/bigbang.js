@@ -91,7 +91,7 @@ function startBigBangSequence(onComplete) {
     if (phase === "fadeInText") {
       // Use your original typing timing here
       const elapsed = now - phaseStart;
-      const charsPerMs = 1 / 10;
+      const charsPerMs = 1 / 0.75;
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
