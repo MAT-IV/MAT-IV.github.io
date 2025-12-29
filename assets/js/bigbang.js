@@ -43,6 +43,12 @@ function runBigBang(onComplete) {
   const centerX = W / 2;
   const centerY = H / 2;
 
+    // Ensure orbits are hidden at the beginning of the intro
+  const orbitNav = document.querySelector('.orbit-nav');
+  const orbitLinesCanvas = document.getElementById('orbit-lines');
+  if (orbitNav) orbitNav.style.visibility = 'hidden';
+  if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
+
   let phase = "fadeInText";
   let phaseStart = performance.now();
 
@@ -183,6 +189,7 @@ function runBigBang(onComplete) {
       ctx.fillRect(0, 0, W, H);
 
       if (flashAlpha >= 1) {
+        // Screen is pure white: show orbits now
         const orbitNav = document.querySelector('.orbit-nav');
         const orbitLinesCanvas = document.getElementById('orbit-lines');
         if (orbitNav) orbitNav.style.visibility = 'visible';
