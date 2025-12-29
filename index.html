@@ -3,8 +3,10 @@ layout: default
 title: Mauricio Trevino
 ---
 
+<!-- Fullscreen starfield canvas -->
 <canvas id="starfield"></canvas>
 
+<!-- Identity in top-left -->
 <header class="identity">
   <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Mauricio Trevino" class="profile-photo">
   <div class="identity-text">
@@ -13,8 +15,22 @@ title: Mauricio Trevino
   </div>
 </header>
 
+<!-- Big Bang toggle in top-right -->
+<div class="bigbang-toggle">
+  <label class="switch">
+    <input type="checkbox" id="bigbang-toggle">
+    <span class="slider"></span>
+  </label>
+  <span class="bigbang-label">Big Bang mode</span>
+</div>
+
+<!-- Orbiting navigation -->
 <nav class="orbit-nav">
-  <a href="{{ '/about/' | relative_url }}" class="orbit-item">About Me</a>
+  <!-- Central dot will be About Me -->
+  <a href="{{ '/about/' | relative_url }}" class="orbit-item">
+    <span class="line-1">About</span>
+    <span class="line-2">Me</span>
+  </a>
   <a href="{{ '/resume/' | relative_url }}" class="orbit-item">Resume</a>
   <a href="{{ '/experience/' | relative_url }}" class="orbit-item">
     <span class="line-1">Professional</span>
@@ -33,5 +49,3 @@ title: Mauricio Trevino
     <span class="line-2">Portfolio</span>
   </a>
 </nav>
-
-
