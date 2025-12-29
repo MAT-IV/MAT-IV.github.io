@@ -4,31 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.getElementById('bigbang-play');
   const orbitNav = document.querySelector('.orbit-nav');
 
-  if (!playButton) return;
+  if (!playButton || !orbitNav) return;
 
-  let introPlayed = false;
+  // Ensure orbits are hidden at initial page load
+  orbitNav.style.visibility = 'hidden';
+  const initialOrbitLines = document.getElementById('orbit-lines');
+  if (initialOrbitLines) initialOrbitLines.style.visibility = 'hidden';
 
   // Auto-play once on initial load
   runBigBang(() => {
-    introPlayed = true;
+    // After first intro completes, orbits are already shown by runBigBang
   });
 
   // Replay on button click
   playButton.addEventListener('click', () => {
     const orbitLinesCanvas = document.getElementById('orbit-lines');
     // Hide orbits during replay
-    if (orbitNav) orbitNav.style.visibility = 'hidden';
+    orbitNav.style.visibility = 'hidden';
     if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
 
     runBigBang(() => {
-      if (orbitNav) orbitNav.style.visibility = 'visible';
-      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
+      // After replay, keep orbits visible
     });
   });
 });
 
 /**
- * Runs the Big Bang animation, then calls onComplete.
+ * Runs the Big Bang animation, then shows orbits at the white flash.
  */
 function runBigBang(onComplete) {
   const canvas = document.getElementById("starfield");
@@ -42,12 +44,6 @@ function runBigBang(onComplete) {
   const H = canvas.height = window.innerHeight;
   const centerX = W / 2;
   const centerY = H / 2;
-
-    // Ensure orbits are hidden at the beginning of the intro
-  const orbitNav = document.querySelector('.orbit-nav');
-  const orbitLinesCanvas = document.getElementById('orbit-lines');
-  if (orbitNav) orbitNav.style.visibility = 'hidden';
-  if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
 
   let phase = "fadeInText";
   let phaseStart = performance.now();
@@ -103,7 +99,8 @@ function runBigBang(onComplete) {
       const x = centerX + radius * Math.cos(angle);
       const y = centerY + radius * Math.sin(angle);
 
-      const speed = 0.6 + Math.random() * 0.5; // faster inward only
+      // Faster inward motion only
+      const speed = 0.6 + Math.random() * 0.5;
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
   }
@@ -189,7 +186,7 @@ function runBigBang(onComplete) {
       ctx.fillRect(0, 0, W, H);
 
       if (flashAlpha >= 1) {
-        // Screen is pure white: show orbits now
+        // Screen is pure white: show orbits now so there is no gap
         const orbitNav = document.querySelector('.orbit-nav');
         const orbitLinesCanvas = document.getElementById('orbit-lines');
         if (orbitNav) orbitNav.style.visibility = 'visible';
