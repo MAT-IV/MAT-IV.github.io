@@ -3,14 +3,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('bigbang-toggle');
   const orbitNav = document.querySelector('.orbit-nav');
-  const orbitLinesCanvas = document.getElementById('orbit-lines'); // created by orbit.js
+
+  // orbit-lines canvas is created by orbit.js after DOMContentLoaded
+  let orbitLinesCanvas = document.getElementById('orbit-lines');
 
   if (!toggle) return;
 
   let bigBangActive = false;
 
-  // Handle toggle changes
+  // Handle toggle changes for Big Bang mode
   toggle.addEventListener('change', () => {
+    // Refresh orbit lines reference in case it was created later
+    orbitLinesCanvas = document.getElementById('orbit-lines');
+
     if (toggle.checked && !bigBangActive) {
       bigBangActive = true;
 
@@ -18,17 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (orbitNav) orbitNav.style.visibility = 'hidden';
       if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
 
+      // Run the Big Bang sequence
       startBigBangSequence(() => {
-        // After animation: show orbits again
+        // After animation completes fully, ensure orbits are visible
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
       });
     } else if (!toggle.checked && bigBangActive) {
-      // If you want a "reset" when turning off
+      // Turning Big Bang off; make sure orbits are visible
       bigBangActive = false;
       if (orbitNav) orbitNav.style.visibility = 'visible';
       if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
-      // You could optionally re-run animation here if toggled off/on again
     }
   });
 });
@@ -36,10 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Runs the Big Bang animation sequence on the starfield canvas:
  * 1) Type out intro text.
- * 2) White particles fly inward from edges to the center.
+ * 2) White particles fly inward from edges to the center (faster).
  * 3) Central glow grows as particles cluster.
  * 4) All particles explode outward + white flash.
- * 5) Fade to black and call onComplete.
+ * 5) While screen is pure white, show orbit layout underneath.
+ * 6) Optional quick fade to black, then call onComplete and stop.
  */
 function startBigBangSequence(onComplete) {
   const canvas = document.getElementById("starfield");
@@ -51,6 +57,7 @@ function startBigBangSequence(onComplete) {
   const centerX = W / 2;
   const centerY = H / 2;
 
+  // Phase state machine
   let phase = "fadeInText";
   let phaseStart = performance.now();
 
@@ -61,7 +68,7 @@ function startBigBangSequence(onComplete) {
   const PARTICLE_COUNT = 300;
   let flashAlpha = 0;
 
-  // Simple particle that moves either inward or in explosion
+  // Simple particle that moves inward then explodes outward
   class Particle {
     constructor(x, y, targetX, targetY, speed) {
       this.x = x;
@@ -71,10 +78,10 @@ function startBigBangSequence(onComplete) {
       this.speed = speed;
       this.vx = 0;
       this.vy = 0;
-      this.state = "inward"; // "inward" or "explode"
+      this.state = "inward"; // or "explode"
     }
 
-    // Update particle motion based on current state
+    // Update particle motion based on its state
     update(dt) {
       if (this.state === "inward") {
         // Move toward center (target)
@@ -87,7 +94,7 @@ function startBigBangSequence(onComplete) {
         this.x += this.vx * dt;
         this.y += this.vy * dt;
       } else if (this.state === "explode") {
-        // Continue in explosion direction
+        // Continue along explosion direction
         this.x += this.vx * dt;
         this.y += this.vy * dt;
       }
@@ -103,7 +110,9 @@ function startBigBangSequence(onComplete) {
   }
 
   /**
-   * Spawn particles along screen edges, all targeting the center.
+   * Spawn particles along the four edges of the screen,
+   * aimed toward the center.
+   * Speeds are higher than before to make clustering faster.
    */
   function spawnInwardParticles(count) {
     for (let i = 0; i < count; i++) {
@@ -122,6 +131,8 @@ function startBigBangSequence(onComplete) {
         x = -20;
         y = Math.random() * H;
       }
+
+      // Faster inward speed for quicker clustering
       const speed = 0.4 + Math.random() * 0.4;
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
@@ -129,17 +140,17 @@ function startBigBangSequence(onComplete) {
 
   let lastTime = performance.now();
 
-  // Main animation loop for Big Bang
+  // Main animation loop for the Big Bang effect
   function loop(now) {
     const dt = now - lastTime;
     lastTime = now;
 
-    // Clear to black each frame
+    // Clear entire canvas to black
     ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, W, H);
 
     if (phase === "fadeInText") {
-      // Typewriter effect for intro text
+      // --- Phase 1: Typewriter intro text ---
       const elapsed = now - phaseStart;
       const charsPerMs = 1 / 40; // ~25 chars/sec
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
@@ -158,7 +169,7 @@ function startBigBangSequence(onComplete) {
       }
 
     } else if (phase === "inward") {
-      // Update and draw inward particles
+      // --- Phase 2: Particles fly inward toward center ---
       particles.forEach(p => p.update(dt));
       particles.forEach(p => p.draw(ctx));
 
@@ -209,45 +220,44 @@ function startBigBangSequence(onComplete) {
       }
 
     } else if (phase === "explode") {
-  // Update and draw explosion
-  particles.forEach(p => p.update(dt));
-  particles.forEach(p => p.draw(ctx));
+      // --- Phase 3: Explosion + white flash ---
+      particles.forEach(p => p.update(dt));
+      particles.forEach(p => p.draw(ctx));
 
-  // White flash over the screen
-  flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
-  ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
-  ctx.fillRect(0, 0, W, H);
+      // White flash overlay
+      flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
+      ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
+      ctx.fillRect(0, 0, W, H);
 
-  // Once flash is full white, immediately reveal orbits underneath
-  if (flashAlpha >= 1) {
-    // Show orbits while the screen is still white
-    const orbitNav = document.querySelector('.orbit-nav');
-    const orbitLinesCanvas = document.getElementById('orbit-lines');
-    if (orbitNav) orbitNav.style.visibility = 'visible';
-    if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
+      if (flashAlpha >= 1) {
+        // Screen is now fully white.
 
-    // Option A: quick fade from white to black (very short)
-    phase = "fadeToBlack";
-    phaseStart = now;
-  }
-}
+        // Reveal orbits NOW (under the white screen) so there is no visible gap.
+        const orbitNav = document.querySelector('.orbit-nav');
+        const orbitLinesCanvas = document.getElementById('orbit-lines');
+        if (orbitNav) orbitNav.style.visibility = 'visible';
+        if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
+        // Move to quick fade-to-black phase
+        phase = "fadeToBlack";
+        phaseStart = now;
+      }
 
-} else if (phase === "fadeToBlack") {
-  const elapsed = now - phaseStart;
-  const fade = Math.min(1, elapsed / 200); // 0.2s fade
-  ctx.fillStyle = "#000";
-  ctx.globalAlpha = fade;
-  ctx.fillRect(0, 0, W, H);
-  ctx.globalAlpha = 1;
+    } else if (phase === "fadeToBlack") {
+      // --- Phase 4: Quick fade from white back to black ---
+      const elapsed = now - phaseStart;
+      const fade = Math.min(1, elapsed / 200); // 0.2 second fade
+      ctx.fillStyle = "#000";
+      ctx.globalAlpha = fade;
+      ctx.fillRect(0, 0, W, H);
+      ctx.globalAlpha = 1;
 
-  if (fade >= 1) {
-    if (typeof onComplete === "function") onComplete();
-    return;
-  }
-}
-
-
+      if (fade >= 1) {
+        // End of Big Bang sequence
+        if (typeof onComplete === "function") onComplete();
+        return; // stop Big Bang loop; normal starfield continues
+      }
+    }
 
     requestAnimationFrame(loop);
   }
