@@ -1,42 +1,3 @@
-// Big Bang mode: fast (~1s) intro animation on the starfield canvas, then reveal orbits
-
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('bigbang-toggle');
-  const orbitNav = document.querySelector('.orbit-nav');
-
-  let orbitLinesCanvas = document.getElementById('orbit-lines');
-
-  if (!toggle) return;
-
-  let bigBangActive = false;
-
-  toggle.addEventListener('change', () => {
-    orbitLinesCanvas = document.getElementById('orbit-lines');
-
-    if (toggle.checked && !bigBangActive) {
-      bigBangActive = true;
-
-      // Hide normal orbits during animation
-      if (orbitNav) orbitNav.style.visibility = 'hidden';
-      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
-
-      startBigBangSequence(() => {
-        // Ensure orbits are visible after sequence
-        if (orbitNav) orbitNav.style.visibility = 'visible';
-        if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
-      });
-    } else if (!toggle.checked && bigBangActive) {
-      bigBangActive = false;
-      if (orbitNav) orbitNav.style.visibility = 'visible';
-      if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
-    }
-  });
-});
-
-/**
- * Fast Big Bang sequence:
- * ~300 ms type, ~300 ms cluster, ~300 ms flash, then cut back.
- */
 function startBigBangSequence(onComplete) {
   const canvas = document.getElementById("starfield");
   if (!canvas) return;
@@ -54,7 +15,7 @@ function startBigBangSequence(onComplete) {
   let textIndex = 0;
 
   const particles = [];
-  const PARTICLE_COUNT = 200; // fewer particles, faster convergence
+  const PARTICLE_COUNT = 300;     // keep original amount
   let flashAlpha = 0;
 
   class Particle {
@@ -93,6 +54,7 @@ function startBigBangSequence(onComplete) {
     }
   }
 
+  // ONLY CHANGE: faster inward speeds, rest of phases unchanged
   function spawnInwardParticles(count) {
     for (let i = 0; i < count; i++) {
       const edge = Math.floor(Math.random() * 4);
@@ -111,8 +73,8 @@ function startBigBangSequence(onComplete) {
         y = Math.random() * H;
       }
 
-      // Much faster inward speed so clustering happens in ~0.3s
-      const speed = 1.0 + Math.random() * 0.5;
+      // Faster inward motion: bump speeds up, but not crazy high
+      const speed = 0.6 + Math.random() * 0.5;  // original was ~0.15–0.4
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
   }
@@ -127,9 +89,9 @@ function startBigBangSequence(onComplete) {
     ctx.fillRect(0, 0, W, H);
 
     if (phase === "fadeInText") {
-      // Fast typewriter: whole line in ~0.25–0.3s
+      // Use your original typing timing here
       const elapsed = now - phaseStart;
-      const charsPerMs = text.length / 280; // full text in ~280 ms
+      const charsPerMs = 1 / 40;
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
@@ -138,8 +100,7 @@ function startBigBangSequence(onComplete) {
       ctx.textBaseline = "middle";
       ctx.fillText(text.slice(0, textIndex), centerX, centerY);
 
-      // Small hold after full text: ~150 ms
-      if (textIndex === text.length && elapsed > 430) {
+      if (textIndex === text.length && elapsed > 2000) {
         phase = "inward";
         phaseStart = now;
         spawnInwardParticles(PARTICLE_COUNT);
@@ -149,7 +110,7 @@ function startBigBangSequence(onComplete) {
       particles.forEach(p => p.update(dt));
       particles.forEach(p => p.draw(ctx));
 
-      const clusterRadius = 60;
+      const clusterRadius = 50;
       let clusteredCount = 0;
 
       particles.forEach(p => {
@@ -162,9 +123,9 @@ function startBigBangSequence(onComplete) {
 
       const fraction = clusteredCount / particles.length;
 
-      const maxGlowRadius = 90;
+      const maxGlowRadius = 80;
       const glowRadius = 10 + maxGlowRadius * fraction;
-      const glowAlpha = 0.3 + 0.7 * fraction;
+      const glowAlpha = 0.2 + 0.6 * fraction;
 
       const gradient = ctx.createRadialGradient(
         centerX, centerY, 0,
@@ -178,14 +139,13 @@ function startBigBangSequence(onComplete) {
       ctx.arc(centerX, centerY, glowRadius, 0, Math.PI * 2);
       ctx.fill();
 
-      // Allow small tolerance: consider “done” when 95% are clustered
-      if (fraction >= 0.95) {
+      if (clusteredCount === particles.length) {
         phase = "explode";
         phaseStart = now;
 
         particles.forEach(p => {
           const angle = Math.atan2(p.y - centerY, p.x - centerX) || Math.random() * Math.PI * 2;
-          const speed = 1.0 + Math.random() * 0.8;
+          const speed = 0.7 + Math.random() * 0.7; // keep original explosion feel
           p.vx = Math.cos(angle) * speed;
           p.vy = Math.sin(angle) * speed;
           p.state = "explode";
@@ -196,22 +156,19 @@ function startBigBangSequence(onComplete) {
       particles.forEach(p => p.update(dt));
       particles.forEach(p => p.draw(ctx));
 
-      // Fast white flash: reach full white in ~200 ms
-      flashAlpha = Math.min(1, flashAlpha + dt * 0.005);
+      flashAlpha = Math.min(1, flashAlpha + dt * 0.004);
       ctx.fillStyle = `rgba(255,255,255,${flashAlpha})`;
       ctx.fillRect(0, 0, W, H);
 
       if (flashAlpha >= 1) {
-        // As soon as screen is pure white, reveal orbits under it
         const orbitNav = document.querySelector('.orbit-nav');
         const orbitLinesCanvas = document.getElementById('orbit-lines');
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
-        // Immediately end sequence; let normal rendering show through
+        // Optional: keep your quick fade or remove it.
+        // Here we keep the instant cut back (no extra fade).
         if (typeof onComplete === "function") onComplete();
-
-        // Clear canvas to transparent black so starfield/orbits can show
         ctx.clearRect(0, 0, W, H);
         return;
       }
