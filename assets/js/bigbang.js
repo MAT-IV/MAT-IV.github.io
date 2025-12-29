@@ -181,3 +181,15 @@ function startBigBangSequence(onComplete) {
 
   requestAnimationFrame(loop);
 }
+
+function enableBigBangOrbits() {
+  document.body.classList.add('bigbang-orbits');
+  // Option 1: only run the new orbit.js as-is
+  // Option 2 (if you want to disable the old circular ring):
+  // add flags in orbit.js to use Big Bang layout only when this class is present
+}
+
+function resetToNormalMode() {
+  document.body.classList.remove('bigbang-orbits');
+  // You can reload the page or maintain a second orbit layout based on the class
+}
