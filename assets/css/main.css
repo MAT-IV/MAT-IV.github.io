@@ -149,3 +149,27 @@ html, body {
 .switch input:checked + .slider:before {
   transform: translateX(22px);
 }
+
+
+.orbit-item {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  /* existing styles... */
+}
+
+.orbit-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffd36b; /* default planet color */
+}
+
+/* Different colors per link via nth-child */
+.orbit-item:nth-child(2)::before { background: #6bc5ff; }
+.orbit-item:nth-child(3)::before { background: #ff7b6b; }
+.orbit-item:nth-child(4)::before { background: #8dff6b; }
+.orbit-item:nth-child(5)::before { background: #b16bff; }
+.orbit-item:nth-child(6)::before { background: #ff6be0; }
