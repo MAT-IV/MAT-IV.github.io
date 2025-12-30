@@ -33,8 +33,51 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', resize);
   resize();
 
-  const baseRadius = 130;
-  const radiusStep = 60;
+    // ----- Radius configuration (desktop vs mobile) -----
+  function getRadiusConfig() {
+    const minDim = Math.min(window.innerWidth, window.innerHeight);
+
+    // Use smaller radii on small screens
+    if (minDim <= 600) {
+      return {
+        baseRadius: 80,   // was 130
+        radiusStep: 40    // was 60
+      };
+    } else if (minDim <= 900) {
+      return {
+        baseRadius: 110,
+        radiusStep: 50
+      };
+    } else {
+      return {
+        baseRadius: 130,
+        radiusStep: 60;
+      };
+    }
+  }
+
+  let { baseRadius, radiusStep } = getRadiusConfig();
+
+  // Recompute radii on resize as well
+  window.addEventListener('resize', () => {
+    ({ baseRadius, radiusStep } = getRadiusConfig());
+  });
+
+  // Assign radius and speed per orbiting item
+  const orbits = [];
+  otherItems.forEach((item, index) => {
+    const radius = baseRadius + index * radiusStep;
+    const periodMs = 14000 + index * 3000;
+    const speed = (2 * Math.PI) / periodMs;
+
+    orbits.push({
+      element: item,
+      radius,
+      angleOffset: index * (Math.PI / 3),
+      speed
+    });
+  });
+
 
   otherItems.forEach((item, index) => {
     const radius = baseRadius + index * radiusStep;
@@ -74,8 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
       octx.stroke();
 
       const angle = elapsed * orbit.speed + orbit.angleOffset;
-      const px = centerX + orbit.radius * Math.cos(angle);
-      const py = centerY + orbit.radius * Math.sin(angle);
+            // Recompute live radius from current baseRadius/radiusStep
+      const index = otherItems.indexOf(orbit.element);
+      const liveRadius = baseRadius + index * radiusStep;
+
+      const px = centerX + liveRadius * Math.cos(angle);
+      const py = centerY + liveRadius * Math.sin(angle);
+
 
       const rect = orbit.element.getBoundingClientRect();
       const x = px - rect.width / 2;
