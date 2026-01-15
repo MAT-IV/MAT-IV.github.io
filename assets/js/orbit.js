@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const items = Array.from(document.querySelectorAll('.orbit-item'));
   if (!items.length || !orbitNav) return;
 
-  const orbits = [];
-
   // First item is central (About Me)
   const aboutItem = items[0];
   const otherItems = items.slice(1);
@@ -18,78 +16,53 @@ document.addEventListener('DOMContentLoaded', () => {
   orbitCanvas.style.inset = '0';
   orbitCanvas.style.zIndex = '2';
   orbitCanvas.style.pointerEvents = 'none';
+  orbitCanvas.style.display = 'none'; // Big Bang will turn this on
   document.body.appendChild(orbitCanvas);
   const octx = orbitCanvas.getContext('2d');
 
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-  function resize() {
-    orbitCanvas.width = window.innerWidth;
-    orbitCanvas.height = window.innerHeight;
-    centerX = window.innerWidth / 2;
-    centerY = window.innerHeight / 2;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-    // ----- Radius configuration (desktop vs mobile) -----
+  // Compute radius config based on viewport size
   function getRadiusConfig() {
     const minDim = Math.min(window.innerWidth, window.innerHeight);
 
-    // Use smaller radii on small screens
     if (minDim <= 600) {
-      return {
-        baseRadius: 80,   // was 130
-        radiusStep: 40    // was 60
-      };
+      // Small phones
+      return { baseRadius: 80, radiusStep: 40 };
     } else if (minDim <= 900) {
-      return {
-        baseRadius: 110,
-        radiusStep: 50
-      };
+      // Large phones / small tablets
+      return { baseRadius: 110, radiusStep: 50 };
     } else {
-      return {
-        baseRadius: 130,
-        radiusStep: 60;
-      };
+      // Desktop
+      return { baseRadius: 130, radiusStep: 60 };
     }
   }
 
   let { baseRadius, radiusStep } = getRadiusConfig();
 
-  // Recompute radii on resize as well
-  window.addEventListener('resize', () => {
+  // Resize handler: update canvas size, center, and radius config
+  function resize() {
+    orbitCanvas.width = window.innerWidth;
+    orbitCanvas.height = window.innerHeight;
+    centerX = window.innerWidth / 2;
+    centerY = window.innerHeight / 2;
+
     ({ baseRadius, radiusStep } = getRadiusConfig());
-  });
+  }
+  window.addEventListener('resize', resize);
+  resize();
 
-  // Assign radius and speed per orbiting item
-  const orbits = [];
-  otherItems.forEach((item, index) => {
-    const radius = baseRadius + index * radiusStep;
+  // Build orbit objects ONCE; we will recompute live radius per frame
+  const orbits = otherItems.map((item, index) => {
     const periodMs = 14000 + index * 3000;
     const speed = (2 * Math.PI) / periodMs;
-
-    orbits.push({
+    return {
       element: item,
-      radius,
+      index,
       angleOffset: index * (Math.PI / 3),
       speed
-    });
-  });
-
-
-  otherItems.forEach((item, index) => {
-    const radius = baseRadius + index * radiusStep;
-    const periodMs = 14000 + index * 3000;
-    const speed = (2 * Math.PI) / periodMs;
-
-    orbits.push({
-      element: item,
-      radius,
-      angleOffset: index * (Math.PI / 3),
-      speed
-    });
+    };
   });
 
   function positionCenterItem() {
@@ -112,18 +85,18 @@ document.addEventListener('DOMContentLoaded', () => {
     octx.lineWidth = 1;
 
     orbits.forEach(orbit => {
+      // Live radius for this item based on current viewport size
+      const radius = baseRadius + orbit.index * radiusStep;
+
+      // Draw orbit line
       octx.beginPath();
-      octx.arc(centerX, centerY, orbit.radius, 0, Math.PI * 2);
+      octx.arc(centerX, centerY, radius, 0, Math.PI * 2);
       octx.stroke();
 
+      // Position item on orbit
       const angle = elapsed * orbit.speed + orbit.angleOffset;
-            // Recompute live radius from current baseRadius/radiusStep
-      const index = otherItems.indexOf(orbit.element);
-      const liveRadius = baseRadius + index * radiusStep;
-
-      const px = centerX + liveRadius * Math.cos(angle);
-      const py = centerY + liveRadius * Math.sin(angle);
-
+      const px = centerX + radius * Math.cos(angle);
+      const py = centerY + radius * Math.sin(angle);
 
       const rect = orbit.element.getBoundingClientRect();
       const x = px - rect.width / 2;
