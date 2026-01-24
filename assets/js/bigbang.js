@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.getElementById('bigbang-play');
   const orbitNav = document.querySelector('.orbit-nav');
-
   if (!playButton || !orbitNav) return;
 
   const orbitLinesCanvasInitial = document.getElementById('orbit-lines');
@@ -22,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (orbitLinesCanvasInitial) orbitLinesCanvasInitial.style.visibility = 'hidden';
 
     runBigBang({ withText: true }, () => {
-      // After first intro completes, orbits are already shown by runBigBang
+      // After first intro completes, orbits are shown
     });
   }
 
-  // Replay on button click (no text)
+  // Replay on button click (no text, reset orbits)
   playButton.addEventListener('click', () => {
     const orbitLinesCanvas = document.getElementById('orbit-lines');
 
@@ -39,11 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-/**
- * Runs the Big Bang animation.
- * options.withText: boolean – show intro text only on first load.
- */
+// Big Bang implementation
 function runBigBang(options, onComplete) {
   const withText = options && options.withText;
 
@@ -128,7 +123,7 @@ function runBigBang(options, onComplete) {
 
     if (phase === "fadeInText") {
       const elapsed = now - phaseStart;
-      const charsPerMs = text.length / 1500; // ~1.5s typing
+      const charsPerMs = text.length / 1500;
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
@@ -207,7 +202,6 @@ function runBigBang(options, onComplete) {
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
-        // On replay (withText = false), reset orbits back to initial positions
         if (!withText && typeof window.resetOrbitsToInitial === 'function') {
           window.resetOrbitsToInitial();
         }
