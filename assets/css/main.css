@@ -108,10 +108,9 @@ html, body {
 }
 
 
-/* Planet icon inside each orbit item */
 .orbit-planet {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin-bottom: 0.1rem;
   background-size: cover;
   background-position: center;
@@ -120,29 +119,29 @@ html, body {
   display: block;
 }
 
-/* Different planets per item */
+/* Use root-relative paths: start from /assets/... */
 .orbit-about .orbit-planet {
-  background-image: url("../images/planet-about.png");
+  background-image: url("/assets/images/planet-about.png");
 }
 
 .orbit-resume .orbit-planet {
-  background-image: url("../images/planet-resume.png");
+  background-image: url("/assets/images/planet-resume.png");
 }
 
 .orbit-experience .orbit-planet {
-  background-image: url("../images/planet-experience.png");
+  background-image: url("/assets/images/planet-experience.png");
 }
 
 .orbit-teams .orbit-planet {
-  background-image: url("../images/planet-teams.png");
+  background-image: url("/assets/images/planet-teams.png");
 }
 
 .orbit-hobby .orbit-planet {
-  background-image: url("../images/planet-hobby.png");
+  background-image: url("/assets/images/planet-hobby.png");
 }
 
 .orbit-maker .orbit-planet {
-  background-image: url("../images/planet-maker.png");
+  background-image: url("/assets/images/planet-maker.png");
 }
 
 
