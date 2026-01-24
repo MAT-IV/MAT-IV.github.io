@@ -1,4 +1,4 @@
-// Orbiting navigation with central About Me and soft separation for a more natural feel
+// Orbiting navigation with central About Me, with varied speeds and radial wobble
 
 document.addEventListener('DOMContentLoaded', () => {
   const orbitNav = document.querySelector('.orbit-nav');
@@ -27,24 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const baseRadiusDefault = 130;
   const radiusStepDefault = 60;
 
-  // Set up orbits with slightly different speeds and initial angles
+  // Set up orbits: slower inner orbits, faster outer orbits
+  const count = otherItems.length;
   const orbits = otherItems.map((item, index) => {
     const radius = baseRadiusDefault + index * radiusStepDefault;
 
+    // Speed scaling: inner = slower, outer = faster
+    // scale factor from ~0.6 for inner to ~1.4 for outer
+    const t = (index + 1) / (count + 1);
+    const speedScale = 0.6 + t * 0.8;
+
     const basePeriodMs = 14000;
-    const periodJitter = 2000 * (Math.random() - 0.5); // ±1s
-    const periodMs = basePeriodMs + index * 2500 + periodJitter;
+    const periodMs = basePeriodMs / speedScale;
 
     const speed = (2 * Math.PI) / periodMs;
 
     // Start angles spaced around the circle
-    const angleOffset = index * (2 * Math.PI / otherItems.length);
+    const angleOffset = index * (2 * Math.PI / count);
+
+    // Each orbit gets its own radial wobble phase and amplitude
+    const wobblePhase = Math.random() * Math.PI * 2;
+    const wobbleAmplitude = 6 + Math.random() * 8; // 6–14px
 
     return {
       element: item,
-      radius,
+      baseRadius: radius,
+      radius: radius,
       speed,
       angle: angleOffset,
+      wobblePhase,
+      wobbleAmplitude,
       posX: 0,
       posY: 0
     };
@@ -63,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     orbits.forEach((orbit, index) => {
       const r = baseRadius + index * radiusStep;
-      orbit.radius = Math.min(r, maxRadius);
+      orbit.baseRadius = Math.min(r, maxRadius);
     });
   }
 
@@ -79,10 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutItem.style.top = `${y}px`;
   }
 
-  // Soft separation: only gently nudge angles when items get very close
-  function softSeparate() {
-    const minDistance = 70;   // desired minimum distance between centers
-    const maxNudge = 0.004;   // maximum angle change per frame (radians)
+  // Emergency-only soft separation: only acts when items are very close
+  function emergencySeparate() {
+    const minDistance = 64;   // desired minimum distance between centers
+    const maxNudge = 0.002;   // smaller than before to preserve orbit feel
 
     for (let i = 0; i < orbits.length; i++) {
       for (let j = i + 1; j < orbits.length; j++) {
@@ -97,15 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const overlap = (minDistance - dist) / minDistance; // 0–1
           const nudge = maxNudge * overlap;
 
-          // Decide direction based on which is ahead in angle space
           const angleDiff = ((b.angle - a.angle) + Math.PI * 2) % (Math.PI * 2);
 
           if (angleDiff < Math.PI) {
-            // b is ahead of a; push b forward and a backward a little
             b.angle += nudge;
             a.angle -= nudge;
           } else {
-            // a is ahead of b; push a forward and b backward
             a.angle += nudge;
             b.angle -= nudge;
           }
@@ -125,23 +134,30 @@ document.addEventListener('DOMContentLoaded', () => {
     octx.strokeStyle = 'rgba(255,255,255,0.25)';
     octx.lineWidth = 1;
 
-    // Update angles according to speed
+    // Update angles
     orbits.forEach(orbit => {
       orbit.angle += orbit.speed * dt;
       if (orbit.angle > Math.PI * 2) orbit.angle -= Math.PI * 2;
       if (orbit.angle < 0) orbit.angle += Math.PI * 2;
     });
 
-    // First compute positions from raw angles
+    // Radial wobble based on time
+    const time = now * 0.001; // seconds
+    orbits.forEach(orbit => {
+      const wobble = Math.sin(time + orbit.wobblePhase) * orbit.wobbleAmplitude;
+      orbit.radius = orbit.baseRadius + wobble;
+    });
+
+    // First positions
     orbits.forEach(orbit => {
       orbit.posX = centerX + orbit.radius * Math.cos(orbit.angle);
       orbit.posY = centerY + orbit.radius * Math.sin(orbit.angle);
     });
 
-    // Then softly separate if items are too close
-    softSeparate();
+    // Emergency separation if they get too close
+    emergencySeparate();
 
-    // Recompute positions after nudging
+    // Recompute positions after nudges
     orbits.forEach(orbit => {
       orbit.posX = centerX + orbit.radius * Math.cos(orbit.angle);
       orbit.posY = centerY + orbit.radius * Math.sin(orbit.angle);
@@ -150,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Draw orbits and place elements
     orbits.forEach(orbit => {
       octx.beginPath();
-      octx.arc(centerX, centerY, orbit.radius, 0, Math.PI * 2);
+      octx.arc(centerX, centerY, orbit.baseRadius, 0, Math.PI * 2);
       octx.stroke();
 
       const rect = orbit.element.getBoundingClientRect();
