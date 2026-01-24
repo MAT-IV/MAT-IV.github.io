@@ -89,7 +89,7 @@ permalink: /teams/
   <!-- 4. SAE Aero Design 2021–2022 – Team Member -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2021-2022.jpg' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
+      <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Member (2021–2022)</h2>
