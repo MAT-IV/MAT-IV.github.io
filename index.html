@@ -19,26 +19,39 @@ title: Mauricio Trevino
 </button>
 
 <nav class="orbit-nav">
-  <!-- Central page (About Me) -->
-  <a href="{{ '/about/' | relative_url }}" class="orbit-item">
+  <a href="{{ '/about/' | relative_url }}" class="orbit-item orbit-about">
+    <span class="orbit-planet"></span>
     <span class="line-1">About</span>
     <span class="line-2">Me</span>
   </a>
-  <a href="{{ '/resume/' | relative_url }}" class="orbit-item">Resume</a>
-  <a href="{{ '/experience/' | relative_url }}" class="orbit-item">
+
+  <a href="{{ '/resume/' | relative_url }}" class="orbit-item orbit-resume">
+    <span class="orbit-planet"></span>
+    Resume
+  </a>
+
+  <a href="{{ '/experience/' | relative_url }}" class="orbit-item orbit-experience">
+    <span class="orbit-planet"></span>
     <span class="line-1">Professional</span>
     <span class="line-2">Experience</span>
   </a>
-  <a href="{{ '/teams/' | relative_url }}" class="orbit-item">
+
+  <a href="{{ '/teams/' | relative_url }}" class="orbit-item orbit-teams">
+    <span class="orbit-planet"></span>
     <span class="line-1">Design</span>
     <span class="line-2">Teams</span>
   </a>
-  <a href="{{ '/projects/' | relative_url }}" class="orbit-item">
+
+  <a href="{{ '/projects/' | relative_url }}" class="orbit-item orbit-hobby">
+    <span class="orbit-planet"></span>
     <span class="line-1">Hobby</span>
     <span class="line-2">Builds</span>
   </a>
-  <a href="{{ '/maker/' | relative_url }}" class="orbit-item">
+
+  <a href="{{ '/maker/' | relative_url }}" class="orbit-item orbit-maker">
+    <span class="orbit-planet"></span>
     <span class="line-1">Maker</span>
     <span class="line-2">Portfolio</span>
   </a>
 </nav>
+
