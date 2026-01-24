@@ -1,4 +1,4 @@
-// Orbiting navigation with central About Me and non-overlapping orbits
+// Orbiting navigation with central About Me and soft separation for a more natural feel
 
 document.addEventListener('DOMContentLoaded', () => {
   const orbitNav = document.querySelector('.orbit-nav');
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
       radius,
       speed,
       angle: angleOffset,
-      angleBaseOffset: angleOffset,
       posX: 0,
       posY: 0
     };
@@ -80,26 +79,37 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutItem.style.top = `${y}px`;
   }
 
-  // Ensure a minimum angular separation between any two items each frame
-  function enforceAngularSeparation() {
-    if (orbits.length < 2) return;
+  // Soft separation: only gently nudge angles when items get very close
+  function softSeparate() {
+    const minDistance = 70;   // desired minimum distance between centers
+    const maxNudge = 0.004;   // maximum angle change per frame (radians)
 
-    const minAngleSep = (Math.PI / 6); // 30 degrees
+    for (let i = 0; i < orbits.length; i++) {
+      for (let j = i + 1; j < orbits.length; j++) {
+        const a = orbits[i];
+        const b = orbits[j];
 
-    // Sort by current angle for stable adjustment
-    const sorted = [...orbits].sort((a, b) => a.angle - b.angle);
+        const dx = a.posX - b.posX;
+        const dy = a.posY - b.posY;
+        const dist = Math.hypot(dx, dy) || 1;
 
-    for (let i = 0; i < sorted.length; i++) {
-      const current = sorted[i];
-      const next = sorted[(i + 1) % sorted.length];
+        if (dist < minDistance) {
+          const overlap = (minDistance - dist) / minDistance; // 0–1
+          const nudge = maxNudge * overlap;
 
-      let diff = next.angle - current.angle;
-      if (diff <= 0) diff += 2 * Math.PI;
+          // Decide direction based on which is ahead in angle space
+          const angleDiff = ((b.angle - a.angle) + Math.PI * 2) % (Math.PI * 2);
 
-      if (diff < minAngleSep) {
-        const needed = minAngleSep - diff;
-        // Push the "next" item forward a bit
-        next.angle += needed;
+          if (angleDiff < Math.PI) {
+            // b is ahead of a; push b forward and a backward a little
+            b.angle += nudge;
+            a.angle -= nudge;
+          } else {
+            // a is ahead of b; push a forward and b backward
+            a.angle += nudge;
+            b.angle -= nudge;
+          }
+        }
       }
     }
   }
@@ -118,21 +128,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update angles according to speed
     orbits.forEach(orbit => {
       orbit.angle += orbit.speed * dt;
-      // Keep angle within 0–2π
       if (orbit.angle > Math.PI * 2) orbit.angle -= Math.PI * 2;
       if (orbit.angle < 0) orbit.angle += Math.PI * 2;
     });
 
-    // Enforce separation in angle space
-    enforceAngularSeparation();
-
-    // Compute positions
+    // First compute positions from raw angles
     orbits.forEach(orbit => {
-      const px = centerX + orbit.radius * Math.cos(orbit.angle);
-      const py = centerY + orbit.radius * Math.sin(orbit.angle);
+      orbit.posX = centerX + orbit.radius * Math.cos(orbit.angle);
+      orbit.posY = centerY + orbit.radius * Math.sin(orbit.angle);
+    });
 
-      orbit.posX = px;
-      orbit.posY = py;
+    // Then softly separate if items are too close
+    softSeparate();
+
+    // Recompute positions after nudging
+    orbits.forEach(orbit => {
+      orbit.posX = centerX + orbit.radius * Math.cos(orbit.angle);
+      orbit.posY = centerY + orbit.radius * Math.sin(orbit.angle);
     });
 
     // Draw orbits and place elements
