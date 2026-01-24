@@ -1,4 +1,6 @@
 // Big Bang intro: auto-plays on first load, replayable via top-right button
+let hasPlayedInitialBigBang = false;
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.getElementById('bigbang-play');
@@ -11,28 +13,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialOrbitLines = document.getElementById('orbit-lines');
   if (initialOrbitLines) initialOrbitLines.style.visibility = 'hidden';
 
-  // Auto-play once on initial load
-  runBigBang(() => {
-    // After first intro completes, orbits are already shown by runBigBang
+    // Auto-play once on initial load (with text)
+  runBigBang({ withText: true }, () => {
+    hasPlayedInitialBigBang = true;
   });
 
-  // Replay on button click
+  // Replay on button click (no text)
   playButton.addEventListener('click', () => {
     const orbitLinesCanvas = document.getElementById('orbit-lines');
-    // Hide orbits during replay
     orbitNav.style.visibility = 'hidden';
     if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
 
-    runBigBang(() => {
+    runBigBang({ withText: false }, () => {
       // After replay, keep orbits visible
     });
   });
+
 });
 
 /**
  * Runs the Big Bang animation, then shows orbits at the white flash.
  */
-function runBigBang(onComplete) {
+function runBigBang(options, onComplete) {
+  const withText = options && options.withText;
   const canvas = document.getElementById("starfield");
   if (!canvas) {
     if (typeof onComplete === 'function') onComplete();
@@ -45,11 +48,12 @@ function runBigBang(onComplete) {
   const centerX = W / 2;
   const centerY = H / 2;
 
-  let phase = "fadeInText";
+  let phase = withText ? "fadeInText" : "inward";
   let phaseStart = performance.now();
 
   const text = "Welcome to my personal portfolio.";
   let textIndex = 0;
+
 
   const particles = [];
   const PARTICLE_COUNT = 300;
