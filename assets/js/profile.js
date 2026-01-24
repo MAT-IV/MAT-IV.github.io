@@ -16,10 +16,3 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.classList.remove('is-visible');
   });
 });
-
-// Mark that we want to skip Big Bang on next home load
-window.addEventListener('beforeunload', () => {
-  if (window.skipBigBangNextLoad) {
-    sessionStorage.setItem('skipBigBang', 'true');
-  }
-});
