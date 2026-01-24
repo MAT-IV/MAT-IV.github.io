@@ -16,3 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.classList.remove('is-visible');
   });
 });
+
+// Helper: set flag to skip Big Bang intro, then go home
+window.skipBigBangAndGoHome = function (event) {
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
+  try {
+    sessionStorage.setItem('skipBigBang', 'true');
+  } catch (e) {
+    // ignore storage issues, just navigate
+  }
+  window.location.href = '/';
+};
