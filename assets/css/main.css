@@ -172,28 +172,29 @@ html, body {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
-  display: none;              /* crucial: hidden by default */
-  align-items: center;
-  justify-content: center;
+  display: none;
   z-index: 20;
 }
 
+/* Visible state */
 .profile-overlay.is-visible {
-  display: flex;
-}
-
-.profile-overlay-inner {
-  max-width: 30vw;   /* smaller on desktop */
-  max-height: 30vh;
-}
-
-.profile-photo-large {
   display: block;
-  width: 100%;
+}
+
+/* Center the large image over the page center (same as About/orbits) */
+.profile-photo-large {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);   /* center on its own middle */
+  max-width: 30vw;                    /* your chosen size */
+  max-height: 30vh;
+  width: auto;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 24px rgba(255, 255, 255, 0.7);
 }
+
 @media (max-width: 768px) {
   .profile-overlay-inner {
     max-width: 80vw;
