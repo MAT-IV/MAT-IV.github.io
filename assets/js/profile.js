@@ -1,10 +1,18 @@
-// Click-to-expand profile photo
+// Click-to-expand profile photo in a centered overlay
 
 document.addEventListener('DOMContentLoaded', () => {
-  const profile = document.getElementById('profile-photo');
-  if (!profile) return;
+  const thumb = document.getElementById('profile-photo');
+  const overlay = document.getElementById('profile-overlay');
 
-  profile.addEventListener('click', () => {
-    profile.classList.toggle('expanded');
+  if (!thumb || !overlay) return;
+
+  // Open overlay on click of the small photo
+  thumb.addEventListener('click', () => {
+    overlay.classList.add('is-visible');
+  });
+
+  // Close overlay when clicking anywhere on it
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('is-visible');
   });
 });
