@@ -190,16 +190,21 @@ function runBigBang(options, onComplete) {
       ctx.fillRect(0, 0, W, H);
 
       if (flashAlpha >= 1) {
-        // Screen is pure white: show orbits now so there is no gap
         const orbitNav = document.querySelector('.orbit-nav');
         const orbitLinesCanvas = document.getElementById('orbit-lines');
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
+        // If this is a replay (no text), reset orbits to their original starting angles
+        if (!withText && typeof window.resetOrbitsToInitial === 'function') {
+          window.resetOrbitsToInitial();
+        }
+
         if (typeof onComplete === "function") onComplete();
         ctx.clearRect(0, 0, W, H);
         return;
       }
+
     }
 
     requestAnimationFrame(loop);
