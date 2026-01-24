@@ -12,9 +12,10 @@ permalink: /resume/
   <a href="{{ '/' | relative_url }}"
      class="back-ship back-ship-resume"
      aria-label="Back to main orbit"
-     onclick="sessionStorage.setItem('skipBigBang', 'true');">
+     onclick="skipBigBangAndGoHome(event);">
     <img src="{{ '/assets/images/ship-resume.png' | relative_url }}" alt="">
   </a>
+
 
 
     <h1 class="resume-header-title">Resume</h1>
