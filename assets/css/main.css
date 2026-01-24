@@ -220,15 +220,19 @@ html, body {
   transform: translateY(-1px);
 }
 
-.back-ship {
-  display: inline-block;
+.resume-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* center the whole group */
+  gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
+/* Make the ship larger */
 .back-ship img {
-  width: 40px;   /* adjust size */
+  width: 64px;   /* try 64px; adjust up/down as you like */
   height: auto;
-  image-rendering: pixelated;  /* keep the pixel-art look */
+  image-rendering: pixelated;
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
@@ -236,5 +240,10 @@ html, body {
 .back-ship:hover img {
   transform: translateY(-2px) scale(1.05);
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+}
+
+/* Optional: remove extra margin from h1 if it pushes things down */
+.resume-header h1 {
+  margin: 0;
 }
 
