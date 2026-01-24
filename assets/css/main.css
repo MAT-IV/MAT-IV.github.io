@@ -239,14 +239,22 @@ html, body {
   margin: 0;
 }
 
-/* Back ship */
-.back-ship-resume img { width: 150px; }
-
-
+/* Base styles for all ships */
+.back-ship img {
+  height: auto;
+  image-rendering: pixelated;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
 
 .back-ship:hover img {
   transform: translateY(-2px) scale(1.05);
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+}
+
+/* Per-page sizes */
+.back-ship-resume img {
+  width: 150px;
 }
 
 
