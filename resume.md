@@ -8,15 +8,14 @@ permalink: /resume/
 
   <!-- Header row: ship on far left, title centered -->
   <div class="resume-header">
-  <div class="resume-header-left">
-  <a href="{{ '/' | relative_url }}"
-     class="back-ship back-ship-resume"
-     aria-label="Back to main orbit"
-     onclick="skipBigBangAndGoHome(event);">
-    <img src="{{ '/assets/images/ship-resume.png' | relative_url }}" alt="">
-  </a>
-
-
+    <div class="resume-header-left">
+      <a href="{{ '/' | relative_url }}"
+         class="back-ship back-ship-resume"
+         aria-label="Back to main orbit"
+         onclick="skipBigBangAndGoHome(event);">
+        <img src="{{ '/assets/images/ship-resume.png' | relative_url }}" alt="">
+      </a>
+    </div>
 
     <h1 class="resume-header-title">Resume</h1>
 
