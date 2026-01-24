@@ -1,6 +1,4 @@
 // Big Bang intro: auto-plays on first load, replayable via top-right button
-let hasPlayedInitialBigBang = false;
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.getElementById('bigbang-play');
@@ -13,29 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialOrbitLines = document.getElementById('orbit-lines');
   if (initialOrbitLines) initialOrbitLines.style.visibility = 'hidden';
 
-    // Auto-play once on initial load (with text)
+  // Auto-play once on initial load (with text)
   runBigBang({ withText: true }, () => {
-    hasPlayedInitialBigBang = true;
+    // After first intro completes, orbits are already shown by runBigBang
   });
 
-  // Replay on button click (no text)
+  // Replay on button click (no text, reset orbits to initial positions)
   playButton.addEventListener('click', () => {
     const orbitLinesCanvas = document.getElementById('orbit-lines');
+
+    // Hide orbits during replay
     orbitNav.style.visibility = 'hidden';
     if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'hidden';
 
     runBigBang({ withText: false }, () => {
-      // After replay, keep orbits visible
+      // After replay, keep orbits visible (handled inside runBigBang flash)
     });
   });
-
 });
 
 /**
- * Runs the Big Bang animation, then shows orbits at the white flash.
+ * Runs the Big Bang animation.
+ * options.withText: boolean – show intro text only on first load.
  */
 function runBigBang(options, onComplete) {
   const withText = options && options.withText;
+
   const canvas = document.getElementById("starfield");
   if (!canvas) {
     if (typeof onComplete === 'function') onComplete();
@@ -53,7 +54,6 @@ function runBigBang(options, onComplete) {
 
   const text = "Welcome to my personal portfolio.";
   let textIndex = 0;
-
 
   const particles = [];
   const PARTICLE_COUNT = 300;
@@ -95,7 +95,6 @@ function runBigBang(options, onComplete) {
     }
   }
 
-  // Spawn particles uniformly on a large ring around center
   function spawnInwardParticles(count) {
     const radius = Math.max(W, H) * 0.7;
     for (let i = 0; i < count; i++) {
@@ -103,7 +102,6 @@ function runBigBang(options, onComplete) {
       const x = centerX + radius * Math.cos(angle);
       const y = centerY + radius * Math.sin(angle);
 
-      // Faster inward motion only
       const speed = 0.6 + Math.random() * 0.5;
       particles.push(new Particle(x, y, centerX, centerY, speed));
     }
@@ -136,6 +134,10 @@ function runBigBang(options, onComplete) {
       }
 
     } else if (phase === "inward") {
+      if (particles.length === 0) {
+        spawnInwardParticles(PARTICLE_COUNT);
+      }
+
       particles.forEach(p => p.update(dt));
       particles.forEach(p => p.draw(ctx));
 
@@ -195,7 +197,7 @@ function runBigBang(options, onComplete) {
         if (orbitNav) orbitNav.style.visibility = 'visible';
         if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
 
-        // If this is a replay (no text), reset orbits to their original starting angles
+        // On replay (withText = false), reset orbits back to initial positions
         if (!withText && typeof window.resetOrbitsToInitial === 'function') {
           window.resetOrbitsToInitial();
         }
@@ -204,7 +206,6 @@ function runBigBang(options, onComplete) {
         ctx.clearRect(0, 0, W, H);
         return;
       }
-
     }
 
     requestAnimationFrame(loop);
