@@ -1,4 +1,4 @@
-// Minimal circular orbits for all menu items (no getBoundingClientRect)
+// Minimal circular orbits for all menu items (with reset helper)
 
 document.addEventListener('DOMContentLoaded', () => {
   const items = Array.from(document.querySelectorAll('.orbit-item'));
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-    const bodies = orbitingItems.map((el, index) => {
+  const bodies = orbitingItems.map((el, index) => {
     const startAngle = (index / orbitingItems.length) * Math.PI * 2;
     return {
       element: el,
@@ -22,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   });
 
-// Allow Big Bang to reset orbits back to their original starting angles
+  // Reset orbits back to their original starting angles
   window.resetOrbitsToInitial = function () {
     bodies.forEach(body => {
       body.angle = body.initialAngle;
     });
   };
-
 
   function resize() {
     centerX = window.innerWidth / 2;
