@@ -18,17 +18,6 @@ title: Mauricio Trevino
   </div>
 </header>
 
-<!-- Fullscreen profile overlay -->
-<div class="profile-overlay" id="profile-overlay">
-  <div class="profile-overlay-inner">
-    <img
-      src="{{ '/assets/images/profile.jpg' | relative_url }}"
-      alt="Mauricio Trevino"
-      class="profile-photo-large"
-    >
-  </div>
-</div>
-
 <!-- Big Bang replay button (top-right) -->
 <button id="bigbang-play" class="bigbang-button" aria-label="Replay Big Bang animation">
   Big&nbsp;Bang
@@ -41,10 +30,10 @@ title: Mauricio Trevino
     <span class="line-2">Me</span>
   </a>
 
-<a href="{{ '/resume/' | relative_url }}" class="orbit-item orbit-resume">
-  <span class="orbit-planet"></span>
-  Resume
-</a>
+  <a href="{{ '/resume/' | relative_url }}" class="orbit-item orbit-resume">
+    <span class="orbit-planet"></span>
+    Resume
+  </a>
 
   <a href="{{ '/experience/' | relative_url }}" class="orbit-item orbit-experience">
     <span class="orbit-planet"></span>
@@ -71,3 +60,11 @@ title: Mauricio Trevino
   </a>
 </nav>
 
+<!-- Fullscreen profile overlay -->
+<div class="profile-overlay" id="profile-overlay">
+  <img
+    src="{{ '/assets/images/profile.jpg' | relative_url }}"
+    alt="Mauricio Trevino"
+    class="profile-photo-large"
+  >
+</div>
