@@ -1,10 +1,10 @@
-// Simple circular orbits for all menu items, clamped for small screens
+// Minimal circular orbits for all menu items (no getBoundingClientRect)
 
 document.addEventListener('DOMContentLoaded', () => {
   const items = Array.from(document.querySelectorAll('.orbit-item'));
   if (!items.length) return;
 
-  // First item is central (About Me)
+  // First item is central (About)
   const centerItem = items[0];
   const orbitingItems = items.slice(1);
 
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       element: el,
       angle: (index / orbitingItems.length) * Math.PI * 2,
       speed: 0.00006 + index * 0.00001,
-      radiusBase: 200,
       radius: 200
     };
   });
@@ -25,15 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     centerX = window.innerWidth / 2;
     centerY = window.innerHeight / 2;
 
-    const minDim = Math.min(window.innerWidth, window.innerHeight); [web:160][web:169]
-    const baseRadius = minDim * 0.22;    // inner orbit
-    const step = minDim * 0.07;          // gap between orbits
-    const maxRadius = minDim * 0.45;     // clamp so nothing leaves the viewport
+    const minDim = Math.min(window.innerWidth, window.innerHeight);
+    const baseRadius = minDim * 0.25;
+    const step = minDim * 0.06;
+    const maxRadius = minDim * 0.42;
 
     bodies.forEach((body, i) => {
-      const r = baseRadius + i * step;
-      body.radiusBase = Math.min(r, maxRadius);
-      body.radius = body.radiusBase;
+      const r = Math.min(baseRadius + i * step, maxRadius);
+      body.radius = r;
     });
   }
 
@@ -42,12 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function positionCenter() {
     if (!centerItem) return;
-    const rect = centerItem.getBoundingClientRect();
-    const x = centerX - rect.width / 2;
-    const y = centerY - rect.height / 2;
     centerItem.style.position = 'fixed';
-    centerItem.style.left = `${x}px`;
-    centerItem.style.top = `${y}px`;
+    centerItem.style.left = '50%';
+    centerItem.style.top = '50%';
+    centerItem.style.transform = 'translate(-50%, -50%)';
   }
 
   let lastTime = null;
@@ -65,10 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const x = centerX + body.radius * Math.cos(body.angle);
       const y = centerY + body.radius * Math.sin(body.angle);
-      const rect = body.element.getBoundingClientRect();
+
       body.element.style.position = 'fixed';
-      body.element.style.left = `${x - rect.width / 2}px`;
-      body.element.style.top = `${y - rect.height / 2}px`;
+      body.element.style.left = `${x}px`;
+      body.element.style.top = `${y}px`;
+      body.element.style.transform = 'translate(-50%, -50%)';
       body.element.style.zIndex = '5';
     });
 
