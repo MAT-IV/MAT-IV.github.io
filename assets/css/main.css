@@ -220,3 +220,21 @@ html, body {
   transform: translateY(-1px);
 }
 
+.back-ship {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.back-ship img {
+  width: 40px;   /* adjust size */
+  height: auto;
+  image-rendering: pixelated;  /* keep the pixel-art look */
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.back-ship:hover img {
+  transform: translateY(-2px) scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+}
+
