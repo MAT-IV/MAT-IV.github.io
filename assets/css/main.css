@@ -183,8 +183,8 @@ html, body {
 }
 
 .profile-overlay-inner {
-  max-width: 60vw;   /* smaller on desktop */
-  max-height: 60vh;
+  max-width: 30vw;   /* smaller on desktop */
+  max-height: 30vh;
 }
 
 .profile-photo-large {
