@@ -6,15 +6,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!playButton || !orbitNav) return;
 
-  // Ensure orbits are hidden at initial page load
-  orbitNav.style.visibility = 'hidden';
-  const initialOrbitLines = document.getElementById('orbit-lines');
-  if (initialOrbitLines) initialOrbitLines.style.visibility = 'hidden';
+   // Check if we should skip Big Bang (coming back from inner pages)
+  const skipBigBang = sessionStorage.getItem('skipBigBang') === 'true';
 
-  // Auto-play once on initial load (with text)
-  runBigBang({ withText: true }, () => {
-    // After first intro completes, orbits are already shown by runBigBang
-  });
+  if (skipBigBang) {
+    // Show orbits immediately, clear the flag
+    orbitNav.style.visibility = 'visible';
+    const orbitLinesCanvas = document.getElementById('orbit-lines');
+    if (orbitLinesCanvas) orbitLinesCanvas.style.visibility = 'visible';
+    sessionStorage.removeItem('skipBigBang');
+  } else {
+    // Normal first-load behavior: hide orbits and play Big Bang with text
+    orbitNav.style.visibility = 'hidden';
+    const initialOrbitLines = document.getElementById('orbit-lines');
+    if (initialOrbitLines) initialOrbitLines.style.visibility = 'hidden';
+
+    runBigBang({ withText: true }, () => {
+      // After first intro completes, orbits are already shown by runBigBang
+    });
+  }
+
 
   // Replay on button click (no text, reset orbits to initial positions)
   playButton.addEventListener('click', () => {
