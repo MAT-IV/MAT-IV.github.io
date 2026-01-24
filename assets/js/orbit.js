@@ -1,4 +1,4 @@
-// Orbiting navigation with central About Me and visible orbit lines
+// Orbiting navigation with central About Me and responsive orbit radii
 
 document.addEventListener('DOMContentLoaded', () => {
   const orbitNav = document.querySelector('.orbit-nav');
@@ -23,20 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-  function resize() {
-    orbitCanvas.width = window.innerWidth;
-    orbitCanvas.height = window.innerHeight;
-    centerX = window.innerWidth / 2;
-    centerY = window.innerHeight / 2;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  const baseRadius = 130;
-  const radiusStep = 60;
+  // Initial base values (will be recalculated responsively in resize())
+  const baseRadiusDefault = 130;
+  const radiusStepDefault = 60;
 
   const orbits = otherItems.map((item, index) => {
-    const radius = baseRadius + index * radiusStep;
+    const radius = baseRadiusDefault + index * radiusStepDefault;
     const periodMs = 14000 + index * 3000;
     const speed = (2 * Math.PI) / periodMs;
     return {
@@ -46,6 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
       speed
     };
   });
+
+  function resize() {
+    orbitCanvas.width = window.innerWidth;
+    orbitCanvas.height = window.innerHeight;
+    centerX = window.innerWidth / 2;
+    centerY = window.innerHeight / 2;
+
+    // Responsive radii: based on smaller viewport dimension
+    const minDim = Math.min(window.innerWidth, window.innerHeight);
+    const baseRadius = minDim * 0.22;   // ~22% of smaller side
+    const radiusStep = minDim * 0.12;   // ~12% step between orbits
+    const maxRadius = minDim * 0.45;    // clamp to keep items on-screen
+
+    orbits.forEach((orbit, index) => {
+      const r = baseRadius + index * radiusStep;
+      orbit.radius = Math.min(r, maxRadius);
+    });
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
 
   function positionCenterItem() {
     if (!aboutItem) return;
