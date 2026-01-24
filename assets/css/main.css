@@ -220,29 +220,28 @@ html, body {
   transform: translateY(-1px);
 }
 
+/* Resume header layout: ship left, title centered */
 .resume-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* ship left, spacer right, title centered by flex */
+  justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-/* Left/right columns fixed width so center can truly center */
 .resume-header-left,
 .resume-header-right {
-  flex: 0 0 80px;  /* width of ship/allows symmetry */
+  flex: 0 0 100px;  /* wide enough to fit a big ship; keeps title centered */
 }
 
-/* Title takes remaining space and centers text within it */
 .resume-header-title {
   flex: 1 1 auto;
   text-align: center;
   margin: 0;
 }
 
-/* Make the ship large enough */
+/* Back ship, larger size */
 .back-ship img {
-  width: 72px;          /* increase as needed */
+  width: 96px;      /* bigger ship; tweak as needed */
   height: auto;
   image-rendering: pixelated;
   cursor: pointer;
@@ -253,4 +252,24 @@ html, body {
   transform: translateY(-2px) scale(1.05);
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
 }
+
+/* Download button (if not already added) */
+.resume-download {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.5);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.resume-download:hover {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+  transform: translateY(-1px);
+}
+
 
