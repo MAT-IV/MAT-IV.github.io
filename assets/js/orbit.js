@@ -23,19 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-  // Initial base values (will be recalculated responsively in resize())
+ // Initial base values (will be recalculated responsively in resize())
   const baseRadiusDefault = 130;
   const radiusStepDefault = 60;
 
+  // Set up orbits with varied speeds and stronger phase offsets
   const orbits = otherItems.map((item, index) => {
     const radius = baseRadiusDefault + index * radiusStepDefault;
-    const periodMs = 14000 + index * 3000;
+
+    // Base period and a bit of randomness so they don't sync perfectly
+    const basePeriodMs = 14000;
+    const periodJitter = 2500 * (Math.random() - 0.5); // ±1.25s
+    const periodMs = basePeriodMs + index * 3000 + periodJitter;
+
     const speed = (2 * Math.PI) / periodMs;
+
+    // Stagger angles so items are spaced around the circle
+    const angleOffset = index * (2 * Math.PI / otherItems.length);
+
     return {
       element: item,
       radius,
-      angleOffset: index * (Math.PI / 3),
-      speed
+      angleOffset,
+      speed,
+      angle: 0
     };
   });
 
@@ -69,30 +80,67 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutItem.style.top = `${y}px`;
   }
 
-  let start = null;
+  let lastTime = null;
 
   function animate(now) {
-    if (!start) start = now;
-    const elapsed = now - start;
+    if (lastTime === null) lastTime = now;
+    const dt = now - lastTime;
+    lastTime = now;
 
     octx.clearRect(0, 0, orbitCanvas.width, orbitCanvas.height);
     octx.strokeStyle = 'rgba(255,255,255,0.25)';
     octx.lineWidth = 1;
 
+    // Update angles and positions
+    orbits.forEach(orbit => {
+      orbit.angle = now * orbit.speed + orbit.angleOffset;
+
+      const px = centerX + orbit.radius * Math.cos(orbit.angle);
+      const py = centerY + orbit.radius * Math.sin(orbit.angle);
+
+      orbit.posX = px;
+      orbit.posY = py;
+    });
+
+    // Simple anti-overlap: if two projected positions are very close,
+    // nudge their angles apart a bit.
+    const minDistance = 70; // pixels between centers
+    for (let i = 0; i < orbits.length; i++) {
+      for (let j = i + 1; j < orbits.length; j++) {
+        const a = orbits[i];
+        const b = orbits[j];
+
+        const dx = a.posX - b.posX;
+        const dy = a.posY - b.posY;
+        const dist = Math.hypot(dx, dy) || 1;
+
+        if (dist < minDistance) {
+          const push = (minDistance - dist) / minDistance;
+
+          // Nudge their angles in opposite directions
+          const nudge = 0.002 * push; // small step so it still feels organic
+          a.angle += nudge;
+          b.angle -= nudge;
+
+          // Recompute positions after the nudge
+          a.posX = centerX + a.radius * Math.cos(a.angle);
+          a.posY = centerY + a.radius * Math.sin(a.angle);
+          b.posX = centerX + b.radius * Math.cos(b.angle);
+          b.posY = centerY + b.radius * Math.sin(b.angle);
+        }
+      }
+    }
+
+    // Draw orbits and place elements
     orbits.forEach(orbit => {
       // Draw orbit line
       octx.beginPath();
       octx.arc(centerX, centerY, orbit.radius, 0, Math.PI * 2);
       octx.stroke();
 
-      // Position item on orbit
-      const angle = elapsed * orbit.speed + orbit.angleOffset;
-      const px = centerX + orbit.radius * Math.cos(angle);
-      const py = centerY + orbit.radius * Math.sin(angle);
-
       const rect = orbit.element.getBoundingClientRect();
-      const x = px - rect.width / 2;
-      const y = py - rect.height / 2;
+      const x = orbit.posX - rect.width / 2;
+      const y = orbit.posY - rect.height / 2;
       orbit.element.style.left = `${x}px`;
       orbit.element.style.top = `${y}px`;
     });
