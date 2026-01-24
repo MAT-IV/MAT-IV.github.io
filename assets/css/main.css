@@ -122,28 +122,29 @@ html, body {
 
 /* Different planets per item */
 .orbit-about .orbit-planet {
-  background-image: url("{{ '/assets/images/planet-about.png' | relative_url }}");
+  background-image: url("../images/planet-about.png");
 }
 
 .orbit-resume .orbit-planet {
-  background-image: url("{{ '/assets/images/planet-resume.png' | relative_url }}");
+  background-image: url("../images/planet-resume.png");
 }
 
 .orbit-experience .orbit-planet {
-  background-image: url("{{ '/assets/images/planet-experience.png' | relative_url }}");
+  background-image: url("../images/planet-experience.png");
 }
 
 .orbit-teams .orbit-planet {
-  background-image: url("{{ '/assets/images/planet-teams.png' | relative_url }}");
+  background-image: url("../images/planet-teams.png");
 }
 
 .orbit-hobby .orbit-planet {
-  background-image: url("{{ '/assets/images/planet-hobby.png' | relative_url }}");
+  background-image: url("../images/planet-hobby.png");
 }
 
 .orbit-maker .orbit-planet {
-  background-image: url("{{ '/assets/images/planet-maker.png' | relative_url }}");
+  background-image: url("../images/planet-maker.png");
 }
+
 
 
 
