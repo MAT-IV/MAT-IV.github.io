@@ -37,18 +37,7 @@ html, body {
   margin-right: 0.8rem;
   border: 2px solid rgba(255, 255, 255, 0.6);
   cursor: zoom-in;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-/* Enlarged state on click */
-.profile-photo.expanded {
-  position: relative;
-  z-index: 10;
-  transform: scale(2.1); /* adjust size as you like */
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.7);
-  cursor: zoom-out;
-}
-
 
 .identity-text h1 {
   margin: 0;
