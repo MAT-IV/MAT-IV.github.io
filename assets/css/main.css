@@ -223,14 +223,26 @@ html, body {
 .resume-header {
   display: flex;
   align-items: center;
-  justify-content: center;   /* center the whole group */
-  gap: 0.75rem;
+  justify-content: space-between;  /* ship left, spacer right, title centered by flex */
   margin-bottom: 1rem;
 }
 
-/* Make the ship larger */
+/* Left/right columns fixed width so center can truly center */
+.resume-header-left,
+.resume-header-right {
+  flex: 0 0 80px;  /* width of ship/allows symmetry */
+}
+
+/* Title takes remaining space and centers text within it */
+.resume-header-title {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 0;
+}
+
+/* Make the ship large enough */
 .back-ship img {
-  width: 64px;   /* try 64px; adjust up/down as you like */
+  width: 72px;          /* increase as needed */
   height: auto;
   image-rendering: pixelated;
   cursor: pointer;
@@ -240,10 +252,5 @@ html, body {
 .back-ship:hover img {
   transform: translateY(-2px) scale(1.05);
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
-}
-
-/* Optional: remove extra margin from h1 if it pushes things down */
-.resume-header h1 {
-  margin: 0;
 }
 
