@@ -1,4 +1,4 @@
-// Orbiting navigation with central About Me and responsive orbit radii
+// Orbiting navigation with central About Me and responsive, phase-locked orbits
 
 document.addEventListener('DOMContentLoaded', () => {
   const orbitNav = document.querySelector('.orbit-nav');
@@ -23,30 +23,61 @@ document.addEventListener('DOMContentLoaded', () => {
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
- // Initial base values (will be recalculated responsively in resize())
+  // Helper: pair indices to lock phases (0 with last, 1 with next, etc.)
+  function buildPairs(count) {
+    const pairs = [];
+    for (let i = 0; i < count; i++) {
+      const j = (i + Math.floor(count / 2)) % count;
+      if (i < j) pairs.push([i, j]);
+    }
+    return pairs;
+  }
+
+  // Initial base values (will be recalculated responsively in resize())
   const baseRadiusDefault = 130;
   const radiusStepDefault = 60;
 
-  // Set up orbits with varied speeds and stronger phase offsets
+  const count = otherItems.length;
+  const pairs = buildPairs(count); // e.g., for 4: [0,2] and [1,3]
+
+  // Set up orbits: same angular speed inside a pair, strong phase offset between pairs
   const orbits = otherItems.map((item, index) => {
     const radius = baseRadiusDefault + index * radiusStepDefault;
 
-    // Base period and a bit of randomness so they don't sync perfectly
-    const basePeriodMs = 14000;
-    const periodJitter = 2500 * (Math.random() - 0.5); // ±1.25s
-    const periodMs = basePeriodMs + index * 3000 + periodJitter;
+    // Base period per pair, plus slight jitter per item to keep it organic
+    const pairIndex = pairs.findIndex(p => p.includes(index));
+    const basePeriodMs = 12000 + (pairIndex >= 0 ? pairIndex * 3000 : 0);
+    const periodJitter = 1500 * (Math.random() - 0.5); // ±0.75s
+    const periodMs = basePeriodMs + periodJitter;
 
     const speed = (2 * Math.PI) / periodMs;
 
-    // Stagger angles so items are spaced around the circle
-    const angleOffset = index * (2 * Math.PI / otherItems.length);
+    // Phase: pairs are separated by 90° or 180° depending on how many pairs exist
+    const totalPairs = pairs.length || 1;
+    const phaseBetweenPairs = (2 * Math.PI) / totalPairs;
+
+    let basePhase = 0;
+    if (pairIndex >= 0) {
+      basePhase = pairIndex * phaseBetweenPairs;
+    }
+
+    // Within the pair, offset the second member by half a turn so they never stack
+    let intraPairPhase = 0;
+    if (pairIndex >= 0) {
+      const [a, b] = pairs[pairIndex];
+      if (index === b) intraPairPhase = Math.PI;
+    }
+
+    const angleOffset = basePhase + intraPairPhase;
 
     return {
       element: item,
       radius,
-      angleOffset,
       speed,
-      angle: 0
+      angleOffset,
+      angle: 0,
+      posX: 0,
+      posY: 0
     };
   });
 
@@ -56,11 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
     centerX = window.innerWidth / 2;
     centerY = window.innerHeight / 2;
 
-    // Responsive radii: based on smaller viewport dimension
     const minDim = Math.min(window.innerWidth, window.innerHeight);
-    const baseRadius = minDim * 0.22;   // ~22% of smaller side
-    const radiusStep = minDim * 0.12;   // ~12% step between orbits
-    const maxRadius = minDim * 0.45;    // clamp to keep items on-screen
+    const baseRadius = minDim * 0.22;
+    const radiusStep = minDim * 0.12;
+    const maxRadius = minDim * 0.45;
 
     orbits.forEach((orbit, index) => {
       const r = baseRadius + index * radiusStep;
@@ -80,19 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutItem.style.top = `${y}px`;
   }
 
-  let lastTime = null;
-
   function animate(now) {
-    if (lastTime === null) lastTime = now;
-    const dt = now - lastTime;
-    lastTime = now;
-
     octx.clearRect(0, 0, orbitCanvas.width, orbitCanvas.height);
     octx.strokeStyle = 'rgba(255,255,255,0.25)';
     octx.lineWidth = 1;
 
     // Update angles and positions
     orbits.forEach(orbit => {
+      // All items keep their own speed, but pairs share similar speed by construction
       orbit.angle = now * orbit.speed + orbit.angleOffset;
 
       const px = centerX + orbit.radius * Math.cos(orbit.angle);
@@ -102,38 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
       orbit.posY = py;
     });
 
-    // Simple anti-overlap: if two projected positions are very close,
-    // nudge their angles apart a bit.
-    const minDistance = 70; // pixels between centers
-    for (let i = 0; i < orbits.length; i++) {
-      for (let j = i + 1; j < orbits.length; j++) {
-        const a = orbits[i];
-        const b = orbits[j];
-
-        const dx = a.posX - b.posX;
-        const dy = a.posY - b.posY;
-        const dist = Math.hypot(dx, dy) || 1;
-
-        if (dist < minDistance) {
-          const push = (minDistance - dist) / minDistance;
-
-          // Nudge their angles in opposite directions
-          const nudge = 0.002 * push; // small step so it still feels organic
-          a.angle += nudge;
-          b.angle -= nudge;
-
-          // Recompute positions after the nudge
-          a.posX = centerX + a.radius * Math.cos(a.angle);
-          a.posY = centerY + a.radius * Math.sin(a.angle);
-          b.posX = centerX + b.radius * Math.cos(b.angle);
-          b.posY = centerY + b.radius * Math.sin(b.angle);
-        }
-      }
-    }
-
     // Draw orbits and place elements
     orbits.forEach(orbit => {
-      // Draw orbit line
       octx.beginPath();
       octx.arc(centerX, centerY, orbit.radius, 0, Math.PI * 2);
       octx.stroke();
