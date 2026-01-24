@@ -135,6 +135,11 @@ html, body {
 .orbit-teams .orbit-planet {
   background-image: url("/assets/images/planet-teams.png");
 }
+/* Make Design Teams planet larger */
+.orbit-teams .orbit-planet {
+  width: 32px;   /* bigger than the default 24px */
+  height: 32px;
+}
 
 .orbit-hobby .orbit-planet {
   background-image: url("/assets/images/planet-hobby.png");
