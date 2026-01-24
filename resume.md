@@ -5,6 +5,11 @@ permalink: /resume/
 ---
 
 <div class="main-content">
+
+  <a href="{{ '/' | relative_url }}" class="back-ship back-ship-resume" aria-label="Back to main orbit">
+    <img src="{{ '/assets/images/x-wing.png' | relative_url }}" alt="">
+  </a>
+
   <h1>Resume</h1>
 
   <p>
