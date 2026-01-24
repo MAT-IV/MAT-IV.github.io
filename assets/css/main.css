@@ -107,21 +107,45 @@ html, body {
   white-space: nowrap;
 }
 
-/* small planet dot */
-.orbit-item::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #ffd36b;
+
+/* Planet icon inside each orbit item */
+.orbit-planet {
+  width: 20px;
+  height: 20px;
   margin-bottom: 0.1rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  display: block;
 }
 
-.orbit-item:nth-child(2)::before { background: #6bc5ff; }
-.orbit-item:nth-child(3)::before { background: #ff7b6b; }
-.orbit-item:nth-child(4)::before { background: #8dff6b; }
-.orbit-item:nth-child(5)::before { background: #b16bff; }
-.orbit-item:nth-child(6)::before { background: #ff6be0; }
+/* Different planets per item */
+.orbit-about .orbit-planet {
+  background-image: url("{{ '/assets/images/planet-about.png' | relative_url }}");
+}
+
+.orbit-resume .orbit-planet {
+  background-image: url("{{ '/assets/images/planet-resume.png' | relative_url }}");
+}
+
+.orbit-experience .orbit-planet {
+  background-image: url("{{ '/assets/images/planet-experience.png' | relative_url }}");
+}
+
+.orbit-teams .orbit-planet {
+  background-image: url("{{ '/assets/images/planet-teams.png' | relative_url }}");
+}
+
+.orbit-hobby .orbit-planet {
+  background-image: url("{{ '/assets/images/planet-hobby.png' | relative_url }}");
+}
+
+.orbit-maker .orbit-planet {
+  background-image: url("{{ '/assets/images/planet-maker.png' | relative_url }}");
+}
+
+
 
 .orbit-item:hover {
   transform: scale(1.2);
