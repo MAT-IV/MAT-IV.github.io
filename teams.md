@@ -50,7 +50,7 @@ permalink: /teams/
   <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2023-2024.jpg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
+      <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Lead (2023–2024)</h2>
@@ -70,7 +70,7 @@ permalink: /teams/
   <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2022-2023.jpg' | relative_url }}" alt="SAE Aero Design aircraft 2022–2023">
+      <img src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2022–2023">
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Design Lead (2022–2023)</h2>
