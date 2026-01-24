@@ -1,4 +1,4 @@
-// Orbiting navigation with central About Me and responsive, phase-locked orbits
+// Orbiting navigation with central About Me and non-overlapping orbits
 
 document.addEventListener('DOMContentLoaded', () => {
   const orbitNav = document.querySelector('.orbit-nav');
@@ -23,59 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-  // Helper: pair indices to lock phases (0 with last, 1 with next, etc.)
-  function buildPairs(count) {
-    const pairs = [];
-    for (let i = 0; i < count; i++) {
-      const j = (i + Math.floor(count / 2)) % count;
-      if (i < j) pairs.push([i, j]);
-    }
-    return pairs;
-  }
-
   // Initial base values (will be recalculated responsively in resize())
   const baseRadiusDefault = 130;
   const radiusStepDefault = 60;
 
-  const count = otherItems.length;
-  const pairs = buildPairs(count); // e.g., for 4: [0,2] and [1,3]
-
-  // Set up orbits: same angular speed inside a pair, strong phase offset between pairs
+  // Set up orbits with slightly different speeds and initial angles
   const orbits = otherItems.map((item, index) => {
     const radius = baseRadiusDefault + index * radiusStepDefault;
 
-    // Base period per pair, plus slight jitter per item to keep it organic
-    const pairIndex = pairs.findIndex(p => p.includes(index));
-    const basePeriodMs = 12000 + (pairIndex >= 0 ? pairIndex * 3000 : 0);
-    const periodJitter = 1500 * (Math.random() - 0.5); // ±0.75s
-    const periodMs = basePeriodMs + periodJitter;
+    const basePeriodMs = 14000;
+    const periodJitter = 2000 * (Math.random() - 0.5); // ±1s
+    const periodMs = basePeriodMs + index * 2500 + periodJitter;
 
     const speed = (2 * Math.PI) / periodMs;
 
-    // Phase: pairs are separated by 90° or 180° depending on how many pairs exist
-    const totalPairs = pairs.length || 1;
-    const phaseBetweenPairs = (2 * Math.PI) / totalPairs;
-
-    let basePhase = 0;
-    if (pairIndex >= 0) {
-      basePhase = pairIndex * phaseBetweenPairs;
-    }
-
-    // Within the pair, offset the second member by half a turn so they never stack
-    let intraPairPhase = 0;
-    if (pairIndex >= 0) {
-      const [a, b] = pairs[pairIndex];
-      if (index === b) intraPairPhase = Math.PI;
-    }
-
-    const angleOffset = basePhase + intraPairPhase;
+    // Start angles spaced around the circle
+    const angleOffset = index * (2 * Math.PI / otherItems.length);
 
     return {
       element: item,
       radius,
       speed,
-      angleOffset,
-      angle: 0,
+      angle: angleOffset,
+      angleBaseOffset: angleOffset,
       posX: 0,
       posY: 0
     };
@@ -110,16 +80,54 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutItem.style.top = `${y}px`;
   }
 
+  // Ensure a minimum angular separation between any two items each frame
+  function enforceAngularSeparation() {
+    if (orbits.length < 2) return;
+
+    const minAngleSep = (Math.PI / 6); // 30 degrees
+
+    // Sort by current angle for stable adjustment
+    const sorted = [...orbits].sort((a, b) => a.angle - b.angle);
+
+    for (let i = 0; i < sorted.length; i++) {
+      const current = sorted[i];
+      const next = sorted[(i + 1) % sorted.length];
+
+      let diff = next.angle - current.angle;
+      if (diff <= 0) diff += 2 * Math.PI;
+
+      if (diff < minAngleSep) {
+        const needed = minAngleSep - diff;
+        // Push the "next" item forward a bit
+        next.angle += needed;
+      }
+    }
+  }
+
+  let lastTime = null;
+
   function animate(now) {
+    if (lastTime === null) lastTime = now;
+    const dt = now - lastTime;
+    lastTime = now;
+
     octx.clearRect(0, 0, orbitCanvas.width, orbitCanvas.height);
     octx.strokeStyle = 'rgba(255,255,255,0.25)';
     octx.lineWidth = 1;
 
-    // Update angles and positions
+    // Update angles according to speed
     orbits.forEach(orbit => {
-      // All items keep their own speed, but pairs share similar speed by construction
-      orbit.angle = now * orbit.speed + orbit.angleOffset;
+      orbit.angle += orbit.speed * dt;
+      // Keep angle within 0–2π
+      if (orbit.angle > Math.PI * 2) orbit.angle -= Math.PI * 2;
+      if (orbit.angle < 0) orbit.angle += Math.PI * 2;
+    });
 
+    // Enforce separation in angle space
+    enforceAngularSeparation();
+
+    // Compute positions
+    orbits.forEach(orbit => {
       const px = centerX + orbit.radius * Math.cos(orbit.angle);
       const py = centerY + orbit.radius * Math.sin(orbit.angle);
 
