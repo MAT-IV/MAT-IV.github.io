@@ -11,14 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-  const bodies = orbitingItems.map((el, index) => {
+    const bodies = orbitingItems.map((el, index) => {
+    const startAngle = (index / orbitingItems.length) * Math.PI * 2;
     return {
       element: el,
-      angle: (index / orbitingItems.length) * Math.PI * 2,
+      angle: startAngle,
+      initialAngle: startAngle,
       speed: 0.00006 + index * 0.00001,
       radius: 200
     };
   });
+
+// Allow Big Bang to reset orbits back to their original starting angles
+  window.resetOrbitsToInitial = function () {
+    bodies.forEach(body => {
+      body.angle = body.initialAngle;
+    });
+  };
+
 
   function resize() {
     centerX = window.innerWidth / 2;
