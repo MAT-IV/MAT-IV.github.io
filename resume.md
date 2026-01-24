@@ -7,10 +7,13 @@ permalink: /resume/
 <div class="main-content">
 
   <div class="resume-header">
-    <div class="resume-header-left">
-      <a href="{{ '/' | relative_url }}" class="back-ship back-ship-resume" aria-label="Back to main orbit">
-        <img src="{{ '/assets/images/x-wing.png' | relative_url }}" alt="">
-      </a>
+   <a href="{{ '/' | relative_url }}"
+   class="back-ship back-ship-resume"
+   aria-label="Back to main orbit"
+   onclick="window.skipBigBangNextLoad = true;">
+  <img src="{{ '/assets/images/x-wing.png' | relative_url }}" alt="">
+</a>
+
     </div>
 
     <h1 class="resume-header-title">Resume</h1>
@@ -33,5 +36,6 @@ permalink: /resume/
     title="Resume PDF viewer"
   ></iframe>
 </div>
+
 
 
