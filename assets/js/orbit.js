@@ -1,26 +1,25 @@
 // Locked orbit navigation:
-// - Professional Experience & Hobby Builds share one orbit, 180° apart
-// - Design Teams & Maker Portfolio share another orbit, 180° apart
-// - Resume has its own orbit and can overlap but is always on top
+// - Professional Experience & Hobby Builds: same orbit, 180° apart
+// - Design Teams & Maker Portfolio: same orbit, 180° apart, offset from inner
+// - Resume: independent orbit, can overlap but always on top
 
 document.addEventListener('DOMContentLoaded', () => {
   const orbitNav = document.querySelector('.orbit-nav');
   const items = Array.from(document.querySelectorAll('.orbit-item'));
   if (!items.length || !orbitNav) return;
 
-  // First item is central (About Me)
-  const aboutItem = items[0];
-  const otherItems = items.slice(1); // [Resume, Experience, Teams, Hobby, Maker]
-
-  if (otherItems.length < 5) {
-    console.warn('Expected at least 5 orbit items after About.');
-  }
-
-  const resumeItem     = otherItems[0]; // Resume
-  const experienceItem = otherItems[1]; // Professional Experience
-  const teamsItem      = otherItems[2]; // Design Teams
-  const hobbyItem      = otherItems[3]; // Hobby Builds
-  const makerItem      = otherItems[4]; // Maker Portfolio
+  // 0: About (center), then:
+  // 1: Resume
+  // 2: Professional Experience
+  // 3: Design Teams
+  // 4: Hobby Builds
+  // 5: Maker Portfolio
+  const aboutItem      = items[0];
+  const resumeItem     = items[1];
+  const experienceItem = items[2];
+  const teamsItem      = items[3];
+  const hobbyItem      = items[4];
+  const makerItem      = items[5];
 
   // Canvas for orbit lines
   const orbitCanvas = document.createElement('canvas');
@@ -29,58 +28,56 @@ document.addEventListener('DOMContentLoaded', () => {
   orbitCanvas.style.inset = '0';
   orbitCanvas.style.zIndex = '2';
   orbitCanvas.style.pointerEvents = 'none';
-  orbitCanvas.style.display = 'none'; // Big Bang will turn this on
+  orbitCanvas.style.display = 'none'; // Big Bang can turn this on
   document.body.appendChild(orbitCanvas);
   const octx = orbitCanvas.getContext('2d');
 
   let centerX = window.innerWidth / 2;
   let centerY = window.innerHeight / 2;
 
-  // Orbits configuration
-  const orbits = [
-    {
-      name: 'resume',
-      element: resumeItem,
-      baseRadius: 150,
-      radius: 150,
-      speed: 0.00013, // independent
-      angle: Math.random() * Math.PI * 2
-    },
-    {
-      name: 'innerA',
-      element: experienceItem,
-      baseRadius: 220,
-      radius: 220,
-      angleOffset: 0
-    },
-    {
-      name: 'innerB',
-      element: hobbyItem,
-      baseRadius: 220,
-      radius: 220,
-      angleOffset: Math.PI // 180° from innerA
-    },
-    {
-      name: 'outerA',
-      element: teamsItem,
-      baseRadius: 300,
-      radius: 300,
-      angleOffset: 0.5 // offset from inner pair
-    },
-    {
-      name: 'outerB',
-      element: makerItem,
-      baseRadius: 300,
-      radius: 300,
-      angleOffset: Math.PI + 0.5 // 180° from outerA
-    }
-  ];
+  // Shared angles for the locked pairs (persist across frames)
+  let innerAngle = Math.random() * Math.PI * 2; // for experience + hobby
+  let outerAngle = Math.random() * Math.PI * 2; // for teams + maker
 
-  // Shared angles for locked pairs (persist across frames)
-  let innerSharedAngle = Math.random() * Math.PI * 2;
-  let outerSharedAngle = Math.random() * Math.PI * 2;
-  const innerSpeed = 0.00008; // radians per ms
-  const outerSpeed = 0.00006;
+  // Speeds (radians per ms)
+  const resumeSpeed = 0.00013;
+  const innerSpeed  = 0.00008;
+  const outerSpeed  = 0.00006;
+
+  // Individual state
+  const state = {
+    resume: {
+      element: resumeItem,
+      angle: Math.random() * Math.PI * 2,
+      radiusBase: 150,
+      radius: 150,
+      z: 10
+    },
+    experience: {
+      element: experienceItem,
+      radiusBase: 220,
+      radius: 220,
+      z: 5
+    },
+    hobby: {
+      element: hobbyItem,
+      radiusBase: 220,
+      radius: 220,
+      z: 5
+    },
+    teams: {
+      element: teamsItem,
+      radiusBase: 300,
+      radius: 300,
+      z: 5
+    },
+    maker: {
+      element: makerItem,
+      radiusBase: 300,
+      radius: 300,
+      z: 5
+    }
+  };
 
   function resize() {
     orbitCanvas.width = window.innerWidth;
@@ -89,21 +86,26 @@ document.addEventListener('DOMContentLoaded', () => {
     centerY = window.innerHeight / 2;
 
     const minDim = Math.min(window.innerWidth, window.innerHeight);
+    const rResume = minDim * 0.22;
+    const rInner  = minDim * 0.30;
+    const rOuter  = minDim * 0.40;
 
-    const resumeRadius = minDim * 0.22;
-    const innerRadius  = minDim * 0.30;
-    const outerRadius  = minDim * 0.40;
-
-    orbits.forEach(orbit => {
-      if (orbit.name === 'resume') {
-        orbit.baseRadius = resumeRadius;
-      } else if (orbit.name === 'innerA' || orbit.name === 'innerB') {
-        orbit.baseRadius = innerRadius;
-      } else if (orbit.name === 'outerA' || orbit.name === 'outerB') {
-        orbit.baseRadius = outerRadius;
-      }
-      orbit.radius = orbit.baseRadius;
-    });
+    if (state.resume) {
+      state.resume.radiusBase = rResume;
+      state.resume.radius = rResume;
+    }
+    if (state.experience && state.hobby) {
+      state.experience.radiusBase = rInner;
+      state.experience.radius = rInner;
+      state.hobby.radiusBase = rInner;
+      state.hobby.radius = rInner;
+    }
+    if (state.teams && state.maker) {
+      state.teams.radiusBase = rOuter;
+      state.teams.radius = rOuter;
+      state.maker.radiusBase = rOuter;
+      state.maker.radius = rOuter;
+    }
   }
 
   window.addEventListener('resize', resize);
@@ -129,55 +131,94 @@ document.addEventListener('DOMContentLoaded', () => {
     octx.strokeStyle = 'rgba(255,255,255,0.25)';
     octx.lineWidth = 1;
 
-    // Advance shared angles for locked pairs
-    innerSharedAngle += innerSpeed * dt;
-    outerSharedAngle += outerSpeed * dt;
+    // Advance angles
+    innerAngle += innerSpeed * dt;
+    outerAngle += outerSpeed * dt;
+    state.resume.angle += resumeSpeed * dt;
 
-    // Keep within 0–2π
-    if (innerSharedAngle > Math.PI * 2) innerSharedAngle -= Math.PI * 2;
-    if (outerSharedAngle > Math.PI * 2) outerSharedAngle -= Math.PI * 2;
+    // Normalize angles
+    const twoPi = Math.PI * 2;
+    if (innerAngle > twoPi) innerAngle -= twoPi;
+    if (outerAngle > twoPi) outerAngle -= twoPi;
+    if (state.resume.angle > twoPi) state.resume.angle -= twoPi;
 
-    // Update individual orbits
-    orbits.forEach(orbit => {
-      if (orbit.name === 'resume') {
-        orbit.angle += orbit.speed * dt;
-        if (orbit.angle > Math.PI * 2) orbit.angle -= Math.PI * 2;
-        if (orbit.angle < 0) orbit.angle += Math.PI * 2;
-      } else if (orbit.name === 'innerA' || orbit.name === 'innerB') {
-        orbit.angle = innerSharedAngle + (orbit.angleOffset || 0);
-      } else if (orbit.name === 'outerA' || orbit.name === 'outerB') {
-        orbit.angle = outerSharedAngle + (orbit.angleOffset || 0);
-      }
-      orbit.radius = orbit.baseRadius;
+    // Draw orbit circles once
+    const radiiDrawn = new Set();
+    [state.resume, state.experience, state.teams].forEach(o => {
+      if (!o) return;
+      if (radiiDrawn.has(o.radiusBase)) return;
+      radiiDrawn.add(o.radiusBase);
+      octx.beginPath();
+      octx.arc(centerX, centerY, o.radiusBase, 0, twoPi);
+      octx.stroke();
     });
 
-    // Draw unique orbit lines
-    const drawnRadii = new Set();
-    orbits.forEach(orbit => {
-      if (!drawnRadii.has(orbit.baseRadius)) {
-        drawnRadii.add(orbit.baseRadius);
-        octx.beginPath();
-        octx.arc(centerX, centerY, orbit.baseRadius, 0, Math.PI * 2);
-        octx.stroke();
-      }
-    });
+    // Compute positions for each element
+    const positions = [];
 
-    // Position elements
-    orbits.forEach(orbit => {
-      if (!orbit.element) return;
-      const x = centerX + orbit.radius * Math.cos(orbit.angle);
-      const y = centerY + orbit.radius * Math.sin(orbit.angle);
-      const rect = orbit.element.getBoundingClientRect();
-      orbit.element.style.position = 'fixed';
-      orbit.element.style.left = `${x - rect.width / 2}px`;
-      orbit.element.style.top = `${y - rect.height / 2}px`;
+    // Resume (independent)
+    if (state.resume.element) {
+      const r = state.resume.radius;
+      const a = state.resume.angle;
+      const x = centerX + r * Math.cos(a);
+      const y = centerY + r * Math.sin(a);
+      positions.push({
+        element: state.resume.element,
+        x,
+        y,
+        z: state.resume.z
+      });
+    }
 
-      // Resume always on top
-      if (orbit.name === 'resume') {
-        orbit.element.style.zIndex = '10';
-      } else {
-        orbit.element.style.zIndex = '5';
-      }
+    // Inner pair: experience + hobby (180° apart)
+    if (state.experience.element && state.hobby.element) {
+      const r = state.experience.radius;
+      const a1 = innerAngle;
+      const a2 = innerAngle + Math.PI;
+
+      positions.push({
+        element: state.experience.element,
+        x: centerX + r * Math.cos(a1),
+        y: centerY + r * Math.sin(a1),
+        z: state.experience.z
+      });
+      positions.push({
+        element: state.hobby.element,
+        x: centerX + r * Math.cos(a2),
+        y: centerY + r * Math.sin(a2),
+        z: state.hobby.z
+      });
+    }
+
+    // Outer pair: teams + maker (180° apart, offset)
+    if (state.teams.element && state.maker.element) {
+      const r = state.teams.radius;
+      const offset = 0.5; // radians offset from inner orbit for natural spacing
+      const a1 = outerAngle + offset;
+      const a2 = outerAngle + offset + Math.PI;
+
+      positions.push({
+        element: state.teams.element,
+        x: centerX + r * Math.cos(a1),
+        y: centerY + r * Math.sin(a1),
+        z: state.teams.z
+      });
+      positions.push({
+        element: state.maker.element,
+        x: centerX + r * Math.cos(a2),
+        y: centerY + r * Math.sin(a2),
+        z: state.maker.z
+      });
+    }
+
+    // Apply positions
+    positions.forEach(pos => {
+      const el = pos.element;
+      const rect = el.getBoundingClientRect();
+      el.style.position = 'fixed';
+      el.style.left = `${pos.x - rect.width / 2}px`;
+      el.style.top = `${pos.y - rect.height / 2}px`;
+      el.style.zIndex = String(pos.z);
     });
 
     positionCenterItem();
