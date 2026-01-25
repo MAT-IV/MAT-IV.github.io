@@ -23,8 +23,7 @@ permalink: /teams/
   </div>
 
   <p>
-    A selection of engineering design teams I’ve contributed to, shown in reverse chronological order.
-    Each project highlights my role, key responsibilities, and the final outcome of the team.
+    During my time at Texas A&M, I contributed to multiple competitive engineering design teams focused on vehicle and aircraft performance. Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes. Select a team below to explore detailed project work and technical contributions.
   </p>
 
   <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
@@ -33,16 +32,15 @@ permalink: /teams/
       <img src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}" alt="Formula SAE IC racecar with aerodynamic package">
     </div>
     <div class="team-card-body">
-      <h2>Formula SAE IC – Aerodynamics</h2>
-      <p class="team-meta">Role: Aerodynamics · Season: [Year]</p>
+      <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
+      <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024-2025</p>
       <p>
-        Short description of the car and competition (e.g., combustion Formula SAE vehicle competing in
-        dynamic and static events). Summarize that you owned or contributed to the aerodynamic package.
+        As part of the 2025 Texas A&M Formula SAE IC team, I contributed to the aerodynamic development and performance validation of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis, carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
       </p>
       <ul>
-        <li>Worked on the front and rear wing, undertray, or other aero components (what you designed or optimized).</li>
-        <li>Mention tools: CAD, CFD, wind tunnel testing, on-track data (pick what actually applies).</li>
-        <li>Final result: e.g., improved downforce, reduced drag, or competition placement.</li>
+        <li>Performed full-vehicle CFD analyses to evaluate aerodynamic performance under pitch, roll, and yaw, informing design iterations based on downforce–drag trade-offs.</li>
+        <li>Supported fabrication and integration of carbon fiber aerodynamic components, with emphasis on manufacturability and structural reliability.</li>
+        <li>Participated in on-track testing to correlate simulation results with vehicle behavior and refine performance for cornering- and endurance-focused events.</li>
       </ul>
     </div>
   </section>
@@ -53,7 +51,7 @@ permalink: /teams/
       <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
     </div>
     <div class="team-card-body">
-      <h2>SAE Aero Design – Team Lead (2023–2024)</h2>
+      <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
       <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
       <p>
         Briefly describe the competition class and mission (payload, flight profile, constraints).
@@ -73,7 +71,7 @@ permalink: /teams/
       <img src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2022–2023">
     </div>
     <div class="team-card-body">
-      <h2>SAE Aero Design – Design Lead (2022–2023)</h2>
+      <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
       <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
       <p>
         Summarize the aircraft concept and your responsibility for the overall configuration and detailed design.
@@ -92,7 +90,7 @@ permalink: /teams/
       <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
     </div>
     <div class="team-card-body">
-      <h2>SAE Aero Design – Team Member (2021–2022)</h2>
+      <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
       <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
       <p>
         Introduce this as your first season on the team, where you focused on learning the workflow and contributing
