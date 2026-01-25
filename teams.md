@@ -180,10 +180,10 @@ permalink: /teams/
       </div>
 
       <!-- GIF or short loop (better as MP4/WebM) [web:494][web:500] -->
-      <h3>Aero visualization</h3>
+      <h3>Aero visualization - Preliminary side mounted radiator study</h3>
       <video
         class="project-video"
-        src="{{ '/assets/videos/formula-cfd-loop.mp4' | relative_url }}"
+        src="{{ '/assets/images/formula/combined-rad-study.mp4' | relative_url }}"
         autoplay
         muted
         loop
