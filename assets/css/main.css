@@ -122,19 +122,19 @@ html, body {
 
 /* Use root-relative paths: start from /assets/... */
 .orbit-about .orbit-planet {
-  background-image: url("/assets/images/planet-about.png");
+  background-image: url("/assets/images/planets/planet-about.png");
 }
 
 .orbit-resume .orbit-planet {
-  background-image: url("/assets/images/planet-resume.png");
+  background-image: url("/assets/images/planets/planet-resume.png");
 }
 
 .orbit-experience .orbit-planet {
-  background-image: url("/assets/images/planet-experience.png");
+  background-image: url("/assets/images/planets/planet-experience.png");
 }
 
 .orbit-teams .orbit-planet {
-  background-image: url("/assets/images/planet-teams.png");
+  background-image: url("/assets/images/planets/planet-teams.png");
 }
 /* Make Design Teams planet larger */
 .orbit-teams .orbit-planet {
@@ -143,11 +143,11 @@ html, body {
 }
 
 .orbit-hobby .orbit-planet {
-  background-image: url("/assets/images/planet-hobby.png");
+  background-image: url("/assets/images/planets/planet-hobby.png");
 }
 
 .orbit-maker .orbit-planet {
-  background-image: url("/assets/images/planet-maker.png");
+  background-image: url("/assets/images/planets/planet-maker.png");
 }
 
 
