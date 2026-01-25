@@ -64,29 +64,43 @@ document.addEventListener('DOMContentLoaded', () => {
   attachTeamOverlay('.team-image-aero-21-22', 'aero-21-22-overlay');
 });
 
-// Lightbox for Development images inside Formula popup
+// Shared lightbox for any project/gallery image on the page
 document.addEventListener('DOMContentLoaded', () => {
-  const formulaOverlay = document.getElementById('formula-overlay');
-  if (!formulaOverlay) return;
-
-  const gallery = formulaOverlay.querySelector('.project-gallery');
-  const lightbox = document.getElementById('formula-image-lightbox');
-  if (!gallery || !lightbox) return;
+  const galleries = document.querySelectorAll('.project-gallery');
+  const cardMediaBlocks = document.querySelectorAll('.team-card-media');
+  const lightbox = document.getElementById('formula-image-lightbox'); // shared lightbox
+  if (!lightbox) return;
 
   const lightboxImg = lightbox.querySelector('.image-lightbox-img');
   const lightboxCaption = lightbox.querySelector('.image-lightbox-caption');
   const lightboxClose = lightbox.querySelector('.image-lightbox-close');
 
-  // Open lightbox when a gallery image is clicked
-  gallery.addEventListener('click', (e) => {
-    const target = e.target;
-    if (!(target instanceof HTMLImageElement)) return;
+  // Attach to all .project-gallery containers (inside popups or cards)
+  galleries.forEach((gallery) => {
+    gallery.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLImageElement)) return;
 
-    lightboxImg.src = target.src;
-    lightboxImg.alt = target.alt;
-    lightboxCaption.textContent = target.alt;
+      lightboxImg.src = target.src;
+      lightboxImg.alt = target.alt;
+      lightboxCaption.textContent = target.alt;
 
-    lightbox.classList.add('is-visible');
+      lightbox.classList.add('is-visible');
+    });
+  });
+
+  // Also attach to any image inside .team-card-media
+  cardMediaBlocks.forEach((block) => {
+    block.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLImageElement)) return;
+
+      lightboxImg.src = target.src;
+      lightboxImg.alt = target.alt;
+      lightboxCaption.textContent = target.alt;
+
+      lightbox.classList.add('is-visible');
+    });
   });
 
   // Close on X
