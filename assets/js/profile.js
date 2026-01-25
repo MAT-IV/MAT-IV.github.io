@@ -55,3 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.project-gallery');
+  const lightbox = document.getElementById('formula-image-lightbox');
+  if (!gallery || !lightbox) return;
+
+  const lightboxImg = lightbox.querySelector('.image-lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.image-lightbox-caption');
+  const lightboxClose = lightbox.querySelector('.image-lightbox-close');
+
+  // Open lightbox when a gallery image is clicked
+  gallery.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.tagName !== 'IMG') return;
+
+    lightboxImg.src = target.src;
+    lightboxImg.alt = target.alt;
+    lightboxCaption.textContent = target.alt; // show alt text as caption
+
+    lightbox.classList.add('is-visible');
+  });
+
+  // Close on X
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('is-visible');
+  });
+
+  // Close when clicking the dark background
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('is-visible');
+    }
+  });
+});
