@@ -13,7 +13,7 @@ permalink: /teams/
          class="back-ship back-ship-teams"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
-        <img src="{{ '/assets/images/ship-teams.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/back-ship/ship-teams.png' | relative_url }}" alt="">
       </a>
     </div>
 
@@ -31,7 +31,7 @@ permalink: /teams/
   <section class="team-card">
     <div class="team-card-media">
       <img
-        src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}"
+        src="{{ '/assets/images/formula/team-formula-aero.jpg' | relative_url }}"
         alt="Formula SAE IC racecar with aerodynamic package"
         class="team-image team-image-formula"
       >
@@ -56,7 +56,7 @@ permalink: /teams/
   <section class="team-card">
     <div class="team-card-media">
       <img
-        src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}"
+        src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
         alt="SAE Aero Design aircraft 2023–2024"
         class="team-image"
       >
@@ -79,7 +79,7 @@ permalink: /teams/
   <section class="team-card">
     <div class="team-card-media">
       <img
-        src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}"
+        src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
         alt="SAE Aero Design aircraft 2022–2023"
         class="team-image"
       >
@@ -102,7 +102,7 @@ permalink: /teams/
   <section class="team-card">
     <div class="team-card-media">
       <img
-        src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}"
+        src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
         alt="SAE Aero Design aircraft 2021–2022"
         class="team-image"
       >
