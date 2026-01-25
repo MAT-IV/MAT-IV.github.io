@@ -1,3 +1,12 @@
+// Helper: lock body scroll when overlays/lightboxes are open
+function setBodyScrollLocked(locked) {
+  if (locked) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
 // Click-to-expand profile photo in a centered overlay
 document.addEventListener('DOMContentLoaded', () => {
   const thumb = document.getElementById('profile-photo');
@@ -6,10 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (thumb && overlay) {
     thumb.addEventListener('click', () => {
       overlay.classList.add('is-visible');
+      setBodyScrollLocked(true);
     });
 
-    overlay.addEventListener('click', () => {
-      overlay.classList.remove('is-visible');
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('is-visible');
+        setBodyScrollLocked(false);
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-visible')) {
+        overlay.classList.remove('is-visible');
+        setBodyScrollLocked(false);
+      }
     });
   }
 });
@@ -27,91 +47,127 @@ window.skipBigBangAndGoHome = function (event) {
   window.location.href = '/';
 };
 
+/* ===== Team overlays (Design Teams page) ===== */
+/* New wiring using data-team-key & data-team */
+function initTeamOverlays() {
+  const overlaySelector = '.team-overlay';
+  const openButtons = document.querySelectorAll('.js-team-open');
+  const heroImages = document.querySelectorAll('.js-team-hero');
+  const overlays = document.querySelectorAll(overlaySelector);
 
-// Generic helper to wire a card image to an overlay
-function attachTeamOverlay(triggerSelector, overlayId) {
-  const trigger = document.querySelector(triggerSelector);
-  const overlay = document.getElementById(overlayId);
-  if (!trigger || !overlay) return;
-
-  const closeBtn = overlay.querySelector('.team-overlay-close');
-
-  // Open overlay on card image click
-  trigger.addEventListener('click', () => {
+  function openOverlay(teamKey) {
+    const overlay = document.querySelector(`${overlaySelector}[data-team="${teamKey}"]`);
+    if (!overlay) return;
     overlay.classList.add('is-visible');
-  });
-
-  // Close on X
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      overlay.classList.remove('is-visible');
-    });
+    setBodyScrollLocked(true);
   }
 
-  // Close when clicking the dark background
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      overlay.classList.remove('is-visible');
+  function closeOverlay(overlay) {
+    overlay.classList.remove('is-visible');
+    setBodyScrollLocked(false);
+  }
+
+  // Buttons in each card
+  openButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const teamKey = button.dataset.teamKey;
+      if (!teamKey) return;
+      openOverlay(teamKey);
+    });
+  });
+
+  // Hero image click in each card
+  heroImages.forEach(img => {
+    img.addEventListener('click', () => {
+      const teamKey = img.dataset.teamKey;
+      if (!teamKey) return;
+      openOverlay(teamKey);
+    });
+  });
+
+  // Close buttons and clicking the dark backdrop
+  overlays.forEach(overlay => {
+    const closeBtn = overlay.querySelector('.team-overlay-close');
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeOverlay(overlay);
+      });
     }
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeOverlay(overlay);
+      }
+    });
   });
 }
 
-// Wire up all team overlays
-document.addEventListener('DOMContentLoaded', () => {
-  attachTeamOverlay('.team-image-formula', 'formula-overlay');
-  attachTeamOverlay('.team-image-aero-23-24', 'aero-23-24-overlay');
-  attachTeamOverlay('.team-image-aero-22-23', 'aero-22-23-overlay');
-  attachTeamOverlay('.team-image-aero-21-22', 'aero-21-22-overlay');
-});
-
-// Shared lightbox for any project/gallery image on the page
-document.addEventListener('DOMContentLoaded', () => {
-  const galleries = document.querySelectorAll('.project-gallery');
-  const cardMediaBlocks = document.querySelectorAll('.team-card-media');
-  const lightbox = document.getElementById('formula-image-lightbox'); // shared lightbox
+/* ===== Shared image lightbox (used inside overlays) ===== */
+function initImageLightbox() {
+  const lightbox = document.querySelector('.image-lightbox');
   if (!lightbox) return;
 
   const lightboxImg = lightbox.querySelector('.image-lightbox-img');
   const lightboxCaption = lightbox.querySelector('.image-lightbox-caption');
-  const lightboxClose = lightbox.querySelector('.image-lightbox-close');
+  const closeBtn = lightbox.querySelector('.image-lightbox-close');
 
-  // Attach to all .project-gallery containers (inside popups or cards)
-  galleries.forEach((gallery) => {
-    gallery.addEventListener('click', (e) => {
-      const target = e.target;
-      if (!(target instanceof HTMLImageElement)) return;
+  function openLightbox(src, alt, caption) {
+    if (!lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    if (lightboxCaption) {
+      lightboxCaption.textContent = caption || alt || '';
+    }
+    lightbox.classList.add('is-visible');
+    lightbox.setAttribute('aria-hidden', 'false');
+    setBodyScrollLocked(true);
+  }
 
-      lightboxImg.src = target.src;
-      lightboxImg.alt = target.alt;
-      lightboxCaption.textContent = target.alt;
+  function closeLightbox() {
+    lightbox.classList.remove('is-visible');
+    lightbox.setAttribute('aria-hidden', 'true');
+    setBodyScrollLocked(false);
+  }
 
-      lightbox.classList.add('is-visible');
-    });
-  });
-
-  // Also attach to any image inside .team-card-media
-  cardMediaBlocks.forEach((block) => {
-    block.addEventListener('click', (e) => {
-      const target = e.target;
-      if (!(target instanceof HTMLImageElement)) return;
-
-      lightboxImg.src = target.src;
-      lightboxImg.alt = target.alt;
-      lightboxCaption.textContent = target.alt;
-
-      lightbox.classList.add('is-visible');
+  // Any image with .js-lightbox-target opens the lightbox
+  document.querySelectorAll('.js-lightbox-target').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation(); // don't trigger overlay backdrop
+      const src = img.getAttribute('src');
+      const alt = img.getAttribute('alt');
+      const caption = img.dataset.caption;
+      openLightbox(src, alt, caption);
     });
   });
 
   // Close on X
-  lightboxClose.addEventListener('click', () => {
-    lightbox.classList.remove('is-visible');
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
 
   // Close when clicking the dark background
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
-      lightbox.classList.remove('is-visible');
+      closeLightbox();
     }
   });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-visible')) {
+      closeLightbox();
+    }
+  });
+}
+
+// Init team overlays + lightbox after DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  initTeamOverlays();
+  initImageLightbox();
 });
