@@ -13,7 +13,7 @@ permalink: /experience/
          class="back-ship back-ship-teams"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
-        <img src="{{ '/assets/images/back-ship/ship-teams.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/back-ship/sls.png' | relative_url }}" alt="">
       </a>
     </div>
 
