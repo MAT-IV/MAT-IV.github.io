@@ -99,14 +99,11 @@ function initTeamOverlays() {
   });
 }
 
-// Shared lightbox for development images inside Formula popup
-function initFormulaLightbox() {
-  const formulaOverlay = document.getElementById('formula-overlay');
-  if (!formulaOverlay) return;
-
-  const gallery = formulaOverlay.querySelector('.project-gallery');
-  const lightbox = document.getElementById('formula-image-lightbox');
-  if (!gallery || !lightbox) return;
+// Shared lightbox for all development images in any project-gallery
+function initImageLightbox() {
+  // If you keep the old id, change this to 'formula-image-lightbox'
+  const lightbox = document.getElementById('image-lightbox') || document.getElementById('formula-image-lightbox');
+  if (!lightbox) return;
 
   const lightboxImg = lightbox.querySelector('.image-lightbox-img');
   const lightboxCaption = lightbox.querySelector('.image-lightbox-caption');
@@ -128,14 +125,12 @@ function initFormulaLightbox() {
     setBodyScrollLocked(false);
   }
 
-  // Open lightbox when a gallery image (marked for lightbox) is clicked
-  gallery.addEventListener('click', (e) => {
-    const target = e.target;
-    if (!(target instanceof HTMLImageElement)) return;
-    if (!target.classList.contains('js-lightbox-target')) return;
-
-    e.stopPropagation(); // don't close overlay
-    openLightboxFromImage(target);
+  // Attach click handler to every dev image that should open the lightbox
+  document.querySelectorAll('.project-gallery .js-lightbox-target').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation(); // don't close the team overlay beneath
+      openLightboxFromImage(img);
+    });
   });
 
   // Close on X
@@ -164,5 +159,5 @@ function initFormulaLightbox() {
 // Wire up all team overlays + lightbox
 document.addEventListener('DOMContentLoaded', () => {
   initTeamOverlays();
-  initFormulaLightbox();
+  initImageLightbox();
 });
