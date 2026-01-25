@@ -31,9 +31,12 @@ permalink: /resume/
     </a>
   </p>
 
-  <iframe
-    src="/assets/resume/Mauricio_Trevino_Resume.pdf"
-    style="width: 100%; height: 80vh; border: none;"
-    title="Resume PDF viewer"
-  ></iframe>
+  <!-- Responsive PDF viewer -->
+  <div class="pdf-container">
+    <iframe
+      src="/assets/resume/Mauricio_Trevino_Resume.pdf#view=FitH"
+      title="Resume PDF viewer"
+      loading="lazy"
+    ></iframe>
+  </div>
 </div>
