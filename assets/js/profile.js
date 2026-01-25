@@ -26,3 +26,32 @@ window.skipBigBangAndGoHome = function (event) {
   }
   window.location.href = '/';
 };
+
+
+// Formula image -> open details overlay on Teams page
+document.addEventListener('DOMContentLoaded', () => {
+  const formulaImg = document.querySelector('.team-image-formula');
+  const formulaOverlay = document.getElementById('formula-overlay');
+  if (!formulaImg || !formulaOverlay) return;
+
+  const closeBtn = formulaOverlay.querySelector('.team-overlay-close');
+
+  // Open overlay on click
+  formulaImg.addEventListener('click', () => {
+    formulaOverlay.classList.add('is-visible');
+  });
+
+  // Close overlay on close button
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      formulaOverlay.classList.remove('is-visible');
+    });
+  }
+
+  // Close overlay when clicking the dark background
+  formulaOverlay.addEventListener('click', (e) => {
+    if (e.target === formulaOverlay) {
+      formulaOverlay.classList.remove('is-visible');
+    }
+  });
+});
