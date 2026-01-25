@@ -376,10 +376,11 @@ permalink: /teams/
           
           <img
             src="{{ '/assets/images/sae-aero/21-22/bare-jig-21-22.JPG' | relative_url }}"
-            alt="Structural constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional tolerance."
+            alt="Structural constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional                 tolerance."
             class="project-gallery-img js-lightbox-target"
-            data-caption="Structural" constrcution of an experimental version of the plane using aluminum extrusion to maintain                  dimensional tolerance."
+            data-caption="Structural constrcution of an experimental version of the plane using aluminum extrusion to maintain                    dimensional tolerance."
           >
+
           <img
             src="{{ '/assets/images/sae-aero/21-22/cad-21-22.JPG' | relative_url }}"
             alt="CAD rendering of the 21-22 competition plane."
