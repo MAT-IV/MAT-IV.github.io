@@ -108,7 +108,6 @@ html, body {
   white-space: nowrap;
 }
 
-
 .orbit-planet {
   width: 24px;
   height: 24px;
@@ -136,9 +135,10 @@ html, body {
 .orbit-teams .orbit-planet {
   background-image: url("/assets/images/planets/planet-teams.png");
 }
+
 /* Make Design Teams planet larger */
 .orbit-teams .orbit-planet {
-  width: 32px;   /* bigger than the default 24px */
+  width: 32px;
   height: 32px;
 }
 
@@ -150,9 +150,6 @@ html, body {
   background-image: url("/assets/images/planets/planet-maker.png");
 }
 
-
-
-
 .orbit-item:hover {
   transform: scale(1.2);
   background: rgba(255,255,255,0.2);
@@ -160,7 +157,6 @@ html, body {
 
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
-  /* Keep orbits fixed; only adjust button position */
   .bigbang-button {
     top: auto;
     bottom: 1rem;
@@ -181,13 +177,13 @@ html, body {
   display: block;
 }
 
-/* Center the large image over the page center (same as About/orbits) */
+/* Center the large image over the page center */
 .profile-photo-large {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);   /* center on its own middle */
-  max-width: 60vw;                    /* your chosen size */
+  transform: translate(-50%, -50%);
+  max-width: 60vw;
   max-height: 60vh;
   width: auto;
   height: auto;
@@ -230,7 +226,7 @@ html, body {
 
 .resume-header-left,
 .resume-header-right {
-  flex: 0 0 100px;  /* wide enough to fit a big ship; keeps title centered */
+  flex: 0 0 100px;
 }
 
 .resume-header-title {
@@ -259,29 +255,10 @@ html, body {
 
 /* Design Teams ship size */
 .back-ship-teams img {
-  width: 96px;   /* or larger if you want this one bigger */
+  width: 96px;
 }
 
-/* Generic page header: ship left, title centered */
-.page-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.page-header-left,
-.page-header-right {
-  flex: 0 0 110px;     /* enough width for a large ship; keeps title centered */
-}
-
-.page-header-title {
-  flex: 1 1 auto;
-  text-align: center;
-  margin: 0;
-}
-
-/* Generic page header reused across inner pages */
+/* Generic page header */
 .page-header {
   display: flex;
   align-items: center;
@@ -300,7 +277,7 @@ html, body {
   margin: 0;
 }
 
-/* Design team cards (vertical layout) */
+/* Design team cards */
 .team-card {
   display: flex;
   flex-direction: row;
@@ -344,11 +321,6 @@ html, body {
   }
 }
 
-/* Teams ship size */
-.back-ship-teams img {
-  width: 96px;
-}
-
 /* Base for all team images */
 .team-image {
   display: block;
@@ -370,6 +342,7 @@ html, body {
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
 
+/* Team detail overlays */
 .team-overlay {
   position: fixed;
   inset: 0;
@@ -383,14 +356,14 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;          /* <– important [web:481] */
+  overflow-y: auto;
 }
 
 .team-overlay-inner {
   position: relative;
   max-width: 900px;
   width: 90vw;
-  max-height: 90vh;          /* still caps height on desktop */
+  max-height: 90vh;
   padding: 1.5rem 1.25rem;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 16px;
@@ -413,16 +386,15 @@ html, body {
   z-index: 1;
 }
 
-/* Mobile */
+/* Mobile tweaks for overlays */
 @media (max-width: 600px) {
   .team-overlay.is-visible {
-    align-items: flex-start;  /* start at top so you can scroll everything [web:473][web:480] */
+    align-items: flex-start;
   }
 
   .team-overlay-inner {
     width: 100vw;
     max-width: 100vw;
-    /* remove hard 100vh so full content can extend and be scrolled */
     height: auto;
     max-height: none;
     border-radius: 0;
@@ -439,6 +411,7 @@ html, body {
   object-fit: cover;
 }
 
+/* Project galleries (cards or overlays) */
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -453,7 +426,7 @@ html, body {
   object-fit: cover;
 }
 
-/* Responsive video in modal [web:488][web:490] */
+/* Responsive video in modal */
 .project-video {
   display: block;
   width: 100%;
@@ -462,7 +435,7 @@ html, body {
   border-radius: 10px;
 }
 
-
+/* Shared lightbox */
 .image-lightbox {
   position: fixed;
   inset: 0;
@@ -516,7 +489,7 @@ html, body {
   line-height: 1.4;
 }
 
-/* Optional: tighter layout on small screens */
+/* Lightbox mobile */
 @media (max-width: 600px) {
   .image-lightbox-inner {
     width: 100vw;
