@@ -56,8 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Lightbox for Development images inside Formula popup
 document.addEventListener('DOMContentLoaded', () => {
-  const gallery = document.querySelector('.project-gallery');
+  const formulaOverlay = document.getElementById('formula-overlay');
+  if (!formulaOverlay) return;
+
+  const gallery = formulaOverlay.querySelector('.project-gallery');
   const lightbox = document.getElementById('formula-image-lightbox');
   if (!gallery || !lightbox) return;
 
