@@ -31,7 +31,7 @@ permalink: /experience/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/experience/nasa-coop-hero.jpg' | relative_url }}"
+          src="{{ '/assets/images/experience/nasa-selfie.jpeg' | relative_url }}"
           alt="NASA facility and aircraft."
           class="team-image team-image-nasa"
           data-team-key="nasa-coop"
@@ -39,15 +39,15 @@ permalink: /experience/
       </div>
     </div>
     <div class="team-card-body">
-      <h2>NASA – Engineering Co‑Op</h2>
-      <p class="team-meta">Role: Engineering Co‑Op · Dates: <!-- e.g. Summer 2024 – Spring 2025 --></p>
+      <h2>NASA – Rocket Propulsion Testing Co‑Op</h2>
+      <p class="team-meta">Role: Pathways Co‑Op · Dates: Spring 2023, Summer 2023, Spring 2024</p>
       <p>
-        Briefly describe your NASA Co‑Op here: team or branch, primary mission focus, and how your work contributed (e.g., flight testing, structural analysis, CFD, systems integration).
+        As a Rocket Propulsion Test Engineering co-op in NASA’s Pathways program at Stennis Space Center, I worked as a full-time engineer across three rotations focused on cryogenic fluid systems, test stand integration, and data analysis. My work spanned piping and instrumentation design, system-level modeling, and test operations for liquid-oxygen-based rocket propulsion projects.
       </p>
       <ul>
-        <li>High‑level responsibility or project bullet.</li>
-        <li>Another key technical or ownership bullet.</li>
-        <li>A result, outcome, or impact bullet.</li>
+        <li>Spring 2023 – Created piping sketches (PSK), performed RTD protuberance analysis, and designed LOX pipe supports for a new valve test system.</li>
+        <li>Summer 2023 – Took on more autonomous PSK development, supported LOX transfers as a transfer engineer, and built Flomaster models and test sequences for a liquid oxygen valve test (LVT).</li>
+        <li>Spring 2024 – Completed LVT test data analysis and Cv calculations, updated facilities capability documentation, and contributed to customer-specific thermo-fluids and data analysis tasks.</li>
       </ul>
     </div>
   </section>
@@ -85,26 +85,55 @@ permalink: /experience/
 
       <div class="team-overlay-content">
         <h2>NASA – Engineering Co‑Op</h2>
-        <p class="team-meta">Role: Engineering Co‑Op · Dates: <!-- e.g. Summer 2024 – Spring 2025 --></p>
+        <p class="team-meta">Role: Engineering Co‑Op · Dates: <Spring 2023, Summer 2023, Spring 2024></p>
 
         <!-- Hero image -->
         <img
-          src="{{ '/assets/images/experience/nasa-coop-hero.jpg' | relative_url }}"
-          alt="NASA Co‑Op project hero image."
+          src="{{ '/assets/images/experience/engine-photo.JPG' | relative_url }}"
+          alt="RS-25 Engine."
           class="project-hero-image"
         >
 
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          Longer overview of your NASA Co‑Op: directorate/center, the program or project you supported, high‑level objectives, and how your work fit into those objectives.
+          Across three NASA Pathways rotations at Stennis, I moved from helping define a new liquid oxygen valve test system on paper to supporting cryogenic operations and finally closing the loop with post-test data analysis and facility-level documentation. The experience blended thermo-fluids, structural design, and test operations in a way that closely mirrored how real propulsion projects flow from concept to hardware and test.
         </p>
 
-        <h3>Responsibilities</h3>
+        <h3>Spring 2023 - First Term (Getting Started)</h3>
+        <p>
+        In my first term, I joined the Rocket Propulsion Test group at the very beginning of a new LOX valve project and saw how requirements turn into real piping and hardware. My work focused on building the initial piping sketch, analyzing instrumentation, and designing pipe supports that will be installed on a live test stand.
+        <p>
+        <!-- Key Work -->
+        <h3>Key Work</h3>
         <ul>
-          <li>Responsibility 1 with some technical detail (e.g., analysis method, tool, or test type).</li>
-          <li>Responsibility 2 (e.g., design, integration, data reduction, scripting, or documentation).</li>
-          <li>Responsibility 3 emphasizing ownership, collaboration, or cross‑disciplinary work.</li>
+          <li>Generated a detailed piping sketch (PSK) for a liquid oxygen valve test, coordinating with design engineers and test stand operators to capture flow paths, instrumentation, and purge/bleed lines.</li>
+          <li>Performed protuberance analysis for a Rosemount RTD using ASME standards and PTC 19.3, selecting an insertion length that met stress, resonance, and response-time requirements.</li>
+          <li>Designed and analyzed a LOX pipe support in CREO and AutoPIPE, performing buckling and stress checks (hand calcs and FEA) to meet structural safety margins.</li>
+        </ul>
+
+        <h3>Summer 2023 - Second Term (More Autonomy and Operations)</h3>
+        <p>
+        By my second term, I moved from shadowing to owning more of the design work and also stepped into operations through the technical control center (TCC). I expanded into thermo-fluid system analysis while still building on the piping and test stand understanding from my first rotation.
+        <p>
+        <!-- Key Work -->
+        <h3>Key Work</h3>
+        <ul>
+          <li>Independently developed PSKs for multiple projects (engine schematics, facility and special test equipment drawings), including stand walk-downs to ensure designs matched real hardware and were technician-friendly to install.</li>
+          <li>Shadowed and then acted as a transfer engineer in the TCC, executing a supervised LOX transfer from storage tanks to a customer’s run tank and seeing how design, software, and operations converge on test day.</li>
+          <li>Built Flomaster models and test sequences for the LOX Valve Test (LVT), using fluid property tools (REFPROP) and manufacturer Cv curves to simulate different valve profiles and verify component pressure limits and test cases.</li>
+        </ul>
+
+        <h3>Spring 2024 - Third Term (Closing the Loop)</h3>
+        <p>
+        In my final term, I got to see the LOX Valve Test project through full activation and focused heavily on data analysis and site-level documentation. I also supported additional customer projects that tied together fluid dynamics, heat transfer, and real test data processing.
+        <p>
+        <!-- Key Work -->
+        <h3>Key Work</h3>
+        <ul>
+          <li>Served as a data analysis engineer in the Test Control Center for LVT runs, writing custom Winplot scripts, verifying pre-test “blue lines,” and computing system Cv values from post-test data to compare against manufacturer curves.</li>
+          <li>Updated the Facilities Capability Document by walking down each major test stand, confirming current commodity connections, and documenting capabilities for future business development.</li>
+          <li>Assisted on customer-specific thermo-fluids and data-analysis tasks, including orifice sizing using heat-transfer/flow calculations and developing scripts to flag out-of-family instrumentation during and after tests.</li>
         </ul>
 
         <!-- Small image gallery -->
@@ -141,9 +170,10 @@ permalink: /experience/
           playsinline
         ></video>
 
-        <h3>Results</h3>
-        <p>
-          Summarize key outcomes: what you delivered, improvements or insights gained, and any recognition, publications, or tangible impact from your work.
+        <h3>Overall summary and reflection</h3>
+        <p> Across all three terms, I was able to watch a major LOX valve project progress from initial PSK and instrumentation sizing, through system modeling and sequence development, all the way to cryogenic test data and performance characterization. That full-cycle exposure, combined with hands-on time in the test control center and on stand walk-downs, made the link between classroom thermo-fluids and real rocket test systems very tangible.
+        <br><br>
+    Just as importantly, the co-op showed me how dependent successful tests are on communication between design engineers, operators, technicians, and data analysts. The experience solidified that I enjoy working at the intersection of analysis, hardware, and operations, and it gave me a level of confidence and context that I’ll carry into future roles in propulsion and test engineering.
         </p>
       </div>
     </div>
