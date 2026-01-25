@@ -23,23 +23,22 @@ permalink: /teams/
   </div>
 
   <p>
-    During my time at Texas A&M, I contributed to multiple competitive engineering design teams focused on vehicle and aircraft performance. Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes. Select a team below to explore detailed project work and technical contributions.
+    During my time at Texas A&M, I contributed to multiple competitive engineering design teams focused on vehicle and aircraft performance.
+    Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes.
   </p>
 
   <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
   <section class="team-card">
     <div class="team-card-media">
-      <a href="#"
-            class="team-card-link"
-           data-team="formula-fsae">
-        <img src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}" alt="Formula SAE IC racecar with aerodynamic package">
-      </a>
+      <img src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}" alt="Formula SAE IC racecar with aerodynamic package">
     </div>
     <div class="team-card-body">
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
-      <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024-2025</p>
+      <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
       <p>
-        As part of the 2025 Texas A&M Formula SAE IC team, I contributed to the aerodynamic development and performance validation of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis, carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
+        As part of the 2025 Texas A&M Formula SAE IC team, I contributed to the aerodynamic development and performance validation
+        of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis,
+        carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
       </p>
       <ul>
         <li>Performed full-vehicle CFD analyses to evaluate aerodynamic performance under pitch, roll, and yaw, informing design iterations based on downforce–drag trade-offs.</li>
@@ -52,18 +51,13 @@ permalink: /teams/
   <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <a href="#"
-         class="team-card-link"
-         data-team="aero-2023-2024">
-        <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
-      </a>
+      <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
       <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
       <p>
-        Briefly describe the competition class and mission (payload, flight profile, constraints).
-        As team lead, emphasize both technical oversight and leadership.
+        (Update this section with your final text about the class, mission, and your leadership.)
       </p>
       <ul>
         <li>Coordinated subsystem leads (airframe, structures, propulsion, avionics) and managed schedule and milestones.</li>
@@ -76,17 +70,13 @@ permalink: /teams/
   <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <a href="#"
-   class="team-card-link"
-   data-team="aero-2022-2023">
       <img src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2022–2023">
-      </a>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
       <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
       <p>
-        Summarize the aircraft concept and your responsibility for the overall configuration and detailed design.
+        (Update this section with your summary of the aircraft concept and your configuration/detailed design role.)
       </p>
       <ul>
         <li>Owned the conceptual layout (wing, tail, fuselage), sizing, and major structural decisions.</li>
@@ -99,18 +89,13 @@ permalink: /teams/
   <!-- 4. SAE Aero Design 2021–2022 – Team Member -->
   <section class="team-card">
     <div class="team-card-media">
-      <a href="#"
-         class="team-card-link"
-         data-team="aero-2021-2022">
-        <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
-      </a>
+      <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
       <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
       <p>
-        Introduce this as your first season on the team, where you focused on learning the workflow and contributing
-        to specific tasks (e.g., subcomponent design, fabrication, ground testing).
+        (Update this with your first-season story, tasks, and what you learned.)
       </p>
       <ul>
         <li>Describe 1–2 subsystems or tasks you contributed to (fixtures, components, assembly, testing).</li>
@@ -120,18 +105,4 @@ permalink: /teams/
     </div>
   </section>
 
-
-  <!-- Team detail overlay -->
-  <div class="team-overlay" id="team-overlay">
-    <div class="team-overlay-inner">
-      <button class="team-overlay-close" aria-label="Close details">&times;</button>
-      <div class="team-overlay-content" id="team-overlay-content">
-        <!-- Filled dynamically by JS -->
-      </div>
-    </div>
-  </div>
-
-</div> <!-- end of .main-content -->
-
-
-
+</div>
