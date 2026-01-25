@@ -197,16 +197,15 @@ permalink: /teams/
           (Detailed results here: measured downforce, top speed, lap time gains, competition placement, etc.)
         </p>
       </div>
+    </div>
+  </div>
 
-      <!-- Large image viewer inside Formula overlay -->
-      <div class="image-lightbox" id="formula-image-lightbox">
-        <div class="image-lightbox-inner">
-          <button class="image-lightbox-close" aria-label="Close image">&times;</button>
-          <img src="" alt="" class="image-lightbox-img">
-          <p class="image-lightbox-caption"></p>
-        </div>
-      </div>
-
+  <!-- Large image viewer (global, over everything) -->
+  <div class="image-lightbox" id="formula-image-lightbox">
+    <div class="image-lightbox-inner">
+      <button class="image-lightbox-close" aria-label="Close image">&times;</button>
+      <img src="" alt="" class="image-lightbox-img">
+      <p class="image-lightbox-caption"></p>
     </div>
   </div>
 
