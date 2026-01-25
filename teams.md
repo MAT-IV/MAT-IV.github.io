@@ -24,7 +24,7 @@ permalink: /teams/
 
   <p>
     During my time at Texas A&amp;M, I contributed to multiple competitive engineering design teams focused on vehicle and aircraft performance.
-    Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes.
+    Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes. Select the image of the project for more detail.
   </p>
 
   <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
@@ -53,7 +53,7 @@ permalink: /teams/
     </div>
   </section>
 
-  <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
+  <!-- 2. SAE Aero Design 2023–2024 – Team Advisor -->
   <section class="team-card">
     <div class="team-card-media">
       <div class="project-gallery">
@@ -69,12 +69,12 @@ permalink: /teams/
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
       <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
       <p>
-        (Update this section with your final text about the class, mission, and your leadership.)
+        As Structural and Material Science (SMS) Sub-Team Advisor for the 2023–2024 Texas A&M SAE Aero Design Micro Class team, I mentored the structural leadership while contributing to the design and manufacturing of a Warren-truss fuselage, truss-spar wing, and lightweight empennage for a high-performance aircraft optimized for short takeoff, high payload fraction, and robust stability. My role combined technical coaching on structural architecture and analysis methods with hands-on support in developing manufacturable, test-validated structures aligned with the team’s Key Performance Parameter framework.
       </p>
       <ul>
-        <li>Coordinated subsystem leads (airframe, structures, propulsion, avionics) and managed schedule and milestones.</li>
-        <li>Reviewed design trades, ensured compliance with SAE rules, and led design reviews or test campaigns.</li>
-        <li>Final result: describe how the aircraft performed at competition (flights completed, scoring, lessons learned).</li>
+        <li>Advised the SMS leadership on structural strategy, analysis workflows, and risk-informed decision-making, helping shape fuselage, wing, and empennage architectures around weight, manufacturability, and stability goals.</li>
+        <li>Supported design and validation of the Warren-truss fuselage, truss-spar wing, and integrated horizontal and vertical stabilizers using SkyCiv, SolidWorks FEA, and static testing to meet factor-of-safety and stiffness targets.​</li>
+        <li>Assisted in refining manufacturing methods and test campaigns, including spar and fuselage load testing, connection design, and material selection to reduce empty weight while maintaining reliability.</li>
       </ul>
     </div>
   </section>
@@ -230,29 +230,80 @@ permalink: /teams/
         <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
 
         <img
-          src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
+          src="{{ '/assets/images/sae-aero/23-24/flying-23-24' | relative_url }}"
           alt="SAE Aero Design aircraft 2023–2024"
           class="project-hero-image"
         >
 
+        <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          (Longer overview of the 2023–2024 aircraft concept, mission, and your responsibilities as team lead.)
+          During the 2023–2024 season, the Micro Class aircraft was designed around strict goals for under-25 ft takeoff distance, maximized takeoff and payload-to-empty-weight ratios, and robust stability and control, all guided by clearly defined KPPs and RAPs. The team moved to a Warren-truss fuselage with an upward-tapered boom, a NACA 6412-based flapped wing, and a conventional empennage with flaperons, leveraging a suite of in-house tools and CFD to converge on a light but capable configuration. In my advisor role, I worked primarily with the leadership team to ensure that structural concepts stayed consistent with these performance targets while remaining buildable within schedule and budget constraints.
+          <br><br>
+          On the structural side, I coached the team through major architecture decisions such as selecting and refining the Warren-truss fuselage, integrating plywood wing boxes and payload interfaces, and evolving from box spars to truss spars in the wings to improve strength-to-weight performance. I helped guide their use of SkyCiv and FEA to set preliminary sizing for truss members, ribs, spars, and landing gear, emphasizing consistent factors of safety, realistic load cases, and the importance of matching structural assumptions to aerodynamic loads and dynamic behavior. For the empennage, I assisted as they developed a horizontal stabilizer integrated into the boom and an all-moving vertical stabilizer sized around center-of-pressure location and allowable deflection, ensuring the structures supported the dynamic stability characteristics quantified by the aerodynamics team.
+          <br><br>
+          I also contributed directly to design iteration, testing, and manufacturing practices. This included supporting spar and connector testing that led to switching from 3‑ply poplar to 5‑ply birch at critical joints, advising on the transition from box-beam to truss spars, and helping interpret fuselage profile load tests that enabled lighter mixed-thickness truss members. On the materials and fabrication side, I reinforced best practices around balsa and birch usage, carbon fiber and hardware placement, adhesive selection (e.g., CA vs epoxy), and the use of jigs and laser-cut templates to control geometric accuracy for wings and fuselage assemblies. Throughout the season, I acted as a technical sounding board for the structural leadership, helping them connect simulation results, physical test data, and pilot feedback into coherent structural updates across successive prototypes and the final competition aircraft.
         </p>
 
         <h3>Responsibilities</h3>
         <ul>
-          <li>Coordinated subsystem leads and ensured integration of airframe, structure, propulsion, and avionics.</li>
-          <li>Led design reviews, requirements tracking, and risk management for the competition timeline.</li>
-          <li>Managed test campaigns, flight readiness, and competition logistics.</li>
+          <li>Mentored the SMS leadership team on structural architectures (Warren-truss fuselage, truss-spar wings, integrated tail), analysis tools (SkyCiv, FEA, beam theory), and design reviews, helping align structural decisions with KPP/RAP priorities and flight-score-driven targets.</li>
+          <li>Supported detailed structural design and testing of major components, including truss-spar wings, plywood wing boxes, integrated horizontal and vertical stabilizers, and landing gear, using static load tests and FEA to refine sizing, connections, and factors of safety.</li>
+          <li>Assisted with manufacturing planning and execution by advising on material selection, joint and connector design, jigging and laser-cut processes, and iterative weight-reduction changes informed by fuselage and spar testing across MXP and MCP iterations.</li>
         </ul>
+        
+        <!-- Small image gallery -->
+        <h3>Development images</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/sae-aero/23-24/tech-23-24.jpeg' | relative_url }}"
+            alt="Technical Inspection of the 2023-2024 plane."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Technical Inspection of the 2023-2024 plane."
+          >
+          
+          <img
+            src="{{ '/assets/images/sae-aero/23-24/wing-test-23-24.jpeg' | relative_url }}"
+            alt="Structural test of half wing."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Structural test of half wing."
+          >
+          <img
+            src="{{ '/assets/images/sae-aero/23-24/2024-comp-rebuild.png' | relative_url }}"
+            alt="Rebuild of aircraft after crash at competition."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Rebuild of aircraft after crash at competition."
+          >
+          <img
+            src="{{ '/assets/images/sae-aero/23-24/2024-plane-win.jpeg' | relative_url }}"
+            alt="Me holding Micro Class awards."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Me holding Micro Class awards."
+          >
 
+          <img
+            src="{{ '/assets/images/sae-aero/23-24/winning-23-24.JPG' | relative_url }}"
+            alt="Micro and Regular after two Class sweep!"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Micro and Regular after two Class sweep!"
+          >
+          
+        </div>
+        <!-- GIF or short loop -->
+        <h3>Competition flight of 2023-2024 aircraft.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/sae-aero/23-24/comp-flight-23-24.MOV' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        
         <h3>Results</h3>
         <p>
-          (Details on competition performance, scoring, reliability, and any unique achievements from this season.)
+          (Competition outcome and any notable design successes or lessons learned.)
         </p>
-
-        <!-- Optional: add a gallery here later using .project-gallery -->
       </div>
     </div>
   </div>
@@ -326,8 +377,6 @@ permalink: /teams/
         <p>
           (Competition outcome and any notable design successes or lessons learned.)
         </p>
-
-        <!-- Optional: add a gallery here later using .project-gallery -->
       </div>
     </div>
   </div>
