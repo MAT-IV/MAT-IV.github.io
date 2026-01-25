@@ -349,6 +349,27 @@ html, body {
   width: 96px;
 }
 
+/* Base for all team images */
+.team-image {
+  display: block;
+  width: 220px;
+  max-width: 40vw;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for Formula image */
+.team-image-formula {
+  cursor: pointer;
+}
+
+.team-image-formula:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
+}
+
 .team-overlay {
   position: fixed;
   inset: 0;
@@ -386,7 +407,7 @@ html, body {
   cursor: pointer;
 }
 
-/* Reuse project hero styling inside overlay */
+/* Reuse project hero styling */
 .team-overlay .project-hero-image {
   display: block;
   width: 100%;
@@ -395,5 +416,3 @@ html, body {
   border-radius: 10px;
   object-fit: cover;
 }
-
-
