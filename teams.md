@@ -351,7 +351,7 @@ permalink: /teams/
             data-caption="CAD rendering of the 21-22 competition plane."
           >
           <img
-            src="{{ '/assets/images/formula/sae-aero/21-22/flight-test-21-22.PNG' | relative_url }}"
+            src="{{ '/assets/images/sae-aero/21-22/flight-test-21-22.PNG' | relative_url }}"
             alt="First hand-held launch of the competition aircraft."
             class="project-gallery-img js-lightbox-target"
             data-caption="First hand-held launch of the competition aircraft."
