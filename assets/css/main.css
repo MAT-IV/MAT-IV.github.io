@@ -292,7 +292,7 @@ html, body {
 
 /* UNIFORM CARD IMAGE SIZE – updated */
 .team-card-media {
-  flex: 0 0 300px; /*wide */
+  flex: 0 0 400px; /*wide */
 }
 
 .team-card-media img {
