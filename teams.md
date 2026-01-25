@@ -29,7 +29,11 @@ permalink: /teams/
   <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}" alt="Formula SAE IC racecar with aerodynamic package">
+      <a href="#"
+            class="team-card-link"
+           data-team="formula-fsae">
+        <img src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}" alt="Formula SAE IC racecar with aerodynamic package">
+      </a>
     </div>
     <div class="team-card-body">
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
@@ -48,7 +52,11 @@ permalink: /teams/
   <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
+      <a href="#"
+         class="team-card-link"
+         data-team="aero-2023-2024">
+        <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
+      </a>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
@@ -68,7 +76,11 @@ permalink: /teams/
   <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
   <section class="team-card">
     <div class="team-card-media">
+      <a href="#"
+   class="team-card-link"
+   data-team="aero-2022-2023">
       <img src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2022–2023">
+      </a>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
@@ -87,7 +99,11 @@ permalink: /teams/
   <!-- 4. SAE Aero Design 2021–2022 – Team Member -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
+      <a href="#"
+         class="team-card-link"
+         data-team="aero-2021-2022">
+        <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
+      </a>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
@@ -104,4 +120,18 @@ permalink: /teams/
     </div>
   </section>
 
-</div>
+
+  <!-- Team detail overlay -->
+  <div class="team-overlay" id="team-overlay">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+      <div class="team-overlay-content" id="team-overlay-content">
+        <!-- Filled dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end of .main-content -->
+
+
+
