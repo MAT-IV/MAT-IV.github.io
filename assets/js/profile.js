@@ -26,9 +26,3 @@ window.skipBigBangAndGoHome = function (event) {
   }
   window.location.href = '/';
 };
-
-<script src="{{ '/assets/js/stars.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/orbit.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/bigbang.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/profile.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/teams.js' | relative_url }}"></script>
