@@ -230,7 +230,7 @@ permalink: /teams/
         <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
 
         <img
-          src="{{ '/assets/images/sae-aero/23-24/flying-23-24' | relative_url }}"
+          src="{{ '/assets/images/sae-aero/23-24/flying-23-24.jpg' | relative_url }}"
           alt="SAE Aero Design aircraft 2023–2024"
           class="project-hero-image"
         >
@@ -269,7 +269,7 @@ permalink: /teams/
             data-caption="Structural test of half wing."
           >
           <img
-            src="{{ '/assets/images/sae-aero/23-24/2024-comp-rebuild.png' | relative_url }}"
+            src="{{ '/assets/images/sae-aero/23-24/2024-comp-plane-rebuild.png' | relative_url }}"
             alt="Rebuild of aircraft after crash at competition."
             class="project-gallery-img js-lightbox-target"
             data-caption="Rebuild of aircraft after crash at competition."
@@ -293,13 +293,23 @@ permalink: /teams/
         <h3>Competition flight of 2023-2024 aircraft.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/sae-aero/23-24/comp-flight-23-24.MOV' | relative_url }}"
+          src="{{ '/assets/images/sae-aero/23-24/comp-flight-23-24.mp4' | relative_url }}"
           autoplay
           muted
           loop
           playsinline
         ></video>
         
+        <!-- GIF or short loop -->
+        <h3>Competition weather.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/sae-aero/23-24/rain-23-24.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
         <h3>Results</h3>
         <p>
           (Competition outcome and any notable design successes or lessons learned.)
