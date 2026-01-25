@@ -348,17 +348,6 @@ html, body {
   }
 }
 
-/* Base for all team images */
-.team-image {
-  display: block;
-  width: 220px;
-  max-width: 40vw;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
 /* Hover effect for Formula image */
 .team-image-formula {
   cursor: pointer;
