@@ -292,7 +292,7 @@ html, body {
 
 /* UNIFORM CARD IMAGE SIZE – updated */
 .team-card-media {
-  flex: 0 0 260px;
+  flex: 0 0 300px;
 }
 
 .team-card-media img {
@@ -346,12 +346,18 @@ html, body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect for Formula image (card hero) */
-.team-image-formula {
+/* Hover effect for all team card hero images */
+.team-image-formula,
+.team-image-aero-23-24,
+.team-image-aero-22-23,
+.team-image-aero-21-22 {
   cursor: pointer;
 }
 
-.team-image-formula:hover {
+.team-image-formula:hover,
+.team-image-aero-23-24:hover,
+.team-image-aero-22-23:hover,
+.team-image-aero-21-22:hover {
   transform: scale(1.06);
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
