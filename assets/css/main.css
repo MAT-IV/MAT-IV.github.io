@@ -438,3 +438,26 @@ html, body {
   border-radius: 10px;
   object-fit: cover;
 }
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive video in modal [web:488][web:490] */
+.project-video {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1.25rem;
+  border-radius: 10px;
+}
