@@ -424,13 +424,14 @@ permalink: /teams/
     </div>
   </div>
 
-  <!-- Shared large image viewer (global, over everything) -->
-  <div class="image-lightbox" id="formula-image-lightbox">
-    <div class="image-lightbox-inner">
-      <button class="image-lightbox-close" aria-label="Close image">&times;</button>
-      <img src="" alt="" class="image-lightbox-img">
-      <p class="image-lightbox-caption"></p>
-    </div>
+<!-- Shared large image viewer (global, over everything) -->
+<div class="image-lightbox" id="image-lightbox">
+  <div class="image-lightbox-inner">
+    <button class="image-lightbox-close" aria-label="Close image">&times;</button>
+    <img src="" alt="" class="image-lightbox-img">
+    <p class="image-lightbox-caption"></p>
   </div>
+</div>
+
 
 </div>
