@@ -122,82 +122,92 @@ permalink: /teams/
   </section>
 
   <!-- Formula SAE detail overlay -->
- <div class="team-overlay" id="formula-overlay">
-  <div class="team-overlay-inner">
-    <button class="team-overlay-close" aria-label="Close details">&times;</button>
-    <div class="team-overlay-content">
-      <h2>Formula SAE IC – Aerodynamics</h2>
-      <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
+  <div class="team-overlay" id="formula-overlay">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
 
-      <!-- Hero image -->
-      <img
-        src="{{ '/assets/images/formula/2025 Champ Photo.JPEG' | relative_url }}"
-        alt="Formula SAE IC racecar with aerodynamic package"
-        class="project-hero-image"
-      >
+      <div class="team-overlay-content">
+        <h2>Formula SAE IC – Aerodynamics</h2>
+        <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
 
-      <!-- Overview -->
-      <h3>Overview</h3>
-      <p>
-        As part of my senior capstone, I was a member of the 2025 Texas A&M Formula SAE Internal Combustion design team, where I contributed to the aerodynamic development and performance validation of a Formula-style race car built for international competition. The vehicle was designed and evaluated across a series of static design reviews and dynamic performance events emphasizing acceleration, cornering capability, efficiency, and endurance.
-
-      My primary technical contributions centered on full-vehicle aerodynamic simulation, composite manufacturing, and track-based validation. I conducted CFD analyses of the complete aerodynamic package to evaluate downforce and drag trade-offs under realistic operating conditions, including the effects of pitch, roll, and yaw. These simulations informed iterative design decisions while accounting for manufacturing feasibility, packaging constraints, and integration with the overall vehicle system.
-
-      In parallel, I supported the fabrication and assembly of carbon fiber aerodynamic components and participated in on-track testing to correlate simulation predictions with observed vehicle behavior. This simulation-to-testing workflow was used to refine the aerodynamic package and improve performance in cornering- and endurance-dominated events.
-      </p>
-
-      <!-- Responsibilities -->
-      <h3>Responsibilities</h3>
-      <ul>
-        <li>Full-vehicle CFD under pitch, roll, and yaw to balance downforce and drag.</li>
-        <li>Design and integration of carbon fiber aerodynamic components.</li>
-        <li>Trackside data collection and correlation between CFD and telemetry.</li>
-      </ul>
-
-      <!-- Small image gallery -->
-      <h3>Development images</h3>
-      <div class="project-gallery">
+        <!-- Hero image -->
         <img
-          src="{{ '/assets/images/formula/cfd-side-view-formula.png' | relative_url }}"
-          alt="CFD side view of Formula car showing velocity magnitude"
+          src="{{ '/assets/images/formula/2025 Champ Photo.JPEG' | relative_url }}"
+          alt="Formula SAE IC racecar with aerodynamic package"
+          class="project-hero-image"
         >
-        <img
-          src="{{ '/assets/images/formula/formula-floor-layup.jpg' | relative_url }}"
-          alt="Carbon fiber floor during wet layup construction"
-        >
-        <img
-          src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
-          alt="The 2025 Formula car achieved 100 miles of aero track testing"
-        >
-        <img
-          src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
-          alt="Aerodynamics Design Event Competition Poster"
+
+        <!-- Overview -->
+        <h3>Overview</h3>
+        <p>
+          As part of my senior capstone, I was a member of the 2025 Texas A&amp;M Formula SAE Internal Combustion design team, where I contributed to the aerodynamic development and performance validation of a Formula-style race car built for international competition. The vehicle was designed and evaluated across a series of static design reviews and dynamic performance events emphasizing acceleration, cornering capability, efficiency, and endurance.
+          <br><br>
+          My primary technical contributions centered on full-vehicle aerodynamic simulation, composite manufacturing, and track-based validation. I conducted CFD analyses of the complete aerodynamic package to evaluate downforce and drag trade-offs under realistic operating conditions, including the effects of pitch, roll, and yaw. These simulations informed iterative design decisions while accounting for manufacturing feasibility, packaging constraints, and integration with the overall vehicle system.
+          <br><br>
+          In parallel, I supported the fabrication and assembly of carbon fiber aerodynamic components and participated in on-track testing to correlate simulation predictions with observed vehicle behavior. This simulation-to-testing workflow was used to refine the aerodynamic package and improve performance in cornering- and endurance-dominated events.
+        </p>
+
+        <!-- Responsibilities -->
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Full-vehicle CFD under pitch, roll, and yaw to balance downforce and drag.</li>
+          <li>Design and integration of carbon fiber aerodynamic components.</li>
+          <li>Trackside data collection and correlation between CFD and telemetry.</li>
+        </ul>
+
+        <!-- Small image gallery -->
+        <h3>Development images</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/formula/cfd-side-view-formula.png' | relative_url }}"
+            alt="CFD side view of Formula car showing velocity magnitude"
           >
-        <img
-          src="{{ '/assets/images/formula/EPS-Poster-Full-Car.png' | relative_url }}"
-          alt="Full Car Engineering Project Showcase Poster"
+          <img
+            src="{{ '/assets/images/formula/formula-floor-layup.jpg' | relative_url }}"
+            alt="Carbon fiber floor during wet layup construction"
           >
+          <img
+            src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
+            alt="The 2025 Formula car achieved 100 miles of aero track testing"
+          >
+          <img
+            src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
+            alt="Aerodynamics Design Event Competition Poster"
+          >
+          <img
+            src="{{ '/assets/images/formula/EPS-Poster-Full-Car.png' | relative_url }}"
+            alt="Full Car Engineering Project Showcase Poster"
+          >
+        </div>
+
+        <!-- GIF or short loop -->
+        <h3>Aero visualization - Preliminary side mounted radiator study</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/formula/combined-rad-study.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <!-- Results -->
+        <h3>Results</h3>
+        <p>
+          (Detailed results here: measured downforce, top speed, lap time gains, competition placement, etc.)
+        </p>
       </div>
 
-      <!-- GIF or short loop (better as MP4/WebM) [web:494][web:500] -->
-      <h3>Aero visualization - Preliminary side mounted radiator study</h3>
-      <video
-        class="project-video"
-        src="{{ '/assets/images/formula/combined-rad-study.mp4' | relative_url }}"
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
+      <!-- Large image viewer inside Formula overlay -->
+      <div class="image-lightbox" id="formula-image-lightbox">
+        <div class="image-lightbox-inner">
+          <button class="image-lightbox-close" aria-label="Close image">&times;</button>
+          <img src="" alt="" class="image-lightbox-img">
+          <p class="image-lightbox-caption"></p>
+        </div>
+      </div>
 
-      <!-- Results -->
-      <h3>Results</h3>
-      <p>
-        (Detailed results here: measured downforce, top speed, lap time gains, competition placement, etc.)
-      </p>
     </div>
   </div>
-</div>
-
 
 </div>
