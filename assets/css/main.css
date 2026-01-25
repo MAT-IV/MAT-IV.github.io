@@ -80,7 +80,7 @@ html, body {
   height: 100%;
   pointer-events: none;
   z-index: 3;
-  visibility: hidden;  /* START HIDDEN: only shown after Big Bang */
+  visibility: hidden;
 }
 
 .orbit-item {
@@ -198,6 +198,7 @@ html, body {
   }
 }
 
+/* Resume download button */
 .resume-download {
   display: inline-block;
   padding: 0.4rem 0.8rem;
@@ -239,7 +240,7 @@ html, body {
 .pdf-container {
   position: relative;
   width: 100%;
-  padding-bottom: 129%;  /* Aspect ratio: ~8.5x11 inches */
+  padding-bottom: 129%;  /* ~8.5x11 aspect */
   height: 0;
   overflow: hidden;
   border-radius: 8px;
@@ -256,7 +257,7 @@ html, body {
   border-radius: 8px;
 }
 
-/* Mobile adjustments */
+/* Mobile PDF tweaks */
 @media (max-width: 768px) {
   .pdf-container {
     max-width: 100vw;
@@ -281,12 +282,11 @@ html, body {
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
 }
 
-/* Per-page sizes */
+/* Per-page ship sizes */
 .back-ship-resume img {
   width: 60px;
 }
 
-/* Design Teams ship size */
 .back-ship-teams img {
   width: 96px;
 }
@@ -310,19 +310,42 @@ html, body {
   margin: 0;
 }
 
-/* Design team cards */
-/* Base for all team images – uniform size */
+/* ===== Design Teams page ===== */
+
+/* Card layout */
+.team-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* Uniform media column + image size */
 .team-card-media {
-  flex: 0 0 260px;       /* fixed media column width for all cards */
+  flex: 0 0 260px;
 }
 
 .team-image {
   display: block;
-  width: 100%;           /* fill the media column */
-  height: 180px;         /* fixed height so all cards line up */
+  width: 100%;
+  height: 180px;
   border-radius: 8px;
-  object-fit: cover;     /* crop instead of distort */
+  object-fit: cover;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover for hero images that open overlays */
+.js-team-hero {
+  cursor: pointer;
+}
+
+.js-team-hero:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
 
 .team-card-body h2 {
@@ -342,20 +365,15 @@ html, body {
     flex-direction: column;
   }
 
+  .team-card-media {
+    flex: 0 0 auto;
+  }
+
   .team-card-media img {
     width: 100%;
     max-width: 100%;
+    height: auto;
   }
-}
-
-/* Hover effect for Formula image */
-.team-image-formula {
-  cursor: pointer;
-}
-
-.team-image-formula:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
 
 /* Team detail overlays */
@@ -417,7 +435,7 @@ html, body {
   }
 }
 
-/* Reuse project hero styling */
+/* Hero image inside overlay, if you use one */
 .team-overlay .project-hero-image {
   display: block;
   width: 100%;
@@ -427,7 +445,7 @@ html, body {
   object-fit: cover;
 }
 
-/* Project galleries (cards or overlays) */
+/* Project galleries */
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -435,11 +453,23 @@ html, body {
   margin-bottom: 1.25rem;
 }
 
+/* Base gallery image */
 .project-gallery img {
   width: 100%;
   display: block;
   border-radius: 8px;
   object-fit: cover;
+}
+
+/* Gallery images that open lightbox */
+.project-gallery-img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-gallery-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
 }
 
 /* Responsive video in modal */
