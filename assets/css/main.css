@@ -311,24 +311,18 @@ html, body {
 }
 
 /* Design team cards */
-.team-card {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  padding: 1rem 1.2rem;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.65);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
+/* Base for all team images – uniform size */
+.team-card-media {
+  flex: 0 0 260px;       /* fixed media column width for all cards */
 }
 
-.team-card-media img {
+.team-image {
   display: block;
-  width: 220px;
-  max-width: 40vw;
-  height: auto;
+  width: 100%;           /* fill the media column */
+  height: 180px;         /* fixed height so all cards line up */
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: cover;     /* crop instead of distort */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .team-card-body h2 {
