@@ -13,7 +13,7 @@ permalink: /resume/
          class="back-ship back-ship-resume"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
-        <img src="{{ '/assets/images/x-wing.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/back-ship/x-wing.png' | relative_url }}" alt="">
       </a>
     </div>
 
