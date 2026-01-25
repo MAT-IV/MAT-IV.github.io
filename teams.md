@@ -337,6 +337,7 @@ permalink: /teams/
             class="project-gallery-img js-lightbox-target"
             data-caption="Experimental Plane post first flight test."
           >
+          
           <img
             src="{{ '/assets/images/sae-aero/21-22/bare-jig-21-22.JPG' | relative_url }}"
             alt="Structural" constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional               tolerance."
