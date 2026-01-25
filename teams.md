@@ -342,7 +342,7 @@ permalink: /teams/
         <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
 
         <img
-          src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
+          src="{{ '/assets/images/sae-aero/21-22/plane-2021-2022.JPG' | relative_url }}"
           alt="SAE Aero Design aircraft 2021–2022"
           class="project-hero-image"
         >
