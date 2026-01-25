@@ -131,7 +131,7 @@ permalink: /teams/
 
       <!-- Hero image -->
       <img
-        src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}"
+        src="{{ '/assets/images/formula/2025 Champ Photo.JPEG' | relative_url }}"
         alt="Formula SAE IC racecar with aerodynamic package"
         class="project-hero-image"
       >
@@ -158,17 +158,25 @@ permalink: /teams/
       <h3>Development images</h3>
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/formula-cfd-side.png' | relative_url }}"
-          alt="CFD side view of Formula car"
+          src="{{ '/assets/images/formula/cfd-side-view-formula.png' | relative_url }}"
+          alt="CFD side view of Formula car showing velocity magnitude"
         >
         <img
-          src="{{ '/assets/images/formula-wing-mold.jpg' | relative_url }}"
-          alt="Carbon fiber wing mold during layup"
+          src="{{ '/assets/images/formula/formula-floor-layup.jpg' | relative_url }}"
+          alt="Carbon fiber floor during wet layup construction"
         >
         <img
-          src="{{ '/assets/images/formula-track-testing.jpg' | relative_url }}"
-          alt="Formula car during track testing"
+          src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
+          alt="The 2025 Formula car achieved 100 miles of aero track testing"
         >
+        <img
+          src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
+          alt="Aerodynamics Design Event Competition Poster"
+          >
+        <img
+          src="{{ '/assets/images/formula/EPS-Poster-Full-Car.png' | relative_url }}"
+          alt="Full Car Engineering Project Showcase Poster"
+          >
       </div>
 
       <!-- GIF or short loop (better as MP4/WebM) [web:494][web:500] -->
