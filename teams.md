@@ -27,15 +27,17 @@ permalink: /teams/
     Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes.
   </p>
 
-  <!-- 1. Formula SAE IC – Aerodynamics -->
+  <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/formula/team-formula-aero.jpg' | relative_url }}"
-        alt="Formula SAE IC racecar with aerodynamic package"
-        class="team-image js-team-hero"
-        data-team-key="formula-ic"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/formula/team-formula-aero.jpg' | relative_url }}"
+          alt="Formula SAE IC racecar with aerodynamic package"
+          class="team-image team-image-formula"
+          data-team-key="formula-ic"
+        >
+      </div>
     </div>
     <div class="team-card-body">
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
@@ -50,19 +52,20 @@ permalink: /teams/
         <li>Supported fabrication and integration of carbon fiber aerodynamic components, with emphasis on manufacturability and structural reliability.</li>
         <li>Participated in on-track testing to correlate simulation results with vehicle behavior and refine performance for cornering- and endurance-focused events.</li>
       </ul>
-      <button class="resume-download js-team-open" data-team-key="formula-ic">View project details</button>
     </div>
   </section>
 
   <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
-        alt="SAE Aero Design aircraft 2023–2024"
-        class="team-image js-team-hero"
-        data-team-key="sae-aero-23-24"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2023–2024"
+          class="team-image team-image-aero-23-24"
+          data-team-key="aero-23-24"
+        >
+      </div>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
@@ -72,179 +75,270 @@ permalink: /teams/
       </p>
       <ul>
         <li>Coordinated subsystem leads (airframe, structures, propulsion, avionics) and managed schedule and milestones.</li>
-        <li>Reviewed design trades, ensured compliance with SAE rules, and led the team through competition preparation and test flights.</li>
-        <li>Integrated feedback from flight tests into final design refinements and documentation.</li>
+        <li>Reviewed design trades, ensured compliance with SAE rules, and led design reviews or test campaigns.</li>
+        <li>Final result: describe how the aircraft performed at competition (flights completed, scoring, lessons learned).</li>
       </ul>
-      <button class="resume-download js-team-open" data-team-key="sae-aero-23-24">View project details</button>
     </div>
   </section>
 
-  <!-- 3. SAE Aero Design 2022–2023 – Structures, etc. -->
+  <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
-        alt="SAE Aero Design aircraft 2022–2023"
-        class="team-image js-team-hero"
-        data-team-key="sae-aero-22-23"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2022–2023"
+          class="team-image team-image-aero-22-23"
+          data-team-key="aero-22-23"
+        >
+      </div>
     </div>
     <div class="team-card-body">
-      <h2>SAE Aero Design – Structures &amp; Testing</h2>
-      <p class="team-meta">Role: Structures · Season: 2022–2023</p>
+      <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
+      <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
       <p>
-        (Update this section with your description of the structures role, analysis, and testing contributions.)
+        (Update this section with your summary of the aircraft concept and your configuration/detailed design role.)
       </p>
       <ul>
-        <li>Developed structural sizing and margins for primary airframe members.</li>
-        <li>Helped define test plans to validate structural performance under expected flight loads.</li>
-        <li>Supported manufacturing and repairs during the build season and competition.</li>
+        <li>Owned the conceptual layout (wing, tail, fuselage), sizing, and major structural decisions.</li>
+        <li>Produced or reviewed CAD models, weight estimates, and basic performance calculations.</li>
+        <li>Final result: competition outcome and any notable design achievements or reliability improvements.</li>
       </ul>
-      <button class="resume-download js-team-open" data-team-key="sae-aero-22-23">View project details</button>
     </div>
   </section>
 
-  <!-- ===== Overlays for each team ===== -->
-
-  <!-- Formula IC overlay -->
-  <div class="team-overlay" data-team="formula-ic">
-    <div class="team-overlay-inner">
-      <button class="team-overlay-close" type="button" aria-label="Close Formula IC details">&times;</button>
-
-      <h2>Formula SAE IC – Aerodynamics</h2>
-      <p class="team-meta">Season 2024–2025 · Role: Full Car Aerodynamics</p>
-
-      <img
-        src="{{ '/assets/images/formula/team-formula-aero.jpg' | relative_url }}"
-        alt="Formula SAE IC racecar with aerodynamic package"
-        class="project-hero-image"
-      >
-
-      <p>
-        (Long-form description of your aero workflow, vehicle targets, CFD process, and competition results.)
-      </p>
-
-      <h3>Development images</h3>
+  <!-- 4. SAE Aero Design 2021–2022 – Team Member -->
+  <section class="team-card">
+    <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/formula/dev/cfd-wing-1.png' | relative_url }}"
-          alt="Front wing CFD iteration 1"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="CFD iteration 1 – front wing pressure distribution"
-        >
-        <img
-          src="{{ '/assets/images/formula/dev/cfd-wing-2.png' | relative_url }}"
-          alt="Front wing CFD iteration 2"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="CFD iteration 2 – refined endplate geometry"
-        >
-        <img
-          src="{{ '/assets/images/formula/dev/aero-package.png' | relative_url }}"
-          alt="Full aero package visualization"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="Full-vehicle aero package visualization"
-        >
-      </div>
-
-      <!-- Example video, optional -->
-      <!--
-      <video class="project-video" controls>
-        <source src="{{ '/assets/videos/formula/aero-walkthrough.mp4' | relative_url }}" type="video/mp4">
-      </video>
-      -->
-    </div>
-  </div>
-
-  <!-- SAE Aero 23–24 overlay -->
-  <div class="team-overlay" data-team="sae-aero-23-24">
-    <div class="team-overlay-inner">
-      <button class="team-overlay-close" type="button" aria-label="Close SAE Aero 23–24 details">&times;</button>
-
-      <h2>SAE Aero Design – 2023–2024</h2>
-      <p class="team-meta">Season 2023–2024 · Role: Team Lead</p>
-
-      <img
-        src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
-        alt="SAE Aero Design aircraft 2023–2024"
-        class="project-hero-image"
-      >
-
-      <p>
-        (Long-form description of the mission, leadership responsibilities, system integration, and competition performance.)
-      </p>
-
-      <h3>Development images</h3>
-      <div class="project-gallery">
-        <img
-          src="{{ '/assets/images/sae-aero/23-24/dev-wing-layout.png' | relative_url }}"
-          alt="Wing planform concept"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="Early wing planform layout for payload mission."
-        >
-        <img
-          src="{{ '/assets/images/sae-aero/23-24/dev-cad.png' | relative_url }}"
-          alt="CAD of airframe assembly"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="CAD assembly of primary airframe structure."
-        >
-        <img
-          src="{{ '/assets/images/sae-aero/23-24/dev-flight-test.png' | relative_url }}"
-          alt="Flight test image"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="Flight testing to validate takeoff distance and climb performance."
+          src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
+          alt="SAE Aero Design aircraft 2021–2022"
+          class="team-image team-image-aero-21-22"
+          data-team-key="aero-21-22"
         >
       </div>
     </div>
-  </div>
-
-  <!-- SAE Aero 22–23 overlay -->
-  <div class="team-overlay" data-team="sae-aero-22-23">
-    <div class="team-overlay-inner">
-      <button class="team-overlay-close" type="button" aria-label="Close SAE Aero 22–23 details">&times;</button>
-
-      <h2>SAE Aero Design – 2022–2023</h2>
-      <p class="team-meta">Season 2022–2023 · Role: Structures &amp; Testing</p>
-
-      <img
-        src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
-        alt="SAE Aero Design aircraft 2022–2023"
-        class="project-hero-image"
-      >
-
+    <div class="team-card-body">
+      <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
+      <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
       <p>
-        (Long-form description of structural analysis, materials, and test work.)
+        (Update this with your first-season story, tasks, and what you learned.)
       </p>
+      <ul>
+        <li>Describe 1–2 subsystems or tasks you contributed to (fixtures, components, assembly, testing).</li>
+        <li>Highlight what you learned that prepared you for design/lead roles in later seasons.</li>
+        <li>Final result: aircraft performance and competition experience.</li>
+      </ul>
+    </div>
+  </section>
 
-      <h3>Development images</h3>
-      <div class="project-gallery">
+  <!-- Formula SAE detail overlay -->
+  <div class="team-overlay" id="formula-overlay" data-team="formula-ic">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>Formula SAE IC – Aerodynamics</h2>
+        <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
+
+        <!-- Hero image -->
         <img
-          src="{{ '/assets/images/sae-aero/22-23/dev-spar-analysis.png' | relative_url }}"
-          alt="Wing spar analysis"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="Wing spar sizing and margin of safety checks."
+          src="{{ '/assets/images/formula/2025 Champ Photo.JPEG' | relative_url }}"
+          alt="Formula SAE IC racecar with aerodynamic package"
+          class="project-hero-image"
         >
-        <img
-          src="{{ '/assets/images/sae-aero/22-23/dev-fuselage-layout.png' | relative_url }}"
-          alt="Fuselage layout"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="Fuselage layout balancing structure and payload volume."
-        >
-        <img
-          src="{{ '/assets/images/sae-aero/22-23/dev-static-test.png' | relative_url }}"
-          alt="Static load test"
-          class="project-gallery-img js-lightbox-target"
-          data-caption="Static load testing of wing and landing gear."
-        >
+
+        <!-- Overview -->
+        <h3>Overview</h3>
+        <p>
+          As part of my senior capstone, I was a member of the 2025 Texas A&amp;M Formula SAE Internal Combustion design team, where I contributed to the aerodynamic development and performance validation of a Formula-style race car built for international competition. The vehicle was designed and evaluated across a series of static design reviews and dynamic performance events emphasizing acceleration, cornering capability, efficiency, and endurance.
+          <br><br>
+          My primary technical contributions centered on full-vehicle aerodynamic simulation, composite manufacturing, and track-based validation. I conducted CFD analyses of the complete aerodynamic package to evaluate downforce and drag trade-offs under realistic operating conditions, including the effects of pitch, roll, and yaw. These simulations informed iterative design decisions while accounting for manufacturing feasibility, packaging constraints, and integration with the overall vehicle system.
+          <br><br>
+          In parallel, I supported the fabrication and assembly of carbon fiber aerodynamic components and participated in on-track testing to correlate simulation predictions with observed vehicle behavior. This simulation-to-testing workflow was used to refine the aerodynamic package and improve performance in cornering- and endurance-dominated events.
+        </p>
+
+        <!-- Responsibilities -->
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Full-vehicle CFD under pitch, roll, and yaw to balance downforce and drag.</li>
+          <li>Design and integration of carbon fiber aerodynamic components.</li>
+          <li>Trackside data collection and correlation between CFD and telemetry.</li>
+        </ul>
+
+        <!-- Small image gallery -->
+        <h3>Development images</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/formula/cfd-side-view-formula.png' | relative_url }}"
+            alt="CFD side view of Formula car showing velocity magnitude"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="CFD side view of Formula car showing velocity magnitude."
+          >
+          <img
+            src="{{ '/assets/images/formula/formula-floor-layup.jpg' | relative_url }}"
+            alt="Carbon fiber floor during wet layup construction"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Carbon fiber floor during wet layup construction."
+          >
+          <img
+            src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
+            alt="The 2025 Formula car achieved 100 miles of aero track testing"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="The 2025 Formula car achieved 100 miles of aero track testing."
+          >
+          <img
+            src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
+            alt="Aerodynamics Design Event Competition Poster"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Aerodynamics Design Event Competition Poster."
+          >
+          <img
+            src="{{ '/assets/images/formula/EPS-Poster-Full-Car.png' | relative_url }}"
+            alt="Full Car Engineering Project Showcase Poster"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Full Car Engineering Project Showcase Poster."
+          >
+        </div>
+
+        <!-- GIF or short loop -->
+        <h3>Aero visualization - Preliminary side mounted radiator study</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/formula/combined-rad-study.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <!-- Results -->
+        <h3>Results</h3>
+        <p>
+          (Detailed results here: measured downforce, top speed, lap time gains, competition placement, etc.)
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- Shared image lightbox (used by all galleries) -->
-  <div class="image-lightbox" aria-hidden="true">
+  <!-- SAE Aero 2023–2024 detail overlay -->
+  <div class="team-overlay" id="aero-23-24-overlay" data-team="aero-23-24">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>SAE Aero Design – Team Lead</h2>
+        <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
+
+        <img
+          src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2023–2024"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Longer overview of the 2023–2024 aircraft concept, mission, and your responsibilities as team lead.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Coordinated subsystem leads and ensured integration of airframe, structure, propulsion, and avionics.</li>
+          <li>Led design reviews, requirements tracking, and risk management for the competition timeline.</li>
+          <li>Managed test campaigns, flight readiness, and competition logistics.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Details on competition performance, scoring, reliability, and any unique achievements from this season.)
+        </p>
+
+        <!-- Optional: add a gallery here later using .project-gallery -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAE Aero 2022–2023 detail overlay -->
+  <div class="team-overlay" id="aero-22-23-overlay" data-team="aero-22-23">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>SAE Aero Design – Design Lead</h2>
+        <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
+
+        <img
+          src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2022–2023"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Overview of the 2022–2023 aircraft, mission profile, and your design goals.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Owned conceptual layout, aerodynamic configuration, and structural sizing.</li>
+          <li>Developed and reviewed CAD, weight estimates, and performance predictions.</li>
+          <li>Worked with manufacturing to ensure designs were buildable and competition-compliant.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Competition outcome and any notable design successes or lessons learned.)
+        </p>
+
+        <!-- Optional: add a gallery here later using .project-gallery -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SAE Aero 2021–2022 detail overlay -->
+  <div class="team-overlay" id="aero-21-22-overlay" data-team="aero-21-22">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>SAE Aero Design – Team Member</h2>
+        <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
+
+        <img
+          src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
+          alt="SAE Aero Design aircraft 2021–2022"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Overview of your first season on the team and what the aircraft was designed to do.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Contributed to component fabrication, assembly, and ground testing.</li>
+          <li>Supported subsystem leads with fixtures, repairs, or documentation as needed.</li>
+          <li>Built foundational skills that enabled later design and leadership roles.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Competition performance and key takeaways from your first year.)
+        </p>
+
+        <!-- Optional: add a gallery here later using .project-gallery -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared large image viewer (global, over everything) -->
+  <div class="image-lightbox" id="formula-image-lightbox">
     <div class="image-lightbox-inner">
-      <button class="image-lightbox-close" type="button" aria-label="Close image">&times;</button>
+      <button class="image-lightbox-close" aria-label="Close image">&times;</button>
       <img src="" alt="" class="image-lightbox-img">
-      <div class="image-lightbox-caption"></div>
+      <p class="image-lightbox-caption"></p>
     </div>
   </div>
 
