@@ -28,32 +28,40 @@ window.skipBigBangAndGoHome = function (event) {
 };
 
 
-// Formula image -> open details overlay on Teams page
-document.addEventListener('DOMContentLoaded', () => {
-  const formulaImg = document.querySelector('.team-image-formula');
-  const formulaOverlay = document.getElementById('formula-overlay');
-  if (!formulaImg || !formulaOverlay) return;
+// Generic helper to wire a card image to an overlay
+function attachTeamOverlay(triggerSelector, overlayId) {
+  const trigger = document.querySelector(triggerSelector);
+  const overlay = document.getElementById(overlayId);
+  if (!trigger || !overlay) return;
 
-  const closeBtn = formulaOverlay.querySelector('.team-overlay-close');
+  const closeBtn = overlay.querySelector('.team-overlay-close');
 
-  // Open overlay on click
-  formulaImg.addEventListener('click', () => {
-    formulaOverlay.classList.add('is-visible');
+  // Open overlay on card image click
+  trigger.addEventListener('click', () => {
+    overlay.classList.add('is-visible');
   });
 
-  // Close overlay on close button
+  // Close on X
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      formulaOverlay.classList.remove('is-visible');
+      overlay.classList.remove('is-visible');
     });
   }
 
-  // Close overlay when clicking the dark background
-  formulaOverlay.addEventListener('click', (e) => {
-    if (e.target === formulaOverlay) {
-      formulaOverlay.classList.remove('is-visible');
+  // Close when clicking the dark background
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('is-visible');
     }
   });
+}
+
+// Wire up all team overlays
+document.addEventListener('DOMContentLoaded', () => {
+  attachTeamOverlay('.team-image-formula', 'formula-overlay');
+  attachTeamOverlay('.team-image-aero-23-24', 'aero-23-24-overlay');
+  attachTeamOverlay('.team-image-aero-22-23', 'aero-22-23-overlay');
+  attachTeamOverlay('.team-image-aero-21-22', 'aero-21-22-overlay');
 });
 
 // Lightbox for Development images inside Formula popup
