@@ -43,9 +43,7 @@ permalink: /teams/
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
       <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
       <p>
-        As part of the 2025 Texas A&amp;M Formula SAE IC team, I contributed to the aerodynamic development and performance validation
-        of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis,
-        carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
+        As part of the 2025 Texas A&amp;M Formula SAE IC team, I contributed to the aerodynamic development and performance validation of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis, carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
       </p>
       <ul>
         <li>Performed full-vehicle CFD analyses to evaluate aerodynamic performance under pitch, roll, and yaw, informing design iterations based on downforce–drag trade-offs.</li>
@@ -81,7 +79,7 @@ permalink: /teams/
     </div>
   </section>
 
-  <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
+  <!-- 3. SAE Aero Design 2022–2023 – Structural and Material Science Product Owner -->
   <section class="team-card">
     <div class="team-card-media">
       <div class="project-gallery">
@@ -97,12 +95,12 @@ permalink: /teams/
       <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
       <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
       <p>
-        (Update this section with your summary of the aircraft concept and your configuration/detailed design role.)
+        As Product Owner for the 2022–2023 Texas A&M SAE Aero Design Micro Class Structural and Material Science sub-team, I led a   team of eight engineers in designing the internal structure, materials strategy, and test program for a high-performance delta-wing, lifting-fuselage aircraft optimized for flight score, reliability, and manufacturability under strict ruleset constraints. My work focused on coordinating cross-functional design decisions with the aerodynamics and project management teams, driving high-level structural trade studies, and ensuring that structural concepts met performance, risk, and factor-of-safety targets established by the team’s key performance parameter framework.
       </p>
       <ul>
-        <li>Owned the conceptual layout (wing, tail, fuselage), sizing, and major structural decisions.</li>
-        <li>Produced or reviewed CAD models, weight estimates, and basic performance calculations.</li>
-        <li>Final result: competition outcome and any notable design achievements or reliability improvements.</li>
+        <li>Led the eight-member structural and materials sub-team, planning and running Scrum-based design and manufacturing meetings, tracking risk items, and aligning sub-team tasks with overall project milestones and design reviews.</li>
+        <li>Coordinated interfaces between structural design and aerodynamics, including interrupted-spar and lifting-fuselage concepts, attachment schemes, and material selections to satisfy lift, payload, and manufacturability constraints.</li>
+        <li>Drove high-level trade studies on wing structure, fuselage truss layouts, stabilizer architectures, landing gear concepts, and material choices using topology optimization, FEA, and static/dynamic testing to balance weight, strength, and build complexity.</li>
       </ul>
     </div>
   </section>
@@ -269,23 +267,61 @@ permalink: /teams/
         <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
 
         <img
-          src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
+          src="{{ '/assets/images/sae-aero/22-23/2023-plane.jpeg' | relative_url }}"
           alt="SAE Aero Design aircraft 2022–2023"
           class="project-hero-image"
         >
 
+        <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          (Overview of the 2022–2023 aircraft, mission profile, and your design goals.)
+          In the 2022–2023 season, the Micro Class aircraft was developed around a delta wing with a lifting fuselage designed to carry three large boxes and 1.5 lb of steel payload, achieving a projected flight score of 33.07 under representative Fort Worth conditions. As Structural and Material Science Product Owner, I was responsible for translating the aerodynamics and scoring-driven outer mold line into a realizable internal structure that met the team’s key performance parameters—8 ft takeoff, high MTOW-to-empty-weight ratio, robust stability and control, and manufacturability—while also satisfying risk assessment metrics related to flight conditions, design integrity, and schedule. This role required balancing technical depth with systems-level oversight, ensuring that structural decisions supported the high-speed, short-duration flight profile and the team’s iterative development process.
+          <br><br>
+          On the technical side, I oversaw structural architecture choices such as interrupted spars to accommodate 12 inch payload boxes, rib and spar placement based on CFD-derived lift distributions, box-spar and pseudo-spar concepts for stiffness, and a modular space-truss fuselage designed around lift and thrust load paths. I guided the team through trade studies comparing swept versus non-swept spars, flat-plate versus thicker wing profiles, and different nose and tail constructions, using topology optimization, FEA, and simplified analytical models to target a minimum factor of safety of 1.5 where feasible. For the tail surfaces and canard–horizontal stabilizer system, I supported structural schemes (box beams, rib spacing, spar locations) tailored to the aerodynamics team’s stability requirements and incidence settings while preserving manufacturability and weight targets.
+          <br><br>
+          I also led the planning and interpretation of structural and materials testing to validate and refine the design. This included static loading of ribs, spars, fuselage profiles, and tail components to failure, dynamic fatigue testing of spars under oscillatory loading, and comparative testing of fuselage truss members and landing gear concepts to inform weight reductions from MXP-1 to MCP-1. On the materials side, I oversaw the use and placement of low-density balsa, birch ply, foam and thermoplastic cores, carbon fiber, and hardware, tying material choices to risk (imperfections, buckling, fatigue) and manufacturability while keeping empty weight near 3.13 lb to preserve payload fraction. Throughout, I served as the primary point of contact between structures, aerodynamics, and project management, ensuring that structural changes, test findings, and risk assessments were communicated clearly and incorporated into team-wide design reviews and iteration plans.
         </p>
 
         <h3>Responsibilities</h3>
         <ul>
-          <li>Owned conceptual layout, aerodynamic configuration, and structural sizing.</li>
-          <li>Developed and reviewed CAD, weight estimates, and performance predictions.</li>
-          <li>Worked with manufacturing to ensure designs were buildable and competition-compliant.</li>
+          <li>Managed the eight-person Structural and Material Science sub-team, organizing Scrum-style sprints, delegating structural tasks (ribs, spars, fuselage, empennage, landing gear, materials), and ensuring alignment with KPP priorities and competition schedule.</li>
+          <li>Led structural trade studies and high-level architecture decisions, including interrupted-spar wings, flat-plate delta wing structure, space-truss fuselage, box-beam stabilizers, and landing gear concepts, using topology optimization, FEA, and analytical sizing to meet factor-of-safety and weight targets.</li>
+          <li>Coordinated cross-team interfaces by mediating between aerodynamic design (OML, airfoils, stability targets) and structural implementation (attachments, materials, testing), and by integrating structural test results into subsequent aerodynamic and systems-level design iterations.</li>
         </ul>
-
+        
+        <!-- Small image gallery -->
+        <h3>Development images</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/sae-aero/22-23/22-23-empty-shell.jpeg' | relative_url }}"
+            alt="Bare structure of 2022-2023 plane."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Bare structure of 2022-2023 plane."
+          >
+          
+          <img
+            src="{{ '/assets/images/sae-aero/22-23/root-test-22-23.jpeg' | relative_url }}"
+            alt="Structural test of discontinuous wing spar."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Structural test of discontinuous wing spar."
+          >
+          <img
+            src="{{ '/assets/images/sae-aero/22-23/post-flight-test-22-23.jpeg' | relative_url }}"
+            alt="Aftermath of first experimental aircraft flight test."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Aftermath of first experimental aircraft flight test."
+          >
+        </div>
+        <!-- GIF or short loop -->
+        <h3>Flight test of 22-23 experimental aircraft.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/sae-aero/22-23/flight-test-22-23.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
         <h3>Results</h3>
         <p>
           (Competition outcome and any notable design successes or lessons learned.)
@@ -314,7 +350,7 @@ permalink: /teams/
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          As a member of the structural and material science sub-team for the Texas A&M SAE Aero Design Micro Class entry, I worked on an aircraft designed to maximize flight score through short-takeoff performance, high payload fraction, and rapid loading within the SAE ruleset. The airframe featured a biplane wing configuration, prismatic fuselage truss, and rear cargo loading architecture, all tailored to carry multiple payload box configurations and steel plate weight while remaining stable and controllable across a range of wind conditions. My responsibilities centered on turning these system-level goals into robust structural solutions that could be iterated quickly under the team’s Agile-based development process.
+          As a member of the structural and material science sub-team for the Texas A&M SAE Aero Design Micro Class, I worked on an aircraft designed to maximize flight score through short-takeoff performance, high payload fraction, and rapid loading within the SAE ruleset. The airframe featured a biplane wing configuration, prismatic fuselage truss, and rear cargo loading architecture, all tailored to carry multiple payload box configurations and steel plate weight while remaining stable and controllable across a range of wind conditions. My responsibilities centered on turning these system-level goals into robust structural solutions that could be iterated quickly under the team’s Agile-based development process.
           <br><br>
           Within the wing and empennage, I supported structural layouts that combined analytical sizing with simulation and testing to achieve targeted stiffness and safety factors. This included applying Euler–Bernoulli beam theory and shear-flow methods to size spars and shear webs, using CFD-derived lift distributions as input loads, and then validating and refining these concepts in SolidWorks-based FEA and designed experiments. For the empennage, I contributed to redesign efforts following early aeroelastic issues, helping move toward stiffer box-spar concepts and material choices that kept twist and deflection within acceptable limits for control authority.
           <br><br>
@@ -340,7 +376,7 @@ permalink: /teams/
           
           <img
             src="{{ '/assets/images/sae-aero/21-22/bare-jig-21-22.JPG' | relative_url }}"
-            alt="Structural" constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional               tolerance."
+            alt="Structural constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional tolerance."
             class="project-gallery-img js-lightbox-target"
             data-caption="Structural" constrcution of an experimental version of the plane using aluminum extrusion to maintain                  dimensional tolerance."
           >
@@ -383,7 +419,6 @@ permalink: /teams/
           (Competition performance and key takeaways from your first year.)
         </p>
 
-        <!-- Optional: add a gallery here later using .project-gallery -->
       </div>
     </div>
   </div>
