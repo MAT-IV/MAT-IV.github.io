@@ -58,7 +58,7 @@ permalink: /teams/
       <img
         src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
         alt="SAE Aero Design aircraft 2023–2024"
-        class="team-image"
+        class="team-image team-image-aero-23-24"
       >
     </div>
     <div class="team-card-body">
@@ -81,7 +81,7 @@ permalink: /teams/
       <img
         src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
         alt="SAE Aero Design aircraft 2022–2023"
-        class="team-image"
+        class="team-image team-image-aero-22-23"
       >
     </div>
     <div class="team-card-body">
@@ -104,7 +104,7 @@ permalink: /teams/
       <img
         src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
         alt="SAE Aero Design aircraft 2021–2022"
-        class="team-image"
+        class="team-image team-image-aero-21-22"
       >
     </div>
     <div class="team-card-body">
@@ -195,6 +195,111 @@ permalink: /teams/
         <h3>Results</h3>
         <p>
           (Detailed results here: measured downforce, top speed, lap time gains, competition placement, etc.)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAE Aero 2023–2024 detail overlay -->
+  <div class="team-overlay" id="aero-23-24-overlay">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>SAE Aero Design – Team Lead</h2>
+        <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
+
+        <img
+          src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2023–2024"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Longer overview of the 2023–2024 aircraft concept, mission, and your responsibilities as team lead.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Coordinated subsystem leads and ensured integration of airframe, structure, propulsion, and avionics.</li>
+          <li>Led design reviews, requirements tracking, and risk management for the competition timeline.</li>
+          <li>Managed test campaigns, flight readiness, and competition logistics.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Details on competition performance, scoring, reliability, and any unique achievements from this season.)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAE Aero 2022–2023 detail overlay -->
+  <div class="team-overlay" id="aero-22-23-overlay">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>SAE Aero Design – Design Lead</h2>
+        <p class="team-meta">Role: Design Lead · Season: 2022–2023</p>
+
+        <img
+          src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2022–2023"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Overview of the 2022–2023 aircraft, mission profile, and your design goals.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Owned conceptual layout, aerodynamic configuration, and structural sizing.</li>
+          <li>Developed and reviewed CAD, weight estimates, and performance predictions.</li>
+          <li>Worked with manufacturing to ensure designs were buildable and competition-compliant.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Competition outcome and any notable design successes or lessons learned.)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAE Aero 2021–2022 detail overlay -->
+  <div class="team-overlay" id="aero-21-22-overlay">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>SAE Aero Design – Team Member</h2>
+        <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
+
+        <img
+          src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
+          alt="SAE Aero Design aircraft 2021–2022"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Overview of your first season on the team and what the aircraft was designed to do.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Contributed to component fabrication, assembly, and ground testing.</li>
+          <li>Supported subsystem leads with fixtures, repairs, or documentation as needed.</li>
+          <li>Built foundational skills that enabled later design and leadership roles.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Competition performance and key takeaways from your first year.)
         </p>
       </div>
     </div>
