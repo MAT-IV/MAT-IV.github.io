@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Open lightbox when a gallery image is clicked
   gallery.addEventListener('click', (e) => {
     const target = e.target;
-    if (target.tagName !== 'IMG') return;
+    if (!(target instanceof HTMLImageElement)) return;
 
     lightboxImg.src = target.src;
     lightboxImg.alt = target.alt;
-    lightboxCaption.textContent = target.alt; // show alt text as caption
+    lightboxCaption.textContent = target.alt;
 
     lightbox.classList.add('is-visible');
   });
