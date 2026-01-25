@@ -349,4 +349,51 @@ html, body {
   width: 96px;
 }
 
+.team-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  z-index: 25;
+}
+
+.team-overlay.is-visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-overlay-inner {
+  position: relative;
+  max-width: 900px;
+  max-height: 90vh;
+  width: 90vw;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.9);
+  overflow-y: auto;
+}
+
+.team-overlay-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Reuse project hero styling inside overlay */
+.team-overlay .project-hero-image {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 
