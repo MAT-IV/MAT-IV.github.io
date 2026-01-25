@@ -1,10 +1,6 @@
 // Helper: lock body scroll when overlays/lightboxes are open
 function setBodyScrollLocked(locked) {
-  if (locked) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
+  document.body.style.overflow = locked ? 'hidden' : '';
 }
 
 // Click-to-expand profile photo in a centered overlay
@@ -47,12 +43,9 @@ window.skipBigBangAndGoHome = function (event) {
   window.location.href = '/';
 };
 
-/* ===== Team overlays (Design Teams page) ===== */
-/* New wiring using data-team-key & data-team */
+// NEW: generic team overlay wiring using data-team-key / data-team
 function initTeamOverlays() {
   const overlaySelector = '.team-overlay';
-  const openButtons = document.querySelectorAll('.js-team-open');
-  const heroImages = document.querySelectorAll('.js-team-hero');
   const overlays = document.querySelectorAll(overlaySelector);
 
   function openOverlay(teamKey) {
@@ -67,26 +60,16 @@ function initTeamOverlays() {
     setBodyScrollLocked(false);
   }
 
-  // Buttons in each card
-  openButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const teamKey = button.dataset.teamKey;
-      if (!teamKey) return;
-      openOverlay(teamKey);
-    });
-  });
-
-  // Hero image click in each card
-  heroImages.forEach(img => {
+  // Card hero images – open overlay, NOT lightbox
+  document.querySelectorAll('.team-image').forEach(img => {
+    const teamKey = img.dataset.teamKey;
+    if (!teamKey) return;
     img.addEventListener('click', () => {
-      const teamKey = img.dataset.teamKey;
-      if (!teamKey) return;
       openOverlay(teamKey);
     });
   });
 
-  // Close buttons and clicking the dark backdrop
+  // Close buttons + backdrop
   overlays.forEach(overlay => {
     const closeBtn = overlay.querySelector('.team-overlay-close');
 
@@ -103,49 +86,61 @@ function initTeamOverlays() {
       }
     });
   });
+
+  // ESC key closes whichever overlay is open
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      overlays.forEach(overlay => {
+        if (overlay.classList.contains('is-visible')) {
+          closeOverlay(overlay);
+        }
+      });
+    }
+  });
 }
 
-/* ===== Shared image lightbox (used inside overlays) ===== */
-function initImageLightbox() {
-  const lightbox = document.querySelector('.image-lightbox');
-  if (!lightbox) return;
+// Shared lightbox for development images inside Formula popup
+function initFormulaLightbox() {
+  const formulaOverlay = document.getElementById('formula-overlay');
+  if (!formulaOverlay) return;
+
+  const gallery = formulaOverlay.querySelector('.project-gallery');
+  const lightbox = document.getElementById('formula-image-lightbox');
+  if (!gallery || !lightbox) return;
 
   const lightboxImg = lightbox.querySelector('.image-lightbox-img');
   const lightboxCaption = lightbox.querySelector('.image-lightbox-caption');
-  const closeBtn = lightbox.querySelector('.image-lightbox-close');
+  const lightboxClose = lightbox.querySelector('.image-lightbox-close');
 
-  function openLightbox(src, alt, caption) {
+  function openLightboxFromImage(img) {
     if (!lightboxImg) return;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || '';
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
     if (lightboxCaption) {
-      lightboxCaption.textContent = caption || alt || '';
+      lightboxCaption.textContent = img.dataset.caption || img.alt || '';
     }
     lightbox.classList.add('is-visible');
-    lightbox.setAttribute('aria-hidden', 'false');
     setBodyScrollLocked(true);
   }
 
   function closeLightbox() {
     lightbox.classList.remove('is-visible');
-    lightbox.setAttribute('aria-hidden', 'true');
     setBodyScrollLocked(false);
   }
 
-  // Any image with .js-lightbox-target opens the lightbox
-  document.querySelectorAll('.js-lightbox-target').forEach(img => {
-    img.addEventListener('click', (e) => {
-      e.stopPropagation(); // don't trigger overlay backdrop
-      const src = img.getAttribute('src');
-      const alt = img.getAttribute('alt');
-      const caption = img.dataset.caption;
-      openLightbox(src, alt, caption);
-    });
+  // Open lightbox when a gallery image (marked for lightbox) is clicked
+  gallery.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLImageElement)) return;
+    if (!target.classList.contains('js-lightbox-target')) return;
+
+    e.stopPropagation(); // don't close overlay
+    openLightboxFromImage(target);
   });
 
   // Close on X
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', (e) => {
       e.stopPropagation();
       closeLightbox();
     });
@@ -166,8 +161,8 @@ function initImageLightbox() {
   });
 }
 
-// Init team overlays + lightbox after DOM ready
+// Wire up all team overlays + lightbox
 document.addEventListener('DOMContentLoaded', () => {
   initTeamOverlays();
-  initImageLightbox();
+  initFormulaLightbox();
 });
