@@ -123,12 +123,12 @@ permalink: /teams/
       <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
       <p class="team-meta">Role: Team Member · Season: 2021–2022</p>
       <p>
-        (Update this with your first-season story, tasks, and what you learned.)
+        The 2021-2022 SAE Aero Design season was my first opportunity to apply my engineering education to build a working prototype aircraft. As a member of the Texas A&M Micro Class Structures and Material Science Sub-team, I contributed to the design of a highly optimized RC-scale cargo aircraft developed for short-takeoff, high-payload operations under strict ruleset constraints. My work focused on structural analysis, composite and truss-based airframe design, and translating CFD-derived load cases into manufacturable, test-validated structures.
       </p>
       <ul>
-        <li>Describe 1–2 subsystems or tasks you contributed to (fixtures, components, assembly, testing).</li>
-        <li>Highlight what you learned that prepared you for design/lead roles in later seasons.</li>
-        <li>Final result: aircraft performance and competition experience.</li>
+        <li>Supported sizing and optimization of wing, empennage, and fuselage structures using Euler–Bernoulli beam theory, shear-flow analysis, and FEA to meet strength and stiffness targets with defined factors of safety.</li>
+        <li>Contributed to composite wing plate and landing gear interface design, including material trade studies, core selection, and validation via physical load testing.</li>
+        <li>Assisted with design and refinement of a modular prismatic fuselage truss and control-surface actuation layout to balance payload accessibility, manufacturability, and structural reliability.</li>
       </ul>
     </div>
   </section>
@@ -145,7 +145,7 @@ permalink: /teams/
         <!-- Hero image -->
         <img
           src="{{ '/assets/images/formula/2025 Champ Photo.JPEG' | relative_url }}"
-          alt="Formula SAE IC racecar with aerodynamic package"
+          alt="Formula SAE IC racecar with aerodynamic package."
           class="project-hero-image"
         >
 
@@ -172,38 +172,38 @@ permalink: /teams/
         <div class="project-gallery">
           <img
             src="{{ '/assets/images/formula/cfd-side-view-formula.png' | relative_url }}"
-            alt="CFD side view of Formula car showing velocity magnitude"
+            alt="CFD side view of Formula car showing velocity magnitude."
             class="project-gallery-img js-lightbox-target"
             data-caption="CFD side view of Formula car showing velocity magnitude."
           >
           <img
             src="{{ '/assets/images/formula/formula-floor-layup.jpg' | relative_url }}"
-            alt="Carbon fiber floor during wet layup construction"
+            alt="Carbon fiber floor during wet layup construction."
             class="project-gallery-img js-lightbox-target"
             data-caption="Carbon fiber floor during wet layup construction."
           >
           <img
             src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
-            alt="The 2025 Formula car achieved 100 miles of aero track testing"
+            alt="The 2025 Formula car achieved 100 miles of aero track testing."
             class="project-gallery-img js-lightbox-target"
             data-caption="The 2025 Formula car achieved 100 miles of aero track testing."
           >
           <img
             src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
-            alt="Aerodynamics Design Event Competition Poster"
+            alt="Aerodynamics Design Event Competition Poster."
             class="project-gallery-img js-lightbox-target"
             data-caption="Aerodynamics Design Event Competition Poster."
           >
           <img
             src="{{ '/assets/images/formula/EPS-Poster-Full-Car.png' | relative_url }}"
-            alt="Full Car Engineering Project Showcase Poster"
+            alt="Full Car Engineering Project Showcase Poster."
             class="project-gallery-img js-lightbox-target"
             data-caption="Full Car Engineering Project Showcase Poster."
           >
         </div>
 
         <!-- GIF or short loop -->
-        <h3>Aero visualization - Preliminary side mounted radiator study</h3>
+        <h3>Aero visualization - Preliminary side mounted radiator study.</h3>
         <video
           class="project-video"
           src="{{ '/assets/images/formula/combined-rad-study.mp4' | relative_url }}"
@@ -311,18 +311,72 @@ permalink: /teams/
           class="project-hero-image"
         >
 
+        <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          (Overview of your first season on the team and what the aircraft was designed to do.)
+          As a member of the structural and material science sub-team for the Texas A&M SAE Aero Design Micro Class entry, I worked on an aircraft designed to maximize flight score through short-takeoff performance, high payload fraction, and rapid loading within the SAE ruleset. The airframe featured a biplane wing configuration, prismatic fuselage truss, and rear cargo loading architecture, all tailored to carry multiple payload box configurations and steel plate weight while remaining stable and controllable across a range of wind conditions. My responsibilities centered on turning these system-level goals into robust structural solutions that could be iterated quickly under the team’s Agile-based development process.
+          <br><br>
+          Within the wing and empennage, I supported structural layouts that combined analytical sizing with simulation and testing to achieve targeted stiffness and safety factors. This included applying Euler–Bernoulli beam theory and shear-flow methods to size spars and shear webs, using CFD-derived lift distributions as input loads, and then validating and refining these concepts in SolidWorks-based FEA and designed experiments. For the empennage, I contributed to redesign efforts following early aeroelastic issues, helping move toward stiffer box-spar concepts and material choices that kept twist and deflection within acceptable limits for control authority.
+          <br><br>
+          I also worked with the team on composite and truss structures that linked major airframe components and enabled fast iteration. This involved evaluating foam and printed cores for the composite wing plate, supporting design of internal bracing to arrest core fatigue and wing droop, and helping define landing gear attachment strategies that could handle landing loads without excessive weight. In the fuselage, I contributed to the definition of a space truss architecture and member layout that balanced payload volume, buckling resistance, and manufacturability, using SkyCiv-based analysis and physical builds to confirm stress levels and safety margins.
         </p>
 
         <h3>Responsibilities</h3>
         <ul>
-          <li>Contributed to component fabrication, assembly, and ground testing.</li>
-          <li>Supported subsystem leads with fixtures, repairs, or documentation as needed.</li>
-          <li>Built foundational skills that enabled later design and leadership roles.</li>
+          <li>Performed preliminary and detailed sizing of spars, ribs, and tail structures using beam theory, shear-flow analysis, and CFD-derived load distributions, then supported validation through FEA and physical deflection/twist testing.</li>
+          <li>Assisted in composite wing plate and core development, including material trade studies between extruded polystyrene and 3D-printed cores, internal brace design to mitigate fatigue, and assessment of stiffness under simulated wing loads.</li>
+          <li>Contributed to fuselage truss and landing gear structural design by helping select member orientations and materials to avoid buckling, define attachment schemes, and meet target factors of safety under combined thrust, lift, and landing loads.</li>
         </ul>
 
+        <!-- Small image gallery -->
+        <h3>Development images</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/sae-aero/21-22/21-22-plane.jpeg' | relative_url }}"
+            alt="Experimental Plane post first flight test."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Experimental Plane post first flight test."
+          >
+          <img
+            src="{{ '/assets/images/sae-aero/21-22/bare-jig-21-22.JPG' | relative_url }}"
+            alt="Structural" constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional tolerance."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Structural" constrcution of an experimental version of the plane using aluminum extrusion to maintain dimensional tolerance."
+          >
+          <img
+            src="{{ '/assets/images/sae-aero/21-22/cad-21-22.JPG' | relative_url }}"
+            alt="CAD rendering of the 21-22 competition plane."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="CAD rendering of the 21-22 competition plane."
+          >
+          <img
+            src="{{ '/assets/images/formula/sae-aero/21-22/flight-test-21-22.PNG' | relative_url }}"
+            alt="First hand-held launch of the competition aircraft."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="First hand-held launch of the competition aircraft."
+          >
+        </div>
+        <!-- GIF or short loop -->
+        <h3>First drop test on custom carbon fiber landing gear.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/sae-aero/21-22/light-drop-test-21-22.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <!-- GIF or short loop -->
+        <h3>Flight test of 21-22 experimental aircraft.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/sae-aero/21-22/flight-test-21-22.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        
         <h3>Results</h3>
         <p>
           (Competition performance and key takeaways from your first year.)
