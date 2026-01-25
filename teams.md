@@ -23,20 +23,24 @@ permalink: /teams/
   </div>
 
   <p>
-    During my time at Texas A&M, I contributed to multiple competitive engineering design teams focused on vehicle and aircraft performance.
+    During my time at Texas A&amp;M, I contributed to multiple competitive engineering design teams focused on vehicle and aircraft performance.
     Each project highlights my technical role, engineering responsibilities, and the resulting design outcomes.
   </p>
 
   <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}" alt="Formula SAE IC racecar with aerodynamic package">
+      <img
+        src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}"
+        alt="Formula SAE IC racecar with aerodynamic package"
+        class="team-image team-image-formula"
+      >
     </div>
     <div class="team-card-body">
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
       <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
       <p>
-        As part of the 2025 Texas A&M Formula SAE IC team, I contributed to the aerodynamic development and performance validation
+        As part of the 2025 Texas A&amp;M Formula SAE IC team, I contributed to the aerodynamic development and performance validation
         of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis,
         carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
       </p>
@@ -51,7 +55,11 @@ permalink: /teams/
   <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2023–2024">
+      <img
+        src="{{ '/assets/images/team-aero-2023-2024.jpeg' | relative_url }}"
+        alt="SAE Aero Design aircraft 2023–2024"
+        class="team-image"
+      >
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
@@ -70,7 +78,11 @@ permalink: /teams/
   <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}" alt="SAE Aero Design aircraft 2022–2023">
+      <img
+        src="{{ '/assets/images/team-aero-2022-2023.jpeg' | relative_url }}"
+        alt="SAE Aero Design aircraft 2022–2023"
+        class="team-image"
+      >
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
@@ -89,7 +101,11 @@ permalink: /teams/
   <!-- 4. SAE Aero Design 2021–2022 – Team Member -->
   <section class="team-card">
     <div class="team-card-media">
-      <img src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}" alt="SAE Aero Design aircraft 2021–2022">
+      <img
+        src="{{ '/assets/images/team-aero-2021-2022.JPG' | relative_url }}"
+        alt="SAE Aero Design aircraft 2021–2022"
+        class="team-image"
+      >
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
@@ -104,5 +120,39 @@ permalink: /teams/
       </ul>
     </div>
   </section>
+
+  <!-- Formula SAE detail overlay -->
+  <div class="team-overlay" id="formula-overlay">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+      <div class="team-overlay-content">
+        <h2>Formula SAE IC – Aerodynamics</h2>
+        <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
+
+        <img
+          src="{{ '/assets/images/team-formula-aero.jpg' | relative_url }}"
+          alt="Formula SAE IC racecar with aerodynamic package"
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          (Put a more detailed overview here: competition context, car concept, and overall aerodynamic objectives.)
+        </p>
+
+        <h3>Responsibilities</h3>
+        <ul>
+          <li>Performed full-vehicle CFD analyses under pitch, roll, and yaw to guide aerodynamic geometry and validate design decisions.</li>
+          <li>Supported design for manufacturability and integration of carbon fiber aerodynamic components with the chassis and suspension.</li>
+          <li>Participated in on-track testing to correlate simulation predictions with telemetry and driver feedback.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <p>
+          (Describe key performance improvements, competition placement, and any notable lessons learned.)
+        </p>
+      </div>
+    </div>
+  </div>
 
 </div>
