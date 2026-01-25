@@ -80,7 +80,7 @@ html, body {
   height: 100%;
   pointer-events: none;
   z-index: 3;
-  visibility: hidden;
+  visibility: hidden;  /* START HIDDEN: only shown after Big Bang */
 }
 
 .orbit-item {
@@ -138,7 +138,7 @@ html, body {
 
 /* Make Design Teams planet larger */
 .orbit-teams .orbit-planet {
-  width: 32px;
+  width: 32px;   /* bigger than the default 24px */
   height: 32px;
 }
 
@@ -157,6 +157,7 @@ html, body {
 
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
+  /* Keep orbits fixed; only adjust button position */
   .bigbang-button {
     top: auto;
     bottom: 1rem;
@@ -177,13 +178,13 @@ html, body {
   display: block;
 }
 
-/* Center the large image over the page center */
+/* Center the large image over the page center (same as About/orbits) */
 .profile-photo-large {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 60vw;
+  transform: translate(-50%, -50%);   /* center on its own middle */
+  max-width: 60vw;                    /* your chosen size */
   max-height: 60vh;
   width: auto;
   height: auto;
@@ -198,7 +199,6 @@ html, body {
   }
 }
 
-/* Resume download button */
 .resume-download {
   display: inline-block;
   padding: 0.4rem 0.8rem;
@@ -227,46 +227,13 @@ html, body {
 
 .resume-header-left,
 .resume-header-right {
-  flex: 0 0 100px;
+  flex: 0 0 100px;  /* wide enough to fit a big ship; keeps title centered */
 }
 
 .resume-header-title {
   flex: 1 1 auto;
   text-align: center;
   margin: 0;
-}
-
-/* Responsive PDF embed wrapper */
-.pdf-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 129%;  /* ~8.5x11 aspect */
-  height: 0;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.pdf-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 8px;
-}
-
-/* Mobile PDF tweaks */
-@media (max-width: 768px) {
-  .pdf-container {
-    max-width: 100vw;
-    margin: 0 auto;
-  }
-
-  .pdf-container iframe {
-    max-width: 100vw;
-  }
 }
 
 /* Base styles for all ships */
@@ -282,16 +249,17 @@ html, body {
   filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
 }
 
-/* Per-page ship sizes */
+/* Per-page sizes */
 .back-ship-resume img {
   width: 60px;
 }
 
+/* Design Teams ship size */
 .back-ship-teams img {
-  width: 96px;
+  width: 96px;   /* or larger if you want this one bigger */
 }
 
-/* Generic page header */
+/* Generic page header: ship left, title centered */
 .page-header {
   display: flex;
   align-items: center;
@@ -301,7 +269,7 @@ html, body {
 
 .page-header-left,
 .page-header-right {
-  flex: 0 0 110px;
+  flex: 0 0 110px;     /* enough width for a large ship; keeps title centered */
 }
 
 .page-header-title {
@@ -310,9 +278,7 @@ html, body {
   margin: 0;
 }
 
-/* ===== Design Teams page ===== */
-
-/* Card layout */
+/* Design team cards (horizontal layout) */
 .team-card {
   display: flex;
   flex-direction: row;
@@ -324,28 +290,17 @@ html, body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
 }
 
-/* Uniform media column + image size */
+/* UNIFORM CARD IMAGE SIZE – updated */
 .team-card-media {
   flex: 0 0 260px;
 }
 
-.team-image {
+.team-card-media img {
   display: block;
   width: 100%;
   height: 180px;
   border-radius: 8px;
   object-fit: cover;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Hover for hero images that open overlays */
-.js-team-hero {
-  cursor: pointer;
-}
-
-.js-team-hero:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
 
 .team-card-body h2 {
@@ -376,7 +331,31 @@ html, body {
   }
 }
 
-/* Team detail overlays */
+/* Teams ship size */
+.back-ship-teams img {
+  width: 96px;
+}
+
+/* Base for all team images */
+.team-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for Formula image (card hero) */
+.team-image-formula {
+  cursor: pointer;
+}
+
+.team-image-formula:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
+}
+
 .team-overlay {
   position: fixed;
   inset: 0;
@@ -390,14 +369,14 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;
+  overflow-y: auto;          /* <– important */
 }
 
 .team-overlay-inner {
   position: relative;
   max-width: 900px;
   width: 90vw;
-  max-height: 90vh;
+  max-height: 90vh;          /* still caps height on desktop */
   padding: 1.5rem 1.25rem;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 16px;
@@ -420,22 +399,23 @@ html, body {
   z-index: 1;
 }
 
-/* Mobile tweaks for overlays */
+/* Mobile */
 @media (max-width: 600px) {
   .team-overlay.is-visible {
-    align-items: flex-start;
+    align-items: flex-start;  /* start at top so you can scroll everything */
   }
 
   .team-overlay-inner {
     width: 100vw;
     max-width: 100vw;
+    /* remove hard 100vh so full content can extend and be scrolled */
     height: auto;
     max-height: none;
     border-radius: 0;
   }
 }
 
-/* Hero image inside overlay, if you use one */
+/* Reuse project hero styling */
 .team-overlay .project-hero-image {
   display: block;
   width: 100%;
@@ -445,7 +425,6 @@ html, body {
   object-fit: cover;
 }
 
-/* Project galleries */
 .project-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -453,7 +432,6 @@ html, body {
   margin-bottom: 1.25rem;
 }
 
-/* Base gallery image */
 .project-gallery img {
   width: 100%;
   display: block;
@@ -461,7 +439,7 @@ html, body {
   object-fit: cover;
 }
 
-/* Gallery images that open lightbox */
+/* NEW: Hover effect + pointer for dev images that open lightbox */
 .project-gallery-img {
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -481,7 +459,6 @@ html, body {
   border-radius: 10px;
 }
 
-/* Shared lightbox */
 .image-lightbox {
   position: fixed;
   inset: 0;
@@ -535,7 +512,7 @@ html, body {
   line-height: 1.4;
 }
 
-/* Lightbox mobile */
+/* Optional: tighter layout on small screens */
 @media (max-width: 600px) {
   .image-lightbox-inner {
     width: 100vw;
