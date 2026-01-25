@@ -214,7 +214,11 @@ permalink: /teams/
         <!-- Results -->
         <h3>Results</h3>
         <p>
-          (Detailed results here: measured downforce, top speed, lap time gains, competition placement, etc.)
+          Going into Formula SAE, I was honestly hesitant to leave the SAE Aero world I had been part of for three years, but that worry didn’t last long. The Texas A&M program forms a brand-new team every season, and because we were all first-time Formula designers, we had no choice but to pull each other up and sharpen our design, analysis, and justification skills together. This season became the culmination of my time at Texas A&M. I have never poured more hours or effort into a single project than I did into this car.
+          <br><br>
+          On the technical side, Formula pushed me hard. I came in having only ever seen CFD results, not actually run full simulations myself, so learning new software, understanding the modeling assumptions, and tying those results back to what the real car was doing on track was intense but absolutely worth it. I spent countless hours refining the carbon fiber aero package and obsessing over the small details of the livery because I believed this car was special. We had a legitimate shot at winning, and if we were going to compete at that level, the car had to look like it belonged there too.
+          <br><br>
+          The people made the experience even better. The friends and late nights from this season are ones I’ll remember for a long time; it felt like everyone was pulling in the same direction toward a shared goal. In the end, the Texas A&M Formula SAE IC team placed 2nd overall at an international competition with 121 universities, and we were the highest-ranked US-based school. Standing there knowing what we’d built and how far we’d come really did feel like a dream.
         </p>
       </div>
     </div>
@@ -304,7 +308,7 @@ permalink: /teams/
         <h3>Competition weather.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/sae-aero/23-24/rain-23-24.mp4' | relative_url }}"
+          src="{{ '/assets/images/sae-aero/23-24/rain-23-24.MOV' | relative_url }}"
           autoplay
           muted
           loop
@@ -312,7 +316,7 @@ permalink: /teams/
         ></video>
         <h3>Results</h3>
         <p>
-          (Competition outcome and any notable design successes or lessons learned.)
+          In my third and final year on SAE Aero Design, I shifted into more of an advisory role to help grow the next generation of leaders. I focused on the overall aircraft package and on coaching the new structures leads through key decisions, while also spending more time building training plans and helping new members develop their skills. This ended up being my favorite year of SAE Aero because I could see three years of work turning into a team culture and environment that I was genuinely proud of. The season culminated with the Micro Class team winning 1st in the world, and Texas A&M becoming one of the few programs ever to win multiple classes at the same time.
         </p>
       </div>
     </div>
@@ -385,7 +389,7 @@ permalink: /teams/
         ></video>
         <h3>Results</h3>
         <p>
-          (Competition outcome and any notable design successes or lessons learned.)
+          Going into my second year on SAE Aero and with the Micro Class team, I wanted to make the most of being in a leadership role and help the team grow in both skill and culture. We invested more time up front in flushing out the design and built modularity into the aircraft so we could swap wings and fuselages between flight tests and learn faster. This was a big growth year for me as I realized how important it is to get the whole team to truly buy in when we’re all sacrificing time and energy for the aircraft. In the end, the Texas A&M Micro Class team podiumed for the first time ever, placing 3rd out of 21 teams. Our design report and presentation were very strong, but we fell short of where we wanted to be in mission performance.
         </p>
       </div>
     </div>
@@ -476,7 +480,7 @@ permalink: /teams/
         
         <h3>Results</h3>
         <p>
-          (Competition performance and key takeaways from your first year.)
+          This was my first real engineering experience, and it was a crash course in applying classroom knowledge while juggling a full course load. It was also the rebirth of the Texas A&M Micro Class SAE team, and I’m genuinely grateful I got to be part of that reset. The hands-on manufacturing and testing drove home how critical design-for-manufacturing and iteration really are, far more than any lecture could. We didn’t podium, but we finished a respectable 4th out of 20 teams, and our largest misses were in scheduling and overall design maturity. We spent so much effort getting off the ground that we didn’t explore enough configurations early and ended up rushing manufacturing at the end.
         </p>
 
       </div>
