@@ -211,6 +211,38 @@ permalink: /teams/
           playsinline
         ></video>
 
+<!-- GIF or short loop -->
+        <h3>Acceleration event at competition.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/formula/accel.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <!-- GIF or short loop -->
+        <h3>Endurance event at competition.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/formula/endurance.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        
+        <!-- GIF or short loop -->
+        <h3>Racing during the Endurance event.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/formula/racing.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
         <!-- Results -->
         <h3>Results</h3>
         <p>
