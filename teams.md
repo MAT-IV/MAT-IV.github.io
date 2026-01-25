@@ -30,11 +30,13 @@ permalink: /teams/
   <!-- 1. Formula SAE IC – Aerodynamics (most recent) -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/formula/team-formula-aero.jpg' | relative_url }}"
-        alt="Formula SAE IC racecar with aerodynamic package"
-        class="team-image team-image-formula"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/formula/team-formula-aero.jpg' | relative_url }}"
+          alt="Formula SAE IC racecar with aerodynamic package"
+          class="team-image team-image-formula"
+        >
+      </div>
     </div>
     <div class="team-card-body">
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
@@ -55,11 +57,13 @@ permalink: /teams/
   <!-- 2. SAE Aero Design 2023–2024 – Team Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
-        alt="SAE Aero Design aircraft 2023–2024"
-        class="team-image team-image-aero-23-24"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/sae-aero/23-24/team-aero-2023-2024.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2023–2024"
+          class="team-image team-image-aero-23-24"
+        >
+      </div>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
@@ -78,11 +82,13 @@ permalink: /teams/
   <!-- 3. SAE Aero Design 2022–2023 – Design Lead -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
-        alt="SAE Aero Design aircraft 2022–2023"
-        class="team-image team-image-aero-22-23"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/sae-aero/22-23/team-aero-2022-2023.jpeg' | relative_url }}"
+          alt="SAE Aero Design aircraft 2022–2023"
+          class="team-image team-image-aero-22-23"
+        >
+      </div>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Design Lead - 3rd Place Overall</h2>
@@ -101,11 +107,13 @@ permalink: /teams/
   <!-- 4. SAE Aero Design 2021–2022 – Team Member -->
   <section class="team-card">
     <div class="team-card-media">
-      <img
-        src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
-        alt="SAE Aero Design aircraft 2021–2022"
-        class="team-image team-image-aero-21-22"
-      >
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/sae-aero/21-22/team-aero-2021-2022.JPG' | relative_url }}"
+          alt="SAE Aero Design aircraft 2021–2022"
+          class="team-image team-image-aero-21-22"
+        >
+      </div>
     </div>
     <div class="team-card-body">
       <h2>SAE Aero Design – Team Member - 4th Place Overall</h2>
@@ -231,6 +239,8 @@ permalink: /teams/
         <p>
           (Details on competition performance, scoring, reliability, and any unique achievements from this season.)
         </p>
+
+        <!-- Optional: add a gallery here later using .project-gallery -->
       </div>
     </div>
   </div>
@@ -266,6 +276,8 @@ permalink: /teams/
         <p>
           (Competition outcome and any notable design successes or lessons learned.)
         </p>
+
+        <!-- Optional: add a gallery here later using .project-gallery -->
       </div>
     </div>
   </div>
@@ -301,11 +313,13 @@ permalink: /teams/
         <p>
           (Competition performance and key takeaways from your first year.)
         </p>
+
+        <!-- Optional: add a gallery here later using .project-gallery -->
       </div>
     </div>
   </div>
 
-  <!-- Large image viewer (global, over everything) -->
+  <!-- Shared large image viewer (global, over everything) -->
   <div class="image-lightbox" id="formula-image-lightbox">
     <div class="image-lightbox-inner">
       <button class="image-lightbox-close" aria-label="Close image">&times;</button>
