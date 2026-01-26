@@ -593,9 +593,11 @@ html, body {
     width: 100vw;
     max-width: 100vw;
     border-radius: 0;   /* edge-to-edge if you like */
+    aspect-ratio: auto; /* override desktop aspect ratio */
   }
 
   .pdf-container iframe {
     border-radius: 0;
   }
 }
+
