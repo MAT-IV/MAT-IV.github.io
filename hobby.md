@@ -92,7 +92,7 @@ permalink: /hobby/
     </div>
     <div class="team-card-body">
       <h2>3D Print Projects</h2>
-      <p class="team-meta">Started: May 2018</p>
+      <p class="team-meta">Started: January 2020</p>
       <p>
         I use 3D printing for functional prototypes, small fixtures, and more recently artwork. I am currently using a Bambu-Labs X1C with AMS, but started out with a Creality Ender-5.
       </p>
@@ -100,6 +100,32 @@ permalink: /hobby/
         <li>Designed and printed custom brackets, camera mounts, and small fixtures from scratch in CAD.</li>
         <li>Tuned print settings (material, infill, supports) to balance strength, weight, and surface finish.</li>
         <li>Iterated quickly on prototypes based on fit checks and real-world use feedback.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <!-- 4. Astrophotography -->
+  <section class="team-card">
+    <div class="team-card-media">
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/hobby/astro/telescope.jpeg' | relative_url }}"
+          alt="Telescope pointed at Moon."
+          class="team-image team-image-hobby-astro"
+          data-team-key="hobby-astro"
+        >
+      </div>
+    </div>
+    <div class="team-card-body">
+      <h2>Astrophotography - EvoStar 80ED Apo Refractor Telescope</h2>
+      <p class="team-meta">Started: December 2021</p>
+      <p>
+        I capture deep-sky images with a Sky-Watcher Evostar 80ED apochromatic refractor, focusing on wide-field nebulae, star clusters, and planets using guided long exposures and calibrated stacking.
+      </p>
+      <ul>
+        <li>Use an 80&nbsp;mm f/7.5 doublet APO (600&nbsp;mm focal length) for wide-field deep-sky imaging with good color correction.</li>
+        <li>Employ guiding, calibration frames, and multi-hour integrations to bring out faint nebulosity and star color.</li>
+        <li>Process data to balance detail, dynamic range, and noise for final presentation.</li>
       </ul>
     </div>
   </section>
@@ -319,6 +345,94 @@ permalink: /hobby/
         <h3>Why it matters</h3>
         <p>
           3D printing closes the loop between CAD and hardware for me. It has improved the way I think about tolerances, assembly, and iteration speed whenever I’m designing parts that have to actually be built and used.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Astrophotography overlay -->
+  <div class="team-overlay" id="hobby-astro-overlay" data-team="hobby-astro">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>Astrophotography</h2>
+        <p class="team-meta">Sky-Watcher Evostar 80ED APO Refractor · Deep-Sky Imaging</p>
+
+        <!-- Hero image -->
+        <img
+          src="{{ '/assets/images/hobby/astro/telescope.jpeg' | relative_url }}"
+          alt="Evostar 80ED."
+          class="project-hero-image"
+        >
+
+        <h3>Setup</h3>
+        <p>
+          My main imaging setup is a Sky-Watcher Evostar 80ED apochromatic refractor (80&nbsp;mm aperture, 600&nbsp;mm focal length, f/7.5) on a tracking mount, paired with my phone as the camera and a star app for locating objects.
+        </p>
+
+        <h3>Workflow</h3>
+        <ul>
+          <li>Plan targets based on season, altitude, and light pollution, favoring wide-field objects that suit the 600&nbsp;mm focal length.</li>
+          <li>Capture guided long exposures with calibration frames (bias, darks, flats) to improve signal-to-noise.</li>
+          <li>Stack and process data to reveal faint structures while preserving star color and a natural background.</li>
+        </ul>
+
+        <h3>Sample images</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/hobby/astro/moon-1.jpeg' | relative_url }}"
+            alt="Waning Moon imaged with the Evostar 80ED."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Waning Moon imaged with the Evostar 80ED."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/moon02.jpeg.jpg' | relative_url }}"
+            alt="Full Moon imaged with the Evostar 80ED."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Full Moon imaged with the Evostar 80ED."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/m42_first.JPG' | relative_url }}"
+            alt="Orion Nebula (M42) imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Orion Nebula (M42) imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/orion-raw.jpeg' | relative_url }}"
+            alt="Orion Nebula (M42) imaged with the Evostar 80ED. Raw 1o second exposure."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Orion Nebula (M42) imaged with the Evostar 80ED. Raw 10 second exposure."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/M31_photo.JPG' | relative_url }}"
+            alt="Andromeda Galexy (M31) imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Andromeda Galexy (M31) imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/saturn.png' | relative_url }}"
+            alt="Saturn imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Saturn imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/jupiter.jpeg' | relative_url }}"
+            alt="Jupiter imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Jupiter imaged with the Evostar 80ED. 60 stacked 10 second exposures."
+          >
+          <img
+            src="{{ '/assets/images/hobby/astro/eclipse.JPEG' | relative_url }}"
+            alt="Annular Solar Eclipse October 2023."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Annular Solar Eclipse October 2023."
+          >
+        </div>
+
+        <h3>Why I enjoy it</h3>
+        <p>
+          I have always loved looking into the night sky, and astrophotography allows me to explore even more. Working with the Evostar 80ED has given me a deeper appreciation for signal-to-noise, tracking accuracy, and careful calibration in turning faint targets into finished images.
         </p>
       </div>
     </div>
