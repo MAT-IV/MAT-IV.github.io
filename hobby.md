@@ -83,8 +83,8 @@ permalink: /hobby/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/hobby/3d-print-hero.jpg' | relative_url }}"
-          alt="3D-printed parts and assemblies on a desk."
+          src="{{ '/assets/images/hobby/3d/printer.jpeg' | relative_url }}"
+          alt="3D-Printer Bambu X1C on a desk."
           class="team-image team-image-hobby-3dprint"
           data-team-key="hobby-3dprint"
         >
@@ -111,7 +111,7 @@ permalink: /hobby/
 
       <div class="team-overlay-content">
         <h2>FPV Drone Builds</h2>
-        <p class="team-meta">Category: FPV & RC · Status: Active Hobby</p>
+        <p class="team-meta">Category: FPV & RC</p>
 
         <!-- Hero image -->
         <img
@@ -158,7 +158,7 @@ permalink: /hobby/
         <h3>Raw flight footage from headset.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/hobby/fpv/raw.MOV' | relative_url }}"
+          src="{{ '/assets/images/hobby/fpv/raw.mp4' | relative_url }}"
           autoplay
           muted
           loop
@@ -222,7 +222,7 @@ permalink: /hobby/
 
       <div class="team-overlay-content">
         <h2>1959 Antique Film Camera</h2>
-        <p class="team-meta">Category: Analog Photography · Status: Ongoing</p>
+        <p class="team-meta">Category: Analog Photography</p>
 
         <!-- Hero image -->
         <img
@@ -245,7 +245,7 @@ permalink: /hobby/
             data-caption="NASA Stennis B-2 Test Stand."
           >
           <img
-            src="{{ '/assets/images/hobby/film/a-1.JPG' | relative_url }}"
+            src="{{ '/assets/images/hobby/film/a-1.jpg' | relative_url }}"
             alt="NASA Stennis A-1 Test Stand."
             class="project-gallery-img js-lightbox-target"
             data-caption="NASA Stennis A-1 Test Stand."
@@ -267,12 +267,12 @@ permalink: /hobby/
 
       <div class="team-overlay-content">
         <h2>3D Print Projects</h2>
-        <p class="team-meta">Category: CAD & Prototyping · Status: Ongoing</p>
+        <p class="team-meta">Category: Prototyping & Artwork</p>
 
         <!-- Hero image -->
         <img
-          src="{{ '/assets/images/hobby/3d-print-hero.jpg' | relative_url }}"
-          alt="Multiple 3D-printed parts and assemblies."
+          src="{{ '/assets/images/hobby/3d/mask.jpeg' | relative_url }}"
+          alt="3D printed mask in printer."
           class="project-hero-image"
         >
 
@@ -291,22 +291,28 @@ permalink: /hobby/
         <h3>Print gallery</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/hobby/3d-print-part-1.jpg' | relative_url }}"
-            alt="Custom 3D-printed FPV camera mount."
+            src="{{ '/assets/images/hobby/3d/tars.jpeg' | relative_url }}"
+            alt="First ever 3D print, TARS from Interstellar."
             class="project-gallery-img js-lightbox-target"
-            data-caption="Custom 3D-printed FPV camera mount."
+            data-caption="First ever 3D print, TARS from Interstellar."
           >
           <img
-            src="{{ '/assets/images/hobby/3d-print-part-2.jpg' | relative_url }}"
-            alt="3D-printed organizers and small fixtures."
+            src="{{ '/assets/images/hobby/3d/gopro-mount.jpeg' | relative_url }}"
+            alt="3D-printed GoPro mount for FPV drone."
             class="project-gallery-img js-lightbox-target"
-            data-caption="3D-printed organizers and small fixtures."
+            data-caption="3D-printed GoPro mount for FPV drone."
           >
           <img
-            src="{{ '/assets/images/hobby/3d-print-part-3.jpg' | relative_url }}"
-            alt="Close-up of 3D-printed mechanical prototype."
+            src="{{ '/assets/images/hobby/3d/car.jpeg' | relative_url }}"
+            alt="Close-up of 3D-printed Formula SAE car prototype."
             class="project-gallery-img js-lightbox-target"
-            data-caption="Close-up of 3D-printed mechanical prototype."
+            data-caption="Close-up of 3D-printed Formula SAE car prototype."
+          >
+          <img
+            src="{{ '/assets/images/hobby/3d/wall-art.jpeg' | relative_url }}"
+            alt="Largest print to date. 350 print hrs on a Kumiko style wall art."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Largest print to date. 350 hrs on a Kumiko style wall art."
           >
         </div>
 
