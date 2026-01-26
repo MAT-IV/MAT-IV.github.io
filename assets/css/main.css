@@ -349,14 +349,18 @@ html, body {
 .team-image-formula,
 .team-image-aero-23-24,
 .team-image-aero-22-23,
-.team-image-aero-21-22 {
+.team-image-aero-21-22,
+.team-image-nasa,
+.team-hover-radlab {
   cursor: pointer;
 }
 
 .team-image-formula:hover,
 .team-image-aero-23-24:hover,
 .team-image-aero-22-23:hover,
-.team-image-aero-21-22:hover {
+.team-image-aero-21-22:hover,
+.team-image-nasa:hover,
+.team-image-radlab:hover {
   transform: scale(1.06);
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
