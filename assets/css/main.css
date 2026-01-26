@@ -259,6 +259,11 @@ html, body {
   width: 96px;   /* or larger if you want this one bigger */
 }
 
+/* Experience ship size */
+.back-ship-experience img {
+  width: 96px;   /* or larger if you want this one bigger */
+}
+
 /* Generic page header: ship left, title centered */
 .page-header {
   display: flex;
