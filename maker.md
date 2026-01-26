@@ -10,10 +10,10 @@ permalink: /hobby/
   <div class="page-header">
     <div class="page-header-left">
       <a href="{{ '/' | relative_url }}"
-         class="back-ship back-ship-teams"
+         class="back-ship back-ship-hobby"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
-        <img src="{{ '/assets/images/back-ship/ship-hobby.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/back-ship/Enterprise.png' | relative_url }}" alt="">
       </a>
     </div>
 
