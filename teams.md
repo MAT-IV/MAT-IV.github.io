@@ -169,10 +169,40 @@ permalink: /teams/
         <h3>Development images</h3>
         <div class="project-gallery">
           <img
+            src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
+            alt="The 2025 Formula car achieved 100 miles of aero track testing."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="The 2025 Formula car achieved 100 miles of aero track testing."
+          >
+          <img
             src="{{ '/assets/images/formula/cfd-side-view-formula.png' | relative_url }}"
             alt="CFD side view of Formula car showing velocity magnitude."
             class="project-gallery-img js-lightbox-target"
             data-caption="CFD side view of Formula car showing velocity magnitude."
+          >
+           <img
+            src="{{ '/assets/images/formula/first-layup.jpeg' | relative_url }}"
+            alt="Aero team first layup."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Aero team first layup."
+          >
+          <img
+            src="{{ '/assets/images/formula/kevlar-cf-test-wing.jpeg' | relative_url }}"
+            alt="Test kevlar carbon fiber wing layup. Was surprisingly brittle."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Test kevlar carbon fiber wing layup. Was surprisingly brittle."
+          >
+          <img
+            src="{{ '/assets/images/formula/front-wing-bag.jpeg' | relative_url }}"
+            alt="First full front wing layup."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="First full front wing layup."
+          >
+          <img
+            src="{{ '/assets/images/formula/front-wing-post-bag.jpeg' | relative_url }}"
+            alt="First full front wing before post processing."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="First full front wing before post processing."
           >
           <img
             src="{{ '/assets/images/formula/formula-floor-layup.jpg' | relative_url }}"
@@ -180,12 +210,7 @@ permalink: /teams/
             class="project-gallery-img js-lightbox-target"
             data-caption="Carbon fiber floor during wet layup construction."
           >
-          <img
-            src="{{ '/assets/images/formula/100-miles-of-aero-testing.png' | relative_url }}"
-            alt="The 2025 Formula car achieved 100 miles of aero track testing."
-            class="project-gallery-img js-lightbox-target"
-            data-caption="The 2025 Formula car achieved 100 miles of aero track testing."
-          >
+
           <img
             src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
             alt="Aerodynamics Design Event Competition Poster."
@@ -250,7 +275,7 @@ permalink: /teams/
           <br><br>
           On the technical side, Formula pushed me hard. I came in having only ever seen CFD results, not actually run full simulations myself, so learning new software, understanding the modeling assumptions, and tying those results back to what the real car was doing on track was intense but absolutely worth it. I spent countless hours refining the carbon fiber aero package and obsessing over the small details of the livery because I believed this car was special. We had a legitimate shot at winning, and if we were going to compete at that level, the car had to look like it belonged there too.
           <br><br>
-          The people made the experience even better. The friends and late nights from this season are ones I’ll remember for a long time; it felt like everyone was pulling in the same direction toward a shared goal. In the end, the Texas A&M Formula SAE IC team placed 2nd overall at an international competition with 121 universities, and we were the highest-ranked US-based school. Standing there knowing what we’d built and how far we’d come really did feel like a dream.
+          The people made the experience even better. The friends and late nights from this season are ones I’ll remember for a long time; it felt like everyone was pulling in the same direction toward a shared goal. In the end, the Texas A&M Formula SAE IC team placed 2nd overall at an international competition against 120 other universities, and we were the highest-ranked US-based school. Standing there knowing what we’d built and how far we’d come really did feel like a dream.
         </p>
       </div>
     </div>
@@ -274,7 +299,7 @@ permalink: /teams/
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          During the 2023–2024 season, the Micro Class aircraft was designed around strict goals for under-25 ft takeoff distance, maximized takeoff and payload-to-empty-weight ratios, and robust stability and control, all guided by clearly defined KPPs and RAPs. The team moved to a Warren-truss fuselage with an upward-tapered boom, a NACA 6412-based flapped wing, and a conventional empennage with flaperons, leveraging a suite of in-house tools and CFD to converge on a light but capable configuration. In my advisor role, I worked primarily with the leadership team to ensure that structural concepts stayed consistent with these performance targets while remaining buildable within schedule and budget constraints.
+          During the 2023–2024 season, the Micro Class aircraft was designed around strict goals for under-25 ft takeoff distance, maximized takeoff and payload-to-empty-weight ratios, and robust stability and control, all guided by clearly defined Key Performance Parameters and Risk Analysis Parameters. The team moved to a Warren-truss fuselage with an upward-tapered boom, a NACA 6412-based flapped wing, and a conventional empennage with flaperons, leveraging a suite of in-house tools and CFD to converge on a light but capable configuration. In my advisor role, I worked primarily with the leadership team to ensure that structural concepts stayed consistent with these performance targets while remaining buildable within schedule and budget constraints.
           <br><br>
           On the structural side, I coached the team through major architecture decisions such as selecting and refining the Warren-truss fuselage, integrating plywood wing boxes and payload interfaces, and evolving from box spars to truss spars in the wings to improve strength-to-weight performance. I helped guide their use of SkyCiv and FEA to set preliminary sizing for truss members, ribs, spars, and landing gear, emphasizing consistent factors of safety, realistic load cases, and the importance of matching structural assumptions to aerodynamic loads and dynamic behavior. For the empennage, I assisted as they developed a horizontal stabilizer integrated into the boom and an all-moving vertical stabilizer sized around center-of-pressure location and allowable deflection, ensuring the structures supported the dynamic stability characteristics quantified by the aerodynamics team.
           <br><br>
@@ -372,7 +397,7 @@ permalink: /teams/
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          In the 2022–2023 season, the Micro Class aircraft was developed around a delta wing with a lifting fuselage designed to carry three large boxes and 1.5 lb of steel payload, achieving a projected flight score of 33.07 under representative Fort Worth conditions. As Structural and Material Science Product Owner, I was responsible for translating the aerodynamics and scoring-driven outer mold line into a realizable internal structure that met the team’s key performance parameters—8 ft takeoff, high MTOW-to-empty-weight ratio, robust stability and control, and manufacturability—while also satisfying risk assessment metrics related to flight conditions, design integrity, and schedule. This role required balancing technical depth with systems-level oversight, ensuring that structural decisions supported the high-speed, short-duration flight profile and the team’s iterative development process.
+          In the 2022–2023 season, the Micro Class aircraft was developed around a delta wing with a lifting fuselage designed to carry three large boxes and 1.5 lb of steel payload, achieving a projected flight score of 33.07 under representative Fort Worth conditions. As Structural and Material Science Product Owner, I was responsible for translating the aerodynamics and scoring-driven outer mold line into a realizable internal structure that met the team’s key performance parameters 8 ft takeoff, high MTOW-to-empty-weight ratio, robust stability and control, and manufacturability while also satisfying risk assessment metrics related to flight conditions, design integrity, and schedule. This role required balancing technical depth with systems-level oversight, ensuring that structural decisions supported the high-speed, short-duration flight profile and the team’s iterative development process.
           <br><br>
           On the technical side, I oversaw structural architecture choices such as interrupted spars to accommodate 12 inch payload boxes, rib and spar placement based on CFD-derived lift distributions, box-spar and pseudo-spar concepts for stiffness, and a modular space-truss fuselage designed around lift and thrust load paths. I guided the team through trade studies comparing swept versus non-swept spars, flat-plate versus thicker wing profiles, and different nose and tail constructions, using topology optimization, FEA, and simplified analytical models to target a minimum factor of safety of 1.5 where feasible. For the tail surfaces and canard–horizontal stabilizer system, I supported structural schemes (box beams, rib spacing, spar locations) tailored to the aerodynamics team’s stability requirements and incidence settings while preserving manufacturability and weight targets.
           <br><br>
