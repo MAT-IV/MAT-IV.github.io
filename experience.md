@@ -57,23 +57,23 @@ permalink: /experience/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/experience/rad-lab-hero.jpg' | relative_url }}"
-          alt="RAD Lab experimental setup or hardware."
+          src="{{ '/assets/images/rad/ball-me.JPG' | relative_url }}"
+          alt="RAD Lab 6ft Ball."
           class="team-image team-image-radlab"
           data-team-key="rad-lab"
         >
       </div>
     </div>
     <div class="team-card-body">
-      <h2>RAD Lab – Engineering Intern</h2>
-      <p class="team-meta">Role: Engineering Intern · Dates: <!-- e.g. Summer 2023 --></p>
+      <h2>Robotics, Automation, and Design Lab – Engineering Intern</h2>
+      <p class="team-meta">Role: Engineering Intern · Dates: Summer 2024, Fall 2024, Spring 2025, Summer 2025</p>
       <p>
-        Briefly describe your RAD Lab internship: what the lab focuses on, your main project area, and how your work fit into the broader research or product goals.
+        During four semesters at the RAD Lab, I contributed to the development of the RoboBall robotic platforms, including both the 2-ft and 6-ft diameter systems designed for exploration and reconnaissance in challenging environments. My work focused on real-time data visualization, wireless power transfer, deployable sensing, and system-level integration, progressing from subsystem development to research contribution and publication.
       </p>
       <ul>
-        <li>High‑level responsibility or project bullet.</li>
-        <li>Another key technical or ownership bullet.</li>
-        <li>A result, outcome, or impact bullet.</li>
+        <li>Developed real-time visualization tools and supported mechanical and electrical integration of the 6-ft RoboBall platform</li>
+        <li>Designed and integrated a wireless inductive charging system across multiple development iterations.</li>
+        <li>Engineered a deployable sensor package for RoboBall III and contributed to a peer-reviewed publication.</li>
       </ul>
     </div>
   </section>
@@ -204,70 +204,166 @@ permalink: /experience/
 
       <div class="team-overlay-content">
         <h2>RAD Lab – Engineering Intern</h2>
-        <p class="team-meta">Role: Engineering Intern · Dates: <!-- e.g. Summer 2023 --></p>
+        <p class="team-meta">Role: Engineering Intern · Dates: Summer 2024, Fall 2024, Spring 2025, Summer 2025</p>
 
         <!-- Hero image -->
         <img
-          src="{{ '/assets/images/experience/rad-lab-hero.jpg' | relative_url }}"
+          src="{{ '/assets/images/rad/ball-team-6.jpeg' | relative_url }}"
           alt="RAD Lab internship project hero image."
           class="project-hero-image"
         >
-
-        <!-- Overview -->
+            <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          Longer overview of your RAD Lab work: lab purpose, main project or experiment, and your role in the research or development effort.
+          The RoboBall platforms developed at the RAD Lab are spherical mobile robots intended for exploration, reconnaissance, and sensing in environments where traditional wheeled or legged systems are limited. Two primary variants were developed: a 2-ft diameter platform optimized for agility and rapid deployment, and a 6-ft diameter platform designed to carry larger payloads and extended sensing capabilities. Across four semesters, I contributed to the design, integration, and testing of subsystems spanning sensing, power, and data visualization for both platforms.
+                  </p>
+
+        <h3>Summer 2024 - First Term (Visualization & 6-ft RoboBall System Bring-Up)</h3>
+        <p>
+          In my first semester at the RAD Lab, I focused on developing software tools and supporting the mechanical and electrical integration of the first 6-ft diameter RoboBall platform. This phase emphasized system bring-up, debugging, and establishing reliable workflows for testing and data interpretation across subsystems.
         </p>
 
-        <h3>Responsibilities</h3>
+        <!-- Key Work -->
+        <h3>Key Work</h3>
         <ul>
-          <li>Responsibility 1 (e.g., experiment design, test stand work, data acquisition, or model development).</li>
-          <li>Responsibility 2 with specific tools, software, or hardware you used.</li>
-          <li>Responsibility 3 highlighting collaboration, iteration, or problem‑solving.</li>
+          <li>Developed real-time data visualization tools using ROS2 and MATLAB to monitor system states and sensor outputs</li>
+          <li>Supported mechanical and electrical integration and buildup of the initial 6-ft RoboBall platform</li>
+          <li>Assisted with system bring-up and early lab testing to validate integrated subsystems</li>
         </ul>
 
         <!-- Small image gallery -->
-        <h3>Development images</h3>
+        <h3>First term media.</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/experience/rad-dev-1.jpg' | relative_url }}"
-            alt="RAD Lab development image 1."
+            src="{{ '/assets/images/rad/ball-praise.jpeg' | relative_url }}"
+            alt="RoboBall III Assembly."
             class="project-gallery-img js-lightbox-target"
-            data-caption="RAD Lab development image 1."
+            data-caption="RoboBall III Assembly."
           >
-          <img
-            src="{{ '/assets/images/experience/rad-dev-2.jpg' | relative_url }}"
-            alt="RAD Lab development image 2."
+
+           <img
+            src="{{ '/assets/images/rad/ball-fam.jpeg' | relative_url }}"
+            alt="RoboBall Family."
             class="project-gallery-img js-lightbox-target"
-            data-caption="RAD Lab development image 2."
+            data-caption="RoboBall Family."
           >
-          <img
-            src="{{ '/assets/images/experience/rad-dev-3.jpg' | relative_url }}"
-            alt="RAD Lab development image 3."
+           <img
+            src="{{ '/assets/images/rad/RAD-Summer-1.gif' | relative_url }}"
+            alt="Summer 1 RAD Lab."
             class="project-gallery-img js-lightbox-target"
-            data-caption="RAD Lab development image 3."
+            data-caption="Summer 1 RAD Lab."
           >
         </div>
 
         <!-- Optional: video block -->
-        <h3>Experiment or demo</h3>
+        <h3>Roboball III bounce.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/experience/rad-video.mp4' | relative_url }}"
+          src="{{ '/assets/images/rad/ball-bounce.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        
+        <h3>Fall 2024 & Spring 2025 - Second and Third Term (Wireless Inductive Charging System)</h3>
+        <p>
+          During my second and third semesters, I led the design and iteration of a wireless inductive charging system to enable untethered recharging of the RoboBall platform. This work required balancing power transfer efficiency, alignment tolerance, and integration constraints to support reliable operation during extended testing campaigns.
+        </p>
+
+        <!-- Key Work -->
+        <h3>Key Work</h3>
+        <ul>
+          <li>Designed and iterated on a wireless inductive charging module for the RoboBall platform.</li>
+          <li>Integrated charging hardware with onboard power electronics and control systems.</li>
+          <li>Evaluated charging performance through testing, focusing on efficiency, robustness, and usability.</li>
+        </ul>
+        
+        <!-- Small image gallery -->
+        <h3>First term media.</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/rad/ball-on-rev.jpeg' | relative_url }}"
+            alt="RoboBall II on REV."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="RoboBall II on REV."
+          >
+        </div>
+
+        <!-- Optional: video block -->
+        <h3>Roboball III water test.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/rad/ball-roll.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <h3>Roboball III on truck.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/rad/ball-truck.mp4' | relative_url }}"
           autoplay
           muted
           loop
           playsinline
         ></video>
 
-        <h3>Results</h3>
+        <h3>Spring 2025 - Fourth Term (Deployable Sensor Package & Research Publication)</h3>
         <p>
-          Summarize what you achieved: validated designs, data products, tools or scripts you built, or how your work advanced the lab’s objectives.
+          In my final semester, I focused on system-level design and research contribution through the development of a deployable sensor package for RoboBall III. This system extended mission range and situational awareness by enabling distributed sensing beyond the primary robot, culminating in a peer-reviewed publication.
+        </p>
+
+        <!-- Key Work -->
+        <h3>Key Work</h3>
+        <ul>
+          <li>Engineered a deployable sensor package providing GPS localization and visual reconnaissance.</li>
+          <li>Integrated sensing, deployment, and communication subsystems into the RoboBall III platform.</li>
+          <li>Contributed to system validation, data analysis, and manuscript preparation as a co-author. View publication record at
+            <a href="https://orcid.org/0009-0002-2986-3486" target="_blank" rel="noopener noreferrer">
+              https://orcid.org/0009-0002-2986-3486
+            </a>.
+          </li>
+        </ul>
+
+        <!-- Small image gallery -->
+        <h3>First term media.</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/rad/merica-ball.jpeg' | relative_url }}"
+            alt="RoboBall III with flags."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="RoboBall III with flags."
+          >
+           <img
+            src="{{ '/assets/images/rad/RAD-Summer-2.gif' | relative_url }}"
+            alt="Summer 2 slide."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Summer 2 slide."
+          >
+        </div>
+
+        <!-- Optional: video block -->
+        <h3>Deployable cubesat.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/rad/cube-sat' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+
+        <h3>Overall summary and reflection</h3>
+        <p>
+    This multi-semester project provided sustained exposure to the full lifecycle of a complex robotic system, from early system bring-up through subsystem iteration and ultimately research-level contribution. Working across software, electrical, mechanical, and sensing domains reinforced the importance of interface definition, incremental validation, and design decisions that account for real-world constraints.
+          <br><br>
+          Over time, my role evolved from supporting integration and tooling to owning subsystem development and contributing at the system and research level. This experience strengthened my ability to work across disciplines, translate testing feedback into design improvements, and contribute meaningfully to technically rigorous, collaborative engineering efforts.
         </p>
       </div>
     </div>
   </div>
-
   <!-- Shared large image viewer (global, over everything) -->
   <div class="image-lightbox" id="image-lightbox">
     <div class="image-lightbox-inner">
