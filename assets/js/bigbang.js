@@ -138,7 +138,7 @@ function runBigBang(options, onComplete) {
       ctx.fillText(text.slice(0, textIndex), centerX, centerY);
 
       // extra pause after full text appears
-      const pauseAfterTextMs = 500; // .5 second pause
+      const pauseAfterTextMs = 250; // .25 second pause
 
       if (textIndex === text.length && elapsed > 2000 + pauseAfterTextMs) {
         phase = "inward";
