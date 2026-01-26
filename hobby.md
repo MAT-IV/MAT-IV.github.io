@@ -31,8 +31,8 @@ permalink: /hobby/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/hobby/fpv-drone-hero.jpg' | relative_url }}"
-          alt="Custom-built FPV drone on a workbench."
+          src="{{ '/assets/images/hobby/fpv/drone-3.jpeg' | relative_url }}"
+          alt="Custom-built FPV drone."
           class="team-image team-image-hobby-fpv"
           data-team-key="hobby-fpv"
         >
@@ -115,14 +115,14 @@ permalink: /hobby/
 
         <!-- Hero image -->
         <img
-          src="{{ '/assets/images/hobby/fpv-drone-hero.jpg' | relative_url }}"
-          alt="Custom-built FPV drone on a workbench."
+          src="{{ '/assets/images/hobby/fpv/drone-1.png' | relative_url }}"
+          alt="Drone #1 build."
           class="project-hero-image"
         >
 
         <h3>Overview</h3>
         <p>
-          I build FPV drones from individual components, handling frame selection, electronics layout, soldering, firmware setup, and tuning. The goal is a reliable freestyle platform that can handle aggressive flying while capturing clean HD footage.
+          I build FPV drones from individual COTS components, handling frame selection, electronics layout, soldering, firmware setup, and tuning. The goal is a reliable freestyle platform that can handle aggressive flying while capturing clean footage via a mounted GoPro.
         </p>
 
         <h3>Build highlights</h3>
@@ -135,39 +135,81 @@ permalink: /hobby/
         <h3>Build gallery</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/hobby/fpv-closeup.jpg' | relative_url }}"
-            alt="Close-up of FPV drone stack and wiring."
+            src="{{ '/assets/images/hobby/fpv/wiring-fpv.PNG' | relative_url }}"
+            alt="Wiring diagram of flight controller."
             class="project-gallery-img js-lightbox-target"
-            data-caption="Close-up of FPV drone stack and wiring."
+            data-caption="Wiring diagram of flight controller."
           >
           <img
-            src="{{ '/assets/images/hobby/fpv-outdoor.jpg' | relative_url }}"
-            alt="FPV drone ready for flight outdoors."
+            src="{{ '/assets/images/hobby/fpv/drone-build.jpeg' | relative_url }}"
+            alt="Mid drone build. Sorry mom for taking up the table."
             class="project-gallery-img js-lightbox-target"
-            data-caption="FPV drone ready for flight outdoors."
+            data-caption="Mid drone build. Sorry mom for taking up the table."
           >
           <img
-            src="{{ '/assets/images/hobby/fpv-workbench.jpg' | relative_url }}"
-            alt="FPV build in progress on the workbench."
+            src="{{ '/assets/images/hobby/fpv/drone-3.jpeg' | relative_url }}"
+            alt="FPV build #2."
             class="project-gallery-img js-lightbox-target"
-            data-caption="FPV build in progress on the workbench."
+            data-caption="FPV build #2."
           >
         </div>
 
         <!-- Optional: FPV DVR clip -->
-        <h3>Flight footage</h3>
+        <h3>Raw flight footage from headset.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/hobby/fpv-flight.mp4' | relative_url }}"
+          src="{{ '/assets/images/hobby/fpv/raw.MOV' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        
+        <h3>Flight videos.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/hobby/fpv/drone-chase.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/hobby/fpv/orbit-drone.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/hobby/fpv/flyby.MP4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/hobby/fpv/up-away.mp4' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/hobby/fpv/drone-orbit.MOV' | relative_url }}"
           autoplay
           muted
           loop
           playsinline
         ></video>
 
-        <h3>Why it matters</h3>
+        <h3>Why I did it.</h3>
         <p>
-          FPV building combines electronics, mechanical layout, and control tuning in a tight feedback loop. It has sharpened my practical wiring, troubleshooting, and configuration skills while giving me a hands-on way to explore control and stability in a real-world system.
+          FPV drone building combines electronics, mechanical layout, and control tuning in a tight feedback loop. It has allowed me to practive my wiring, troubleshooting, and configuration skills while giving me a hands-on way to explore control and stability in a real-world system.
         </p>
       </div>
     </div>
