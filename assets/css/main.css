@@ -298,6 +298,16 @@ html, body {
   width: 150px;   /* or larger if you want this one bigger */
 }
 
+/* Hobby ship size */
+.back-ship-hobby img {
+  width: 60px;   /* or larger if you want this one bigger */
+}
+
+/* About ship size */
+.back-ship-about img {
+  width: 60px;   /* or larger if you want this one bigger */
+}
+
 /* Generic page header: ship left, title centered */
 .page-header {
   display: flex;
