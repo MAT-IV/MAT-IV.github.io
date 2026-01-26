@@ -114,13 +114,31 @@ permalink: /experience/
         </ul>
 
         <!-- Small image gallery -->
-        <h3>First term media.</h3>
+        <h3>Test Stands.</h3>
         <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/nasa/a-1-test-stand.jpeg' | relative_url }}"
+            alt="NASA Stennis A-1 Test Stand."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis A-1 Test Stand."
+          >
           <img
             src="{{ '/assets/images/nasa/test-stand.jpeg' | relative_url }}"
             alt="NASA Stennis B-2 Test Stand."
             class="project-gallery-img js-lightbox-target"
             data-caption="NASA Stennis B-2 Test Stand."
+          >
+          <img
+            src="{{ '/assets/images/nasa/e-complex.png' | relative_url }}"
+            alt="NASA Stennis E-Complex Test Stand."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis E-Complex Test Stand."
+          >
+          <img
+            src="{{ '/assets/images/nasa/rs-engine-bay.jpeg' | relative_url }}"
+            alt="RS-25 Engine ready for hot-fire!."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="RS-25 Engine ready for hot-fire!."
           >
         </div>
 
