@@ -13,7 +13,7 @@ permalink: /about/
          class="back-ship back-ship-about"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
-        <img src="{{ '/assets/images/back-ship/ship-about.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/back-ship/Endurance.png' | relative_url }}" alt="">
       </a>
     </div>
 
@@ -24,7 +24,7 @@ permalink: /about/
 
   <!-- Intro / welcome -->
   <p>
-    Welcome to my personal portfolio. This site brings together my work across propulsion testing, robotics, competitive design teams, and hobby projects that keep me building and learning.
+    Howdy! Welcome to my personal portfolio. This site brings together my work across propulsion testing, robotics, competitive design teams, and hobby projects that keep me building and learning.
   </p>
 
   <!-- Bio block -->
@@ -32,15 +32,15 @@ permalink: /about/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/profile/profile-about.jpg' | relative_url }}"
-          alt="Portrait of Matthew Iverson."
+          src="{{ '/assets/images/profile.jpg' | relative_url }}"
+          alt="Professional NASA portrait of Mauricio Trevino."
           class="team-image"
         >
       </div>
     </div>
 
     <div class="team-card-body">
-      <h2>Matthew Iverson</h2>
+      <h2>Mauricio trevino</h2>
       <p class="team-meta">Mechanical Engineer · Space Studies Graduate Student</p>
       <p>
         I am a mechanical engineer currently pursuing a Professional Science Master’s in Space Studies at Rice University, with a focus on engineering and management. My goal is to pair strong technical foundations with leadership and systems-level decision making to contribute effectively to the space industry.
@@ -49,7 +49,7 @@ permalink: /about/
         I graduated summa cum laude with honors from Texas A&amp;M University with a B.S. in Mechanical Engineering. During my undergraduate studies, I worked as a NASA Pathways Co‑Op at the John C. Stennis Space Center, where I supported rocket engine testing operations through system design support, test planning, and data analysis. I also conducted research in the Robotics, Automation, and Design (RAD) Lab, developing and integrating sensing systems for novel spherical mobile robots.
       </p>
       <p>
-        In parallel, I was actively involved in competitive engineering design teams, including Formula SAE IC and SAE Aero Design, where I applied advanced simulation tools and hands-on fabrication techniques to deliver high-performing vehicle and aircraft designs. Across coursework, research, and team-based projects, I focus on building technically sound, testable systems, with an emphasis on real-world performance and reliability.
+        In parallel, I was actively involved in competitive engineering design teams, including Formula SAE IC and SAE Aero Design, where I applied advanced simulation tools and hands-on fabrication techniques to deliver high-performing vehicle and aircraft designs. Across coursework, research, and team-based projects, I focus on building technically sound, testable systems, with an emphasis on real-world performance and reliability. Enjoy!
       </p>
     </div>
   </section>
