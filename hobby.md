@@ -130,6 +130,28 @@ permalink: /hobby/
     </div>
   </section>
 
+  <!-- Misc Builds -->
+  <section class="team-card">
+    <div class="team-card-media">
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/hobby/misc/hammer.jpeg' | relative_url }}"
+          alt="Meen 360 hammer."
+          class="team-image team-image-hobby-misc"
+          data-team-key="hobby-misc"
+        >
+      </div>
+    </div>
+    <div class="team-card-body">
+      <h2>Misc Builds</h2>
+      <p class="team-meta">Category: One-off Projects</p>
+      <p>
+        This section collects smaller one-off projects and experiments that don’t fit neatly into a single category. It mainly has fun builds that helped me learn new skills.
+      </p>
+    </div>
+  </section>
+
+
   <!-- FPV Drone overlay -->
   <div class="team-overlay" id="hobby-fpv-overlay" data-team="hobby-fpv">
     <div class="team-overlay-inner">
@@ -437,6 +459,66 @@ permalink: /hobby/
       </div>
     </div>
   </div>
+
+  <!-- Misc Builds overlay -->
+  <div class="team-overlay" id="hobby-misc-overlay" data-team="hobby-misc">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>Misc Builds</h2>
+        <p class="team-meta">Category: One-off Projects</p>
+
+        <!-- Hero image -->
+        <img
+          src="{{ '/assets/images/hobby/misc/hammer.jpeg' | relative_url }}"
+          alt="Custom machinist hammer made in class."
+          class="project-hero-image"
+        >
+
+        <h3>Overview</h3>
+        <p>
+          These builds are a mix of fabrication, simple electronics, and practical problem solving.
+        </p>
+
+        <h3>Build gallery</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/hobby/hat-finished.jpeg' | relative_url }}"
+            alt="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season."
+          >
+          <img
+            src="{{ '/assets/images/hobby/hat-wip.jpeg' | relative_url }}"
+            alt="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season. Work in progress"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season. Work in progress"
+          >
+          <img
+            src="{{ '/assets/images/hobby/misc/tron.JPEG' | relative_url }}"
+            alt="Tron Legacy Disk and Jacket. 3D printed disk with integral leds, and led strip on jacket."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Tron Legacy Disk and Jacket. 3D printed disk with integral leds, and led strip on jacket."
+          >
+          <img
+            src="{{ '/assets/images/hobby/misc/hannah-sign.jpeg' | relative_url }}"
+            alt="Custom LED RC sign for my girlfriend. Lasercut wood panel, with LED strip aligned to path."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Custom LED RC sign for my girlfriend. Lasercut wood panel, with LED strip aligned to path."
+          >
+          <img
+            src="{{ '/assets/images/hobby/misc/laser-tag.jpegg' | relative_url }}"
+            alt="Custom lasercut bag-tag for Formula SAE season."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Custom lasercut bag-tag for Formula SAE season."
+          >
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
 
   <!-- Shared large image viewer (global, over everything) -->
   <div class="image-lightbox" id="image-lightbox">
