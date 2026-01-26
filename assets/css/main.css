@@ -126,7 +126,7 @@ html, body {
 
 /* Make Design Teams planet larger */
 .orbit-about .orbit-planet {
-  width: 76px;   /* bigger than the default 24px */
+  width: 100px;   /* bigger than the default 24px */
   height: 76px;
 }
 
