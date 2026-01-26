@@ -257,7 +257,7 @@ permalink: /hobby/
 
         <h3>Why I did it.</h3>
         <p>
-          FPV drone building combines electronics, mechanical layout, and control tuning in a tight feedback loop. It has allowed me to practive my wiring, troubleshooting, and configuration skills while giving me a hands-on way to explore control and stability in a real-world system.
+          FPV drone building combines electronics, mechanical layout, and control tuning in a tight feedback loop. It has allowed me to practice my wiring, troubleshooting, and configuration skills while giving me a hands-on way to explore control and stability in a real-world system.
         </p>
       </div>
     </div>
@@ -409,7 +409,7 @@ permalink: /hobby/
             data-caption="Waning Moon imaged with the Evostar 80ED."
           >
           <img
-            src="{{ '/assets/images/hobby/astro/moon02.jpeg.jpg' | relative_url }}"
+            src="{{ '/assets/images/hobby/astro/moon-2.jpeg' | relative_url }}"
             alt="Full Moon imaged with the Evostar 80ED."
             class="project-gallery-img js-lightbox-target"
             data-caption="Full Moon imaged with the Evostar 80ED."
@@ -484,13 +484,13 @@ permalink: /hobby/
         <h3>Build gallery</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/hobby/hat-finished.jpeg' | relative_url }}"
+            src="{{ '/assets/images/hobby/misc/hat-finished.jpeg' | relative_url }}"
             alt="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season."
             class="project-gallery-img js-lightbox-target"
             data-caption="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season."
           >
           <img
-            src="{{ '/assets/images/hobby/hat-wip.jpeg' | relative_url }}"
+            src="{{ '/assets/images/hobby/misc/hat-wip.jpeg' | relative_url }}"
             alt="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season. Work in progress"
             class="project-gallery-img js-lightbox-target"
             data-caption="Kevlar Carbon Fiber cowboy hat made using leftover material during Formula SAE season. Work in progress"
@@ -508,10 +508,22 @@ permalink: /hobby/
             data-caption="Custom LED RC sign for my girlfriend. Lasercut wood panel, with LED strip aligned to path."
           >
           <img
-            src="{{ '/assets/images/hobby/misc/laser-tag.jpegg' | relative_url }}"
+            src="{{ '/assets/images/hobby/misc/laser-tag.jpeg' | relative_url }}"
             alt="Custom lasercut bag-tag for Formula SAE season."
             class="project-gallery-img js-lightbox-target"
             data-caption="Custom lasercut bag-tag for Formula SAE season."
+          >
+          <img
+            src="{{ '/assets/images/hobby/misc/ace.jpeg' | relative_url }}"
+            alt="Completed the America Cutting Edge training on the 3-axis CNC mill and lathe. I also had the fastest air enigne assembly time."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Completed the America Cutting Edge training on the 3-axis CNC mill and lathe. I also had the fastest air enigne assembly time."
+          >
+          <img
+            src="{{ '/assets/images/hobby/misc/mill-big.jpeg' | relative_url }}"
+            alt="After completing the ACE training, I spent extra time working to mill out a component of Roboball III on the 5-axis mill."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="After completing the ACE training, I spent extra time working to mill out a component of Roboball III on the 5-axis mill."
           >
         </div>
         
