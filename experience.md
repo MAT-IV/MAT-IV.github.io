@@ -31,8 +31,8 @@ permalink: /experience/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/nasa/nasa-selfie.jpeg' | relative_url }}"
-          alt="NASA selfie."
+          src="{{ '/assets/images/nasa/LVT-wide.jpeg' | relative_url }}"
+          alt="LOX Valve Test final build wide shot."
           class="team-image team-image-nasa"
           data-team-key="nasa-coop"
         >
@@ -150,14 +150,12 @@ permalink: /experience/
         
         <!-- Optional: video block -->
         <h3>Stennis Representative Slide.</h3>
-        <video
+        <img
           class="project-video"
           src="{{ '/assets/images/nasa/PAXC.gif' | relative_url }}"
-          autoplay
-          muted
-          loop
-          playsinline
-        ></video>
+          alt="Stennis representative slide animated GIF."
+        >
+
 
         <h3>Spring 2024 - Third Term (Closing the Loop)</h3>
         <p>
@@ -182,10 +180,10 @@ permalink: /experience/
             data-caption="LOX Valve Test final build."
           >
           <img
-            src="{{ '/assets/images/nasa/LVT-wide.jpeg' | relative_url }}"
-            alt="LOX Valve Test final build wide shot."
+            src="{{ '/assets/images/nasa/nasa-selfie.jpeg' | relative_url }}"
+            alt="NASA selfie."
             class="project-gallery-img js-lightbox-target"
-            data-caption="LOX Valve Test final build wide shot."
+            data-caption="NASA selfie."
           >
         </div>
 
