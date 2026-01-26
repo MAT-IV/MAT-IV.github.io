@@ -136,6 +136,12 @@ html, body {
   background-image: url("/assets/images/planets/planet-teams.png");
 }
 
+/* Make Design Teams planet larger */
+.orbit-teams .orbit-planet {
+  width: 32px;   /* bigger than the default 24px */
+  height: 32px;
+}
+
 .orbit-hobby .orbit-planet {
   background-image: url("/assets/images/planets/planet-hobby.png");
 }
@@ -149,13 +155,6 @@ html, body {
   background: rgba(255,255,255,0.2);
 }
 
-/* Desktop: make orbiting planets larger */
-@media (min-width: 769px) {
-  .orbit-planet {
-    width: 75px;   /* or 36px, 40px, etc. */
-    height: 75px;
-  }
-
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
   /* Keep orbits fixed; only adjust button position */
@@ -164,10 +163,6 @@ html, body {
     bottom: 1rem;
   }
 }
-.orbit-about .orbit-planet {
-    width: 100px;
-    height: 100px;
-  }
 
 /* Fullscreen overlay for enlarged profile */
 .profile-overlay {
@@ -570,5 +565,3 @@ html, body {
     border-radius: 0;
   }
 }
-
-
