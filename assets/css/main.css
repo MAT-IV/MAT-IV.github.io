@@ -121,7 +121,7 @@ html, body {
 
 /* Use root-relative paths: start from /assets/... */
 .orbit-about .orbit-planet {
-  background-image: url("/assets/images/planets/planet-about.png");
+  background-image: url("/assets/images/planets/planet-about-gar.png");
 }
 
 .orbit-resume .orbit-planet {
