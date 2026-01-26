@@ -57,8 +57,8 @@ permalink: /hobby/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/hobby/film-camera-hero.jpg' | relative_url }}"
-          alt="1959 antique film camera with developed prints."
+          src="{{ '/assets/images/hobby/film/camera.JPG' | relative_url }}"
+          alt="1959 antique film camera."
           class="team-image team-image-hobby-film"
           data-team-key="hobby-film"
         >
@@ -66,7 +66,7 @@ permalink: /hobby/
     </div>
     <div class="team-card-body">
       <h2>1959 Graflex Super Graphic 4x5 Large Format Camera</h2>
-      <p class="team-meta">Started: February 2023</p>
+      <p class="team-meta">Started: December 2023</p>
       <p>
         I shoot 4x5 large format film photographs using a 1959 film camera. Click the image to see more of my work!
       </p>
@@ -226,8 +226,8 @@ permalink: /hobby/
 
         <!-- Hero image -->
         <img
-          src="{{ '/assets/images/hobby/film-camera-hero.jpg' | relative_url }}"
-          alt="1959 film camera with developed photos."
+          src="{{ '/assets/images/hobby/film/setup-out.jpeg' | relative_url }}"
+          alt="Film photos take work."
           class="project-hero-image"
         >
 
@@ -236,32 +236,19 @@ permalink: /hobby/
           I use a 1959 film camera to explore analog photography, focusing on manual exposure, composition, and understanding how the mechanical side of the camera influences each frame.
         </p>
 
-        <h3>Camera and workflow</h3>
-        <ul>
-          <li>Inspected and refreshed light seals, verified shutter speeds, and tested film advance for consistent operation.</li>
-          <li>Shot different film stocks to learn how contrast, grain, and color rendering change with exposure and development.</li>
-          <li>Scanned negatives and curated a small set of favorite images for digital viewing and printing.</li>
-        </ul>
-
         <h3>Sample photographs</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/hobby/film-photo-1.jpg' | relative_url }}"
-            alt="Sample photograph taken on the 1959 camera."
+            src="{{ '/assets/images/hobby/film/b-2.JPG' | relative_url }}"
+            alt="NASA Stennis B-2 Test Stand."
             class="project-gallery-img js-lightbox-target"
-            data-caption="Sample photograph taken on the 1959 camera."
+            data-caption="NASA Stennis B-2 Test Stand."
           >
           <img
-            src="{{ '/assets/images/hobby/film-photo-2.jpg' | relative_url }}"
-            alt="Black-and-white street scene shot on film."
+            src="{{ '/assets/images/hobby/film/a-1.JPG' | relative_url }}"
+            alt="NASA Stennis A-1 Test Stand."
             class="project-gallery-img js-lightbox-target"
-            data-caption="Black-and-white street scene shot on film."
-          >
-          <img
-            src="{{ '/assets/images/hobby/film-photo-3.jpg' | relative_url }}"
-            alt="Landscape photo captured on vintage film stock."
-            class="project-gallery-img js-lightbox-target"
-            data-caption="Landscape photo captured on vintage film stock."
+            data-caption="NASA Stennis A-1 Test Stand."
           >
         </div>
 
