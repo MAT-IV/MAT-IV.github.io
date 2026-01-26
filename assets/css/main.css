@@ -261,7 +261,7 @@ html, body {
 
 /* Experience ship size */
 .back-ship-experience img {
-  width: 96px;   /* or larger if you want this one bigger */
+  width: 150px;   /* or larger if you want this one bigger */
 }
 
 /* Generic page header: ship left, title centered */
@@ -334,11 +334,6 @@ html, body {
     max-width: 100%;
     height: auto;
   }
-}
-
-/* Teams ship size */
-.back-ship-teams img {
-  width: 96px;
 }
 
 /* Base for all team images */
