@@ -10,20 +10,20 @@ permalink: /experience/
   <div class="page-header">
     <div class="page-header-left">
       <a href="{{ '/' | relative_url }}"
-         class="back-ship back-ship-teams"
+         class="back-ship back-ship-experience"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
         <img src="{{ '/assets/images/back-ship/SLS.png' | relative_url }}" alt="">
       </a>
     </div>
 
-    <h1 class="page-header-title">Experience</h1>
+    <h1 class="page-header-title">Professional Experience</h1>
 
     <div class="page-header-right"></div>
   </div>
 
   <p>
-    This page highlights my most significant professional experiences, including my NASA Co‑Op and my RAD Lab internship. Select an image to view more detail, development images, and results for each role.
+    This page highlights my most significant professional experiences. Select an image to view more details.
   </p>
 
   <!-- 1. NASA Co-Op -->
@@ -31,8 +31,8 @@ permalink: /experience/
     <div class="team-card-media">
       <div class="project-gallery">
         <img
-          src="{{ '/assets/images/experience/nasa-selfie.jpeg' | relative_url }}"
-          alt="NASA facility and aircraft."
+          src="{{ '/assets/images/nasa/nasa-selfie.jpeg' | relative_url }}"
+          alt="NASA selfie."
           class="team-image team-image-nasa"
           data-team-key="nasa-coop"
         >
@@ -89,7 +89,7 @@ permalink: /experience/
 
         <!-- Hero image -->
         <img
-          src="{{ '/assets/images/experience/engine-photo.JPG' | relative_url }}"
+          src="{{ '/assets/images/nasa/engine-photo.JPG' | relative_url }}"
           alt="RS-25 Engine."
           class="project-hero-image"
         >
@@ -112,6 +112,27 @@ permalink: /experience/
           <li>Designed and analyzed a LOX pipe support in CREO and AutoPIPE, performing buckling and stress checks (hand calcs and FEA) to meet structural safety margins.</li>
         </ul>
 
+        <!-- Small image gallery -->
+        <h3>First term images.</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/experience/test-stand.jpeg' | relative_url }}"
+            alt="NASA Stennis B-2 Test Stand."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis B-2 Test Stand."
+          >
+        </div>
+                <!-- Optional: video block -->
+        <h3>RS-25 engine test.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/nasa/rs-25-test.MOV' | relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        
         <h3>Summer 2023 - Second Term (More Autonomy and Operations)</h3>
         <p>
         By my second term, I moved from shadowing to owning more of the design work and also stepped into operations through the technical control center (TCC). I expanded into thermo-fluid system analysis while still building on the piping and test stand understanding from my first rotation.
@@ -123,6 +144,17 @@ permalink: /experience/
           <li>Shadowed and then acted as a transfer engineer in the TCC, executing a supervised LOX transfer from storage tanks to a customer’s run tank and seeing how design, software, and operations converge on test day.</li>
           <li>Built Flomaster models and test sequences for the LOX Valve Test (LVT), using fluid property tools (REFPROP) and manufacturer Cv curves to simulate different valve profiles and verify component pressure limits and test cases.</li>
         </ul>
+        
+                <!-- Optional: video block -->
+        <h3>Stennis Representative Slide.</h3>
+        <video
+          class="project-video"
+          src="{{ '/assets/images/nasa/PAXC'| relative_url }}"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
 
         <h3>Spring 2024 - Third Term (Closing the Loop)</h3>
         <p>
@@ -136,39 +168,23 @@ permalink: /experience/
           <li>Assisted on customer-specific thermo-fluids and data-analysis tasks, including orifice sizing using heat-transfer/flow calculations and developing scripts to flag out-of-family instrumentation during and after tests.</li>
         </ul>
 
-        <!-- Small image gallery -->
-        <h3>Development images</h3>
+                <!-- Small image gallery -->
+        <h3>Third term images.</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/experience/nasa-dev-1.jpg' | relative_url }}"
-            alt="NASA development image 1."
+            src="{{ '/assets/images/experience/LVT-close.jpeg' | relative_url }}"
+            alt="LOX Valve Test final build."
             class="project-gallery-img js-lightbox-target"
-            data-caption="NASA development image 1."
+            data-caption="LOX Valve Test final build."
           >
           <img
-            src="{{ '/assets/images/experience/nasa-dev-2.jpg' | relative_url }}"
-            alt="NASA development image 2."
+            src="{{ '/assets/images/experience/LVT-wide.jpeg' | relative_url }}"
+            alt="LOX Valve Test final build wide shot."
             class="project-gallery-img js-lightbox-target"
-            data-caption="NASA development image 2."
-          >
-          <img
-            src="{{ '/assets/images/experience/nasa-dev-3.jpg' | relative_url }}"
-            alt="NASA development image 3."
-            class="project-gallery-img js-lightbox-target"
-            data-caption="NASA development image 3."
+            data-caption="LOX Valve Test final build wide shot."
           >
         </div>
-
-        <!-- Optional: video block -->
-        <h3>Visualization or testing</h3>
-        <video
-          class="project-video"
-          src="{{ '/assets/images/experience/nasa-video.mp4' | relative_url }}"
-          autoplay
-          muted
-          loop
-          playsinline
-        ></video>
+        </div>
 
         <h3>Overall summary and reflection</h3>
         <p> Across all three terms, I was able to watch a major LOX valve project progress from initial PSK and instrumentation sizing, through system modeling and sequence development, all the way to cryogenic test data and performance characterization. That full-cycle exposure, combined with hands-on time in the test control center and on stand walk-downs, made the link between classroom thermo-fluids and real rocket test systems very tangible.
