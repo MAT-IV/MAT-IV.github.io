@@ -126,8 +126,13 @@ function runBigBang(options, onComplete) {
       const charsPerMs = text.length / 2000;
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
+
+    // Choose font size based on viewport width (desktop vs mobile)
+      const isDesktop = window.innerWidth >= 769;
+      const fontSize = isDesktop ? 40 : 20; // 40px on desktop, 20px on mobile
+      
       ctx.fillStyle = "#fff";
-      ctx.font = "40px Helvetica Neue, Arial, sans-serif";
+      ctx.font = `${fontSize}px Helvetica Neue, Arial, sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(text.slice(0, textIndex), centerX, centerY);
