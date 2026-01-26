@@ -161,3 +161,24 @@ document.addEventListener('DOMContentLoaded', () => {
   initTeamOverlays();
   initImageLightbox();
 });
+
+function openOverlayFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (!hash) return;
+
+  // Find a team image with matching data-team-key
+  const img = document.querySelector(`.team-image[data-team-key="${hash}"]`);
+  if (!img) return;
+
+  // Slight delay to ensure overlays are initialized
+  setTimeout(() => {
+    img.click();
+  }, 100);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTeamOverlays();
+  initImageLightbox();
+  openOverlayFromHash();
+});
+
