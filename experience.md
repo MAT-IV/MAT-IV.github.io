@@ -113,7 +113,7 @@ permalink: /experience/
         </ul>
 
         <!-- Small image gallery -->
-        <h3>First term images.</h3>
+        <h3>First term media.</h3>
         <div class="project-gallery">
           <img
             src="{{ '/assets/images/nasa/test-stand.jpeg' | relative_url }}"
@@ -184,15 +184,13 @@ permalink: /experience/
             data-caption="LOX Valve Test final build wide shot."
           >
         </div>
-        </div>
+
 
         <h3>Overall summary and reflection</h3>
         <p> Across all three terms, I was able to watch a major LOX valve project progress from initial PSK and instrumentation sizing, through system modeling and sequence development, all the way to cryogenic test data and performance characterization. That full-cycle exposure, combined with hands-on time in the test control center and on stand walk-downs, made the link between classroom thermo-fluids and real rocket test systems very tangible.
         <br><br>
     Just as importantly, the co-op showed me how dependent successful tests are on communication between design engineers, operators, technicians, and data analysts. The experience solidified that I enjoy working at the intersection of analysis, hardware, and operations, and it gave me a level of confidence and context that I’ll carry into future roles in propulsion and test engineering.
         </p>
-      </div>
-    </div>
   </div>
 
   <!-- RAD Lab Internship detail overlay -->
