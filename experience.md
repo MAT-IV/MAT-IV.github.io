@@ -345,7 +345,7 @@ permalink: /experience/
         </div>
 
         <!-- Optional: video block -->
-        <h3>Deployable cubesat.</h3>
+        <h3>Deployable sensor package test.</h3>
         <video
           class="project-video"
           src="{{ '/assets/images/rad/cube-sat.MOV' | relative_url }}"
