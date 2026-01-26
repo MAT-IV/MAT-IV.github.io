@@ -309,7 +309,7 @@ html, body {
 
 /* Maker ship size */
 .back-ship-maker img {
-  width: 150px;   /* or larger if you want this one bigger */
+  width: 250px;   /* or larger if you want this one bigger */
 }
 
 /* Generic page header: ship left, title centered */
