@@ -300,7 +300,7 @@ html, body {
 
 /* Hobby ship size */
 .back-ship-hobby img {
-  width: 60px;   /* or larger if you want this one bigger */
+  width: 150px;   /* or larger if you want this one bigger */
 }
 
 /* About ship size */
@@ -395,7 +395,10 @@ html, body {
 .team-image-aero-22-23,
 .team-image-aero-21-22,
 .team-image-nasa,
-.team-hover-radlab {
+.team-image-radlab,
+.team-image-hobby-fpv,
+.team-image-hobby-film,
+.team-image-hobby-3dprint {
   cursor: pointer;
 }
 
@@ -404,7 +407,10 @@ html, body {
 .team-image-aero-22-23:hover,
 .team-image-aero-21-22:hover,
 .team-image-nasa:hover,
-.team-image-radlab:hover {
+.team-image-radlab:hover,
+.team-image-hobby-fpv:hover,
+.team-image-hobby-film:hover,
+.team-image-hobby-3dprint:hover {
   transform: scale(1.06);
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
