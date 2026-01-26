@@ -74,9 +74,10 @@ permalink: /experience/
         <li>Developed real-time visualization tools and supported mechanical and electrical integration of the 6-ft RoboBall platform</li>
         <li>Designed and integrated a wireless inductive charging system across multiple development iterations.</li>
         <li>Engineered a deployable sensor package for Roboball III and contributed to a peer-reviewed publication.</li>
-        <li> View RAD Lab website at
+        <li>
+            View RAD Lab website at
             <a href="https://rad.engr.tamu.edu/" target="_blank" rel="noopener noreferrer">
-            </a>.</li>
+            rad.engr.tamu.edu </a>. </li>
       </ul>
     </div>
   </section>
