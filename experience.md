@@ -85,7 +85,7 @@ permalink: /experience/
 
       <div class="team-overlay-content">
         <h2>NASA – Engineering Co‑Op</h2>
-        <p class="team-meta">Role: Engineering Co‑Op · Dates: <Spring 2023, Summer 2023, Spring 2024></p>
+        <p class="team-meta">Role: Engineering Co‑Op · Dates: Spring 2023, Summer 2023, Spring 2024</p>
 
         <!-- Hero image -->
         <img
@@ -116,7 +116,7 @@ permalink: /experience/
         <h3>First term images.</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/experience/test-stand.jpeg' | relative_url }}"
+            src="{{ '/assets/images/nasa/test-stand.jpeg' | relative_url }}"
             alt="NASA Stennis B-2 Test Stand."
             class="project-gallery-img js-lightbox-target"
             data-caption="NASA Stennis B-2 Test Stand."
@@ -149,7 +149,7 @@ permalink: /experience/
         <h3>Stennis Representative Slide.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/nasa/PAXC'| relative_url }}"
+          src="{{ '/assets/images/nasa/PAXC.gif'| relative_url }}"
           autoplay
           muted
           loop
@@ -172,13 +172,13 @@ permalink: /experience/
         <h3>Third term images.</h3>
         <div class="project-gallery">
           <img
-            src="{{ '/assets/images/experience/LVT-close.jpeg' | relative_url }}"
+            src="{{ '/assets/images/nasa/LVT-close.jpeg' | relative_url }}"
             alt="LOX Valve Test final build."
             class="project-gallery-img js-lightbox-target"
             data-caption="LOX Valve Test final build."
           >
           <img
-            src="{{ '/assets/images/experience/LVT-wide.jpeg' | relative_url }}"
+            src="{{ '/assets/images/nasa/LVT-wide.jpeg' | relative_url }}"
             alt="LOX Valve Test final build wide shot."
             class="project-gallery-img js-lightbox-target"
             data-caption="LOX Valve Test final build wide shot."
