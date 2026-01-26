@@ -124,6 +124,12 @@ html, body {
   background-image: url("/assets/images/planets/planet-about-gar.png");
 }
 
+/* Make Design Teams planet larger */
+.orbit-about .orbit-planet {
+  width: 76px;   /* bigger than the default 24px */
+  height: 76px;
+}
+
 .orbit-resume .orbit-planet {
   background-image: url("/assets/images/planets/planet-resume.png");
 }
