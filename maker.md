@@ -12,7 +12,7 @@ permalink: /maker/
          class="back-ship back-ship-maker"
          aria-label="Back to main orbit"
          onclick="skipBigBangAndGoHome(event);">
-        <img src="{{ '/assets/images/back-ship/ship-maker.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/back-ship/formula.png' | relative_url }}" alt="">
       </a>
     </div>
 
