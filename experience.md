@@ -102,8 +102,9 @@ permalink: /experience/
 
         <h3>Spring 2023 - First Term (Getting Started)</h3>
         <p>
-        In my first term, I joined the Rocket Propulsion Test group at the very beginning of a new LOX valve project and saw how requirements turn into real piping and hardware. My work focused on building the initial piping sketch, analyzing instrumentation, and designing pipe supports that will be installed on a live test stand.
-        <p>
+          In my first term, I joined the Rocket Propulsion Test group at the very beginning of a new LOX valve project and saw how requirements turn into real piping and hardware. My work focused on building the initial piping sketch, analyzing instrumentation, and designing pipe supports that will be installed on a live test stand.
+        </p>
+
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
@@ -122,7 +123,8 @@ permalink: /experience/
             data-caption="NASA Stennis B-2 Test Stand."
           >
         </div>
-                <!-- Optional: video block -->
+
+        <!-- Optional: video block -->
         <h3>RS-25 engine test.</h3>
         <video
           class="project-video"
@@ -135,8 +137,9 @@ permalink: /experience/
         
         <h3>Summer 2023 - Second Term (More Autonomy and Operations)</h3>
         <p>
-        By my second term, I moved from shadowing to owning more of the design work and also stepped into operations through the technical control center (TCC). I expanded into thermo-fluid system analysis while still building on the piping and test stand understanding from my first rotation.
-        <p>
+          By my second term, I moved from shadowing to owning more of the design work and also stepped into operations through the technical control center (TCC). I expanded into thermo-fluid system analysis while still building on the piping and test stand understanding from my first rotation.
+        </p>
+
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
@@ -145,11 +148,11 @@ permalink: /experience/
           <li>Built Flomaster models and test sequences for the LOX Valve Test (LVT), using fluid property tools (REFPROP) and manufacturer Cv curves to simulate different valve profiles and verify component pressure limits and test cases.</li>
         </ul>
         
-                <!-- Optional: video block -->
+        <!-- Optional: video block -->
         <h3>Stennis Representative Slide.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/nasa/PAXC.gif'| relative_url }}"
+          src="{{ '/assets/images/nasa/PAXC.gif' | relative_url }}"
           autoplay
           muted
           loop
@@ -158,8 +161,9 @@ permalink: /experience/
 
         <h3>Spring 2024 - Third Term (Closing the Loop)</h3>
         <p>
-        In my final term, I got to see the LOX Valve Test project through full activation and focused heavily on data analysis and site-level documentation. I also supported additional customer projects that tied together fluid dynamics, heat transfer, and real test data processing.
-        <p>
+          In my final term, I got to see the LOX Valve Test project through full activation and focused heavily on data analysis and site-level documentation. I also supported additional customer projects that tied together fluid dynamics, heat transfer, and real test data processing.
+        </p>
+
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
@@ -168,7 +172,7 @@ permalink: /experience/
           <li>Assisted on customer-specific thermo-fluids and data-analysis tasks, including orifice sizing using heat-transfer/flow calculations and developing scripts to flag out-of-family instrumentation during and after tests.</li>
         </ul>
 
-                <!-- Small image gallery -->
+        <!-- Small image gallery -->
         <h3>Third term images.</h3>
         <div class="project-gallery">
           <img
@@ -185,12 +189,14 @@ permalink: /experience/
           >
         </div>
 
-
         <h3>Overall summary and reflection</h3>
-        <p> Across all three terms, I was able to watch a major LOX valve project progress from initial PSK and instrumentation sizing, through system modeling and sequence development, all the way to cryogenic test data and performance characterization. That full-cycle exposure, combined with hands-on time in the test control center and on stand walk-downs, made the link between classroom thermo-fluids and real rocket test systems very tangible.
-        <br><br>
-    Just as importantly, the co-op showed me how dependent successful tests are on communication between design engineers, operators, technicians, and data analysts. The experience solidified that I enjoy working at the intersection of analysis, hardware, and operations, and it gave me a level of confidence and context that I’ll carry into future roles in propulsion and test engineering.
+        <p>
+          Across all three terms, I was able to watch a major LOX valve project progress from initial PSK and instrumentation sizing, through system modeling and sequence development, all the way to cryogenic test data and performance characterization. That full-cycle exposure, combined with hands-on time in the test control center and on stand walk-downs, made the link between classroom thermo-fluids and real rocket test systems very tangible.
+          <br><br>
+          Just as importantly, the co-op showed me how dependent successful tests are on communication between design engineers, operators, technicians, and data analysts. The experience solidified that I enjoy working at the intersection of analysis, hardware, and operations, and it gave me a level of confidence and context that I’ll carry into future roles in propulsion and test engineering.
         </p>
+      </div>
+    </div>
   </div>
 
   <!-- RAD Lab Internship detail overlay -->
@@ -272,18 +278,5 @@ permalink: /experience/
       <p class="image-lightbox-caption"></p>
     </div>
   </div>
-
-</div>
-
-
-<!-- Shared large image viewer (global, over everything) -->
-<div class="image-lightbox" id="image-lightbox">
-  <div class="image-lightbox-inner">
-    <button class="image-lightbox-close" aria-label="Close image">&times;</button>
-    <img src="" alt="" class="image-lightbox-img">
-    <p class="image-lightbox-caption"></p>
-  </div>
-</div>
-
 
 </div>
