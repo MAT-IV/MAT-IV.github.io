@@ -127,12 +127,15 @@ function runBigBang(options, onComplete) {
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
-      ctx.font = "20px Helvetica Neue, Arial, sans-serif";
+      ctx.font = "40px Helvetica Neue, Arial, sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(text.slice(0, textIndex), centerX, centerY);
 
-      if (textIndex === text.length && elapsed > 2000) {
+      // extra pause after full text appears
+      const pauseAfterTextMs = 500; // .5 second pause
+
+      if (textIndex === text.length && elapsed > 2000 + pauseAfterTextMs) {
         phase = "inward";
         phaseStart = now;
         spawnInwardParticles(PARTICLE_COUNT);
