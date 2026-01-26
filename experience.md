@@ -256,7 +256,7 @@ permalink: /experience/
         </div>
 
         <!-- Optional: video block -->
-        <h3>Roboball III bounce.</h3>
+        <h3>Roboball III rolling.</h3>
         <video
           class="project-video"
           src="{{ '/assets/images/rad/ball-bounce.mp4' | relative_url }}"
@@ -303,7 +303,7 @@ permalink: /experience/
         <h3>Roboball III on truck.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/rad/ball-truck.mp4' | relative_url }}"
+          src="{{ '/assets/images/rad/ball-truck.MOV' | relative_url }}"
           autoplay
           muted
           loop
@@ -348,7 +348,7 @@ permalink: /experience/
         <h3>Deployable cubesat.</h3>
         <video
           class="project-video"
-          src="{{ '/assets/images/rad/cube-sat' | relative_url }}"
+          src="{{ '/assets/images/rad/cube-sat.MOV' | relative_url }}"
           autoplay
           muted
           loop
@@ -357,7 +357,7 @@ permalink: /experience/
 
         <h3>Overall summary and reflection</h3>
         <p>
-    This multi-semester project provided sustained exposure to the full lifecycle of a complex robotic system, from early system bring-up through subsystem iteration and ultimately research-level contribution. Working across software, electrical, mechanical, and sensing domains reinforced the importance of interface definition, incremental validation, and design decisions that account for real-world constraints.
+    This multi-semester research/internship experience provided sustained exposure to the full lifecycle of a complex robotic system, from early system bring-up through subsystem iteration and ultimately research-level contribution. Working across software, electrical, mechanical, and sensing domains reinforced the importance of interface definition, incremental validation, and design decisions that account for real-world constraints.
           <br><br>
           Over time, my role evolved from supporting integration and tooling to owning subsystem development and contributing at the system and research level. This experience strengthened my ability to work across disciplines, translate testing feedback into design improvements, and contribute meaningfully to technically rigorous, collaborative engineering efforts.
         </p>
