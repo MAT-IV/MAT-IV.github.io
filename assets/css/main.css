@@ -587,16 +587,22 @@ html, body {
   border-radius: 8px;
 }
 
-/* Mobile: full-width */
+/* Mobile: full-width, fixed height so it shows */
 @media (max-width: 768px) {
   .pdf-container {
     width: 100vw;
     max-width: 100vw;
-    border-radius: 0;   /* edge-to-edge if you like */
-    aspect-ratio: auto; /* override desktop aspect ratio */
+    margin: 0;              /* edge-to-edge */
+    border-radius: 0;
+    aspect-ratio: auto;     /* let height be controlled by explicit value */
+    height: 100vh;          /* or try 90vh/80vh if 100vh feels too tall */
   }
 
   .pdf-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 0;
   }
 }
