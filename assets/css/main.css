@@ -175,8 +175,8 @@ html, body {
   }
   /* Make About planet larger */
 .orbit-about .orbit-planet {
-  width: 100px;   /* bigger than the default 24px */
-  height: 76px;
+  width: 150px;   /* bigger than the default 24px */
+  height: 125px;
 }
 }
 
