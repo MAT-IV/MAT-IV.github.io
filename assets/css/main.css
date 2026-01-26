@@ -180,7 +180,6 @@ html, body {
 }
 }
 
-
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
   /* Keep orbits fixed; only adjust button position */
@@ -310,7 +309,7 @@ html, body {
 
 /* Maker ship size */
 .back-ship-maker img {
-  width: 60px;   /* or larger if you want this one bigger */
+  width: 150px;   /* or larger if you want this one bigger */
 }
 
 /* Generic page header: ship left, title centered */
