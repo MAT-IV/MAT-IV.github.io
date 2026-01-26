@@ -398,7 +398,9 @@ html, body {
 .team-image-radlab,
 .team-image-hobby-fpv,
 .team-image-hobby-film,
-.team-image-hobby-3dprint {
+.team-image-hobby-3dprint,
+.team-image-hobby-astro,
+.team-image-hobby-misc {
   cursor: pointer;
 }
 
@@ -410,7 +412,9 @@ html, body {
 .team-image-radlab:hover,
 .team-image-hobby-fpv:hover,
 .team-image-hobby-film:hover,
-.team-image-hobby-3dprint:hover {
+.team-image-hobby-3dprint:hover,
+.team-image-hobby-astro:hover,
+.team-image-hobby-misc:hover {
   transform: scale(1.06);
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.7);
 }
