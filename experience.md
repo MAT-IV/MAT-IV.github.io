@@ -73,7 +73,10 @@ permalink: /experience/
       <ul>
         <li>Developed real-time visualization tools and supported mechanical and electrical integration of the 6-ft RoboBall platform</li>
         <li>Designed and integrated a wireless inductive charging system across multiple development iterations.</li>
-        <li>Engineered a deployable sensor package for RoboBall III and contributed to a peer-reviewed publication.</li>
+        <li>Engineered a deployable sensor package for Roboball III and contributed to a peer-reviewed publication.</li>
+        <li> View RAD Lab website at
+            <a href="https://rad.engr.tamu.edu/" target="_blank" rel="noopener noreferrer">
+            </a>.</li>
       </ul>
     </div>
   </section>
@@ -233,19 +236,19 @@ permalink: /experience/
             <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          The RoboBall platforms developed at the RAD Lab are spherical mobile robots intended for exploration, reconnaissance, and sensing in environments where traditional wheeled or legged systems are limited. Two primary variants were developed: a 2-ft diameter platform optimized for agility and rapid deployment, and a 6-ft diameter platform designed to carry larger payloads and extended sensing capabilities. Across four semesters, I contributed to the design, integration, and testing of subsystems spanning sensing, power, and data visualization for both platforms.
+          The Roboball platforms developed at the RAD Lab are spherical mobile robots intended for exploration, reconnaissance, and sensing in environments where traditional wheeled or legged systems are limited. Two primary variants were developed: a 2-ft diameter platform optimized for agility and rapid deployment, and a 6-ft diameter platform designed to carry larger payloads and extended sensing capabilities. Across four semesters, I contributed to the design, integration, and testing of subsystems spanning sensing, power, and data visualization for both platforms.
                   </p>
 
         <h3>Summer 2024 - First Term (Visualization & 6-ft RoboBall System Bring-Up)</h3>
         <p>
-          In my first semester at the RAD Lab, I focused on developing software tools and supporting the mechanical and electrical integration of the first 6-ft diameter RoboBall platform. This phase emphasized system bring-up, debugging, and establishing reliable workflows for testing and data interpretation across subsystems.
+          In my first semester at the RAD Lab, I focused on developing software tools and supporting the mechanical and electrical integration of the first 6-ft diameter Roboball platform. This phase emphasized system bring-up, debugging, and establishing reliable workflows for testing and data interpretation across subsystems.
         </p>
 
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
           <li>Developed real-time data visualization tools using ROS2 and MATLAB to monitor system states and sensor outputs</li>
-          <li>Supported mechanical and electrical integration and buildup of the initial 6-ft RoboBall platform</li>
+          <li>Supported mechanical and electrical integration and buildup of the initial 6-ft Roboball platform</li>
           <li>Assisted with system bring-up and early lab testing to validate integrated subsystems</li>
         </ul>
 
@@ -263,7 +266,7 @@ permalink: /experience/
             src="{{ '/assets/images/rad/ball-fam.jpeg' | relative_url }}"
             alt="RoboBall Family."
             class="project-gallery-img js-lightbox-target"
-            data-caption="RoboBall Family."
+            data-caption="Roboball Family."
           >
            <img
             src="{{ '/assets/images/rad/RAD-Summer-1.gif' | relative_url }}"
@@ -286,7 +289,7 @@ permalink: /experience/
         
         <h3>Fall 2024 & Spring 2025 - Second and Third Term (Wireless Inductive Charging System)</h3>
         <p>
-          During my second and third semesters, I led the design and iteration of a wireless inductive charging system to enable untethered recharging of the RoboBall platform. This work required balancing power transfer efficiency, alignment tolerance, and integration constraints to support reliable operation during extended testing campaigns.
+          During my second and third semesters, I led the design and iteration of a wireless inductive charging system to enable untethered recharging of the Roboball platform. This work required balancing power transfer efficiency, alignment tolerance, and integration constraints to support reliable operation during extended testing campaigns.
         </p>
 
         <!-- Key Work -->
@@ -330,7 +333,7 @@ permalink: /experience/
 
         <h3>Spring 2025 - Fourth Term (Deployable Sensor Package & Research Publication)</h3>
         <p>
-          In my final semester, I focused on system-level design and research contribution through the development of a deployable sensor package for RoboBall III. This system extended mission range and situational awareness by enabling distributed sensing beyond the primary robot, culminating in a peer-reviewed publication.
+          In my final semester, I focused on system-level design and research contribution through the development of a deployable sensor package for Roboball III. This system extended mission range and situational awareness by enabling distributed sensing beyond the primary robot, culminating in a peer-reviewed publication.
         </p>
 
         <!-- Key Work -->
