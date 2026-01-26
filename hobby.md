@@ -23,7 +23,7 @@ permalink: /hobby/
   </div>
 
   <p>
-    This gallery highlights a few of my favorite hobby projects, from FPV drone builds to antique camera photography and 3D prints. Select an image to view more details and supporting media.
+    This gallery highlights a few of my favorite hobby projects. Select an image to view more details and supporting media.
   </p>
 
   <!-- 1. FPV Drone Builds -->
@@ -40,12 +40,12 @@ permalink: /hobby/
     </div>
     <div class="team-card-body">
       <h2>FPV Drone Builds</h2>
-      <p class="team-meta">Category: FPV & RC · Status: Active Hobby</p>
+      <p class="team-meta">Started: June 2020</p>
       <p>
-        I build and tune FPV drones for freestyle flying and casual aerial filming, focusing on reliable electronics, clean wiring, and durable frames that can survive real-world crashes.
+        I build and tune FPV drones for freestyle flying and casual aerial filming.
       </p>
       <ul>
-        <li>Assembled and wired multiple 5-inch and cinewhoop builds using off-the-shelf and custom components.</li>
+        <li>Assembled and wired multiple 5-inch, 6S lipo builds using off-the-shelf and custom components.</li>
         <li>Tuned PID and filter settings in Betaflight to balance responsiveness, stability, and propwash handling.</li>
         <li>Iterated on frame layouts, antenna placement, and GoPro mounting to improve durability and video quality.</li>
       </ul>
@@ -65,13 +65,13 @@ permalink: /hobby/
       </div>
     </div>
     <div class="team-card-body">
-      <h2>1959 Antique Film Camera</h2>
-      <p class="team-meta">Category: Analog Photography · Status: Ongoing</p>
+      <h2>1959 Graflex Super Graphic 4x5 Large Format Camera</h2>
+      <p class="team-meta">Started: February 2023</p>
       <p>
-        I shoot and curate photographs using a 1959 film camera, focusing on the mechanics of the camera itself as much as the images, from metering and manual focus to film selection and development.
+        I shoot 4x5 large format film photographs using a 1959 film camera. Click the image to see more of my work!
       </p>
       <ul>
-        <li>Restored and calibrated a 1950s-era camera, including light seals and basic shutter/transport checks.</li>
+        <li>Restored and calibrated a 1950s-era camera, including light seals and basic shutter maintinence.</li>
         <li>Experimented with different film stocks, exposure settings, and composition styles.</li>
         <li>Scanned and organized select images into digital collections for sharing and archival.</li>
       </ul>
@@ -92,9 +92,9 @@ permalink: /hobby/
     </div>
     <div class="team-card-body">
       <h2>3D Print Projects</h2>
-      <p class="team-meta">Category: CAD & Prototyping · Status: Ongoing</p>
+      <p class="team-meta">Started: May 2018</p>
       <p>
-        I use 3D printing for functional prototypes and small fixtures, from FPV mounting hardware to organization tools and mechanical test pieces.
+        I use 3D printing for functional prototypes, small fixtures, and more recently artwork. I am currently using a Bambu-Labs X1C with AMS, but started out with a Creality Ender-5.
       </p>
       <ul>
         <li>Designed and printed custom brackets, camera mounts, and small fixtures from scratch in CAD.</li>
