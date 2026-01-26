@@ -190,6 +190,14 @@ html, body {
   }
 }
 
+/* Desktop: make Big Bang button larger */
+@media (min-width: 769px) {
+  .bigbang-button {
+    padding: 0.6rem 1.2rem;  /* bigger pill */
+    font-size: 0.95rem;      /* larger text */
+  }
+}
+
 /* Fullscreen overlay for enlarged profile */
 .profile-overlay {
   position: fixed;
