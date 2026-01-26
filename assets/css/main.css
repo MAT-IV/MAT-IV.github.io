@@ -164,6 +164,10 @@ html, body {
     bottom: 1rem;
   }
 }
+.orbit-about .orbit-planet {
+    width: 100px;
+    height: 100px;
+  }
 
 /* Fullscreen overlay for enlarged profile */
 .profile-overlay {
