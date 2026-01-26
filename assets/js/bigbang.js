@@ -123,7 +123,7 @@ function runBigBang(options, onComplete) {
 
     if (phase === "fadeInText") {
       const elapsed = now - phaseStart;
-      const charsPerMs = text.length / 1500;
+      const charsPerMs = text.length / 2000;
       textIndex = Math.min(text.length, Math.floor(elapsed * charsPerMs));
 
       ctx.fillStyle = "#fff";
