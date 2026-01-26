@@ -124,7 +124,7 @@ html, body {
   background-image: url("/assets/images/planets/planet-about-gar.png");
 }
 
-/* Make Design Teams planet larger */
+/* Make About planet larger */
 .orbit-about .orbit-planet {
   width: 100px;   /* bigger than the default 24px */
   height: 76px;
@@ -160,6 +160,26 @@ html, body {
   transform: scale(1.2);
   background: rgba(255,255,255,0.2);
 }
+
+/* Desktop: make orbiting planets larger */
+@media (min-width: 769px) {
+  .orbit-planet {
+    width: 56px;   /* or 36px, 40px, etc. */
+    height: 56px;
+  }
+
+  /* If you still want Design Teams to be a bit larger than the others: */
+  .orbit-teams .orbit-planet {
+    width: 75px;
+    height: 75px;
+  }
+  /* Make About planet larger */
+.orbit-about .orbit-planet {
+  width: 100px;   /* bigger than the default 24px */
+  height: 76px;
+}
+}
+
 
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
