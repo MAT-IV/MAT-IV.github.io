@@ -65,7 +65,7 @@ permalink: /experience/
       </div>
     </div>
     <div class="team-card-body">
-      <h2>Robotics, Automation, and Design Lab – Engineering Intern</h2>
+      <h2>Robotics, Automation, and Design Lab – Research Assistant</h2>
       <p class="team-meta">Role: Engineering Intern · Dates: Summer 2024, Fall 2024, Spring 2025, Summer 2025</p>
       <p>
         During four semesters at the RAD Lab, I contributed to the development of the RoboBall robotic platforms, including both the 2-ft and 6-ft diameter systems designed for exploration and reconnaissance in challenging environments. My work focused on real-time data visualization, wireless power transfer, deployable sensing, and system-level integration, progressing from subsystem development to research contribution and publication.
@@ -203,8 +203,8 @@ permalink: /experience/
       <button class="team-overlay-close" aria-label="Close details">&times;</button>
 
       <div class="team-overlay-content">
-        <h2>RAD Lab – Engineering Intern</h2>
-        <p class="team-meta">Role: Engineering Intern · Dates: Summer 2024, Fall 2024, Spring 2025, Summer 2025</p>
+        <h2>RAD Lab – Research Assistant</h2>
+        <p class="team-meta">Role: Research Assistant · Dates: Summer 2024, Fall 2024, Spring 2025, Summer 2025</p>
 
         <!-- Hero image -->
         <img
