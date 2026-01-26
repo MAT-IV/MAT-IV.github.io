@@ -569,9 +569,9 @@ html, body {
 /* Desktop/tablet: centered, not full width */
 .pdf-container {
   position: relative;
-  width: 70vw;          /* narrower than screen on desktop */
-  max-width: 900px;     /* optional hard cap */
-  margin: 0 auto;       /* center horizontally */
+  width: 70vw;
+  max-width: 900px;
+  margin: 0 auto;
   aspect-ratio: 8.5 / 11;
   overflow: hidden;
   border-radius: 8px;
@@ -587,23 +587,28 @@ html, body {
   border-radius: 8px;
 }
 
-/* Mobile: full-width, fixed height so it shows */
+/* Mobile: match viewport width, let height grow naturally, no sideways scroll */
 @media (max-width: 768px) {
   .pdf-container {
-    width: 100vw;
-    max-width: 100vw;
-    margin: 0;              /* edge-to-edge */
+    position: relative;   /* keep */
+    width: 100%;          /* match page width */
+    max-width: 100%;      /* never wider than screen */
+    margin: 0;            /* edge-to-edge */
     border-radius: 0;
-    aspect-ratio: auto;     /* let height be controlled by explicit value */
-    height: 100vh;          /* or try 90vh/80vh if 100vh feels too tall */
+    aspect-ratio: auto;   /* cancel desktop aspect ratio */
+    overflow: hidden;     /* avoid stray scrollbars */
   }
 
   .pdf-container iframe {
-    position: absolute;
-    inset: 0;
+    position: static;     /* let iframe define its own height */
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 0;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
