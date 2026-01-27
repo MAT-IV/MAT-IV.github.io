@@ -322,7 +322,7 @@ html, body {
 
 .page-header-left,
 .page-header-right {
-  flex: 0 0 110px;     /* enough width for a large ship; keeps title centered */
+  flex: 0 0 260px;     /* enough width for a large ship; keeps title centered */
 }
 
 .page-header-title {
