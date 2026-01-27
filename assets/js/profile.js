@@ -58,6 +58,18 @@ function initTeamOverlays() {
   function closeOverlay(overlay) {
     overlay.classList.remove('is-visible');
     setBodyScrollLocked(false);
+
+    // If we arrived here from the Maker Gallery, go back there
+    try {
+      if (sessionStorage.getItem('cameFromMaker') === 'true') {
+        sessionStorage.removeItem('cameFromMaker');
+        if (window.history.length > 1) {
+          window.history.back();
+        }
+      }
+    } catch (e) {
+      // ignore storage issues
+    }
   }
 
   // Card hero images – open overlay, NOT lightbox
@@ -169,15 +181,15 @@ function openOverlayFromHash() {
   }, 100);
 }
 
-// Maker Gallery: open quick-view overlays from maker grid
-function initMakerGridOverlays() {
-  document.querySelectorAll('.maker-item[data-target-team]').forEach(item => {
-    const teamKey = item.getAttribute('data-target-team');
-    item.addEventListener('click', () => {
-      const overlay = document.querySelector(`.team-overlay[data-team="${teamKey}"]`);
-      if (!overlay) return;
-      overlay.classList.add('is-visible');
-      setBodyScrollLocked(true);
+// Maker: remember that we came from Maker before navigating away
+function initMakerSourceFlag() {
+  document.querySelectorAll('.maker-item[href]').forEach(link => {
+    link.addEventListener('click', () => {
+      try {
+        sessionStorage.setItem('cameFromMaker', 'true');
+      } catch (e) {
+        // ignore storage issues
+      }
     });
   });
 }
@@ -186,6 +198,6 @@ function initMakerGridOverlays() {
 document.addEventListener('DOMContentLoaded', () => {
   initTeamOverlays();
   initImageLightbox();
-  initMakerGridOverlays();
+  initMakerSourceFlag();
   openOverlayFromHash();
 });
