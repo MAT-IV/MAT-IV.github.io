@@ -101,7 +101,6 @@ function initTeamOverlays() {
 
 // Shared lightbox for all development images in any project-gallery
 function initImageLightbox() {
-  // If you keep the old id, change this to 'formula-image-lightbox'
   const lightbox = document.getElementById('image-lightbox') || document.getElementById('formula-image-lightbox');
   if (!lightbox) return;
 
@@ -156,12 +155,7 @@ function initImageLightbox() {
   });
 }
 
-// Wire up all team overlays + lightbox
-document.addEventListener('DOMContentLoaded', () => {
-  initTeamOverlays();
-  initImageLightbox();
-});
-
+// Open overlay based on URL hash (used when navigating with #team-key)
 function openOverlayFromHash() {
   const hash = window.location.hash.replace('#', '');
   if (!hash) return;
@@ -170,15 +164,28 @@ function openOverlayFromHash() {
   const img = document.querySelector(`.team-image[data-team-key="${hash}"]`);
   if (!img) return;
 
-  // Slight delay to ensure overlays are initialized
   setTimeout(() => {
     img.click();
   }, 100);
 }
 
+// Maker Gallery: open quick-view overlays from maker grid
+function initMakerGridOverlays() {
+  document.querySelectorAll('.maker-item[data-target-team]').forEach(item => {
+    const teamKey = item.getAttribute('data-target-team');
+    item.addEventListener('click', () => {
+      const overlay = document.querySelector(`.team-overlay[data-team="${teamKey}"]`);
+      if (!overlay) return;
+      overlay.classList.add('is-visible');
+      setBodyScrollLocked(true);
+    });
+  });
+}
+
+// Wire up all behavior once
 document.addEventListener('DOMContentLoaded', () => {
   initTeamOverlays();
   initImageLightbox();
+  initMakerGridOverlays();
   openOverlayFromHash();
 });
-
