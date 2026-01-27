@@ -39,7 +39,7 @@ permalink: /maker/
     <!-- SAE Aero 23–24 -->
     <a class="maker-item" href="{{ '/teams/#aero-23-24' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-aero-23-24.jpg' | relative_url }}"
+        src="{{ '/assets/images/sae-aero-23-24-2024-comp-plane-rebuild.png' | relative_url }}"
         alt="SAE Aero 2023–2024 aircraft."
       >
       <span>SAE Aero 2023–2024</span>
@@ -48,7 +48,7 @@ permalink: /maker/
     <!-- SAE Aero 22–23 -->
     <a class="maker-item" href="{{ '/teams/#aero-22-23' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-aero-22-23.jpg' | relative_url }}"
+        src="{{ '/assets/images/sae-aero/22-23/2023-plane.jpeg' | relative_url }}"
         alt="SAE Aero 2022–2023 aircraft."
       >
       <span>SAE Aero 2022–2023</span>
@@ -57,7 +57,7 @@ permalink: /maker/
     <!-- SAE Aero 21–22 -->
     <a class="maker-item" href="{{ '/teams/#aero-21-22' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-aero-21-22.jpg' | relative_url }}"
+        src="{{ '/assets/images/sae-aero/21-22/21-22-plane.jpeg' | relative_url }}"
         alt="SAE Aero 2021–2022 aircraft."
       >
       <span>SAE Aero 2021–2022</span>
@@ -66,7 +66,7 @@ permalink: /maker/
     <!-- NASA (Experience page) -->
     <a class="maker-item" href="{{ '/experience/#nasa-coop' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-nasa.jpg' | relative_url }}"
+        src="{{ '/assets/images/nasa/LVT-close.jpeg' | relative_url }}"
         alt="Rocket test hardware at Stennis."
       >
       <span>NASA Pathways</span>
@@ -75,7 +75,7 @@ permalink: /maker/
     <!-- RAD Lab (Experience page) -->
     <a class="maker-item" href="{{ '/experience/#rad-lab' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-radlab.jpg' | relative_url }}"
+        src="{{ '/assets/images/rad-ball-me.JPG' | relative_url }}"
         alt="RoboBall platform in the RAD Lab."
       >
       <span>RAD Lab RoboBall</span>
@@ -84,25 +84,26 @@ permalink: /maker/
     <!-- FPV (Hobby page) -->
     <a class="maker-item" href="{{ '/hobby/#hobby-fpv' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-fpv.jpg' | relative_url }}"
+        src="{{ '/assets/images//hobby/fpv/drone-3.jpeg' | relative_url }}"
         alt="Custom FPV drone."
       >
       <span>FPV Drones</span>
     </a>
 
-    <!-- Astrophotography (Hobby page) -->
-    <a class="maker-item" href="{{ '/hobby/#hobby-astro' | relative_url }}">
+    <!-- 3D Prints (Hobby page) -->
+    <a class="maker-item" href="{{ '/hobby/#hobby-3dprint' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-astro.jpg' | relative_url }}"
-        alt="Deep-sky astrophotography image."
+        src="{{ '/assets/images/hobby/3d/wall-art.jpeg' | relative_url }}"
+        alt="3D-printed parts and fixtures."
       >
-      <span>Astrophotography</span>
+      <span>3D Print Projects</span>
     </a>
+
 
     <!-- Misc builds (Hobby page) -->
     <a class="maker-item" href="{{ '/hobby/#hobby-misc' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-misc.jpg' | relative_url }}"
+        src="{{ '/assets/images/hobby/misc/hammer.jpeg' | relative_url }}"
         alt="Assorted small projects."
       >
       <span>Misc Builds</span>
