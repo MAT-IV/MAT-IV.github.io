@@ -573,45 +573,39 @@ html, body {
   }
 }
 
-/* ===== Resume PDF layout ===== */
+/* ===== Resume layout  ===== */
 
-/* Desktop/tablet: centered, not full width */
+/* Desktop / tablet */
 .pdf-container {
   position: relative;
   width: 70vw;
   max-width: 900px;
   margin: 0 auto;
-  aspect-ratio: 8.5 / 11;
+  /* no aspect-ratio when using an image, let the image define it */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-.pdf-container iframe {
-  position: absolute;
-  inset: 0;
+/* Responsive resume image */
+.resume-image {
+  display: block;
   width: 100%;
-  height: 100%;
-  border: none;
+  height: auto;
   border-radius: 8px;
 }
 
-/* Mobile: match page width, no sideways scroll */
+/* Mobile */
 @media (max-width: 768px) {
   .pdf-container {
-    position: relative;
     width: 100%;
     max-width: 100%;
     margin: 0;
     border-radius: 0;
-    aspect-ratio: auto;
-    overflow: hidden;
+    box-shadow: none;
   }
 
-  .pdf-container iframe {
-    position: static;
-    width: 100%;
-    height: auto;
+  .resume-image {
     border-radius: 0;
   }
 
