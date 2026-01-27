@@ -611,20 +611,20 @@ html, body {
   border-radius: 8px;
 }
 
-/* Mobile: match viewport width, let height grow naturally, no sideways scroll */
+/* Mobile: match page width, no sideways scroll */
 @media (max-width: 768px) {
   .pdf-container {
-    position: relative;   /* keep */
-    width: 100%;          /* match page width */
-    max-width: 100%;      /* never wider than screen */
-    margin: 0;            /* edge-to-edge */
+    position: relative;
+    width: 100%;       /* use content width, not 100vw */
+    max-width: 100%;
+    margin: 0;
     border-radius: 0;
-    aspect-ratio: auto;   /* cancel desktop aspect ratio */
-    overflow: hidden;     /* avoid stray scrollbars */
+    aspect-ratio: auto; /* cancel the fixed ratio */
+    overflow: hidden;
   }
 
   .pdf-container iframe {
-    position: static;     /* let iframe define its own height */
+    position: static;  /* let it define its own height */
     width: 100%;
     height: auto;
     border-radius: 0;
@@ -635,6 +635,7 @@ html, body {
     overflow-x: hidden;
   }
 }
+
 
 /* Maker grid */
 .maker-grid {
