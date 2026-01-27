@@ -284,8 +284,34 @@ permalink: /hobby/
           I use a 1959 film camera to explore analog photography, focusing on manual exposure, composition, and understanding how the mechanical side of the camera influences each frame.
         </p>
 
-        <h3>Sample photographs</h3>
+        <h3>Enchanted Rock Portfolio</h3>
         <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/hobby/film/camp1.jpg' | relative_url }}"
+            alt="Long walk."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Long walk."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/camp2.jpg' | relative_url }}"
+            alt="Enchanted."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Enchanted."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/camp3.jpg' | relative_url }}"
+            alt="Distant."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Distant."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/camp4.jpg' | relative_url }}"
+            alt="Glowing."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Glowing."
+          >
+          
+          <h3>Legacy of Giants Portfolio</h3>
           <img
             src="{{ '/assets/images/hobby/film/b-2.JPG' | relative_url }}"
             alt="NASA Stennis B-2 Test Stand."
@@ -298,6 +324,104 @@ permalink: /hobby/
             class="project-gallery-img js-lightbox-target"
             data-caption="NASA Stennis A-1 Test Stand."
           >
+          <img
+            src="{{ '/assets/images/hobby/film/a1-me.jpeg' | relative_url }}"
+            alt="NASA Stennis B-2 Test Stand Distant."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis B-2 Test Stand Distant."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/a1-engineer.jpeg' | relative_url }}"
+            alt="NASA Stennis A-1 Test Stand Engineer."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis A-1 Test Stand Engineer."
+          >
+          
+          <h3>'the road to space goes through Mississippi' Portfolio</h3>
+          <img
+            src="{{ '/assets/images/hobby/film/stennis1.jpg' | relative_url }}"
+            alt="NASA Stennis Welcome."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis Welcome."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/stennis2.jpg' | relative_url }}"
+            alt="NASA Stennis E-Complex."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="NASA Stennis E-Complex."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/stennis3.jpg' | relative_url }}"
+            alt="RS-25 Awaiting Test"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="RS-24 Awaiting Test."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/stennis4.jpg' | relative_url }}"
+            alt="RS-25 Mid Test"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="RS-24 Mid Test."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/stennis5.jpg' | relative_url }}"
+            alt="RS-25 Test"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="RS-24 Test."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/stennis6.jpg' | relative_url }}"
+            alt="Eureka!"
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Eureka!."
+          >
+
+          <h3> Pondside Nostalgia Portfolio</h3>
+          <img
+            src="{{ '/assets/images/hobby/film/home1.jpg' | relative_url }}"
+            alt="Pond."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Pond."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/home2.jpg' | relative_url }}"
+            alt="Fountain."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Fountain."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/home1.jpg' | relative_url }}"
+            alt="Creek."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Creek."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/home1.jpg' | relative_url }}"
+            alt="Trees."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Trees."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/home1.jpg' | relative_url }}"
+            alt="Shaded."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Shaded."
+          >
+          <img
+            src="{{ '/assets/images/hobby/film/home1.jpg' | relative_url }}"
+            alt="Nostalgia."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Nostalgia."
+          >
+          
+          <h3>Formula SAE Portfolio</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/hobby/film/car-film.jpg' | relative_url }}"
+            alt="Ready to Race."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Ready to Race."
+          >
+ 
         </div>
 
         <h3>Why it matters</h3>
