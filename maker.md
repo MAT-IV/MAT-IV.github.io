@@ -36,10 +36,28 @@ permalink: /maker/
       <span>Formula SAE IC</span>
     </a>
 
+    <!-- NASA (Experience page) -->
+    <a class="maker-item" href="{{ '/experience/#nasa-coop' | relative_url }}">
+      <img
+        src="{{ '/assets/images/nasa/LVT-close.jpeg' | relative_url }}"
+        alt="Rocket test hardware at Stennis."
+      >
+      <span>NASA Pathways</span>
+    </a>
+
+    <!-- RAD Lab (Experience page) -->
+    <a class="maker-item" href="{{ '/experience/#rad-lab' | relative_url }}">
+      <img
+        src="{{ '/assets/images/rad/ball-me.JPG' | relative_url }}"
+        alt="RoboBall at RAD Lab."
+      >
+      <span>RAD Lab RoboBall</span>
+    </a>
+    
     <!-- SAE Aero 23–24 -->
     <a class="maker-item" href="{{ '/teams/#aero-23-24' | relative_url }}">
       <img
-        src="{{ '/assets/images/sae-aero-23-24-2024-comp-plane-rebuild.png' | relative_url }}"
+        src="{{ '/assets/images/sae-aero/23-24/2024-comp-plane-rebuild.png' | relative_url }}"
         alt="SAE Aero 2023–2024 aircraft."
       >
       <span>SAE Aero 2023–2024</span>
@@ -63,22 +81,13 @@ permalink: /maker/
       <span>SAE Aero 2021–2022</span>
     </a>
 
-    <!-- NASA (Experience page) -->
-    <a class="maker-item" href="{{ '/experience/#nasa-coop' | relative_url }}">
+    <!-- Film camera (Hobby page) -->
+    <a class="maker-item" href="{{ '/hobby/#hobby-film' | relative_url }}">
       <img
-        src="{{ '/assets/images/nasa/LVT-close.jpeg' | relative_url }}"
-        alt="Rocket test hardware at Stennis."
+        src="{{ '/assets/images/hobby/film/camera-me.JPG' | relative_url }}"
+        alt="1959 film camera and developed photographs."
       >
-      <span>NASA Pathways</span>
-    </a>
-
-    <!-- RAD Lab (Experience page) -->
-    <a class="maker-item" href="{{ '/experience/#rad-lab' | relative_url }}">
-      <img
-        src="{{ '/assets/images/rad-ball-me.JPG' | relative_url }}"
-        alt="RoboBall platform in the RAD Lab."
-      >
-      <span>RAD Lab RoboBall</span>
+      <span>1959 Film Camera</span>
     </a>
 
     <!-- FPV (Hobby page) -->
