@@ -310,7 +310,7 @@ permalink: /hobby/
             class="project-gallery-img js-lightbox-target"
             data-caption="Glowing."
           >
-          
+          <br><br>
           <h3>Legacy of Giants Portfolio</h3>
           <img
             src="{{ '/assets/images/hobby/film/b-2.JPG' | relative_url }}"
@@ -331,12 +331,12 @@ permalink: /hobby/
             data-caption="NASA Stennis B-2 Test Stand Distant."
           >
           <img
-            src="{{ '/assets/images/hobby/film/a1-engineer.jpeg' | relative_url }}"
+            src="{{ 'assets/images/hobby/film/a1-engieer.jpeg' | relative_url }}"
             alt="NASA Stennis A-1 Test Stand Engineer."
             class="project-gallery-img js-lightbox-target"
             data-caption="NASA Stennis A-1 Test Stand Engineer."
           >
-          
+          <br><br>
           <h3>'the road to space goes through Mississippi' Portfolio</h3>
           <img
             src="{{ '/assets/images/hobby/film/stennis1.jpg' | relative_url }}"
@@ -374,7 +374,7 @@ permalink: /hobby/
             class="project-gallery-img js-lightbox-target"
             data-caption="Eureka!."
           >
-
+          <br><br>
           <h3> Pondside Nostalgia Portfolio</h3>
           <img
             src="{{ '/assets/images/hobby/film/home1.jpg' | relative_url }}"
@@ -412,7 +412,7 @@ permalink: /hobby/
             class="project-gallery-img js-lightbox-target"
             data-caption="Nostalgia."
           >
-          
+          <br><br>
           <h3>Formula SAE Portfolio</h3>
         <div class="project-gallery">
           <img
