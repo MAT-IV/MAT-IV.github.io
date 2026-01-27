@@ -23,7 +23,7 @@ permalink: /resume/
   </div>
 
   <p>
-    <a href="/assets/resume/Mauricio_Trevino_Resume.pdf"
+    <a href="/assets/resume/Mauricio Trevino Resume.pdf"
        class="resume-download"
        target="_blank"
        rel="noopener">
@@ -31,12 +31,12 @@ permalink: /resume/
     </a>
   </p>
 
-  <!-- Responsive PDF viewer -->
+  <!-- Responsive resume image viewer (replaces PDF iframe) -->
   <div class="pdf-container">
-    <iframe
-      src="/assets/resume/Mauricio_Trevino_Resume.pdf#view=FitH"
-      title="Resume PDF viewer"
-      loading="lazy"
-    ></iframe>
+    <img
+      src="{{ '/assets/resume/Mauricio Trevino Resume.png' | relative_url }}"
+      alt="Resume for Mauricio Treviño"
+      class="resume-image"
+    />
   </div>
 </div>
