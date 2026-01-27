@@ -43,12 +43,12 @@ permalink: /teams/
       <h2>Formula SAE IC – Aerodynamics - 2nd Place Overall</h2>
       <p class="team-meta">Role: Full Car Aerodynamics · Season: 2024–2025</p>
       <p>
-        As part of the 2025 Texas A&amp;M Formula SAE IC team, I contributed to the aerodynamic development and performance validation of a Formula-style race car designed for international competition. My work focused on full-vehicle CFD analysis, carbon fiber aerodynamic component manufacturing, and on-track testing to maximize vehicle performance.
+        As a member of the 2025 Texas A&M Formula SAE IC team, I worked on the aerodynamic development and validation of a Formula-style race car built for international competition. My contributions focused on full-vehicle CFD using ANSYS Fluent, carbon fiber aerodynamic component fabrication, and track testing to translate simulation results into measurable on-track performance.
       </p>
       <ul>
-        <li>Performed full-vehicle CFD analyses to evaluate aerodynamic performance under pitch, roll, and yaw, informing design iterations based on downforce–drag trade-offs.</li>
-        <li>Supported fabrication and integration of carbon fiber aerodynamic components, with emphasis on manufacturability and structural reliability.</li>
-        <li>Participated in on-track testing to correlate simulation results with vehicle behavior and refine performance for cornering- and endurance-focused events.</li>
+        <li>Performed full-vehicle CFD analyses in ANSYS Fluent, evaluating aerodynamic performance under pitch, roll, and yaw to guide design decisions based on downforce–drag trade-offs.</li>
+        <li>Supported the design, fabrication, and integration of carbon fiber aerodynamic components using wet layup and vacuum bagging, with attention to manufacturability and structural robustness.</li>
+        <li>Participated in on-track aerodynamic validation, including tuft testing and lap-time comparison, to correlate CFD predictions with real vehicle behavior and refine performance for cornering and endurance focused events.</li>
       </ul>
     </div>
   </section>
@@ -69,12 +69,12 @@ permalink: /teams/
       <h2>SAE Aero Design – Team Lead - 1st Place Overall</h2>
       <p class="team-meta">Role: Team Lead · Season: 2023–2024</p>
       <p>
-        As Structural and Material Science (SMS) Sub-Team Advisor for the 2023–2024 Texas A&M SAE Aero Design Micro Class team, I mentored the structural leadership while contributing to the design and manufacturing of a Warren-truss fuselage, truss-spar wing, and lightweight empennage for a high-performance aircraft optimized for short takeoff, high payload fraction, and robust stability. My role combined technical coaching on structural architecture and analysis methods with hands-on support in developing manufacturable, test-validated structures aligned with the team’s Key Performance Parameter framework.
+        As Structural and Material Science (SMS) Sub-Team Advisor for the 2023–2024 Texas A&M SAE Aero Design Micro Class team, I mentored the structural leadership while contributing to the design and manufacturing of a Warren-truss fuselage, truss-spar wing, and lightweight empennage. The aircraft was optimized for short takeoff, high payload fraction, and stable flight characteristics. My role combined technical guidance on structural architecture, analysis workflows, and risk-based trade studies with hands-on support in developing structures that were manufacturable, test-validated, and aligned with the team’s Key Performance Parameters.
       </p>
       <ul>
-        <li>Advised the SMS leadership on structural strategy, analysis workflows, and risk-informed decision-making, helping shape fuselage, wing, and empennage architectures around weight, manufacturability, and stability goals.</li>
-        <li>Supported design and validation of the Warren-truss fuselage, truss-spar wing, and integrated horizontal and vertical stabilizers using SkyCiv, SolidWorks FEA, and static testing to meet factor-of-safety and stiffness targets.​</li>
-        <li>Assisted in refining manufacturing methods and test campaigns, including spar and fuselage load testing, connection design, and material selection to reduce empty weight while maintaining reliability.</li>
+        <li>Advised SMS leadership on structural architecture and analysis strategy, helping shape fuselage, wing, and empennage concepts around weight targets, manufacturability, and stability requirements.</li>
+        <li>Supported the design and validation of a Warren-truss fuselage, truss-spar wing, and integrated empennage using SolidWorks, SkyCiv, SolidWorks FEA, and static load testing to meet stiffness and factor-of-safety goals.​</li>
+        <li>Assisted in refining manufacturing methods and test campaigns, including spar and fuselage load testing, joint design, and material selection, enabling empty-weight reduction while maintaining structural reliability.</li>
       </ul>
     </div>
   </section>
@@ -150,19 +150,21 @@ permalink: /teams/
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          As part of my senior capstone, I was a member of the 2025 Texas A&amp;M Formula SAE Internal Combustion design team, where I contributed to the aerodynamic development and performance validation of a Formula-style race car built for international competition. The vehicle was designed and evaluated across a series of static design reviews and dynamic performance events emphasizing acceleration, cornering capability, efficiency, and endurance.
+          As part of my senior capstone, I was a member of the 2025 Texas A&M Formula SAE Internal Combustion team, contributing to the aerodynamic development and performance validation of a Formula-style race car built for international competition. The vehicle was evaluated through a combination of static design reviews and dynamic events emphasizing acceleration, cornering performance, efficiency, and endurance.
           <br><br>
-          My primary technical contributions centered on full-vehicle aerodynamic simulation, composite manufacturing, and track-based validation. I conducted CFD analyses of the complete aerodynamic package to evaluate downforce and drag trade-offs under realistic operating conditions, including the effects of pitch, roll, and yaw. These simulations informed iterative design decisions while accounting for manufacturing feasibility, packaging constraints, and integration with the overall vehicle system.
+          My primary technical contributions centered on full-vehicle aerodynamic simulation, composite manufacturing, and track-based validation. I conducted CFD analyses of the complete aerodynamic package using ANSYS Fluent, evaluating downforce and drag across realistic operating conditions, including the effects of pitch, roll, and yaw encountered during worst case braking maneuvers. Geometry was developed and iterated in SolidWorks, with simulation results informing design changes while accounting for packaging constraints and manufacturing feasibility.
           <br><br>
-          In parallel, I supported the fabrication and assembly of carbon fiber aerodynamic components and participated in on-track testing to correlate simulation predictions with observed vehicle behavior. This simulation-to-testing workflow was used to refine the aerodynamic package and improve performance in cornering- and endurance-dominated events.
+          In parallel, I supported the fabrication and assembly of carbon fiber aerodynamic components using wet layup and vacuum bagging techniques, and participated in on-track testing to validate simulation results. Aerodynamic behavior was assessed using tuft testing, telemetry, and lap-time comparisons, allowing CFD predictions to be correlated with real-world performance. This simulation-to-testing workflow was used to refine the aerodynamic package and improve performance in cornering and endurance dominated events.
         </p>
 
         <!-- Responsibilities -->
         <h3>Responsibilities</h3>
         <ul>
-          <li>Full-vehicle CFD under pitch, roll, and yaw to balance downforce and drag.</li>
-          <li>Design and integration of carbon fiber aerodynamic components.</li>
-          <li>Trackside data collection and correlation between CFD and telemetry.</li>
+          <li>Conducted full-vehicle CFD in ANSYS Fluent under pitch, roll, and yaw to balance downforce, drag, and vehicle stability.</li>
+          <li>Modeled and iterated aerodynamic geometry in SolidWorks, coordinating design changes with manufacturing and packaging constraints.</li>
+          <li>Fabricated and integrated carbon fiber aerodynamic components using wet layup and vacuum bag vacuum bagging methods.</li>
+          <li>Performed trackside aerodynamic validation, including tuft testing and telemetry analysis, to correlate CFD results with on-track behavior.</li>
+          <li>Evaluated aerodynamic impact using lap-time comparisons across testing sessions to quantify performance gains.</li>
         </ul>
 
         <!-- Small image gallery -->
@@ -179,6 +181,12 @@ permalink: /teams/
             alt="CFD side view of Formula car showing velocity magnitude."
             class="project-gallery-img js-lightbox-target"
             data-caption="CFD side view of Formula car showing velocity magnitude."
+          >
+          <img
+            src="{{ '/assets/images/formula/layup-me.jpg' | relative_url }}"
+            alt="Me working on a layup."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Me working on a layup."
           >
            <img
             src="{{ '/assets/images/formula/first-layup.jpeg' | relative_url }}"
@@ -210,7 +218,12 @@ permalink: /teams/
             class="project-gallery-img js-lightbox-target"
             data-caption="Carbon fiber floor during wet layup construction."
           >
-
+          <img
+            src="{{ '/assets/images/formula/aero_poster.png' | relative_url }}"
+            alt="Design comp simulation poster."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Design comp simulation poster."
+          >
           <img
             src="{{ '/assets/images/formula/Formula-Aero-Poster.png' | relative_url }}"
             alt="Aerodynamics Design Event Competition Poster."
@@ -299,18 +312,19 @@ permalink: /teams/
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          During the 2023–2024 season, the Micro Class aircraft was designed around strict goals for under-25 ft takeoff distance, maximized takeoff and payload-to-empty-weight ratios, and robust stability and control, all guided by clearly defined Key Performance Parameters and Risk Analysis Parameters. The team moved to a Warren-truss fuselage with an upward-tapered boom, a NACA 6412-based flapped wing, and a conventional empennage with flaperons, leveraging a suite of in-house tools and CFD to converge on a light but capable configuration. In my advisor role, I worked primarily with the leadership team to ensure that structural concepts stayed consistent with these performance targets while remaining buildable within schedule and budget constraints.
+          During the 2023–2024 season, the Micro Class aircraft was designed around strict performance goals, including sub-25-ft takeoff distance, high payload-to-empty-weight ratio, and robust stability and control. These goals were formalized through Key Performance Parameters and Risk Analysis Parameters that guided architecture-level decisions throughout the design cycle. The team adopted a Warren-truss fuselage with an upward-tapered boom, a NACA 6412-based flapped wing, and a conventional empennage with flaperons, using in-house analysis tools, CFD results, and test data to converge on a lightweight but capable configuration. In my advisor role, I worked closely with the leadership team to ensure that structural concepts supported these performance targets while remaining buildable within schedule and budget constraints.
           <br><br>
-          On the structural side, I coached the team through major architecture decisions such as selecting and refining the Warren-truss fuselage, integrating plywood wing boxes and payload interfaces, and evolving from box spars to truss spars in the wings to improve strength-to-weight performance. I helped guide their use of SkyCiv and FEA to set preliminary sizing for truss members, ribs, spars, and landing gear, emphasizing consistent factors of safety, realistic load cases, and the importance of matching structural assumptions to aerodynamic loads and dynamic behavior. For the empennage, I assisted as they developed a horizontal stabilizer integrated into the boom and an all-moving vertical stabilizer sized around center-of-pressure location and allowable deflection, ensuring the structures supported the dynamic stability characteristics quantified by the aerodynamics team.
+          On the structural side, I coached the team through major architecture decisions, including the selection and refinement of the Warren-truss fuselage, the integration of plywood wing boxes and payload interfaces, and the transition from box spars to truss-spar wings to improve strength-to-weight performance. I guided the use of SkyCiv, SolidWorks FEA, and classical beam theory to establish preliminary sizing for truss members, ribs, spars, and landing gear, emphasizing realistic load cases, consistent factors of safety, and alignment between structural assumptions and aerodynamic and dynamic loads. For the empennage, I assisted with the development of a boom-integrated horizontal stabilizer and an all-moving vertical stabilizer, ensuring structural stiffness and allowable deflections were consistent with center-of-pressure placement and stability requirements defined by the aerodynamics team.
           <br><br>
-          I also contributed directly to design iteration, testing, and manufacturing practices. This included supporting spar and connector testing that led to switching from 3‑ply poplar to 5‑ply birch at critical joints, advising on the transition from box-beam to truss spars, and helping interpret fuselage profile load tests that enabled lighter mixed-thickness truss members. On the materials and fabrication side, I reinforced best practices around balsa and birch usage, carbon fiber and hardware placement, adhesive selection (e.g., CA vs epoxy), and the use of jigs and laser-cut templates to control geometric accuracy for wings and fuselage assemblies. Throughout the season, I acted as a technical sounding board for the structural leadership, helping them connect simulation results, physical test data, and pilot feedback into coherent structural updates across successive prototypes and the final competition aircraft.
+          I also contributed directly to design iteration, testing, and manufacturing practices. This included supporting spar and connector testing that drove material changes from 3-ply poplar to 5-ply birch at critical joints, advising on the shift from box-beam to truss-spar construction, and helping interpret fuselage profile load tests that enabled lighter mixed-thickness truss members. On the fabrication side, I reinforced best practices for balsa and birch construction, carbon fiber and hardware placement, adhesive selection (CA vs. epoxy), and the use of aluminum-extrusion jigs and laser-cut templates to maintain geometric accuracy in wing and fuselage assemblies. Throughout the season, I served as a technical sounding board for the SMS leadership, helping connect simulation results, physical test data, and pilot feedback into coherent structural updates across multiple prototypes and the final competition aircraft.
         </p>
 
         <h3>Responsibilities</h3>
         <ul>
-          <li>Mentored the SMS leadership team on structural architectures (Warren-truss fuselage, truss-spar wings, integrated tail), analysis tools (SkyCiv, FEA, beam theory), and design reviews, helping align structural decisions with KPP/RAP priorities and flight-score-driven targets.</li>
-          <li>Supported detailed structural design and testing of major components, including truss-spar wings, plywood wing boxes, integrated horizontal and vertical stabilizers, and landing gear, using static load tests and FEA to refine sizing, connections, and factors of safety.</li>
-          <li>Assisted with manufacturing planning and execution by advising on material selection, joint and connector design, jigging and laser-cut processes, and iterative weight-reduction changes informed by fuselage and spar testing across MXP and MCP iterations.</li>
+          <li>Mentored the SMS leadership team on structural architectures (Warren-truss fuselage, truss-spar wings, integrated empennage), analysis tools (SkyCiv, SolidWorks FEA, beam theory), and design reviews to align structural decisions with KPP/RAP priorities and flight-score-driven objectives.</li>
+          <li>Supported detailed structural design and validation of major components. This included truss-spar wings, plywood wing boxes, integrated horizontal and vertical stabilizers, and landing gear—using static load testing and FEA to refine sizing, joints, and factors of safety.</li>
+          <li>Assisted with manufacturing planning and execution, advising on material selection (balsa, birch, carbon fiber), joint and connector design, jig construction using aluminum extrusion, laser-cut rib and template fabrication, and iterative weight-reduction changes informed by fuselage and spar testing across MXP and MCP iterations.</li>
+          <li>Supported team coordination and iteration tracking using Vivify Scrum, helping maintain schedule discipline and trace design changes across analysis, testing, and manufacturing.</li>
         </ul>
         
         <!-- Small image gallery -->
