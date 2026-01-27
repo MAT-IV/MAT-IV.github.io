@@ -42,12 +42,12 @@ permalink: /experience/
       <h2>NASA – Rocket Propulsion Testing Co‑Op</h2>
       <p class="team-meta">Role: Pathways Co‑Op · Dates: Spring 2023, Summer 2023, Spring 2024</p>
       <p>
-        As a Rocket Propulsion Test Engineering co-op in NASA’s Pathways program at Stennis Space Center, I worked as a full-time engineer across three rotations focused on cryogenic fluid systems, test stand integration, and data analysis. My work spanned piping and instrumentation design, system-level modeling, and test operations for liquid-oxygen-based rocket propulsion projects.
+        As a Rocket Propulsion Test Engineering Co-Op in NASA’s Pathways Program at the Stennis Space Center, I worked as a full-time engineer across three rotations supporting cryogenic propulsion testing. My work focused on liquid oxygen (LOX) fluid systems, test stand integration, and post-test data analysis, spanning piping and instrumentation design, thermo-fluid modeling, structural analysis, and live test operations for propulsion projects.
       </p>
       <ul>
-        <li>Spring 2023 – Created piping sketches (PSK), performed RTD protuberance analysis, and designed LOX pipe supports for a new valve test system.</li>
-        <li>Summer 2023 – Took on more autonomous PSK development, supported LOX transfers as a transfer engineer, and built Flomaster models and test sequences for a liquid oxygen valve test (LVT).</li>
-        <li>Spring 2024 – Completed LVT test data analysis and Cv calculations, updated facilities capability documentation, and contributed to customer-specific thermo-fluids and data analysis tasks.</li>
+        <li>Spring 2023: Developed piping sketches (PSKs) in AutoCAD, performed RTD protuberance analysis, and designed LOX pipe supports using Creo and AutoPIPE for a new valve test system.</li>
+        <li>Summer 2023: Took ownership of PSK development, supported cryogenic operations as a LOX transfer engineer, and built Flomaster system models and test sequences for a liquid oxygen valve test (LVT).</li>
+        <li>Spring 2024: Completed post-test data analysis and Cv calculations using WinPlot, updated facility capability documentation, and supported customer-specific thermo-fluids and data-analysis tasks.</li>
       </ul>
     </div>
   </section>
@@ -101,20 +101,20 @@ permalink: /experience/
         <!-- Overview -->
         <h3>Overview</h3>
         <p>
-          Across three NASA Pathways rotations at Stennis, I moved from helping define a new liquid oxygen valve test system on paper to supporting cryogenic operations and finally closing the loop with post-test data analysis and facility-level documentation. The experience blended thermo-fluids, structural design, and test operations in a way that closely mirrored how real propulsion projects flow from concept to hardware and test.
+          Across three NASA Pathways rotations at Stennis Space Center, I progressed from defining a new liquid oxygen valve test system at the design stage to supporting live cryogenic operations and closing the loop with post-test data analysis and facility-level documentation. The experience closely mirrored the full lifecycle of propulsion test projects, integrating thermo-fluids, structural analysis, and real-time test operations in an active rocket test environment.
         </p>
 
-        <h3>Spring 2023 - First Term (Getting Started)</h3>
+        <h3>Spring 2023 - First Term (System Definition and Design)</h3>
         <p>
-          In my first term, I joined the Rocket Propulsion Test group at the very beginning of a new LOX valve project and saw how requirements turn into real piping and hardware. My work focused on building the initial piping sketch, analyzing instrumentation, and designing pipe supports that will be installed on a live test stand.
+          In my first rotation, I joined the Rocket Propulsion Test group at the outset of a new LOX valve test project and focused on translating requirements into hardware-ready designs. This work centered on piping definition, instrumentation analysis, and structural support design for installation on an operational test stand.
         </p>
 
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
-          <li>Generated a detailed piping sketch (PSK) for a liquid oxygen valve test, coordinating with design engineers and test stand operators to capture flow paths, instrumentation, and purge/bleed lines.</li>
-          <li>Performed protuberance analysis for a Rosemount RTD using ASME standards and PTC 19.3, selecting an insertion length that met stress, resonance, and response-time requirements.</li>
-          <li>Designed and analyzed a LOX pipe support in CREO and AutoPIPE, performing buckling and stress checks (hand calcs and FEA) to meet structural safety margins.</li>
+          <li>Generated a detailed piping sketch (PSK) in AutoCAD for a liquid oxygen valve test system, coordinating with design engineers and test stand operators to define flow paths, instrumentation locations, purge lines, and bleed configurations.</li>
+          <li>Performed RTD protuberance analysis for a Rosemount sensor in accordance with ASME standards and PTC 19.3, selecting an insertion length that satisfied stress limits, vortex shedding constraints, and response-time requirements.</li>
+          <li>Designed and analyzed LOX pipe supports using Creo (model-based engineering) and AutoPIPE, performing hand calculations and FEA-based buckling and stress checks to meet structural safety margins and ASME B31.3 requirements.</li>
         </ul>
 
         <!-- Small image gallery -->
@@ -159,15 +159,15 @@ permalink: /experience/
         
         <h3>Summer 2023 - Second Term (More Autonomy and Operations)</h3>
         <p>
-          By my second term, I moved from shadowing to owning more of the design work and also stepped into operations through the technical control center (TCC). I expanded into thermo-fluid system analysis while still building on the piping and test stand understanding from my first rotation.
+          By my second rotation, I transitioned from supporting design work to owning portions of system definition and stepping into cryogenic operations through the Technical Control Center (TCC). This term expanded my role into system-level fluid modeling and test execution.
         </p>
 
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
-          <li>Independently developed PSKs for multiple projects (engine schematics, facility and special test equipment drawings), including stand walk-downs to ensure designs matched real hardware and were technician-friendly to install.</li>
-          <li>Shadowed and then acted as a transfer engineer in the TCC, executing a supervised LOX transfer from storage tanks to a customer’s run tank and seeing how design, software, and operations converge on test day.</li>
-          <li>Built Flomaster models and test sequences for the LOX Valve Test (LVT), using fluid property tools (REFPROP) and manufacturer Cv curves to simulate different valve profiles and verify component pressure limits and test cases.</li>
+          <li>Independently developed PSKs for multiple projects, including engine schematics and special test equipment drawings, conducting stand walk-downs to ensure designs matched as-built hardware and were practical for technician installation.</li>
+          <li>SShadowed and then served as a LOX transfer engineer in the TCC, supporting supervised transfers from storage tanks to customer run tanks and gaining first-hand experience with cryogenic operations on test day.</li>
+          <li>Built Flomaster system models and test sequences for the LOX Valve Test (LVT), using REFPROP fluid properties, Darcy–Weisbach loss calculations, and manufacturer Cv curves to evaluate pressure drops, verify component limits, and define safe operating test cases.</li>
         </ul>
         
         <!-- Optional: video block -->
@@ -181,15 +181,15 @@ permalink: /experience/
 
         <h3>Spring 2024 - Third Term (Closing the Loop)</h3>
         <p>
-          In my final term, I got to see the LOX Valve Test project through full activation and focused heavily on data analysis and site-level documentation. I also supported additional customer projects that tied together fluid dynamics, heat transfer, and real test data processing.
+          In my final rotation, I supported the LVT project through full activation and focused heavily on post-test data analysis, facility documentation, and customer-driven engineering tasks that tied together modeling, testing, and real data.
         </p>
 
         <!-- Key Work -->
         <h3>Key Work</h3>
         <ul>
-          <li>Served as a data analysis engineer in the Test Control Center for LVT runs, writing custom Winplot scripts, verifying pre-test “blue lines,” and computing system Cv values from post-test data to compare against manufacturer curves.</li>
-          <li>Updated the Facilities Capability Document by walking down each major test stand, confirming current commodity connections, and documenting capabilities for future business development.</li>
-          <li>Assisted on customer-specific thermo-fluids and data-analysis tasks, including orifice sizing using heat-transfer/flow calculations and developing scripts to flag out-of-family instrumentation during and after tests.</li>
+          <li>Served as a data analysis engineer in the Test Control Center for LVT runs, writing custom WinPlot scripts, verifying pre-test “blue lines,” and computing system Cv values from test data to compare against manufacturer performance curves.</li>
+          <li>Updated the Facilities Capability Document by walking down major test stands, verifying current commodity connections and configurations, and documenting capabilities to support future customer testing and business development.</li>
+          <li>Assisted with customer-specific thermo-fluids and data-analysis tasks, including orifice sizing using heat-transfer and flow calculations and developing scripts to flag out-of-family instrumentation behavior during and after tests.</li>
         </ul>
 
         <!-- Small image gallery -->
