@@ -126,7 +126,7 @@ html, body {
 
 /* Make About planet larger */
 .orbit-about .orbit-planet {
-  width: 100px;   /* bigger than the default 24px */
+  width: 100px;
   height: 76px;
 }
 
@@ -144,7 +144,7 @@ html, body {
 
 /* Make Design Teams planet larger */
 .orbit-teams .orbit-planet {
-  width: 32px;   /* bigger than the default 24px */
+  width: 32px;
   height: 32px;
 }
 
@@ -164,25 +164,23 @@ html, body {
 /* Desktop: make orbiting planets larger */
 @media (min-width: 769px) {
   .orbit-planet {
-    width: 56px;   /* or 36px, 40px, etc. */
+    width: 56px;
     height: 56px;
   }
 
-  /* If you still want Design Teams to be a bit larger than the others: */
   .orbit-teams .orbit-planet {
     width: 75px;
     height: 75px;
   }
-  /* Make About planet larger */
-.orbit-about .orbit-planet {
-  width: 150px;   /* bigger than the default 24px */
-  height: 90px;
-}
+
+  .orbit-about .orbit-planet {
+    width: 150px;
+    height: 90px;
+  }
 }
 
 /* ===== Mobile fallback ===== */
 @media (max-width: 768px) {
-  /* Keep orbits fixed; only adjust button position */
   .bigbang-button {
     top: auto;
     bottom: 1rem;
@@ -192,8 +190,8 @@ html, body {
 /* Desktop: make Big Bang button larger */
 @media (min-width: 769px) {
   .bigbang-button {
-    padding: 0.6rem 1.2rem;  /* bigger pill */
-    font-size: 0.95rem;      /* larger text */
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -206,18 +204,17 @@ html, body {
   z-index: 20;
 }
 
-/* Visible state */
 .profile-overlay.is-visible {
   display: block;
 }
 
-/* Center the large image over the page center (same as About/orbits) */
+/* Center the large image over the page center */
 .profile-photo-large {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);   /* center on its own middle */
-  max-width: 60vw;                    /* your chosen size */
+  transform: translate(-50%, -50%);
+  max-width: 60vw;
   max-height: 60vh;
   width: auto;
   height: auto;
@@ -260,7 +257,7 @@ html, body {
 
 .resume-header-left,
 .resume-header-right {
-  flex: 0 0 100px;  /* wide enough to fit a big ship; keeps title centered */
+  flex: 0 0 100px;
 }
 
 .resume-header-title {
@@ -287,29 +284,24 @@ html, body {
   width: 60px;
 }
 
-/* Design Teams ship size */
 .back-ship-teams img {
-  width: 96px;   /* or larger if you want this one bigger */
+  width: 96px;
 }
 
-/* Experience ship size */
 .back-ship-experience img {
-  width: 150px;   /* or larger if you want this one bigger */
+  width: 150px;
 }
 
-/* Hobby ship size */
 .back-ship-hobby img {
-  width: 150px;   /* or larger if you want this one bigger */
+  width: 150px;
 }
 
-/* About ship size */
 .back-ship-about img {
-  width: 60px;   /* or larger if you want this one bigger */
+  width: 60px;
 }
 
-/* Maker ship size */
 .back-ship-maker img {
-  width: 250px;   /* or larger if you want this one bigger */
+  width: 250px;
 }
 
 /* Generic page header: ship left, title centered */
@@ -322,7 +314,7 @@ html, body {
 
 .page-header-left,
 .page-header-right {
-  flex: 0 0 260px;     /* enough width for a large ship; keeps title centered */
+  flex: 0 0 260px;
 }
 
 .page-header-title {
@@ -343,15 +335,14 @@ html, body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
 }
 
-/* UNIFORM CARD IMAGE SIZE – updated */
 .team-card-media {
-  flex: 0 0 400px; /*wide */
+  flex: 0 0 400px;
 }
 
 .team-card-media img {
   display: block;
   width: 100%;
-  height: 300px;  /* taller */
+  height: 300px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -393,7 +384,7 @@ html, body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect for all team card hero images */
+/* Hover effect for team images */
 .team-image-formula,
 .team-image-aero-23-24,
 .team-image-aero-22-23,
@@ -431,19 +422,18 @@ html, body {
   z-index: 25;
 }
 
-/* Allow the overlay to scroll if content is tall */
 .team-overlay.is-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: auto;          /* <– important */
+  overflow-y: auto;
 }
 
 .team-overlay-inner {
   position: relative;
   max-width: 900px;
   width: 90vw;
-  max-height: 90vh;          /* still caps height on desktop */
+  max-height: 90vh;
   padding: 1.5rem 1.25rem;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 16px;
@@ -452,7 +442,6 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Close button stays pinned to top of modal content */
 .team-overlay-close {
   position: sticky;
   top: 0;
@@ -466,23 +455,21 @@ html, body {
   z-index: 1;
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .team-overlay.is-visible {
-    align-items: flex-start;  /* start at top so you can scroll everything */
+    align-items: flex-start;
   }
 
   .team-overlay-inner {
     width: 100vw;
     max-width: 100vw;
-    /* remove hard 100vh so full content can extend and be scrolled */
     height: auto;
     max-height: none;
     border-radius: 0;
   }
 }
 
-/* Reuse project hero styling */
+/* Project hero image in overlays */
 .team-overlay .project-hero-image {
   display: block;
   width: 100%;
@@ -506,7 +493,6 @@ html, body {
   object-fit: cover;
 }
 
-/* NEW: Hover effect + pointer for dev images that open lightbox */
 .project-gallery-img {
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -531,7 +517,7 @@ html, body {
   inset: 0;
   background: rgba(0, 0, 0, 0.9);
   display: none;
-  z-index: 30; /* above .team-overlay */
+  z-index: 30;
 }
 
 .image-lightbox.is-visible {
@@ -579,7 +565,6 @@ html, body {
   line-height: 1.4;
 }
 
-/* Optional: tighter layout on small screens */
 @media (max-width: 600px) {
   .image-lightbox-inner {
     width: 100vw;
@@ -615,16 +600,16 @@ html, body {
 @media (max-width: 768px) {
   .pdf-container {
     position: relative;
-    width: 100%;       /* use content width, not 100vw */
+    width: 100%;
     max-width: 100%;
     margin: 0;
     border-radius: 0;
-    aspect-ratio: auto; /* cancel the fixed ratio */
+    aspect-ratio: auto;
     overflow: hidden;
   }
 
   .pdf-container iframe {
-    position: static;  /* let it define its own height */
+    position: static;
     width: 100%;
     height: auto;
     border-radius: 0;
@@ -636,11 +621,10 @@ html, body {
   }
 }
 
-
 /* Maker grid */
 .maker-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 columns on desktop */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -677,7 +661,6 @@ html, body {
   box-shadow: 0 0 16px rgba(255,255,255,0.4);
 }
 
-/* Optional: stack to 2 or 1 columns on smaller screens */
 @media (max-width: 900px) {
   .maker-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -689,4 +672,3 @@ html, body {
     grid-template-columns: 1fr;
   }
 }
-
