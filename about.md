@@ -40,7 +40,7 @@ permalink: /about/
     </div>
 
     <div class="team-card-body">
-      <h2>Mauricio trevino</h2>
+      <h2>Mauricio Trevino</h2>
       <p class="team-meta">Mechanical Engineer · Space Studies Graduate Student</p>
       <p>
         I am a mechanical engineer currently pursuing a Professional Science Master’s in Space Studies at Rice University, with a focus on engineering and management. My goal is to pair strong technical foundations with leadership and systems-level decision making to contribute effectively to the space industry.
