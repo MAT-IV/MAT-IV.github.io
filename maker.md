@@ -30,7 +30,7 @@ permalink: /maker/
     <!-- Formula SAE IC (Design Teams page) -->
     <a class="maker-item" href="{{ '/teams/#formula-ic' | relative_url }}">
       <img
-        src="{{ '/assets/images/maker/maker-formula.jpg' | relative_url }}"
+        src="{{ '/assets/images/formula/driver-car.JPEG' | relative_url }}"
         alt="Formula SAE IC racecar."
       >
       <span>Formula SAE IC</span>
