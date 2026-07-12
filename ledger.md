@@ -231,7 +231,7 @@ permalink: /ledger/
       payerChoice: "a"
     };
 
-    var configured = SHEET_API_URL !== "https://script.google.com/macros/s/AKfycbwcd-CTOwkQSFhY4Brd9IRR7XkHVM7vnpZeZyspmLsYCPSMhly6qBHKonULB2EsIpTk4w/exec" && SHEET_API_URL.indexOf("http") === 0;
+    var configured = SHEET_API_URL.indexOf("http") === 0;
 
     // Apps Script POST helper. Uses text/plain to dodge CORS preflight
     // (Apps Script doesn't handle OPTIONS requests by default).
