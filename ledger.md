@@ -67,7 +67,7 @@ permalink: /ledger/
   }
   .ledger-shake { animation: ledgerShake 0.4s; }
 
-  /* ---- App shell (matches site's dark card language) ---- */
+  /* ---- App shell ---- */
   .ledger-app { font-family: "Helvetica Neue", Arial, sans-serif; }
   .ledger-app .l-section {
     background: rgba(0,0,0,0.65);
@@ -100,13 +100,16 @@ permalink: /ledger/
   .ledger-app .l-month-nav button:hover { background: rgba(255,255,255,0.18); }
   .ledger-app .l-month-nav .l-month-label { font-size: 0.85rem; min-width: 120px; text-align: center; opacity: 0.9; }
 
-  .ledger-app .l-form { display: grid; grid-template-columns: 120px 100px 1fr 150px 1fr auto; gap: 0.6rem; align-items: end; }
+  .ledger-app .l-form { display: grid; grid-template-columns: 120px 100px 1fr 150px 1fr 70px 90px auto; gap: 0.6rem; align-items: end; }
   .ledger-app .l-field label { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.6; margin-bottom: 0.25rem; }
   .ledger-app input, .ledger-app select {
     width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.3); color: #fff;
     padding: 0.5rem 0.6rem; border-radius: 8px; font-size: 0.85rem; box-sizing: border-box;
   }
   .ledger-app input:focus, .ledger-app select:focus { outline: none; border-color: #fff; }
+  .ledger-app .l-field-check { display: flex; flex-direction: column; align-items: flex-start; }
+  .ledger-app .l-field-check input[type="checkbox"] { width: auto; margin-top: 0.35rem; transform: scale(1.15); }
+  .ledger-app .l-field-check input[disabled] { opacity: 0.35; }
   .ledger-app .l-payer-toggle { display: flex; border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; overflow: hidden; }
   .ledger-app .l-payer-toggle button {
     flex: 1; background: transparent; border: none; color: rgba(255,255,255,0.6); padding: 0.5rem 0.3rem; cursor: pointer; font-size: 0.75rem;
@@ -119,6 +122,12 @@ permalink: /ledger/
     transition: box-shadow 0.2s, transform 0.2s;
   }
   .ledger-app .l-add-btn:hover { box-shadow: 0 0 10px rgba(255,255,255,0.6); transform: translateY(-1px); }
+  .ledger-app .l-cancel-btn {
+    background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.35); border-radius: 999px;
+    padding: 0.55rem 0.9rem; cursor: pointer; font-size: 0.8rem; white-space: nowrap;
+  }
+  .ledger-app .l-cancel-btn:hover { color: #fff; border-color: #fff; }
+  .ledger-app .l-editing-note { font-size: 0.72rem; color: #f2d27a; margin-bottom: 0.6rem; }
 
   .ledger-app .l-cat-manage { display: flex; gap: 0.5rem; margin-top: 1rem; align-items: center; flex-wrap: wrap; }
   .ledger-app .l-cat-pill {
@@ -134,16 +143,20 @@ permalink: /ledger/
   }
   .ledger-app .l-small-btn:hover { background: rgba(255,255,255,0.18); }
   .ledger-app .l-note { font-size: 0.7rem; opacity: 0.55; margin-top: 0.5rem; }
-  .ledger-app .l-names-row { display: flex; gap: 0.6rem; margin-top: 0.6rem; flex-wrap: wrap; }
-  .ledger-app .l-names-row input { max-width: 160px; }
 
   .ledger-app .l-bar-row { display: grid; grid-template-columns: 130px 1fr 80px; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; font-size: 0.85rem; }
   .ledger-app .l-bar-track { position: relative; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
   .ledger-app .l-bar-fill { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, #f2d27a, #f0996a); border-radius: 4px; }
   .ledger-app .l-bar-amt { text-align: right; opacity: 0.75; }
 
+  .ledger-app .l-pie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .ledger-app .l-pie-card { background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.8rem; text-align: center; }
+  .ledger-app .l-pie-card h4 { margin: 0 0 0.6rem; font-size: 0.8rem; font-weight: 600; opacity: 0.85; }
+  .ledger-app .l-pie-wrap { position: relative; height: 190px; }
+  .ledger-app .l-pie-empty { opacity: 0.45; font-size: 0.75rem; padding-top: 3.5rem; }
+
   .ledger-app .l-filters select { width: auto; padding: 0.3rem 0.6rem; font-size: 0.75rem; border-radius: 999px; }
-  .ledger-app .l-txn { display: grid; grid-template-columns: 55px 100px 1fr 90px 80px 24px; gap: 0.6rem; align-items: center; padding: 0.55rem 0; border-bottom: 1px dashed rgba(255,255,255,0.15); font-size: 0.85rem; }
+  .ledger-app .l-txn { display: grid; grid-template-columns: 55px 100px 1fr 90px 80px 52px; gap: 0.6rem; align-items: center; padding: 0.55rem 0; border-bottom: 1px dashed rgba(255,255,255,0.15); font-size: 0.85rem; }
   .ledger-app .l-txn:last-child { border-bottom: none; }
   .ledger-app .l-txn .l-date { opacity: 0.6; font-size: 0.75rem; }
   .ledger-app .l-txn .l-cat { opacity: 0.6; font-size: 0.75rem; }
@@ -151,25 +164,35 @@ permalink: /ledger/
   .ledger-app .l-txn .l-payer.a { color: #6fd8c2; }
   .ledger-app .l-txn .l-payer.b { color: #f0996a; }
   .ledger-app .l-txn .l-amt { text-align: right; }
-  .ledger-app .l-txn .l-del { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 0.9rem; }
+  .ledger-app .l-txn .l-actions { display: flex; gap: 0.4rem; justify-content: flex-end; }
+  .ledger-app .l-txn .l-edit, .ledger-app .l-txn .l-del { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; font-size: 0.9rem; }
+  .ledger-app .l-txn .l-edit:hover { color: #f2d27a; }
   .ledger-app .l-txn .l-del:hover { color: #ff8a8a; }
   .ledger-app .l-empty { opacity: 0.55; font-size: 0.85rem; text-align: center; padding: 1.2rem 0; }
   .ledger-app .l-sync-note { font-size: 0.7rem; opacity: 0.5; text-align: right; margin-top: -0.4rem; margin-bottom: 0.6rem; }
 
+  .ledger-app .l-badge { display: inline-block; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; padding: 0.12rem 0.4rem; border-radius: 999px; margin-left: 0.4rem; vertical-align: middle; }
+  .ledger-app .l-badge.shared { background: rgba(142,169,242,0.18); color: #8ea9f2; }
+  .ledger-app .l-badge.paid { background: rgba(111,216,194,0.18); color: #6fd8c2; }
+  .ledger-app .l-badge.owed { background: rgba(240,153,106,0.18); color: #f0996a; }
+
   @media (max-width: 720px) {
     .ledger-app .l-form { grid-template-columns: 1fr 1fr; }
-    .ledger-app .l-form .l-add-btn { grid-column: span 2; }
-    .ledger-app .l-txn { grid-template-columns: 1fr 1fr; grid-template-areas: "date amt" "desc desc" "cat payer" "del del"; row-gap: 0.25rem; }
+    .ledger-app .l-form .l-add-btn, .ledger-app .l-form .l-cancel-btn { grid-column: span 1; }
+    .ledger-app .l-pie-grid { grid-template-columns: 1fr; }
+    .ledger-app .l-txn { grid-template-columns: 1fr 1fr; grid-template-areas: "date amt" "desc desc" "cat payer" "actions actions"; row-gap: 0.25rem; }
     .ledger-app .l-txn .l-date { grid-area: date; } .ledger-app .l-txn .l-amt { grid-area: amt; text-align:right; }
     .ledger-app .l-txn .l-desc { grid-area: desc; } .ledger-app .l-txn .l-cat { grid-area: cat; }
-    .ledger-app .l-txn .l-payer { grid-area: payer; text-align:right; } .ledger-app .l-txn .l-del { grid-area: del; justify-self:end; }
+    .ledger-app .l-txn .l-payer { grid-area: payer; text-align:right; } .ledger-app .l-txn .l-actions { grid-area: actions; }
   }
 </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 
 <script>
 (function(){
   // ===== CONFIG: paste your deployed Google Apps Script Web App URL here =====
-  var SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwcd-CTOwkQSFhY4Brd9IRR7XkHVM7vnpZeZyspmLsYCPSMhly6qBHKonULB2EsIpTk4w/exec";
+  var SHEET_API_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
   // =============================================================================
 
   var PASSCODE_HASH = "b56ce3d097ea517d19efbae8326de0f81bfb41d056b17b93dc493b401f223391";
@@ -219,7 +242,10 @@ permalink: /ledger/
   // ===================== Ledger app =====================
   function initLedgerApp(){
     var DEFAULT_CATEGORIES = ["Groceries","Eating Out","Housing","Utilities","Transport","Fun","Health","Other"];
+    var PALETTE = ['#f2d27a','#6fd8c2','#f0996a','#8ea9f2','#c792ea','#7fd1ae','#e8987a','#9fb8d9','#e0c46f','#d98a9f'];
     var root = appRoot;
+    var pieCharts = { a: null, b: null, all: null };
+
     var state = {
       expenses: [],
       categories: DEFAULT_CATEGORIES.slice(),
@@ -228,13 +254,15 @@ permalink: /ledger/
       saving: false,
       monthOffset: 0,
       filterCat: "All",
-      payerChoice: "a"
+      payerChoice: "a",
+      editingId: null,
+      formShared: false,
+      formPaidBack: false,
+      formDraft: { date: null, amount: '', category: null, description: '' }
     };
 
     var configured = SHEET_API_URL.indexOf("http") === 0;
 
-    // Apps Script POST helper. Uses text/plain to dodge CORS preflight
-    // (Apps Script doesn't handle OPTIONS requests by default).
     function sheetPost(action, payload){
       return fetch(SHEET_API_URL, {
         method: "POST",
@@ -254,6 +282,30 @@ permalink: /ledger/
     function fmt(n){ return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
     function todayStr(){ return new Date().toISOString().slice(0,10); }
     function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+    function categoryColor(cat){
+      var idx = state.categories.indexOf(cat);
+      if (idx === -1) idx = 0;
+      return PALETTE[idx % PALETTE.length];
+    }
+
+    function captureFormDraft(){
+      var dateEl = root.querySelector('#f-date');
+      var amtEl = root.querySelector('#f-amount');
+      var catEl = root.querySelector('#f-cat');
+      var descEl = root.querySelector('#f-desc');
+      if (dateEl) state.formDraft.date = dateEl.value;
+      if (amtEl) state.formDraft.amount = amtEl.value;
+      if (catEl) state.formDraft.category = catEl.value;
+      if (descEl) state.formDraft.description = descEl.value;
+    }
+
+    function resetForm(){
+      state.editingId = null;
+      state.formShared = false;
+      state.formPaidBack = false;
+      state.payerChoice = 'a';
+      state.formDraft = { date: null, amount: '', category: null, description: '' };
+    }
 
     async function loadAll(){
       if (!configured){ state.loaded = true; render(); return; }
@@ -271,7 +323,6 @@ permalink: /ledger/
     }
 
     async function refreshFromSheet(){
-      // Re-pull after a write so both partners' next render reflects the sheet as source of truth.
       try {
         var res = await fetch(SHEET_API_URL, { method: "GET" });
         if (res.ok){
@@ -297,6 +348,41 @@ permalink: /ledger/
       });
     }
 
+    function categoryTotals(list){
+      var byCat = {};
+      list.forEach(function(e){ byCat[e.category] = (byCat[e.category]||0) + Number(e.amount); });
+      return byCat;
+    }
+
+    function renderPieCharts(monthExpenses){
+      if (typeof Chart === 'undefined') return;
+      var groups = {
+        a: monthExpenses.filter(function(e){ return e.payer === 'a'; }),
+        b: monthExpenses.filter(function(e){ return e.payer === 'b'; }),
+        all: monthExpenses
+      };
+      ['a','b','all'].forEach(function(key){
+        var canvasId = key === 'all' ? 'pieAll' : 'pie' + key.toUpperCase();
+        var canvas = root.querySelector('#' + canvasId);
+        if (!canvas) return;
+        if (pieCharts[key]) { pieCharts[key].destroy(); pieCharts[key] = null; }
+        var totals = categoryTotals(groups[key]);
+        var labels = Object.keys(totals);
+        if (!labels.length) return;
+        var values = labels.map(function(l){ return totals[l]; });
+        var colors = labels.map(categoryColor);
+        pieCharts[key] = new Chart(canvas, {
+          type: 'pie',
+          data: { labels: labels, datasets: [{ data: values, backgroundColor: colors, borderColor: 'rgba(0,0,0,0.5)', borderWidth: 1 }] },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom', labels: { color: 'rgba(255,255,255,0.75)', font: { size: 10 }, boxWidth: 10, padding: 8 } } }
+          }
+        });
+      });
+    }
+
     function render(){
       if (!state.loaded){ root.innerHTML = '<p class="l-empty">Loading ledger…</p>'; return; }
 
@@ -305,8 +391,7 @@ permalink: /ledger/
       var totalA = monthExpenses.filter(function(e){ return e.payer==='a'; }).reduce(function(s,e){ return s+Number(e.amount); }, 0);
       var totalB = monthExpenses.filter(function(e){ return e.payer==='b'; }).reduce(function(s,e){ return s+Number(e.amount); }, 0);
 
-      var byCat = {};
-      monthExpenses.forEach(function(e){ byCat[e.category] = (byCat[e.category]||0) + Number(e.amount); });
+      var byCat = categoryTotals(monthExpenses);
       var maxCat = Math.max(1, Math.max.apply(null, Object.values(byCat).length ? Object.values(byCat) : [0]));
       var catEntries = Object.entries(byCat).sort(function(a,b){ return b[1]-a[1]; });
       var catRows = catEntries.map(function(pair){
@@ -317,18 +402,36 @@ permalink: /ledger/
 
       var filtered = state.filterCat === 'All' ? monthExpenses : monthExpenses.filter(function(e){ return e.category===state.filterCat; });
       var txnRows = filtered.map(function(e){
+        var badges = '';
+        if (e.shared){
+          badges += '<span class="l-badge shared">Shared</span>';
+          badges += e.paidBack ? '<span class="l-badge paid">Paid back</span>' : '<span class="l-badge owed">Owed</span>';
+        }
         return '<div class="l-txn">' +
           '<div class="l-date">'+e.date.slice(5)+'</div>' +
           '<div class="l-cat">'+escapeHtml(e.category)+'</div>' +
-          '<div class="l-desc">'+escapeHtml(e.description || '—')+'</div>' +
+          '<div class="l-desc">'+escapeHtml(e.description || '—')+badges+'</div>' +
           '<div class="l-payer '+e.payer+'">'+escapeHtml(state.names[e.payer])+'</div>' +
           '<div class="l-amt">'+fmt(e.amount)+'</div>' +
-          '<button class="l-del" data-del="'+e.id+'" title="Delete">&#10005;</button></div>';
+          '<div class="l-actions">' +
+            '<button class="l-edit" data-edit="'+e.id+'" title="Edit">&#9998;</button>' +
+            '<button class="l-del" data-del="'+e.id+'" title="Delete">&#10005;</button>' +
+          '</div></div>';
       }).join('') || '<p class="l-empty">No transactions'+(state.filterCat!=='All' ? ' in this category' : '')+' yet.</p>';
 
       var catOptions = state.categories.map(function(c){ return '<option value="'+escapeHtml(c)+'">'+escapeHtml(c)+'</option>'; }).join('');
       var filterOptions = ['All'].concat(state.categories).map(function(c){ return '<option value="'+escapeHtml(c)+'" '+(state.filterCat===c?'selected':'')+'>'+escapeHtml(c)+'</option>'; }).join('');
       var catPills = state.categories.map(function(c){ return '<span class="l-cat-pill">'+escapeHtml(c)+' <button data-delcat="'+escapeHtml(c)+'">&#10005;</button></span>'; }).join('');
+
+      var draft = state.formDraft;
+      var draftDate = draft.date || todayStr();
+      var draftAmount = draft.amount;
+      var draftCategory = draft.category || state.categories[0];
+      var draftDesc = draft.description || '';
+
+      var catOptionsWithSelection = state.categories.map(function(c){
+        return '<option value="'+escapeHtml(c)+'" '+(c===draftCategory?'selected':'')+'>'+escapeHtml(c)+'</option>';
+      }).join('');
 
       root.innerHTML =
         '<div class="l-sync-note"></div>' +
@@ -344,31 +447,40 @@ permalink: /ledger/
             (state.monthOffset<0 ? '<button id="nextM">&rarr;</button>' : '<button disabled style="opacity:.3;cursor:default">&rarr;</button>') +
             '</div></div>' +
 
+          (state.editingId ? '<div class="l-editing-note">Editing an existing entry — Save changes to update it, or Cancel.</div>' : '') +
+
           '<div class="l-form">' +
-            '<div class="l-field"><label>Date</label><input type="date" id="f-date" value="'+todayStr()+'"></div>' +
-            '<div class="l-field"><label>Amount</label><input type="number" id="f-amount" step="0.01" min="0" placeholder="0.00"></div>' +
-            '<div class="l-field"><label>Category</label><select id="f-cat">'+catOptions+'</select></div>' +
+            '<div class="l-field"><label>Date</label><input type="date" id="f-date" value="'+draftDate+'"></div>' +
+            '<div class="l-field"><label>Amount</label><input type="number" id="f-amount" step="0.01" min="0" placeholder="0.00" value="'+escapeHtml(draftAmount)+'"></div>' +
+            '<div class="l-field"><label>Category</label><select id="f-cat">'+catOptionsWithSelection+'</select></div>' +
             '<div class="l-field"><label>Paid by</label><div class="l-payer-toggle">' +
               '<button type="button" data-payer="a" class="'+(state.payerChoice==='a'?'active a':'')+'">'+escapeHtml(state.names.a)+'</button>' +
               '<button type="button" data-payer="b" class="'+(state.payerChoice==='b'?'active b':'')+'">'+escapeHtml(state.names.b)+'</button>' +
             '</div></div>' +
-            '<div class="l-field"><label>Description</label><input type="text" id="f-desc" placeholder="e.g. HEB run"></div>' +
-            '<button class="l-add-btn" id="addBtn">Add</button>' +
+            '<div class="l-field"><label>Description</label><input type="text" id="f-desc" placeholder="e.g. HEB run" value="'+escapeHtml(draftDesc)+'"></div>' +
+            '<div class="l-field l-field-check"><label>Shared</label><input type="checkbox" id="f-shared" '+(state.formShared?'checked':'')+'></div>' +
+            '<div class="l-field l-field-check"><label>Paid back</label><input type="checkbox" id="f-paidback" '+(state.formShared?'':'disabled')+' '+(state.formPaidBack?'checked':'')+'></div>' +
+            '<div style="display:flex; gap:0.5rem;">' +
+              '<button class="l-add-btn" id="addBtn">'+(state.editingId ? 'Save changes' : 'Add')+'</button>' +
+              (state.editingId ? '<button class="l-cancel-btn" id="cancelEditBtn" type="button">Cancel</button>' : '') +
+            '</div>' +
           '</div>' +
 
           '<div class="l-cat-manage">' + catPills +
             '<div class="l-add-cat"><input type="text" id="newCat" placeholder="New category">' +
             '<button class="l-small-btn" id="addCatBtn">Add category</button></div>' +
           '</div>' +
-          '<div class="l-note">Editing account names below updates them everywhere.</div>' +
-          '<div class="l-names-row">' +
-            '<input type="text" id="nameA" value="'+escapeHtml(state.names.a)+'" placeholder="Partner A name">' +
-            '<input type="text" id="nameB" value="'+escapeHtml(state.names.b)+'" placeholder="Partner B name">' +
-            '<button class="l-small-btn" id="saveNamesBtn">Save names</button>' +
-          '</div>' +
         '</div>' +
 
-        '<div class="l-section"><div class="l-section-title">By category</div>' + catRows + '</div>' +
+        '<div class="l-section"><div class="l-section-title">By category — combined</div>' + catRows + '</div>' +
+
+        '<div class="l-section"><div class="l-section-title">By category — by partner</div>' +
+          '<div class="l-pie-grid">' +
+            '<div class="l-pie-card"><h4>'+escapeHtml(state.names.a)+'</h4><div class="l-pie-wrap"><canvas id="pieA"></canvas></div></div>' +
+            '<div class="l-pie-card"><h4>'+escapeHtml(state.names.b)+'</h4><div class="l-pie-wrap"><canvas id="pieB"></canvas></div></div>' +
+            '<div class="l-pie-card"><h4>Combined</h4><div class="l-pie-wrap"><canvas id="pieAll"></canvas></div></div>' +
+          '</div>' +
+        '</div>' +
 
         '<div class="l-section"><div class="l-section-title"><span>Transactions</span>' +
           '<div class="l-filters"><select id="filterCat">'+filterOptions+'</select></div></div>' +
@@ -376,14 +488,27 @@ permalink: /ledger/
         '</div>';
 
       renderSyncNote();
+      renderPieCharts(monthExpenses);
 
       root.querySelector('#prevM').onclick = function(){ state.monthOffset--; render(); };
       var nextBtn = root.querySelector('#nextM');
       if (nextBtn) nextBtn.onclick = function(){ state.monthOffset++; render(); };
 
       Array.prototype.forEach.call(root.querySelectorAll('[data-payer]'), function(btn){
-        btn.onclick = function(){ state.payerChoice = btn.getAttribute('data-payer'); render(); };
+        btn.onclick = function(){ captureFormDraft(); state.payerChoice = btn.getAttribute('data-payer'); render(); };
       });
+
+      root.querySelector('#f-shared').onchange = function(e){
+        captureFormDraft();
+        state.formShared = e.target.checked;
+        if (!state.formShared) state.formPaidBack = false;
+        render();
+      };
+      root.querySelector('#f-paidback').onchange = function(e){
+        captureFormDraft();
+        state.formPaidBack = e.target.checked;
+        render();
+      };
 
       root.querySelector('#addBtn').onclick = async function(){
         var date = root.querySelector('#f-date').value || todayStr();
@@ -391,22 +516,62 @@ permalink: /ledger/
         var category = root.querySelector('#f-cat').value;
         var description = root.querySelector('#f-desc').value.trim();
         if (!amount || amount <= 0){ root.querySelector('#f-amount').focus(); return; }
-        var entry = { id: Date.now().toString(36)+Math.random().toString(36).slice(2,6), date: date, amount: amount, category: category, description: description, payer: state.payerChoice };
-        state.expenses.push(entry);
-        render();
-        if (configured){
-          state.saving = true; renderSyncNote();
-          await sheetPost('addExpense', entry);
-          await refreshFromSheet();
-          state.saving = false;
+        var shared = state.formShared;
+        var paidBack = shared ? state.formPaidBack : false;
+
+        if (state.editingId){
+          var id = state.editingId;
+          var updated = { id: id, date: date, amount: amount, category: category, description: description, payer: state.payerChoice, shared: shared, paidBack: paidBack };
+          var idx = state.expenses.findIndex(function(e){ return e.id === id; });
+          if (idx !== -1) state.expenses[idx] = updated;
+          resetForm();
           render();
+          if (configured){
+            state.saving = true; renderSyncNote();
+            await sheetPost('editExpense', updated);
+            await refreshFromSheet();
+            state.saving = false;
+            render();
+          }
+        } else {
+          var entry = { id: Date.now().toString(36)+Math.random().toString(36).slice(2,6), date: date, amount: amount, category: category, description: description, payer: state.payerChoice, shared: shared, paidBack: paidBack };
+          state.expenses.push(entry);
+          resetForm();
+          render();
+          if (configured){
+            state.saving = true; renderSyncNote();
+            await sheetPost('addExpense', entry);
+            await refreshFromSheet();
+            state.saving = false;
+            render();
+          }
         }
       };
+
+      var cancelBtn = root.querySelector('#cancelEditBtn');
+      if (cancelBtn) cancelBtn.onclick = function(){ resetForm(); render(); };
+
+      Array.prototype.forEach.call(root.querySelectorAll('[data-edit]'), function(btn){
+        btn.onclick = function(){
+          var id = btn.getAttribute('data-edit');
+          var entry = state.expenses.find(function(e){ return e.id === id; });
+          if (!entry) return;
+          state.editingId = id;
+          state.payerChoice = entry.payer;
+          state.formShared = !!entry.shared;
+          state.formPaidBack = !!entry.paidBack;
+          state.formDraft = { date: entry.date, amount: String(entry.amount), category: entry.category, description: entry.description };
+          render();
+          var formEl = root.querySelector('.l-form');
+          if (formEl) formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        };
+      });
 
       Array.prototype.forEach.call(root.querySelectorAll('[data-del]'), function(btn){
         btn.onclick = async function(){
           var id = btn.getAttribute('data-del');
           state.expenses = state.expenses.filter(function(e){ return e.id !== id; });
+          if (state.editingId === id) resetForm();
           render();
           if (configured){
             state.saving = true; renderSyncNote();
@@ -448,19 +613,6 @@ permalink: /ledger/
       });
 
       root.querySelector('#filterCat').onchange = function(e){ state.filterCat = e.target.value; render(); };
-
-      root.querySelector('#saveNamesBtn').onclick = async function(){
-        var a = root.querySelector('#nameA').value.trim() || 'Partner A';
-        var b = root.querySelector('#nameB').value.trim() || 'Partner B';
-        state.names = { a: a, b: b };
-        render();
-        if (configured){
-          state.saving = true; renderSyncNote();
-          await sheetPost('saveSettings', { categories: state.categories, names: state.names });
-          state.saving = false;
-          render();
-        }
-      };
     }
 
     loadAll();
