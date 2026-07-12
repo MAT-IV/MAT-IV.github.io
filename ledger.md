@@ -192,7 +192,7 @@ permalink: /ledger/
 <script>
 (function(){
   // ===== CONFIG: paste your deployed Google Apps Script Web App URL here =====
-  var SHEET_API_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+  var SHEET_API_URL = "https://script.google.com/macros/s/AKfycby8gYJCjN0-yh2GqqbK29-o7zOycRTl_74TiBfRFzl2MvX_yzvvs9gugtDIMTdXR5ufUA/exec";
   // =============================================================================
 
   var PASSCODE_HASH = "b56ce3d097ea517d19efbae8326de0f81bfb41d056b17b93dc493b401f223391";
