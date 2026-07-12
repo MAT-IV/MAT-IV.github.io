@@ -54,4 +54,9 @@ permalink: /about/
     </div>
   </section>
 
+<!--Expense Report Link -->
+<p style="margin-top: 2.5rem; opacity: 0.45; font-size: 0.8rem; text-align: center;">
+    <a href="{{ '/ledger/' | relative_url }}" style="color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.4);">Ledger</a>
+  </p>
+  
 </div>
