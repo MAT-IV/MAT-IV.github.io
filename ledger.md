@@ -168,10 +168,9 @@ permalink: /ledger/
 
 <script>
 (function(){
-  // ===== CONFIG: fill these in after creating your free jsonbin.io bin =====
-  var JSONBIN_BIN_ID = "YOUR_BIN_ID_HERE";
-  var JSONBIN_API_KEY = "YOUR_JSONBIN_KEY_HERE";
-  // ===========================================================================
+  // ===== CONFIG: paste your deployed Google Apps Script Web App URL here =====
+  var SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwcd-CTOwkQSFhY4Brd9IRR7XkHVM7vnpZeZyspmLsYCPSMhly6qBHKonULB2EsIpTk4w/exec";
+  // =============================================================================
 
   var PASSCODE_HASH = "b56ce3d097ea517d19efbae8326de0f81bfb41d056b17b93dc493b401f223391";
 
@@ -232,8 +231,17 @@ permalink: /ledger/
       payerChoice: "a"
     };
 
-    var configured = JSONBIN_BIN_ID !== "YOUR_BIN_ID_HERE" && JSONBIN_API_KEY !== "YOUR_JSONBIN_KEY_HERE";
-    var API_URL = "https://api.jsonbin.io/v3/b/" + JSONBIN_BIN_ID;
+    var configured = SHEET_API_URL !== "https://script.google.com/macros/s/AKfycbwcd-CTOwkQSFhY4Brd9IRR7XkHVM7vnpZeZyspmLsYCPSMhly6qBHKonULB2EsIpTk4w/exec" && SHEET_API_URL.indexOf("http") === 0;
+
+    // Apps Script POST helper. Uses text/plain to dodge CORS preflight
+    // (Apps Script doesn't handle OPTIONS requests by default).
+    function sheetPost(action, payload){
+      return fetch(SHEET_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ action: action, payload: payload || {} })
+      }).then(function(r){ return r.json(); });
+    }
 
     function monthKey(offset){
       var d = new Date(); d.setDate(1); d.setMonth(d.getMonth() + offset);
@@ -250,11 +258,11 @@ permalink: /ledger/
     async function loadAll(){
       if (!configured){ state.loaded = true; render(); return; }
       try {
-        var res = await fetch(API_URL + "?meta=false", { headers: { "X-Master-Key": JSONBIN_API_KEY } });
+        var res = await fetch(SHEET_API_URL, { method: "GET" });
         if (res.ok){
           var data = await res.json();
           if (data.expenses) state.expenses = data.expenses;
-          if (data.categories) state.categories = data.categories;
+          if (data.categories && data.categories.length) state.categories = data.categories;
           if (data.names) state.names = data.names;
         }
       } catch(e) { console.error('load error', e); }
@@ -262,24 +270,23 @@ permalink: /ledger/
       render();
     }
 
-    async function saveAll(){
-      if (!configured) return;
-      state.saving = true;
+    async function refreshFromSheet(){
+      // Re-pull after a write so both partners' next render reflects the sheet as source of truth.
       try {
-        await fetch(API_URL, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json", "X-Master-Key": JSONBIN_API_KEY },
-          body: JSON.stringify({ expenses: state.expenses, categories: state.categories, names: state.names })
-        });
-      } catch(e) { console.error('save failed', e); }
-      state.saving = false;
-      renderSyncNote();
+        var res = await fetch(SHEET_API_URL, { method: "GET" });
+        if (res.ok){
+          var data = await res.json();
+          if (data.expenses) state.expenses = data.expenses;
+          if (data.categories && data.categories.length) state.categories = data.categories;
+          if (data.names) state.names = data.names;
+        }
+      } catch(e) { console.error('refresh failed', e); }
     }
 
     function renderSyncNote(){
       var el = root.querySelector('.l-sync-note');
       if (!el) return;
-      el.textContent = configured ? (state.saving ? 'Syncing…' : 'Synced') : 'Not connected — add your jsonbin.io keys to sync between devices';
+      el.textContent = configured ? (state.saving ? 'Syncing…' : 'Synced to sheet') : 'Not connected — add your Apps Script URL to sync between devices';
     }
 
     function expensesForMonth(offset){
@@ -378,7 +385,7 @@ permalink: /ledger/
         btn.onclick = function(){ state.payerChoice = btn.getAttribute('data-payer'); render(); };
       });
 
-      root.querySelector('#addBtn').onclick = function(){
+      root.querySelector('#addBtn').onclick = async function(){
         var date = root.querySelector('#f-date').value || todayStr();
         var amount = parseFloat(root.querySelector('#f-amount').value);
         var category = root.querySelector('#f-cat').value;
@@ -387,45 +394,72 @@ permalink: /ledger/
         var entry = { id: Date.now().toString(36)+Math.random().toString(36).slice(2,6), date: date, amount: amount, category: category, description: description, payer: state.payerChoice };
         state.expenses.push(entry);
         render();
-        saveAll();
+        if (configured){
+          state.saving = true; renderSyncNote();
+          await sheetPost('addExpense', entry);
+          await refreshFromSheet();
+          state.saving = false;
+          render();
+        }
       };
 
       Array.prototype.forEach.call(root.querySelectorAll('[data-del]'), function(btn){
-        btn.onclick = function(){
+        btn.onclick = async function(){
           var id = btn.getAttribute('data-del');
           state.expenses = state.expenses.filter(function(e){ return e.id !== id; });
           render();
-          saveAll();
+          if (configured){
+            state.saving = true; renderSyncNote();
+            await sheetPost('deleteExpense', { id: id });
+            await refreshFromSheet();
+            state.saving = false;
+            render();
+          }
         };
       });
 
-      root.querySelector('#addCatBtn').onclick = function(){
+      root.querySelector('#addCatBtn').onclick = async function(){
         var input = root.querySelector('#newCat');
         var val = input.value.trim();
         if (!val || state.categories.indexOf(val) !== -1) return;
         state.categories.push(val);
         render();
-        saveAll();
+        if (configured){
+          state.saving = true; renderSyncNote();
+          await sheetPost('saveSettings', { categories: state.categories, names: state.names });
+          state.saving = false;
+          render();
+        }
       };
 
       Array.prototype.forEach.call(root.querySelectorAll('[data-delcat]'), function(btn){
-        btn.onclick = function(){
+        btn.onclick = async function(){
           var cat = btn.getAttribute('data-delcat');
           state.categories = state.categories.filter(function(c){ return c !== cat; });
           if (state.filterCat === cat) state.filterCat = 'All';
           render();
-          saveAll();
+          if (configured){
+            state.saving = true; renderSyncNote();
+            await sheetPost('saveSettings', { categories: state.categories, names: state.names });
+            state.saving = false;
+            render();
+          }
         };
       });
 
       root.querySelector('#filterCat').onchange = function(e){ state.filterCat = e.target.value; render(); };
 
-      root.querySelector('#saveNamesBtn').onclick = function(){
+      root.querySelector('#saveNamesBtn').onclick = async function(){
         var a = root.querySelector('#nameA').value.trim() || 'Partner A';
         var b = root.querySelector('#nameB').value.trim() || 'Partner B';
         state.names = { a: a, b: b };
         render();
-        saveAll();
+        if (configured){
+          state.saving = true; renderSyncNote();
+          await sheetPost('saveSettings', { categories: state.categories, names: state.names });
+          state.saving = false;
+          render();
+        }
       };
     }
 
