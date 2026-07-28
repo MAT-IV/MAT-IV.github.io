@@ -26,6 +26,33 @@ permalink: /experience/
     This page highlights my most significant professional experiences. Select an image to view more details.
   </p>
 
+<!-- 0. The Exploration Company Internship -->
+  <section class="team-card">
+    <div class="team-card-media">
+      <div class="project-gallery">
+        <img
+          src="{{ '/assets/images/tec/crew-mockup-wide.jpeg' | relative_url }}"
+          alt="Nyx crew vehicle mockup interior, full-scale build."
+          class="team-image team-image-tec"
+          data-team-key="tec-intern"
+        >
+      </div>
+    </div>
+    <div class="team-card-body">
+      <h2>The Exploration Company – Crew Systems Engineering Intern, Mechanical/Structures</h2>
+      <p class="team-meta">Role: Crew Systems Engineering Intern · Location: Houston, TX</p>
+      <p>
+        As a Crew Systems Engineering Intern at The Exploration Company, I helped stand up the company's newest Houston facility, the Rapid Innovation Lab, and led the build of a full-scale, low-fidelity crew vehicle mockup of the Nyx Earth vehicle. Working side-by-side with former NASA astronaut Dr. Lee Morin, I designed and hand-built the interior systems — from crew seating to touchscreen displays to custom hand controllers — managing an assembly of over 500 components from concept through integration.
+      </p>
+      <ul>
+        <li>Hand-built the furniture and lab infrastructure for the new Rapid Innovation Lab facility from the ground up.</li>
+        <li>Developed the full interior of a full-scale Nyx Earth crew vehicle mockup alongside astronaut Dr. Lee Morin.</li>
+        <li>Modified COTS racing seats with a custom base for crew seating, and designed a triple-touchscreen crew control panel and custom cursor control devices (CCDs).</li>
+        <li>Presented the mockup at the facility's grand opening to politicians, engineers, and press; recipient of the Spirit of Exploration Award at the company's summer all-hands in Munich, Germany.</li>
+      </ul>
+    </div>
+  </section>
+  
   <!-- 1. NASA Co-Op -->
   <section class="team-card">
     <div class="team-card-media">
@@ -82,6 +109,107 @@ permalink: /experience/
     </div>
   </section>
 
+
+<!-- The Exploration Company detail overlay -->
+  <div class="team-overlay" id="tec-intern-overlay" data-team="tec-intern">
+    <div class="team-overlay-inner">
+      <button class="team-overlay-close" aria-label="Close details">&times;</button>
+
+      <div class="team-overlay-content">
+        <h2>The Exploration Company – Crew Systems Engineering Intern, Mechanical/Structures</h2>
+        <p class="team-meta">Role: Crew Systems Engineering Intern · Location: Houston, TX</p>
+
+        <!-- Hero image -->
+        <img
+          src="{{ '/assets/images/tec/crew-mockup-interior.jpeg' | relative_url }}"
+          alt="Interior of the Nyx crew vehicle mockup."
+          class="project-hero-image"
+        >
+
+        <!-- Overview -->
+        <h3>Overview</h3>
+        <p>
+          At The Exploration Company, I supported the Nyx Crew systems team as it developed requirements, early hardware prototypes, and human-in-the-loop test setups for a crewed orbital vehicle. My work centered on standing up a brand-new Houston facility and building a full-scale interior mockup of the Nyx Earth vehicle, taking it from empty space to a presentation-ready crew cabin used for hands-on engineering evaluation.
+        </p>
+
+        <h3>Standing Up the Rapid Innovation Lab</h3>
+        <p>
+          When I joined, the Rapid Innovation Lab was an empty facility. I hand-built the furniture, workbenches, and hardware fixtures needed to turn it into a functioning rapid-prototyping space, laying the groundwork for the crew mockup build that followed.
+        </p>
+
+        <h3>Key Work</h3>
+        <ul>
+          <li>Built the lab's furniture and hardware infrastructure from scratch to support rapid, hands-on prototype development.</li>
+          <li>Worked directly with former NASA astronaut Dr. Lee Morin to design the interior layout and crew interfaces of a full-scale, low-fidelity Nyx Earth crew vehicle mockup.</li>
+          <li>Modified commercial off-the-shelf racing seats with a custom-designed base to serve as crew seating.</li>
+          <li>Designed and built a triple-touchscreen control panel for crew display interaction.</li>
+          <li>Designed and iterated on custom cursor control devices (CCDs) for crew interaction with the displays.</li>
+          <li>Managed assembly and integration of an interior system comprising over 500 components, coordinating with vendors on procurement and delivery.</li>
+        </ul>
+
+        <!-- Small image gallery -->
+        <h3>Mockup Build & Hand Controller Iterations</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/tec/crew-seats.jpeg' | relative_url }}"
+            alt="Modified racing seats used for crew seating."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Custom crew seating, modified from COTS racing seats."
+          >
+          <img
+            src="{{ '/assets/images/tec/control-panel.jpeg' | relative_url }}"
+            alt="Triple touchscreen crew control panel."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Triple-touchscreen crew control panel."
+          >
+          <img
+            src="{{ '/assets/images/tec/ccd-iterations.jpeg' | relative_url }}"
+            alt="Iterations of the cursor control device."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Cursor control device (CCD) design iterations."
+          >
+          <img
+            src="{{ '/assets/images/tec/grand-opening.jpeg' | relative_url }}"
+            alt="Grand opening presentation of the crew mockup."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Presenting the mockup at the Rapid Innovation Lab grand opening."
+          >
+        </div>
+
+        <h3>Grand Opening & Recognition</h3>
+        <p>
+          I presented the completed mockup at the Rapid Innovation Lab's grand opening to an audience of politicians, engineers, and press, including coverage by the
+          <a href="https://www.houstonchronicle.com/news/houston-texas/space/article/houston-space-lab-hiring-22315841.php" target="_blank" rel="noopener noreferrer">Houston Chronicle</a>.
+          For this work, I received the Spirit of Exploration Award at the company's summer all-hands event in Munich, Germany.
+        </p>
+
+        <!-- Presentation slides -->
+        <h3>Presentation Slides</h3>
+        <div class="project-gallery">
+          <img
+            src="{{ '/assets/images/tec/mockup-slide.jpeg' | relative_url }}"
+            alt="Crew mockup presentation slide."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Crew mockup presentation slide."
+          >
+          <img
+            src="{{ '/assets/images/tec/seats-slide.jpeg' | relative_url }}"
+            alt="Crew seats presentation slide."
+            class="project-gallery-img js-lightbox-target"
+            data-caption="Crew seats presentation slide."
+          >
+        </div>
+
+        <h3>Overall Summary and Reflection</h3>
+        <p>
+          This internship gave me end-to-end ownership over a physical build — from standing up the lab itself to designing, fabricating, and integrating the systems inside a full-scale crew vehicle mockup. Working directly with an astronaut on crew interface design brought a level of real-world usability feedback I hadn't experienced before, and managing 500+ components through vendors and integration taught me how much program-level coordination underlies even a "low-fidelity" hardware build.
+          <br><br>
+          Presenting the finished mockup to press and leadership, and later being recognized with the Spirit of Exploration Award, reinforced how much I enjoy the intersection of hands-on fabrication, human factors, and systems integration — and it's shaped my interest in pursuing more crew systems and human spaceflight hardware work going forward.
+        </p>
+      </div>
+    </div>
+  </div>
+  
   <!-- NASA Co-Op detail overlay -->
   <div class="team-overlay" id="nasa-coop-overlay" data-team="nasa-coop">
     <div class="team-overlay-inner">
